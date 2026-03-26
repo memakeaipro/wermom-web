@@ -7665,7 +7665,7 @@ footer::before {
         <div class="gs-hero-image" style="margin:0;">
           <div class="gs-hero-video-wrap">
             <video id="gs-hero-video" playsinline preload="metadata" loop>
-              <source src="Image/vid1.mp4" type="video/mp4">
+              <source src="vid/vid1.mp4" type="video/mp4">
             </video>
             <button id="gs-video-pause-btn">
               <svg class="pause-ico" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
@@ -8182,7 +8182,7 @@ function goToSurvey() {
   const country = document.getElementById('gs-country').value;
   if (!name || !email) { alert('Please fill in your name and email.'); return; }
   const params = new URLSearchParams({ name, email, phone, country });
-  window.location.href = 'wermom-survey.html?' + params.toString();
+  window.location.href = 'survey.html?' + params.toString();
 }
 
 // ==================== SMOOTH SCROLL FOR ANCHOR LINKS ====================
