@@ -1,0 +1,3036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wermom - Health Survey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FFF9F5;
+            --cream-deep: #FFF1E8;
+            --blush: #FFE4D6;
+            --peach: #F4A886;
+            --rose: #E8846A;
+            --rose-deep: #D4604A;
+            --sage: #7BA68D;
+            --sage-light: #E8F2EC;
+            --sage-deep: #5C8A6F;
+            --midnight: #1A1A2E;
+            --charcoal: #2D2D3F;
+            --slate: #4A4A5E;
+            --warm-gray: #8A8A9A;
+            --light-gray: #E8E6E3;
+            --white: #FFFFFF;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, rgba(255, 249, 245, 0.5) 0%, rgba(232, 242, 236, 0.3) 100%),
+                        radial-gradient(circle at 20% 50%, rgba(255, 228, 214, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(123, 166, 141, 0.1) 0%, transparent 50%),
+                        var(--cream);
+            background-attachment: fixed;
+            color: var(--midnight);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background-color: rgba(255, 249, 245, 0.9);
+            border-bottom: 1px solid var(--cream-deep);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--rose);
+            text-decoration: none;
+        }
+
+        .nav-back {
+            color: var(--slate);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-back:hover {
+            color: var(--rose);
+        }
+
+        /* Main Layout Container */
+        .layout-wrapper {
+            display: flex;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: calc(100vh - 80px);
+        }
+
+        /* Form Column */
+        .form-column {
+            flex: 0 0 60%;
+        }
+
+        /* Sidebar Column */
+        .sidebar-column {
+            flex: 0 0 40%;
+            position: sticky;
+            top: 90px;
+            align-self: flex-start;
+        }
+
+        /* Step Indicators */
+        .step-indicators {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            gap: 0;
+        }
+
+        .step-indicator {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: #b0a8a3;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+            z-index: 1;
+            font-family: var(--font-body);
+            letter-spacing: -0.01em;
+        }
+
+        .step-indicator.active {
+            background: linear-gradient(135deg, #e8846a 0%, #f2a68e 100%);
+            color: var(--white);
+            box-shadow: 0 0 0 4px rgba(232, 132, 106, 0.15), 0 4px 14px rgba(232, 132, 106, 0.3);
+            transform: scale(1.12);
+            animation: stepPulse 2s ease-in-out infinite;
+        }
+
+        .step-indicator.completed {
+            background: linear-gradient(135deg, #f2a68e 0%, #e8846a 100%);
+            color: var(--white);
+        }
+
+        @keyframes stepPulse {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(232, 132, 106, 0.15), 0 4px 14px rgba(232, 132, 106, 0.3); }
+            50% { box-shadow: 0 0 0 8px rgba(232, 132, 106, 0.08), 0 4px 20px rgba(232, 132, 106, 0.25); }
+        }
+
+        .step-line {
+            flex: 1;
+            height: 3px;
+            min-width: 16px;
+            max-width: 48px;
+            background: var(--light-gray);
+            border-radius: 3px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .step-line.done {
+            background: linear-gradient(90deg, #e8846a, #f2a68e);
+        }
+
+        .step-line.current {
+            background: linear-gradient(90deg, #f2a68e, var(--light-gray));
+        }
+
+        /* Progress Bar */
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 4px;
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--rose) 0%, var(--sage) 100%);
+            width: 0%;
+            transition: width 0.4s ease;
+            border-radius: 10px;
+        }
+
+
+        .category-motivation {
+            color: var(--rose);
+            font-size: 0.85rem;
+            font-weight: 500;
+            font-style: italic;
+            margin-top: 8px;
+            line-height: 1.5;
+            padding-left: 12px;
+            border-left: 2px solid var(--peach);
+        }
+        /* Category Header */
+        .category-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--midnight);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .category-description {
+            color: var(--warm-gray);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Form Fields */
+        .form-group {
+            margin-bottom: 1.75rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: var(--midnight);
+            font-size: 0.95rem;
+        }
+
+        .required::after {
+            content: " *";
+            color: var(--rose);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1.5px solid var(--light-gray);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--midnight);
+            background-color: var(--white);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--rose);
+            box-shadow: 0 0 0 4px rgba(232, 132, 106, 0.15);
+            background-color: rgba(255, 249, 245, 0.5);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Chips */
+        .chips-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .chip {
+            padding: 0.65rem 1.25rem;
+            border: 1.5px solid var(--light-gray);
+            border-radius: 25px;
+            background-color: var(--white);
+            color: var(--midnight);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .chip:hover {
+            border-color: var(--rose);
+            color: var(--rose);
+            transform: translateY(-2px);
+        }
+
+        .chip.active {
+            border-color: var(--rose);
+            background-color: var(--rose);
+            color: var(--cream);
+        }
+
+        .chips-multi .chip.active {
+            border-color: var(--sage);
+            background-color: var(--sage);
+            color: var(--cream);
+        }
+
+        /* Checkbox */
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            cursor: pointer;
+            accent-color: var(--rose);
+        }
+
+        .checkbox-label {
+            cursor: pointer;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 0.875rem 1.75rem;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary {
+            background-color: var(--cream-deep);
+            color: var(--midnight);
+            border: 1.5px solid var(--light-gray);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light-gray);
+            border-color: var(--rose);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--rose) 0%, var(--sage) 100%);
+            color: var(--cream);
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(232, 132, 106, 0.3);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Step Content */
+        .step {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sidebar Content */
+        .sidebar-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            animation: sidebarFade 0.4s ease;
+        }
+
+        @keyframes sidebarFade {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Review Card */
+        .review-card {
+            background-color: var(--white);
+            padding: 1.75rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(26, 26, 46, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: #F4B860;
+        }
+
+        .review-quote {
+            font-style: italic;
+            color: var(--warm-gray);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--midnight);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .review-location {
+            color: var(--warm-gray);
+            font-size: 0.85rem;
+        }
+
+        /* Photo Card */
+        .photo-card {
+            background: linear-gradient(135deg, var(--rose) 0%, var(--peach) 100%);
+            min-height: 220px;
+            border-radius: 12px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: var(--white);
+            box-shadow: 0 4px 16px rgba(232, 132, 106, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-card.gradient-sage {
+            background: linear-gradient(135deg, var(--sage) 0%, var(--sage-deep) 100%);
+        }
+
+        .photo-card.gradient-blush {
+            background: linear-gradient(135deg, var(--blush) 0%, var(--rose) 100%);
+        }
+
+        .photo-card-text {
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Tip Card */
+        .tip-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            background-color: var(--sage-light);
+        }
+
+        .tip-card.blush {
+            background-color: rgba(255, 228, 214, 0.6);
+        }
+
+        .tip-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tip-text {
+            color: var(--midnight);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* Progress Card */
+        .progress-card {
+            background: linear-gradient(135deg, rgba(232, 132, 106, 0.1) 0%, rgba(123, 166, 141, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1.5px solid rgba(123, 166, 141, 0.2);
+        }
+
+        .progress-percent {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--rose);
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-text {
+            color: var(--warm-gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Expert Quote */
+        .expert-quote {
+            background-color: var(--white);
+            padding: 1.75rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--rose);
+            box-shadow: 0 2px 8px rgba(26, 26, 46, 0.08);
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: var(--warm-gray);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            font-weight: 600;
+            color: var(--midnight);
+            font-size: 0.9rem;
+        }
+
+        .quote-title {
+            color: var(--rose);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Encouragement Card */
+        .encouragement-card {
+            background: linear-gradient(135deg, rgba(232, 132, 106, 0.15) 0%, rgba(123, 166, 141, 0.15) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .encouragement-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .encouragement-text {
+            color: var(--midnight);
+            font-size: 1rem;
+            line-height: 1.7;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .encouragement-subtext {
+            color: var(--warm-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Stat Card */
+        .stat-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(26, 26, 46, 0.08);
+        }
+
+        .stat-number {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--rose);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+            color: var(--warm-gray);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--cream-deep);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .summary-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--midnight);
+            margin-bottom: 1rem;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .summary-label {
+            color: var(--warm-gray);
+            font-weight: 500;
+        }
+
+        .summary-value {
+            color: var(--midnight);
+            font-weight: 600;
+            text-align: right;
+            max-width: 60%;
+            word-break: break-word;
+        }
+
+        /* Thank You Screen */
+        .thank-you-container {
+            display: none;
+            text-align: center;
+            padding: 3rem 1rem;
+            min-height: calc(100vh - 80px);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .thank-you-container.active {
+            display: flex;
+        }
+
+        .thank-you-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: celebrateFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes celebrateFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        .thank-you-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--midnight);
+            margin-bottom: 1rem;
+        }
+
+        .thank-you-text {
+            color: var(--warm-gray);
+            font-size: 1.05rem;
+            max-width: 600px;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .delivery-info {
+            background: linear-gradient(135deg, var(--sage-light) 0%, rgba(123, 166, 141, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem auto;
+            border-left: 4px solid var(--sage);
+            max-width: 500px;
+        }
+
+        .delivery-info strong {
+            color: var(--sage-deep);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .home-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.875rem 2rem;
+            background: linear-gradient(135deg, var(--rose) 0%, var(--sage) 100%);
+            color: var(--cream);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .home-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(232, 132, 106, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .layout-wrapper {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .form-column {
+                flex: 0 0 100%;
+            }
+
+            .sidebar-column {
+                flex: 0 0 100%;
+                position: static;
+            }
+
+            .sidebar-content {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-logo {
+                font-size: 1.25rem;
+            }
+
+            .layout-wrapper {
+                padding: 1.5rem;
+                gap: 1.5rem;
+            }
+
+            .category-title {
+                font-size: 1.5rem;
+            }
+
+            .step-indicators {
+                gap: 0;
+                margin-bottom: 1.5rem;
+                padding: 0 8px;
+            }
+
+            .step-indicator {
+                width: 30px;
+                height: 30px;
+                font-size: 0.72rem;
+            }
+
+            .step-line {
+                min-width: 8px;
+                max-width: 28px;
+                height: 2px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                margin-top: 2rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+
+            .chips-group {
+                gap: 0.5rem;
+            }
+
+            .chip {
+                padding: 0.55rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .sidebar-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+
+        .error-message {
+            color: var(--rose-deep);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        /* ==================== ADDED: SOCIAL PROOF ==================== */
+        .reports-sent-banner {
+            background: linear-gradient(135deg, var(--midnight) 0%, var(--charcoal) 100%);
+            color: var(--white);
+            padding: 16px 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .reports-sent-number {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--peach);
+            display: block;
+            line-height: 1.2;
+        }
+        .reports-sent-text {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 4px;
+        }
+        .reports-sent-sub {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.35);
+            margin-top: 6px;
+            font-style: italic;
+        }
+        .live-counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 100px;
+            background: rgba(123,166,141,0.1);
+            border: 1px solid rgba(123,166,141,0.2);
+            font-size: 0.78rem;
+            color: var(--sage-deep);
+            font-weight: 600;
+        }
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4CAF50;
+            animation: livePulse 2s infinite;
+            flex-shrink: 0;
+        }
+        @keyframes livePulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(76,175,80,0.4); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(76,175,80,0); }
+        }
+        .live-counter-num {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+        }
+        .social-proof-popup {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            background: var(--white);
+            border-radius: 14px;
+            padding: 14px 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+            z-index: 1000;
+            max-width: 320px;
+            transform: translateX(-120%);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .social-proof-popup.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .spp-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+        .spp-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--peach), var(--rose));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.82rem;
+            flex-shrink: 0;
+        }
+        .spp-name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--midnight);
+        }
+        .spp-location {
+            font-size: 0.72rem;
+            color: var(--warm-gray);
+        }
+        .spp-detail {
+            font-size: 0.78rem;
+            color: var(--slate);
+            line-height: 1.4;
+            margin-bottom: 4px;
+            padding-left: 46px;
+        }
+        .spp-action {
+            font-size: 0.82rem;
+            color: var(--rose);
+            font-weight: 700;
+            padding-left: 46px;
+            letter-spacing: -0.01em;
+        }
+        .spp-time {
+            font-size: 0.65rem;
+            color: var(--warm-gray);
+            font-weight: 400;
+        }
+        .spp-close {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            cursor: pointer;
+            color: var(--warm-gray);
+            font-size: 1rem;
+            line-height: 1;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+        }
+        .spp-close:hover { opacity: 1; }
+        .mobile-social-bar {
+            display: none;
+        }
+        @media (max-width: 1200px) {
+            .mobile-social-bar {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 16px;
+            }
+            .sidebar-column .reports-sent-banner,
+            .sidebar-column .live-counter {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .social-proof-popup {
+                left: 12px;
+                right: 12px;
+                bottom: 16px;
+                max-width: none;
+            }
+        }
+
+        /* Exit Confirmation Modal */
+        .exit-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(26,26,46,0.5);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .exit-modal-overlay.show {
+            display: flex;
+        }
+        .exit-modal {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 36px 32px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.15);
+            animation: modalSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes modalSlideIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .exit-modal-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--blush), var(--cream-deep));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.5rem;
+        }
+        .exit-modal h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--midnight);
+            margin-bottom: 10px;
+        }
+        .exit-modal p {
+            color: var(--slate);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .exit-modal-features {
+            text-align: left;
+            margin: 16px 0 20px;
+            padding: 14px 16px;
+            background: var(--sage-light);
+            border-radius: 12px;
+        }
+        .exit-modal-features div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: var(--sage-deep);
+            font-weight: 500;
+            padding: 4px 0;
+        }
+        .exit-modal-features div::before {
+            content: '\2713';
+            font-weight: 700;
+            color: var(--sage);
+            flex-shrink: 0;
+        }
+        .exit-modal-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .exit-modal-stay {
+            padding: 14px 24px;
+            background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .exit-modal-stay:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(232, 132, 106, 0.3);
+        }
+        .exit-modal-leave {
+            padding: 10px 24px;
+            background: none;
+            color: var(--warm-gray);
+            border: none;
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    
+        /* Sidebar Review */
+        .sidebar-review {
+            margin-top: 16px;
+        }
+        .sidebar-review .review-quote {
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+        .review-meta {
+            font-size: 0.78rem;
+            color: var(--rose);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        /* Pregnant mode: hide baby-specific fields */
+        .form-group.pregnant-hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="nav-logo" onclick="event.preventDefault(); showExitModal();">Wermom</a>
+    </nav>
+
+    <!-- Main Layout Container -->
+    <div class="layout-wrapper" id="mainLayout">
+        <!-- Form Column -->
+        <div class="form-column">
+            <!-- Progress Section -->
+            <div class="progress-section">
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progressBar"></div>
+                </div>
+            </div>
+
+            <!-- Mobile-only: Social proof banner -->
+            <div class="mobile-social-bar">
+                <div class="reports-sent-banner">
+                    <span class="reports-sent-number">1,200+</span>
+                    <div class="reports-sent-text">Free Expert Reports Sent This Week</div>
+                    <div class="reports-sent-sub">Personalized health insights for moms &amp; babies</div>
+                </div>
+                <div class="live-counter">
+                    <div class="live-dot"></div>
+                    <span><span class="live-counter-num">24</span> people filling this form right now</span>
+                </div>
+            </div>
+
+            <!-- Step Indicators -->
+            <div class="step-indicators" id="stepIndicators">
+                <div class="step-indicator active" data-step="1">1</div>
+                <div class="step-line" data-after="1"></div>
+                <div class="step-indicator" data-step="2">2</div>
+                <div class="step-line" data-after="2"></div>
+                <div class="step-indicator" data-step="3">3</div>
+                <div class="step-line" data-after="3"></div>
+                <div class="step-indicator" data-step="4">4</div>
+                <div class="step-line" data-after="4"></div>
+                <div class="step-indicator" data-step="5">5</div>
+                <div class="step-line" data-after="5"></div>
+                <div class="step-indicator" data-step="6">6</div>
+                <div class="step-line" data-after="6"></div>
+                <div class="step-indicator" data-step="7">7</div>
+                <div class="step-line" data-after="7"></div>
+                <div class="step-indicator" data-step="8">🔐</div>
+                <div class="step-line" data-after="8"></div>
+                <div class="step-indicator" data-step="9">💳</div>
+            </div>
+
+            <!-- Form -->
+            <form id="surveyForm">
+                <!-- STEP 1: Mom's Profile -->
+                <div class="step active" data-step="1">
+                    <div class="category-header">
+                        <h1 class="category-title">Mom's Profile</h1>
+                        <p class="category-description">Let's start with some basic information about you and your health background.</p>
+                        <p class="category-motivation">We'd love to know you better — this helps us personalize everything just for you.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullName" class="required">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <div class="error-message">Please enter your full name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="required">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message">Please enter a valid email</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="required">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <div class="error-message">Please enter your phone number</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country" class="required">Country</label>
+                        <input type="text" id="country" name="country" required>
+                        <div class="error-message">Please enter your country</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age" class="required">Your Age</label>
+                        <input type="number" id="age" name="age" min="18" max="60" required>
+                        <div class="error-message">Please enter a valid age</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="height" class="required">Height (cm)</label>
+                        <input type="number" id="height" name="height" min="100" max="220" required>
+                        <div class="error-message">Please enter your height</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weight" class="required">Current Weight (kg)</label>
+                        <input type="number" id="weight" name="weight" min="30" max="200" step="0.1" required>
+                        <div class="error-message">Please enter your weight</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bloodType" class="required">Blood Type</label>
+                        <select id="bloodType" name="bloodType" required>
+                            <option value="">Select blood type</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="Don't know">Don't know</option>
+                        </select>
+                        <div class="error-message">Please select your blood type</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Current Status</label>
+                        <div class="chips-group chips-single" data-field="currentStatus">
+                            <button type="button" class="chip" data-value="Pregnant">Pregnant</button>
+                            <button type="button" class="chip" data-value="Newborn 0-3m">Newborn 0-3m</button>
+                            <button type="button" class="chip" data-value="Baby 3m-1y">Baby 3m-1y</button>
+                            <button type="button" class="chip" data-value="Toddler 1-3y">Toddler 1-3y</button>
+                            <button type="button" class="chip" data-value="Child 3-6y">Child 3-6y</button>
+                        </div>
+                        <div class="error-message">Please select your current status</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pregnancies" class="required">Number of Pregnancies</label>
+                        <input type="number" id="pregnancies" name="pregnancies" min="0" max="20" required>
+                        <div class="error-message">Please enter the number of pregnancies</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Any Chronic Conditions?</label>
+                        <div class="chips-group chips-multi" data-field="chronicConditions">
+                            <button type="button" class="chip" data-value="None">None</button>
+                            <button type="button" class="chip" data-value="Diabetes">Diabetes</button>
+                            <button type="button" class="chip" data-value="Hypertension">Hypertension</button>
+                            <button type="button" class="chip" data-value="Thyroid">Thyroid</button>
+                            <button type="button" class="chip" data-value="Anemia">Anemia</button>
+                            <button type="button" class="chip" data-value="Asthma">Asthma</button>
+                            <button type="button" class="chip" data-value="Other">Other</button>
+                        </div>
+                        <div class="error-message">Please select at least one option</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="medications">Current Medications</label>
+                        <input type="text" id="medications" name="medications" placeholder="List any current medications">
+                    </div>
+                </div>
+
+                <!-- STEP 2: Baby's Status -->
+                <div class="step" data-step="2">
+                    <div class="category-header">
+                        <h1 class="category-title">Baby's Status</h1>
+                        <p class="category-description">Tell us about your baby's health, growth, and development.</p>
+                        <p class="category-motivation">Every baby is unique. These details help us understand where your little one is right now.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="babyName" class="required">Baby's Name</label>
+                        <input type="text" id="babyName" name="babyName" required>
+                        <div class="error-message">Please enter your baby's name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Baby's Current Status</label>
+                        <div class="chips-group chips-single" data-field="babyStatus">
+                            <button type="button" class="chip" data-value="Pregnant">Pregnant</button>
+                            <button type="button" class="chip" data-value="Newborn">Newborn</button>
+                        </div>
+                        <div class="error-message">Please select baby's status</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="babyDOB" class="required">Date of Birth / Expected Due Date</label>
+                        <input type="date" id="babyDOB" name="babyDOB" required>
+                        <div class="error-message">Please enter a date</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Baby's Gender</label>
+                        <div class="chips-group chips-single" data-field="babyGender">
+                            <button type="button" class="chip" data-value="Boy">Boy</button>
+                            <button type="button" class="chip" data-value="Girl">Girl</button>
+                            <button type="button" class="chip" data-value="Don't know yet">Don't know yet</button>
+                        </div>
+                        <div class="error-message">Please select baby's gender</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Delivery Method</label>
+                        <div class="chips-group chips-single" data-field="deliveryMethod">
+                            <button type="button" class="chip" data-value="Natural">Natural</button>
+                            <button type="button" class="chip" data-value="C-Section">C-Section</button>
+                            <button type="button" class="chip" data-value="Not yet born">Not yet born</button>
+                        </div>
+                        <div class="error-message">Please select a delivery method</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="birthWeight">Birth Weight (kg)</label>
+                        <input type="number" id="birthWeight" name="birthWeight" min="1" max="6" step="0.1" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="currentBabyWeight">Current Weight (kg)</label>
+                        <input type="number" id="currentBabyWeight" name="currentBabyWeight" min="1" max="50" step="0.1" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="babyHeight">Current Length/Height (cm)</label>
+                        <input type="number" id="babyHeight" name="babyHeight" min="30" max="200" step="0.1" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="headCircumference">Head Circumference (cm)</label>
+                        <input type="number" id="headCircumference" name="headCircumference" min="25" max="60" step="0.1" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Feeding Method</label>
+                        <div class="chips-group chips-single" data-field="feedingMethod">
+                            <button type="button" class="chip" data-value="Breastfeeding">Breastfeeding</button>
+                            <button type="button" class="chip" data-value="Formula">Formula</button>
+                            <button type="button" class="chip" data-value="Mixed">Mixed</button>
+                            <button type="button" class="chip" data-value="Solid food started">Solid food started</button>
+                        </div>
+                        <div class="error-message">Please select a feeding method</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="formulaBrand">If Formula: Which Brand?</label>
+                        <input type="text" id="formulaBrand" name="formulaBrand" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Solid Foods Started?</label>
+                        <div class="chips-group chips-single" data-field="solidFoods">
+                            <button type="button" class="chip" data-value="Not yet">Not yet</button>
+                            <button type="button" class="chip" data-value="Just started">Just started</button>
+                            <button type="button" class="chip" data-value="Regular">Regular</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="foodAllergies">Any Food Allergies?</label>
+                        <input type="text" id="foodAllergies" name="foodAllergies" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Teething Status</label>
+                        <div class="chips-group chips-single" data-field="teethingStatus">
+                            <button type="button" class="chip" data-value="Not yet">Not yet</button>
+                            <button type="button" class="chip" data-value="Started">Started</button>
+                            <button type="button" class="chip" data-value="Several teeth">Several teeth</button>
+                        </div>
+                        <div class="error-message">Please select teething status</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Can Baby Crawl/Walk?</label>
+                        <div class="chips-group chips-single" data-field="mobilityStatus">
+                            <button type="button" class="chip" data-value="Not yet">Not yet</button>
+                            <button type="button" class="chip" data-value="Crawling">Crawling</button>
+                            <button type="button" class="chip" data-value="Walking">Walking</button>
+                            <button type="button" class="chip" data-value="Running">Running</button>
+                        </div>
+                        <div class="error-message">Please select mobility status</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="developmentalConcerns">Any Developmental Concerns?</label>
+                        <textarea id="developmentalConcerns" name="developmentalConcerns" placeholder="Optional"></textarea>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Medical History -->
+                <div class="step" data-step="3">
+                    <div class="category-header">
+                        <h1 class="category-title">Medical History</h1>
+                        <p class="category-description">Information about pregnancies, vaccinations, and past health events.</p>
+                        <p class="category-motivation">Don't worry — this stays confidential. It helps our experts spot patterns early.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prenatalCheckups" class="required">Number of Prenatal Checkups So Far</label>
+                        <input type="number" id="prenatalCheckups" name="prenatalCheckups" min="0" max="50" required>
+                        <div class="error-message">Please enter the number</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ultrasounds" class="required">Number of Ultrasounds</label>
+                        <input type="number" id="ultrasounds" name="ultrasounds" min="0" max="50" required>
+                        <div class="error-message">Please enter the number</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Any Pregnancy Complications?</label>
+                        <div class="chips-group chips-multi" data-field="pregnancyComplications">
+                            <button type="button" class="chip" data-value="None">None</button>
+                            <button type="button" class="chip" data-value="Gestational diabetes">Gestational diabetes</button>
+                            <button type="button" class="chip" data-value="Preeclampsia">Preeclampsia</button>
+                            <button type="button" class="chip" data-value="Placenta previa">Placenta previa</button>
+                            <button type="button" class="chip" data-value="Anemia">Anemia</button>
+                            <button type="button" class="chip" data-value="Other">Other</button>
+                        </div>
+                        <div class="error-message">Please select at least one option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Baby's Vaccination Status</label>
+                        <div class="chips-group chips-single" data-field="vaccinationStatus">
+                            <button type="button" class="chip" data-value="Up to date">Up to date</button>
+                            <button type="button" class="chip" data-value="Behind schedule">Behind schedule</button>
+                            <button type="button" class="chip" data-value="Not started">Not started</button>
+                        </div>
+                        <div class="error-message">Please select vaccination status</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="babyDoctorVisits">Recent Doctor Visits for Baby</label>
+                        <input type="text" id="babyDoctorVisits" name="babyDoctorVisits" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Any Hospitalizations?</label>
+                        <div class="chips-group chips-single" data-field="hospitalizations">
+                            <button type="button" class="chip" data-value="None">None</button>
+                            <button type="button" class="chip" data-value="Mom">Mom</button>
+                            <button type="button" class="chip" data-value="Baby">Baby</button>
+                            <button type="button" class="chip" data-value="Both">Both</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Family History of Genetic Conditions?</label>
+                        <div class="chips-group chips-multi" data-field="familyHistory">
+                            <button type="button" class="chip" data-value="None">None</button>
+                            <button type="button" class="chip" data-value="Diabetes">Diabetes</button>
+                            <button type="button" class="chip" data-value="Heart disease">Heart disease</button>
+                            <button type="button" class="chip" data-value="Allergies">Allergies</button>
+                            <button type="button" class="chip" data-value="Asthma">Asthma</button>
+                            <button type="button" class="chip" data-value="Other">Other</button>
+                        </div>
+                        <div class="error-message">Please select at least one option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="bloodTestResults">Baby's Most Recent Blood Test Results</label>
+                        <input type="text" id="bloodTestResults" name="bloodTestResults" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="momAllergies">Any Allergies - Mom?</label>
+                        <input type="text" id="momAllergies" name="momAllergies" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="babyAllergies">Any Allergies - Baby?</label>
+                        <input type="text" id="babyAllergies" name="babyAllergies" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Currently Breastfeeding?</label>
+                        <div class="chips-group chips-single" data-field="breastfeeding">
+                            <button type="button" class="chip" data-value="Yes">Yes</button>
+                            <button type="button" class="chip" data-value="No">No</button>
+                            <button type="button" class="chip" data-value="Weaning">Weaning</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Postpartum Recovery Status</label>
+                        <div class="chips-group chips-single" data-field="postpartumRecovery">
+                            <button type="button" class="chip" data-value="Fully recovered">Fully recovered</button>
+                            <button type="button" class="chip" data-value="Still recovering">Still recovering</button>
+                            <button type="button" class="chip" data-value="Complications">Complications</button>
+                        </div>
+                        <div class="error-message">Please select recovery status</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="babyRecentWeight">Baby's Most Recent Weight at Doctor's Visit (kg)</label>
+                        <input type="number" id="babyRecentWeight" name="babyRecentWeight" min="1" max="30" step="0.1" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="momSurgeries">Any Surgeries — Mom?</label>
+                        <input type="text" id="momSurgeries" name="momSurgeries" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="babySurgeries">Any Surgeries — Baby?</label>
+                        <input type="text" id="babySurgeries" name="babySurgeries" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="babyVitaminSupplement">Current Vitamin/Supplement for Baby?</label>
+                        <input type="text" id="babyVitaminSupplement" name="babyVitaminSupplement" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Pediatrician Visit Frequency</label>
+                        <div class="chips-group chips-single" data-field="pediatricianFrequency">
+                            <button type="button" class="chip" data-value="Monthly">Monthly</button>
+                            <button type="button" class="chip" data-value="Every 2 months">Every 2 months</button>
+                            <button type="button" class="chip" data-value="Every 3 months">Every 3 months</button>
+                            <button type="button" class="chip" data-value="Only when sick">Only when sick</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Last Dental Checkup — Baby</label>
+                        <div class="chips-group chips-single" data-field="lastDentalCheckup">
+                            <button type="button" class="chip" data-value="Not yet">Not yet</button>
+                            <button type="button" class="chip" data-value="Within 6 months">Within 6 months</button>
+                            <button type="button" class="chip" data-value="Over 6 months ago">Over 6 months ago</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+                </div>
+
+                <!-- STEP 4: Nutrition & Diet -->
+                <div class="step" data-step="4">
+                    <div class="category-header">
+                        <h1 class="category-title">Nutrition & Diet</h1>
+                        <p class="category-description">Help us understand your and your baby's nutritional habits.</p>
+                        <p class="category-motivation">Good nutrition is the foundation. Tell us what's on the menu!</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">How Many Meals Does Mom Eat Per Day?</label>
+                        <div class="chips-group chips-single" data-field="mealsPerDay">
+                            <button type="button" class="chip" data-value="1-2">1-2</button>
+                            <button type="button" class="chip" data-value="3">3</button>
+                            <button type="button" class="chip" data-value="4+">4+</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="typicalBreakfast">Typical Breakfast</label>
+                        <input type="text" id="typicalBreakfast" name="typicalBreakfast" placeholder="What do you usually eat?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="typicalLunch">Typical Lunch</label>
+                        <input type="text" id="typicalLunch" name="typicalLunch" placeholder="What do you usually eat?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="typicalDinner">Typical Dinner</label>
+                        <input type="text" id="typicalDinner" name="typicalDinner" placeholder="What do you usually eat?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="snacks">Snacks?</label>
+                        <input type="text" id="snacks" name="snacks" placeholder="Any snacks throughout the day?">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Water Intake Per Day</label>
+                        <div class="chips-group chips-single" data-field="waterIntake">
+                            <button type="button" class="chip" data-value="Less than 1L">Less than 1L</button>
+                            <button type="button" class="chip" data-value="1-2L">1-2L</button>
+                            <button type="button" class="chip" data-value="2-3L">2-3L</button>
+                            <button type="button" class="chip" data-value="3L+">3L+</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Current Supplements</label>
+                        <div class="chips-group chips-multi" data-field="supplements">
+                            <button type="button" class="chip" data-value="None">None</button>
+                            <button type="button" class="chip" data-value="Prenatal vitamins">Prenatal vitamins</button>
+                            <button type="button" class="chip" data-value="Iron">Iron</button>
+                            <button type="button" class="chip" data-value="Calcium">Calcium</button>
+                            <button type="button" class="chip" data-value="Vitamin D">Vitamin D</button>
+                            <button type="button" class="chip" data-value="DHA/Omega-3">DHA/Omega-3</button>
+                            <button type="button" class="chip" data-value="Probiotics">Probiotics</button>
+                            <button type="button" class="chip" data-value="Other">Other</button>
+                        </div>
+                        <div class="error-message">Please select at least one option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="babyDailyMeals">Baby's Typical Daily Meals</label>
+                        <input type="text" id="babyDailyMeals" name="babyDailyMeals" placeholder="Describe baby's typical meals">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="milkIntake">Baby's Milk Intake Per Day</label>
+                        <input type="text" id="milkIntake" name="milkIntake" placeholder="E.g., 600 ml, 8 bottles">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="feedingDifficulties">Any Feeding Difficulties?</label>
+                        <textarea id="feedingDifficulties" name="feedingDifficulties" placeholder="Optional"></textarea>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Does Baby Eat Organic/Homemade Food?</label>
+                        <div class="chips-group chips-single" data-field="organicFoodChoice">
+                            <button type="button" class="chip" data-value="Mostly organic">Mostly organic</button>
+                            <button type="button" class="chip" data-value="Mix of both">Mix of both</button>
+                            <button type="button" class="chip" data-value="Mostly store-bought">Mostly store-bought</button>
+                            <button type="button" class="chip" data-value="N/A">N/A</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="refusedFoods">Any Foods Baby Refuses to Eat?</label>
+                        <input type="text" id="refusedFoods" name="refusedFoods" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Mom's Caffeine Intake</label>
+                        <div class="chips-group chips-single" data-field="momCaffeineIntake">
+                            <button type="button" class="chip" data-value="None">None</button>
+                            <button type="button" class="chip" data-value="1 cup/day">1 cup/day</button>
+                            <button type="button" class="chip" data-value="2-3 cups/day">2-3 cups/day</button>
+                            <button type="button" class="chip" data-value="4+ cups/day">4+ cups/day</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Any Digestive Issues — Baby?</label>
+                        <div class="chips-group chips-multi" data-field="babyDigestiveIssues">
+                            <button type="button" class="chip" data-value="None">None</button>
+                            <button type="button" class="chip" data-value="Reflux">Reflux</button>
+                            <button type="button" class="chip" data-value="Gas">Gas</button>
+                            <button type="button" class="chip" data-value="Colic">Colic</button>
+                            <button type="button" class="chip" data-value="Constipation">Constipation</button>
+                            <button type="button" class="chip" data-value="Diarrhea">Diarrhea</button>
+                            <button type="button" class="chip" data-value="Other">Other</button>
+                        </div>
+                        <div class="error-message">Please select at least one option</div>
+                    </div>
+                </div>
+
+                <!-- STEP 5: Sleep & Energy -->
+                <div class="step" data-step="5">
+                    <div class="category-header">
+                        <h1 class="category-title">Sleep & Energy</h1>
+                        <p class="category-description">Understanding sleep patterns is crucial for both mom and baby's wellbeing.</p>
+                        <p class="category-motivation">Sleep matters more than you think — for both of you. Let's understand your rhythms.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="momSleepHours" class="required">Mom's Sleep Hours Per Night</label>
+                        <input type="number" id="momSleepHours" name="momSleepHours" min="0" max="12" step="0.5" required>
+                        <div class="error-message">Please enter sleep hours</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Sleep Quality</label>
+                        <div class="chips-group chips-single" data-field="sleepQuality">
+                            <button type="button" class="chip" data-value="Poor">Poor</button>
+                            <button type="button" class="chip" data-value="Fair">Fair</button>
+                            <button type="button" class="chip" data-value="Good">Good</button>
+                            <button type="button" class="chip" data-value="Excellent">Excellent</button>
+                        </div>
+                        <div class="error-message">Please select sleep quality</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="babySleep24h" class="required">Baby's Total Sleep Per 24h (hours)</label>
+                        <input type="number" id="babySleep24h" name="babySleep24h" min="0" max="24" step="0.5" required>
+                        <div class="error-message">Please enter sleep hours</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="nightWakings" class="required">Number of Night Wakings</label>
+                        <input type="number" id="nightWakings" name="nightWakings" min="0" max="20" required>
+                        <div class="error-message">Please enter the number</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="napSchedule">Baby's Nap Schedule</label>
+                        <input type="text" id="napSchedule" name="napSchedule" placeholder="E.g., Two 1-hour naps, or 3-4 shorter naps">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Mom's Energy Level</label>
+                        <div class="chips-group chips-single" data-field="energyLevel">
+                            <button type="button" class="chip" data-value="Very low">Very low</button>
+                            <button type="button" class="chip" data-value="Low">Low</button>
+                            <button type="button" class="chip" data-value="Moderate">Moderate</button>
+                            <button type="button" class="chip" data-value="Good">Good</button>
+                            <button type="button" class="chip" data-value="High">High</button>
+                        </div>
+                        <div class="error-message">Please select energy level</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Exercise Frequency</label>
+                        <div class="chips-group chips-single" data-field="exerciseFrequency">
+                            <button type="button" class="chip" data-value="None">None</button>
+                            <button type="button" class="chip" data-value="1-2x/week">1-2x/week</button>
+                            <button type="button" class="chip" data-value="3-4x/week">3-4x/week</button>
+                            <button type="button" class="chip" data-value="Daily">Daily</button>
+                        </div>
+                        <div class="error-message">Please select exercise frequency</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="sleepConcerns">Any Sleep Concerns for Baby?</label>
+                        <textarea id="sleepConcerns" name="sleepConcerns" placeholder="Optional"></textarea>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Does Baby Use a Pacifier for Sleep?</label>
+                        <div class="chips-group chips-single" data-field="pacifierUse">
+                            <button type="button" class="chip" data-value="Yes">Yes</button>
+                            <button type="button" class="chip" data-value="No">No</button>
+                            <button type="button" class="chip" data-value="Sometimes">Sometimes</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Mom's Screen Time Before Bed</label>
+                        <div class="chips-group chips-single" data-field="momScreenTime">
+                            <button type="button" class="chip" data-value="None">None</button>
+                            <button type="button" class="chip" data-value="Under 30min">Under 30min</button>
+                            <button type="button" class="chip" data-value="30min-1hr">30min-1hr</button>
+                            <button type="button" class="chip" data-value="Over 1hr">Over 1hr</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+                </div>
+
+                <!-- STEP 6: Current Health -->
+                <div class="step" data-step="6">
+                    <div class="category-header">
+                        <h1 class="category-title">Current Health</h1>
+                        <p class="category-description">How are you and your baby feeling right now?</p>
+                        <p class="category-motivation">Almost there! How are you and your little one feeling these days?</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Mom's Current Pain/Discomfort</label>
+                        <div class="chips-group chips-multi" data-field="momDiscomfort">
+                            <button type="button" class="chip" data-value="None">None</button>
+                            <button type="button" class="chip" data-value="Back pain">Back pain</button>
+                            <button type="button" class="chip" data-value="Headaches">Headaches</button>
+                            <button type="button" class="chip" data-value="Joint pain">Joint pain</button>
+                            <button type="button" class="chip" data-value="Pelvic pain">Pelvic pain</button>
+                            <button type="button" class="chip" data-value="Other">Other</button>
+                        </div>
+                        <div class="error-message">Please select at least one option</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recentIllnessesMom">Recent Illnesses - Mom</label>
+                        <input type="text" id="recentIllnessesMom" name="recentIllnessesMom" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="recentIllnessesBaby">Recent Illnesses - Baby</label>
+                        <input type="text" id="recentIllnessesBaby" name="recentIllnessesBaby" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Stress Level</label>
+                        <div class="chips-group chips-single" data-field="stressLevel">
+                            <button type="button" class="chip" data-value="Low">Low</button>
+                            <button type="button" class="chip" data-value="Moderate">Moderate</button>
+                            <button type="button" class="chip" data-value="High">High</button>
+                            <button type="button" class="chip" data-value="Very high">Very high</button>
+                        </div>
+                        <div class="error-message">Please select stress level</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Mood Lately</label>
+                        <div class="chips-group chips-single" data-field="mood">
+                            <button type="button" class="chip" data-value="Great">Great</button>
+                            <button type="button" class="chip" data-value="Good">Good</button>
+                            <button type="button" class="chip" data-value="Okay">Okay</button>
+                            <button type="button" class="chip" data-value="Low">Low</button>
+                            <button type="button" class="chip" data-value="Very low">Very low</button>
+                        </div>
+                        <div class="error-message">Please select your mood</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Support System</label>
+                        <div class="chips-group chips-multi" data-field="supportSystem">
+                            <button type="button" class="chip" data-value="Partner">Partner</button>
+                            <button type="button" class="chip" data-value="Family nearby">Family nearby</button>
+                            <button type="button" class="chip" data-value="Friends">Friends</button>
+                            <button type="button" class="chip" data-value="Professional help">Professional help</button>
+                            <button type="button" class="chip" data-value="Alone">Alone</button>
+                        </div>
+                        <div class="error-message">Please select at least one option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Baby's Current Symptoms</label>
+                        <div class="chips-group chips-multi" data-field="babySymptoms">
+                            <button type="button" class="chip" data-value="None">None</button>
+                            <button type="button" class="chip" data-value="Fever">Fever</button>
+                            <button type="button" class="chip" data-value="Cough">Cough</button>
+                            <button type="button" class="chip" data-value="Runny nose">Runny nose</button>
+                            <button type="button" class="chip" data-value="Rash">Rash</button>
+                            <button type="button" class="chip" data-value="Diarrhea">Diarrhea</button>
+                            <button type="button" class="chip" data-value="Constipation">Constipation</button>
+                            <button type="button" class="chip" data-value="Other">Other</button>
+                        </div>
+                        <div class="error-message">Please select at least one option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Baby's Mood Generally</label>
+                        <div class="chips-group chips-single" data-field="babyMood">
+                            <button type="button" class="chip" data-value="Happy">Happy</button>
+                            <button type="button" class="chip" data-value="Mostly happy">Mostly happy</button>
+                            <button type="button" class="chip" data-value="Fussy">Fussy</button>
+                            <button type="button" class="chip" data-value="Very fussy">Very fussy</button>
+                        </div>
+                        <div class="error-message">Please select baby's mood</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="upcomingAppointments">Any Upcoming Medical Appointments?</label>
+                        <input type="text" id="upcomingAppointments" name="upcomingAppointments" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="biggestConcern" class="required">Biggest Health Concern Right Now?</label>
+                        <textarea id="biggestConcern" name="biggestConcern" required placeholder="Please tell us what's on your mind"></textarea>
+                        <div class="error-message">Please describe your concern</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Baby's Skin Condition</label>
+                        <div class="chips-group chips-multi" data-field="babySkinCondition">
+                            <button type="button" class="chip" data-value="Normal">Normal</button>
+                            <button type="button" class="chip" data-value="Eczema">Eczema</button>
+                            <button type="button" class="chip" data-value="Cradle cap">Cradle cap</button>
+                            <button type="button" class="chip" data-value="Diaper rash">Diaper rash</button>
+                            <button type="button" class="chip" data-value="Dry skin">Dry skin</button>
+                            <button type="button" class="chip" data-value="Other">Other</button>
+                        </div>
+                        <div class="error-message">Please select at least one option</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Mom's Mental Health Support</label>
+                        <div class="chips-group chips-single" data-field="momMentalHealthSupport">
+                            <button type="button" class="chip" data-value="Not needed">Not needed</button>
+                            <button type="button" class="chip" data-value="Would like some">Would like some</button>
+                            <button type="button" class="chip" data-value="Currently receiving">Currently receiving</button>
+                            <button type="button" class="chip" data-value="Need urgently">Need urgently</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Baby's Eye/Hearing Checked?</label>
+                        <div class="chips-group chips-single" data-field="babyEyeHearingCheck">
+                            <button type="button" class="chip" data-value="Yes both">Yes both</button>
+                            <button type="button" class="chip" data-value="Eyes only">Eyes only</button>
+                            <button type="button" class="chip" data-value="Hearing only">Hearing only</button>
+                            <button type="button" class="chip" data-value="Not yet">Not yet</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Postpartum Body Recovery Areas</label>
+                        <div class="chips-group chips-multi" data-field="postpartumRecoveryAreas">
+                            <button type="button" class="chip" data-value="None">None</button>
+                            <button type="button" class="chip" data-value="Weight">Weight</button>
+                            <button type="button" class="chip" data-value="Hair loss">Hair loss</button>
+                            <button type="button" class="chip" data-value="Stretch marks">Stretch marks</button>
+                            <button type="button" class="chip" data-value="Diastasis recti">Diastasis recti</button>
+                            <button type="button" class="chip" data-value="Pelvic floor">Pelvic floor</button>
+                            <button type="button" class="chip" data-value="Other">Other</button>
+                        </div>
+                        <div class="error-message">Please select at least one option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Baby's Social Interaction</label>
+                        <div class="chips-group chips-single" data-field="babySocialInteraction">
+                            <button type="button" class="chip" data-value="Very social">Very social</button>
+                            <button type="button" class="chip" data-value="Somewhat social">Somewhat social</button>
+                            <button type="button" class="chip" data-value="Shy">Shy</button>
+                            <button type="button" class="chip" data-value="Prefers alone time">Prefers alone time</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recentTravelChanges">Any Recent Travel or Environment Changes?</label>
+                        <input type="text" id="recentTravelChanges" name="recentTravelChanges" placeholder="Optional">
+                    </div>
+                </div>
+
+                <!-- STEP 7: Measurements & Growth -->
+                <div class="step" data-step="7">
+                    <div class="category-header">
+                        <h1 class="category-title">Measurements & Growth</h1>
+                        <p class="category-description">Final step! Help us track your baby's growth trajectory accurately.</p>
+                        <p class="category-motivation">Last step! These numbers tell your baby's unique growth story.</p>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="babyCurrentWeight7">Baby's Latest Weight (kg)</label>
+                        <input type="number" id="babyCurrentWeight7" name="babyCurrentWeight7" min="1" max="30" step="0.1" placeholder="Most recent measurement">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="babyCurrentHeight7">Baby's Latest Height/Length (cm)</label>
+                        <input type="number" id="babyCurrentHeight7" name="babyCurrentHeight7" min="30" max="130" step="0.1" placeholder="Most recent measurement">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="headCirc7">Head Circumference (cm)</label>
+                        <input type="number" id="headCirc7" name="headCirc7" min="25" max="55" step="0.1" placeholder="If known">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Weight Percentile (if known)</label>
+                        <div class="chips-group chips-single" data-field="weightPercentile">
+                            <button type="button" class="chip" data-value="Below average">Below average</button>
+                            <button type="button" class="chip" data-value="Average">Average</button>
+                            <button type="button" class="chip" data-value="Above average">Above average</button>
+                            <button type="button" class="chip" data-value="Don't know">Don't know</button>
+                        </div>
+                        <div class="error-message">Please select an option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label class="required">Any Growth Concerns?</label>
+                        <div class="chips-group chips-multi" data-field="growthConcerns">
+                            <button type="button" class="chip" data-value="None">None</button>
+                            <button type="button" class="chip" data-value="Slow weight gain">Slow weight gain</button>
+                            <button type="button" class="chip" data-value="Rapid weight gain">Rapid weight gain</button>
+                            <button type="button" class="chip" data-value="Short for age">Short for age</button>
+                            <button type="button" class="chip" data-value="Head size concern">Head size concern</button>
+                            <button type="button" class="chip" data-value="Other">Other</button>
+                        </div>
+                        <div class="error-message">Please select at least one option</div>
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="lastMeasuredDate">When Was Baby Last Measured?</label>
+                        <input type="date" id="lastMeasuredDate" name="lastMeasuredDate">
+                    </div>
+
+                    <div class="form-group" data-pregnant-hide>
+                        <label for="growthNotes">Any Additional Notes About Growth?</label>
+                        <textarea id="growthNotes" name="growthNotes" placeholder="Optional - anything else about your baby's growth pattern"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="termsCheckbox" name="termsCheckbox" required>
+                            <label for="termsCheckbox" class="checkbox-label">I agree to Wermom's terms & privacy policy and consent to receive my free health assessment report via email.</label>
+                        </div>
+                        <div class="error-message">Please agree to terms to continue</div>
+                    </div>
+
+                    <!-- Summary -->
+                    <div class="summary-section">
+                        <h3 class="summary-title">Review Your Answers</h3>
+                        <div id="summaryContent"></div>
+                    </div>
+                </div>
+
+                <!-- STEP 8: Create Account -->
+                <div class="step" data-step="8">
+                    <div class="category-header">
+                        <h1 class="category-title">Create Your Account</h1>
+                        <p class="category-description">One quick step — set your password to unlock your personalized report and full app access.</p>
+                        <p class="category-motivation">Your report is almost ready! Just secure your account first.</p>
+                    </div>
+
+                    <div style="background:linear-gradient(135deg,#fdf5f2,#f0f7f3);border-radius:16px;padding:24px 28px;margin-bottom:24px;">
+                        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+                            <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#e8846a,#f2a68e);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;">✓</div>
+                            <div>
+                                <div style="font-weight:600;color:var(--midnight);">Survey Complete!</div>
+                                <div style="font-size:0.85rem;color:var(--warm-gray);">Your data is saved. Now let's secure your account.</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                            <div style="flex:1;min-width:120px;background:#fff;border-radius:10px;padding:12px;text-align:center;">
+                                <div style="font-size:1.5rem;font-weight:700;color:var(--rose);" id="accountEmail">—</div>
+                                <div style="font-size:0.75rem;color:var(--warm-gray);">Your email</div>
+                            </div>
+                            <div style="flex:1;min-width:120px;background:#fff;border-radius:10px;padding:12px;text-align:center;">
+                                <div style="font-size:1.5rem;font-weight:700;color:var(--sage);" id="accountBabyName">—</div>
+                                <div style="font-size:0.75rem;color:var(--warm-gray);">Baby's name</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required" for="accountPassword">Create Password</label>
+                        <div style="position:relative;">
+                            <input type="password" id="accountPassword" name="accountPassword" placeholder="At least 8 characters" minlength="8" style="padding-right:48px;">
+                            <button type="button" onclick="togglePasswordVisibility(this)" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--warm-gray);font-size:1.1rem;" title="Show password">👁</button>
+                        </div>
+                        <div style="margin-top:6px;font-size:0.8rem;color:var(--warm-gray);">
+                            <span id="pwLength" style="color:#ccc;">✓ 8+ characters</span> ·
+                            <span id="pwUpper" style="color:#ccc;">✓ uppercase</span> ·
+                            <span id="pwNumber" style="color:#ccc;">✓ number</span>
+                        </div>
+                        <div class="error-message">Password must be at least 8 characters</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required" for="accountPasswordConfirm">Confirm Password</label>
+                        <input type="password" id="accountPasswordConfirm" name="accountPasswordConfirm" placeholder="Re-enter your password">
+                        <div class="error-message" id="passwordMatchError">Passwords don't match</div>
+                    </div>
+
+                    <div style="background:#f0f7f3;border-radius:12px;padding:20px;margin-top:16px;">
+                        <div style="font-weight:600;color:var(--sage-deep);margin-bottom:10px;">🎁 What you'll get with your account:</div>
+                        <div style="display:grid;gap:8px;font-size:0.9rem;color:var(--charcoal);">
+                            <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Your detailed AI health report (PDF)</div>
+                            <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> 7-day free trial of Wermom Premium</div>
+                            <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Daily health tracking & AI analysis</div>
+                            <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> 24/7 AI health chat for moms</div>
+                            <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Cancel anytime — no commitment</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 9: Free Trial + Payment -->
+                <div class="step" data-step="9">
+                    <div class="category-header">
+                        <h1 class="category-title">Start Your Free Trial</h1>
+                        <p class="category-description">7 days free — then $9.99/month. Cancel anytime before your trial ends and you won't be charged.</p>
+                        <p class="category-motivation">Your report is being generated right now. Unlock it with your free trial!</p>
+                    </div>
+
+                    <!-- Trial Summary Card -->
+                    <div style="background:linear-gradient(135deg,#e8846a,#f2a68e);border-radius:16px;padding:28px;color:#fff;margin-bottom:24px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+                            <div>
+                                <div style="font-size:1.6rem;font-weight:700;">Wermom Premium</div>
+                                <div style="opacity:0.9;font-size:0.95rem;">Complete care for mom & baby</div>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.2);border-radius:20px;padding:6px 16px;font-weight:600;font-size:0.85rem;">7 DAYS FREE</div>
+                        </div>
+                        <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:12px;">
+                            <span style="font-size:2.2rem;font-weight:800;">$0</span>
+                            <span style="font-size:1rem;opacity:0.85;">for 7 days</span>
+                        </div>
+                        <div style="font-size:0.85rem;opacity:0.8;">Then $9.99/month · Cancel anytime · No hidden fees</div>
+                        <div style="margin-top:16px;display:grid;gap:6px;font-size:0.9rem;">
+                            <div>✓ Personalized AI Health Report (PDF) — delivered within 12h</div>
+                            <div>✓ Daily health tracking with AI analysis</div>
+                            <div>✓ Unlimited AI health chat</div>
+                            <div>✓ Growth charts & milestone tracking</div>
+                            <div>✓ Kick counter & contraction timer (pregnant moms)</div>
+                            <div>✓ Monthly deep-dive reports</div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Form -->
+                    <div style="background:#fff;border:1.5px solid var(--light-gray);border-radius:16px;padding:24px 28px;">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                            <span style="font-weight:600;color:var(--midnight);">Payment Details</span>
+                            <div style="margin-left:auto;display:flex;gap:6px;align-items:center;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sage)" stroke="none"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                                <span style="font-size:0.8rem;color:var(--sage-deep);">SSL Secured</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="required" for="cardName">Name on Card</label>
+                            <input type="text" id="cardName" name="cardName" placeholder="Full name as shown on card">
+                            <div class="error-message">Please enter the name on your card</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="required" for="cardNumber">Card Number</label>
+                            <div style="position:relative;">
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" inputmode="numeric">
+                                <div id="cardBrand" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:1.3rem;"></div>
+                            </div>
+                            <div class="error-message">Please enter a valid card number</div>
+                        </div>
+
+                        <div style="display:flex;gap:16px;">
+                            <div class="form-group" style="flex:1;">
+                                <label class="required" for="cardExpiry">Expiry Date</label>
+                                <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM / YY" maxlength="7" inputmode="numeric">
+                                <div class="error-message">Invalid expiry</div>
+                            </div>
+                            <div class="form-group" style="flex:1;">
+                                <label class="required" for="cardCVC">CVC</label>
+                                <input type="text" id="cardCVC" name="cardCVC" placeholder="123" maxlength="4" inputmode="numeric">
+                                <div class="error-message">Invalid CVC</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div style="display:flex;justify-content:center;gap:24px;margin-top:20px;padding:16px 0;">
+                        <div style="text-align:center;font-size:0.8rem;color:var(--warm-gray);">
+                            <div style="font-size:1.3rem;">🔒</div>
+                            256-bit SSL
+                        </div>
+                        <div style="text-align:center;font-size:0.8rem;color:var(--warm-gray);">
+                            <div style="font-size:1.3rem;">💳</div>
+                            PCI Compliant
+                        </div>
+                        <div style="text-align:center;font-size:0.8rem;color:var(--warm-gray);">
+                            <div style="font-size:1.3rem;">🛡️</div>
+                            Cancel Anytime
+                        </div>
+                        <div style="text-align:center;font-size:0.8rem;color:var(--warm-gray);">
+                            <div style="font-size:1.3rem;">💰</div>
+                            Money-Back Guarantee
+                        </div>
+                    </div>
+
+                    <div style="background:#f0f7f3;border-radius:12px;padding:16px 20px;margin-top:8px;font-size:0.85rem;color:var(--sage-deep);line-height:1.6;">
+                        <strong>How it works:</strong> Your card will not be charged today. After your 7-day free trial, your subscription will be $9.99/month. You can cancel at any time in your account settings — if you cancel before the trial ends, you won't be charged at all.
+                    </div>
+                </div>
+            </form>
+
+            <!-- Navigation Buttons -->
+            <div id="buttonGroup" class="button-group">
+                <button type="button" id="prevBtn" class="btn-secondary hidden">← Previous</button>
+                <button type="button" id="nextBtn" class="btn-primary">Next →</button>
+            </div>
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="sidebar-column">
+            <div class="sidebar-content" id="sidebarContent"></div>
+            <div class="review-card sidebar-review">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-quote">"I started using Wermom when I was pregnant with my first daughter, and now she's almost 2. When my second baby came along, I didn't even think twice — I just opened the app. The reports caught my eldest's mild speech delay early enough to get therapy started before age 2, and the nutrition plans helped me through two completely different pregnancies. It's like having a pediatrician, a nutritionist, and a mom friend who actually knows what she's talking about — all in one place."</div>
+                <div class="review-author">Rachel M.</div>
+                <div class="review-meta">Mom of 2 · Using Wermom for 2 years</div>
+                <div class="review-location">Portland, USA</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thank You Screen -->
+    <div class="thank-you-container" id="thankYouScreen">
+        <div style="width: 100%; text-align: center; max-width: 540px;">
+            <div class="thank-you-icon">🎉</div>
+            <h1 class="thank-you-title">You're All Set!</h1>
+            <p class="thank-you-text">
+                Welcome to Wermom, <span id="thankYouName">dear mom</span>! Your 7-day free trial has started and your personalized health report is being generated right now.
+            </p>
+            <div class="delivery-info">
+                <div>
+                    <strong>Your Report Will Be Ready By:</strong><br>
+                    <span id="deliveryTime" style="font-size:1.15rem;color:var(--rose);font-weight:600;">Within 12 hours</span>
+                </div>
+                <div style="margin-top: 0.75rem; font-size: 0.9rem;">
+                    We'll send the PDF to <strong id="reportEmail">your email</strong>
+                </div>
+            </div>
+
+            <div style="background:linear-gradient(135deg,#f0f7f3,#e8f2ec);border-radius:16px;padding:24px;margin:24px auto;text-align:left;max-width:460px;">
+                <div style="font-weight:700;color:var(--sage-deep);margin-bottom:12px;text-align:center;">🚀 Start tracking NOW for a better report!</div>
+                <div style="display:grid;gap:10px;font-size:0.9rem;color:var(--charcoal);" id="trackingTips">
+                    <!-- Filled dynamically based on pregnant/newborn -->
+                </div>
+            </div>
+
+            <p class="thank-you-text" style="font-size:0.85rem;color:var(--warm-gray);margin-top:16px;">
+                Your card won't be charged during the trial. We'll remind you on Day 5.
+            </p>
+            <a href="#" id="openAppBtn" onclick="openWermomApp()" class="home-link" style="margin-top:16px;display:inline-block;background:linear-gradient(135deg,var(--sage),var(--sage-deep));color:#fff;padding:14px 32px;border-radius:12px;text-decoration:none;font-weight:600;font-size:1.05rem;box-shadow:0 4px 16px rgba(92,138,111,0.3);">Open Wermom App →</a>
+            <p style="font-size:0.8rem;color:var(--warm-gray);margin-top:12px;">Your account is ready. All survey data has been synced to the app.</p>
+        </div>
+    </div>
+
+
+    <!-- Social Proof Popup -->
+    <div class="social-proof-popup" id="socialProofPopup">
+        <div class="spp-close" onclick="closeSocialProof()">&times;</div>
+        <div class="spp-header">
+            <div class="spp-avatar" id="sppAvatar">A</div>
+            <div>
+                <div class="spp-name" id="sppName">Alise M.</div>
+                <div class="spp-location" id="sppLocation">Portland, USA</div>
+            </div>
+        </div>
+        <div class="spp-detail" id="sppDetail">Mom of a 6-month-old baby</div>
+        <div class="spp-action">Submitted form &amp; started free trial <span class="spp-time" id="sppTime">2 min ago</span></div>
+    </div>
+
+
+    <!-- Exit Confirmation Modal -->
+    <div class="exit-modal-overlay" id="exitModal">
+        <div class="exit-modal">
+            <div class="exit-modal-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3>Wait — your free report is almost ready!</h3>
+            <p>You're so close. Our pediatric experts will review your answers and send you a detailed, personalized health report — <strong>completely free</strong>.</p>
+            <div class="exit-modal-features">
+                <div>Expert-reviewed personalized report</div>
+                <div>Covers both mom and baby health</div>
+                <div>Delivered within 24 hours to your email</div>
+            </div>
+            <div class="exit-modal-btns">
+                <button class="exit-modal-stay" onclick="closeExitModal()">Yes, I'll continue my free assessment</button>
+                <button class="exit-modal-leave" onclick="window.location.href='wermom-landing.html'">No thanks, take me back</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State management
+        const formData = {};
+        const requiredFields = {
+            1: ['fullName', 'email', 'phone', 'country', 'age', 'height', 'weight', 'bloodType', 'currentStatus', 'pregnancies', 'chronicConditions'],
+            2: ['babyName', 'babyStatus', 'babyDOB', 'babyGender', 'deliveryMethod', 'feedingMethod', 'solidFoods', 'teethingStatus', 'mobilityStatus'],
+            3: ['prenatalCheckups', 'ultrasounds', 'pregnancyComplications', 'vaccinationStatus', 'hospitalizations', 'familyHistory', 'breastfeeding', 'postpartumRecovery'],
+            4: ['mealsPerDay', 'waterIntake', 'supplements'],
+            5: ['momSleepHours', 'sleepQuality', 'babySleep24h', 'nightWakings', 'energyLevel', 'exerciseFrequency'],
+            6: ['momDiscomfort', 'stressLevel', 'mood', 'supportSystem', 'babySymptoms', 'babyMood', 'biggestConcern'],
+            7: ['weightPercentile', 'growthConcerns', 'termsCheckbox'],
+            8: ['accountPassword', 'accountPasswordConfirm'],
+            9: ['cardName', 'cardNumber', 'cardExpiry', 'cardCVC']
+        };
+
+        let currentStep = 1;
+        const totalSteps = 9;
+
+        // Sidebar content data
+        const sidebarData = {
+            1: `
+                <div class="reports-sent-banner">
+                    <span class="reports-sent-number">1,200+</span>
+                    <div class="reports-sent-text">Free Expert Reports Sent This Week</div>
+                    <div class="reports-sent-sub">Personalized health insights for moms &amp; babies</div>
+                </div>
+                <div class="live-counter">
+                    <div class="live-dot"></div>
+                    <span><span class="live-counter-num" id="liveCounterNum">24</span> people filling this form right now</span>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🎯</div>
+                    <div class="tip-text">Every detail you share helps us tailor advice specifically for your baby's unique needs. No two babies are alike.</div>
+                </div>
+            `,
+            2: `
+                <div class="reports-sent-banner">
+                    <span class="reports-sent-number">1,200+</span>
+                    <div class="reports-sent-text">Free Expert Reports Sent This Week</div>
+                    <div class="reports-sent-sub">Personalized health insights for moms &amp; babies</div>
+                </div>
+                <div class="live-counter">
+                    <div class="live-dot"></div>
+                    <span><span class="live-counter-num" id="liveCounterNum">24</span> people filling this form right now</span>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-card-text">"Understanding your baby's exact stage means every recommendation is age-appropriate and development-focused."</div>
+                </div>
+                <div class="tip-card blush">
+                    <div class="tip-icon">📈</div>
+                    <div class="tip-text">Babies develop at different rates. Wermom tracks YOUR baby's curve, not a textbook average.</div>
+                </div>
+            `,
+            3: `
+                <div class="reports-sent-banner">
+                    <span class="reports-sent-number">1,200+</span>
+                    <div class="reports-sent-text">Free Expert Reports Sent This Week</div>
+                    <div class="reports-sent-sub">Personalized health insights for moms &amp; babies</div>
+                </div>
+                <div class="live-counter">
+                    <div class="live-dot"></div>
+                    <span><span class="live-counter-num" id="liveCounterNum">24</span> people filling this form right now</span>
+                </div>
+                <div class="expert-quote">
+                    <div class="quote-text">"A thorough health history allows us to flag potential risks early — before they become problems."</div>
+                    <div class="quote-author">Dr. Sarah Chen</div>
+                    <div class="quote-title">Pediatric Specialist</div>
+                </div>
+            `,
+            4: `
+                <div class="reports-sent-banner">
+                    <span class="reports-sent-number">1,200+</span>
+                    <div class="reports-sent-text">Free Expert Reports Sent This Week</div>
+                    <div class="reports-sent-sub">Personalized health insights for moms &amp; babies</div>
+                </div>
+                <div class="live-counter">
+                    <div class="live-dot"></div>
+                    <span><span class="live-counter-num" id="liveCounterNum">24</span> people filling this form right now</span>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🥗</div>
+                    <div class="tip-text">Proper nutrition in the first 1,000 days shapes brain development, immune strength, and lifelong health.</div>
+                </div>
+            `,
+            5: `
+                <div class="reports-sent-banner">
+                    <span class="reports-sent-number">1,200+</span>
+                    <div class="reports-sent-text">Free Expert Reports Sent This Week</div>
+                    <div class="reports-sent-sub">Personalized health insights for moms &amp; babies</div>
+                </div>
+                <div class="live-counter">
+                    <div class="live-dot"></div>
+                    <span><span class="live-counter-num" id="liveCounterNum">24</span> people filling this form right now</span>
+                </div>
+                <div class="photo-card gradient-sage">
+                    <div class="photo-card-text">"Sleep patterns reveal so much about your baby's health. Our analysis catches regressions before they fully develop."</div>
+                </div>
+            `,
+            6: `
+                <div class="reports-sent-banner">
+                    <span class="reports-sent-number">1,200+</span>
+                    <div class="reports-sent-text">Free Expert Reports Sent This Week</div>
+                    <div class="reports-sent-sub">Personalized health insights for moms &amp; babies</div>
+                </div>
+                <div class="live-counter">
+                    <div class="live-dot"></div>
+                    <span><span class="live-counter-num" id="liveCounterNum">24</span> people filling this form right now</span>
+                </div>
+                <div class="tip-card blush">
+                    <div class="tip-icon">💪</div>
+                    <div class="tip-text">Your stress and energy directly affect your baby. Wermom monitors both of you together — because you're a team.</div>
+                </div>
+            `,
+            7: `
+                <div class="reports-sent-banner">
+                    <span class="reports-sent-number">1,200+</span>
+                    <div class="reports-sent-text">Free Expert Reports Sent This Week</div>
+                    <div class="reports-sent-sub">Personalized health insights for moms &amp; babies</div>
+                </div>
+                <div class="live-counter">
+                    <div class="live-dot"></div>
+                    <span><span class="live-counter-num" id="liveCounterNum">24</span> people filling this form right now</span>
+                </div>
+                <div class="expert-quote">
+                    <div class="quote-text">"Accurate growth measurements are the foundation of pediatric assessment. Every cm and kg tells your baby's unique story."</div>
+                    <div class="quote-author">Dr. Marcus Lee</div>
+                    <div class="quote-title">Growth Specialist</div>
+                </div>
+                <div class="tip-card sage">
+                    <div class="tip-icon">📏</div>
+                    <div class="tip-text">Your baby's growth pattern is as individual as their fingerprint. We track YOUR baby's trajectory, not population averages.</div>
+                </div>
+            `,
+            8: `
+                <div style="background:#fff;border-radius:16px;padding:24px;border:1.5px solid var(--light-gray);">
+                    <div style="text-align:center;margin-bottom:16px;">
+                        <div style="font-size:2.5rem;">🔐</div>
+                        <div style="font-weight:700;font-size:1.1rem;color:var(--midnight);margin-top:8px;">Your data is safe with us</div>
+                    </div>
+                    <div style="display:grid;gap:10px;font-size:0.9rem;">
+                        <div style="display:flex;gap:8px;align-items:center;"><span style="color:var(--sage);">✓</span> HIPAA-inspired privacy standards</div>
+                        <div style="display:flex;gap:8px;align-items:center;"><span style="color:var(--sage);">✓</span> 256-bit encryption</div>
+                        <div style="display:flex;gap:8px;align-items:center;"><span style="color:var(--sage);">✓</span> We never sell your data</div>
+                        <div style="display:flex;gap:8px;align-items:center;"><span style="color:var(--sage);">✓</span> Delete your data anytime</div>
+                    </div>
+                </div>
+                <div class="tip-card" style="margin-top:16px;">
+                    <div class="tip-icon">⚡</div>
+                    <div class="tip-text">Your personalized report will be ready within 12 hours of completing signup. Check your email!</div>
+                </div>
+            `,
+            9: `
+                <div style="background:#fff;border-radius:16px;padding:24px;border:1.5px solid var(--light-gray);">
+                    <div style="text-align:center;margin-bottom:16px;">
+                        <div style="font-size:2.5rem;">🎉</div>
+                        <div style="font-weight:700;font-size:1.1rem;color:var(--midnight);margin-top:8px;">What happens next?</div>
+                    </div>
+                    <div style="display:grid;gap:14px;font-size:0.9rem;">
+                        <div style="display:flex;gap:10px;align-items:flex-start;">
+                            <div style="width:28px;height:28px;border-radius:50%;background:var(--rose);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</div>
+                            <div><strong>Instant access</strong> — Open the Wermom app and start tracking today</div>
+                        </div>
+                        <div style="display:flex;gap:10px;align-items:flex-start;">
+                            <div style="width:28px;height:28px;border-radius:50%;background:var(--rose);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</div>
+                            <div><strong>Within 12 hours</strong> — Your AI health report lands in your inbox</div>
+                        </div>
+                        <div style="display:flex;gap:10px;align-items:flex-start;">
+                            <div style="width:28px;height:28px;border-radius:50%;background:var(--rose);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</div>
+                            <div><strong>Day 5</strong> — We'll remind you before your trial ends</div>
+                        </div>
+                        <div style="display:flex;gap:10px;align-items:flex-start;">
+                            <div style="width:28px;height:28px;border-radius:50%;background:var(--sage);color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">7</div>
+                            <div><strong>Day 7</strong> — Trial ends. Love it? Keep going. Not for you? Cancel with one tap.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card sidebar-review" style="margin-top:16px;">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-quote">"I almost didn't sign up because I thought it would be just another app. But the report changed how I think about my baby's health. Worth every penny."</div>
+                    <div class="review-author">Mei L.</div>
+                    <div class="review-meta">Mom of a 6-month-old · Singapore</div>
+                </div>
+            `
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            readURLParams();
+            setupChipListeners();
+            setupButtonListeners();
+            showStep(1);
+        });
+
+        function readURLParams() {
+            const params = new URLSearchParams(window.location.search);
+            const fullName = params.get('name');
+            const email = params.get('email');
+            const phone = params.get('phone');
+            const country = params.get('country');
+
+            if (fullName) document.getElementById('fullName').value = fullName;
+            if (email) document.getElementById('email').value = email;
+            if (phone) document.getElementById('phone').value = phone;
+            if (country) document.getElementById('country').value = country;
+        }
+
+        function setupChipListeners() {
+            document.querySelectorAll('.chip').forEach(chip => {
+                chip.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const group = this.parentElement;
+                    const isMulti = group.classList.contains('chips-multi');
+
+                    if (!isMulti) {
+                        group.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+                    }
+
+                    this.classList.toggle('active');
+                });
+            });
+        }
+
+        function setupButtonListeners() {
+            document.getElementById('nextBtn').addEventListener('click', nextStep);
+            document.getElementById('prevBtn').addEventListener('click', prevStep);
+        }
+
+        function validateStep(step) {
+            let isValid = true;
+            const required = requiredFields[step] || [];
+
+            document.querySelectorAll('.error-message').forEach(msg => msg.classList.remove('show'));
+
+            for (let field of required) {
+                const element = document.getElementById(field);
+                if (!element) {
+                    const chipGroup = document.querySelector(`[data-field="${field}"]`);
+                    if (chipGroup && !chipGroup.querySelector('.chip.active')) {
+                        isValid = false;
+                        const errorMsg = chipGroup.parentElement.querySelector('.error-message');
+                        if (errorMsg) errorMsg.classList.add('show');
+                    }
+                } else if (element.type === 'checkbox') {
+                    if (!element.checked) {
+                        isValid = false;
+                        const errorMsg = element.parentElement.parentElement.querySelector('.error-message');
+                        if (errorMsg) errorMsg.classList.add('show');
+                    }
+                } else if (!element.value) {
+                    isValid = false;
+                    const errorMsg = element.parentElement.querySelector('.error-message');
+                    if (errorMsg) errorMsg.classList.add('show');
+                }
+            }
+
+            return isValid;
+        }
+
+        function collectFormData() {
+            document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"], select, textarea').forEach(input => {
+                formData[input.id] = input.value;
+            });
+
+            document.querySelectorAll('[data-field]').forEach(group => {
+                const field = group.getAttribute('data-field');
+                const selected = Array.from(group.querySelectorAll('.chip.active')).map(chip => chip.getAttribute('data-value'));
+                formData[field] = selected.join(', ');
+            });
+
+            formData['termsCheckbox'] = document.getElementById('termsCheckbox').checked;
+        }
+
+        function updateSidebar(step) {
+            const sidebarContent = document.getElementById('sidebarContent');
+            if (sidebarData[step]) {
+                sidebarContent.innerHTML = sidebarData[step];
+            }
+        }
+
+        function updateStepIndicators(step) {
+            // Update step circles
+            document.querySelectorAll('.step-indicators .step-indicator').forEach(indicator => {
+                const indicatorStep = parseInt(indicator.getAttribute('data-step'));
+                indicator.classList.remove('active', 'completed');
+                if (indicatorStep === step) {
+                    indicator.classList.add('active');
+                } else if (indicatorStep < step) {
+                    indicator.classList.add('completed');
+                }
+            });
+            // Update connecting lines
+            document.querySelectorAll('.step-line').forEach(line => {
+                const afterStep = parseInt(line.getAttribute('data-after'));
+                line.classList.remove('done', 'current');
+                if (afterStep < step) {
+                    line.classList.add('done');
+                } else if (afterStep === step - 1) {
+                    line.classList.add('current');
+                }
+            });
+        }
+
+        function showStep(step) {
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+
+            const stepElement = document.querySelector(`.step[data-step="${step}"]`);
+            if (stepElement) stepElement.classList.add('active');
+
+            updateProgress(step);
+            updateStepIndicators(step);
+            updateSidebar(step);
+
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            if (step === 1) {
+                prevBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+            }
+
+            if (step === 7) {
+                nextBtn.textContent = 'Continue to Create Account →';
+                collectFormData();
+                generateSummary();
+            } else if (step === 8) {
+                nextBtn.textContent = 'Continue to Free Trial →';
+                // Pre-fill email from formData
+                const acctEmail = document.getElementById('accountEmail');
+                if (acctEmail) acctEmail.textContent = formData.email || '—';
+                const acctBaby = document.getElementById('accountBabyName');
+                if (acctBaby) acctBaby.textContent = formData.babyName || '—';
+            } else if (step === totalSteps) {
+                nextBtn.textContent = 'Start Free Trial & Get My Report';
+                nextBtn.style.background = 'linear-gradient(135deg,#4a8c6f,#5C8A6F)';
+                nextBtn.style.fontSize = '1.05rem';
+            } else {
+                nextBtn.textContent = 'Next →';
+                nextBtn.style.background = '';
+                nextBtn.style.fontSize = '';
+            }
+        }
+
+        function nextStep() {
+            // Custom validation for account & payment steps
+            if (currentStep === 8) {
+                if (!validateStep8()) return;
+            } else if (currentStep === 9) {
+                if (!validateStep9()) return;
+            } else {
+                if (!validateStep(currentStep)) return;
+            }
+
+            collectFormData();
+
+            if (currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+                window.scrollTo(0, 0);
+            } else {
+                submitSurvey();
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function updateProgress(step) {
+            const percent = (step / totalSteps) * 100;
+            document.getElementById('progressBar').style.width = percent + '%';
+        }
+
+        function generateSummary() {
+            const summaryContent = document.getElementById('summaryContent');
+            const categories = [
+                { title: "Mom's Profile", fields: ['fullName', 'email', 'age', 'currentStatus'] },
+                { title: "Baby's Status", fields: ['babyName', 'babyStatus', 'babyDOB', 'babyGender', 'feedingMethod'] },
+                { title: "Medical History", fields: ['vaccinationStatus', 'breastfeeding', 'postpartumRecovery'] },
+                { title: "Nutrition", fields: ['mealsPerDay', 'waterIntake'] },
+                { title: "Sleep & Energy", fields: ['momSleepHours', 'sleepQuality', 'babySleep24h'] },
+                { title: "Current Health", fields: ['stressLevel', 'mood'] },
+                { title: "Measurements & Growth", fields: ['babyCurrentWeight7', 'babyCurrentHeight7', 'weightPercentile', 'growthConcerns'] }
+            ];
+
+            let html = '';
+            categories.forEach(cat => {
+                cat.fields.forEach(field => {
+                    if (formData[field]) {
+                        const label = field.charAt(0).toUpperCase() + field.slice(1);
+                        html += `
+                            <div class="summary-item">
+                                <span class="summary-label">${label}</span>
+                                <span class="summary-value">${formData[field]}</span>
+                            </div>
+                        `;
+                    }
+                });
+            });
+
+            summaryContent.innerHTML = html;
+        }
+
+        // ==================== BACKEND API CONFIG ====================
+        // ==================== PASSWORD / CARD HELPERS ====================
+        function togglePasswordVisibility(btn) {
+            const input = btn.parentElement.querySelector('input');
+            if (input.type === 'password') {
+                input.type = 'text';
+                btn.textContent = '🙈';
+            } else {
+                input.type = 'password';
+                btn.textContent = '👁';
+            }
+        }
+
+        // Live password strength indicators
+        document.addEventListener('input', function(e) {
+            if (e.target.id === 'accountPassword') {
+                const pw = e.target.value;
+                const lenOk = pw.length >= 8;
+                const upperOk = /[A-Z]/.test(pw);
+                const numOk = /[0-9]/.test(pw);
+                document.getElementById('pwLength').style.color = lenOk ? 'var(--sage)' : '#ccc';
+                document.getElementById('pwUpper').style.color = upperOk ? 'var(--sage)' : '#ccc';
+                document.getElementById('pwNumber').style.color = numOk ? 'var(--sage)' : '#ccc';
+            }
+            // Card number formatting
+            if (e.target.id === 'cardNumber') {
+                let v = e.target.value.replace(/\D/g, '').substring(0, 16);
+                e.target.value = v.replace(/(.{4})/g, '$1 ').trim();
+                // Card brand detection
+                const brand = document.getElementById('cardBrand');
+                if (v.startsWith('4')) brand.textContent = '💳 Visa';
+                else if (/^5[1-5]/.test(v) || /^2[2-7]/.test(v)) brand.textContent = '💳 MC';
+                else if (/^3[47]/.test(v)) brand.textContent = '💳 Amex';
+                else brand.textContent = '';
+            }
+            // Expiry formatting
+            if (e.target.id === 'cardExpiry') {
+                let v = e.target.value.replace(/\D/g, '').substring(0, 4);
+                if (v.length >= 3) v = v.substring(0, 2) + ' / ' + v.substring(2);
+                e.target.value = v;
+            }
+        });
+
+        function validateStep8() {
+            let valid = true;
+            const pw = document.getElementById('accountPassword').value;
+            const pw2 = document.getElementById('accountPasswordConfirm').value;
+
+            // Clear errors
+            document.querySelectorAll('.step[data-step="8"] .error-message').forEach(e => e.classList.remove('show'));
+
+            if (pw.length < 8) {
+                document.getElementById('accountPassword').parentElement.parentElement.querySelector('.error-message').classList.add('show');
+                valid = false;
+            }
+            if (pw !== pw2) {
+                document.getElementById('passwordMatchError').classList.add('show');
+                valid = false;
+            }
+            return valid;
+        }
+
+        function validateStep9() {
+            let valid = true;
+            const name = document.getElementById('cardName').value.trim();
+            const num = document.getElementById('cardNumber').value.replace(/\s/g, '');
+            const exp = document.getElementById('cardExpiry').value.replace(/\s/g, '');
+            const cvc = document.getElementById('cardCVC').value.trim();
+
+            // Clear errors
+            document.querySelectorAll('.step[data-step="9"] .error-message').forEach(e => e.classList.remove('show'));
+
+            if (!name) {
+                document.getElementById('cardName').parentElement.querySelector('.error-message').classList.add('show');
+                valid = false;
+            }
+            if (num.length < 13 || !/^\d+$/.test(num)) {
+                document.getElementById('cardNumber').closest('.form-group').querySelector('.error-message').classList.add('show');
+                valid = false;
+            }
+            if (!/^\d{2}\/\d{2}$/.test(exp)) {
+                document.getElementById('cardExpiry').parentElement.querySelector('.error-message').classList.add('show');
+                valid = false;
+            }
+            if (cvc.length < 3 || !/^\d+$/.test(cvc)) {
+                document.getElementById('cardCVC').parentElement.querySelector('.error-message').classList.add('show');
+                valid = false;
+            }
+            return valid;
+        }
+
+        const WERMOM_API_URL = 'https://wermom-backend-production.up.railway.app';
+
+        async function submitSurvey() {
+            collectFormData();
+            console.log('Survey Data:', formData);
+
+            // Show loading state on submit button
+            const submitBtn = document.querySelector('.btn-next');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting...';
+                submitBtn.style.opacity = '0.7';
+            }
+
+            try {
+                // Send data to backend FIRST, wait for response
+                const result = await sendToBackend(formData);
+                console.log('Survey submitted to backend:', result);
+
+                // ═══ Store auth tokens for app deep-link ═══
+                // Backend now returns auth tokens so the app can auto-login
+                if (result.data && result.data.auth) {
+                    window.__wermomAuth = result.data.auth;
+                    // Store in sessionStorage for the "Open App" button
+                    try {
+                        sessionStorage.setItem('wermom_auth', JSON.stringify(result.data.auth));
+                        sessionStorage.setItem('wermom_userId', result.data.userId);
+                        sessionStorage.setItem('wermom_babyId', result.data.babyId);
+                    } catch(e) { /* storage not available */ }
+                }
+
+                // Only show success screen AFTER backend confirms
+                document.getElementById('mainLayout').classList.add('hidden');
+                document.getElementById('buttonGroup').classList.add('hidden');
+                document.getElementById('thankYouScreen').classList.add('active');
+
+                const name = formData['fullName'] || 'dear mom';
+                const email = formData['email'] || 'your email';
+                document.getElementById('thankYouName').textContent = name.split(' ')[0];
+                document.getElementById('reportEmail').textContent = email;
+
+                const deliveryHours = Math.floor(Math.random() * 6) + 6;
+                const deliveryTime = new Date(Date.now() + deliveryHours * 3600000);
+                const deliveryText = deliveryTime.toLocaleDateString('en-US', {
+                    weekday: 'short',
+                    month: 'short',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                document.getElementById('deliveryTime').textContent = deliveryText;
+
+                const tips = document.getElementById('trackingTips');
+                if (isPregnant) {
+                    tips.innerHTML = `
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);font-size:1.2rem;">🤰</span> <strong>Count baby kicks</strong> — track fetal movements daily (10 kicks in 2 hours is the gold standard)</div>
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);font-size:1.2rem;">📝</span> <strong>Log contractions</strong> — timing and intensity help detect early labor signs</div>
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);font-size:1.2rem;">😴</span> <strong>Track your sleep</strong> — sleep quality directly affects fetal brain development</div>
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);font-size:1.2rem;">💊</span> <strong>Log daily supplements</strong> — folic acid, iron, DHA consistency matters</div>
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);font-size:1.2rem;">📊</span> <strong>Daily mood & symptoms</strong> — patterns help predict and prevent complications</div>
+                    `;
+                } else {
+                    tips.innerHTML = `
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);font-size:1.2rem;">🍼</span> <strong>Log every feeding</strong> — breast/bottle, time & duration for pattern analysis</div>
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);font-size:1.2rem;">😴</span> <strong>Track sleep cycles</strong> — naps, night sleep, and wake-ups for AI analysis</div>
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);font-size:1.2rem;">💩</span> <strong>Log diaper changes</strong> — frequency, color & consistency reveal digestive health</div>
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);font-size:1.2rem;">📏</span> <strong>Weekly measurements</strong> — weight, length, and head circumference</div>
+                        <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);font-size:1.2rem;">🎯</span> <strong>Note milestones</strong> — smiling, rolling, sitting, babbling for development tracking</div>
+                    `;
+                }
+
+            } catch (err) {
+                console.error('Backend submission failed:', err);
+                // Show error to user instead of fake success
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit';
+                    submitBtn.style.opacity = '1';
+                }
+                alert('Something went wrong: ' + err.message + '\n\nPlease check your information and try again.');
+            }
+        }
+
+        async function sendToBackend(data) {
+            const payload = {
+                // Profile data (matching survey HTML input IDs)
+                email: data.email || '',
+                fullName: data.fullName || '',
+                phone: data.phone || '',
+                country: data.country || 'Vietnam',
+                age: data.age || null,
+                heightCm: data.height || null,
+                weightKg: data.weight || null,
+                bloodType: data.bloodType || null,
+
+                // Baby data
+                babyName: data.babyName || 'Baby',
+                babyStatus: data.babyStatus || 'Newborn',
+                babyGender: data.babyGender || null,
+                babyDOB: data.babyDOB || null,
+                gestationalWeeks: data.gestationalWeeks || null,
+                birthWeightKg: data.birthWeight || null,
+                deliveryMethod: data.deliveryMethod || null,
+                feedingMethod: data.feedingMethod || null,
+
+                // Account creation
+                password: data.accountPassword || '',
+
+                // Payment info (will be processed by backend/Stripe)
+                payment: {
+                    cardName: data.cardName || '',
+                    cardLast4: (data.cardNumber || '').replace(/\s/g, '').slice(-4),
+                    cardExpiry: data.cardExpiry || '',
+                    // Note: Full card number should be tokenized via Stripe.js in production
+                    // For now we send it to backend which would use Stripe server-side
+                    cardToken: 'tok_demo_' + Date.now() // Placeholder — replace with Stripe token
+                },
+                trialStart: new Date().toISOString(),
+
+                // Full survey data as JSON (ALL 80+ fields preserved)
+                surveyData: data
+            };
+
+            const response = await fetch(WERMOM_API_URL + '/api/survey/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error || 'Server error ' + response.status);
+            }
+
+            return await response.json();
+        }
+
+
+        // ==================== OPEN APP (Deep Link) ====================
+        function openWermomApp() {
+            // Try deep link first (for users with app installed)
+            const auth = window.__wermomAuth || {};
+            const deepLink = `wermom://auth?token=${encodeURIComponent(auth.accessToken || '')}&refresh=${encodeURIComponent(auth.refreshToken || '')}`;
+
+            // Try to open the app via deep link
+            const start = Date.now();
+            window.location.href = deepLink;
+
+            // If deep link fails (app not installed), redirect to App Store after 1.5s
+            setTimeout(() => {
+                if (Date.now() - start < 2000) {
+                    // Deep link didn't work — redirect to App Store / landing
+                    window.location.href = 'https://apps.apple.com/app/wermom/id0000000000'; // Replace with real App Store ID
+                }
+            }, 1500);
+        }
+
+        // ==================== ADDED: LIVE COUNTER ====================
+        (function() {
+            function updateCounter() {
+                var num = Math.floor(Math.random() * (34 - 17 + 1)) + 17;
+                document.querySelectorAll('.live-counter-num').forEach(function(el) { el.textContent = num; });
+            }
+            updateCounter();
+            setInterval(updateCounter, 7 * 60 * 1000);
+        })();
+
+        // ==================== ADDED: SOCIAL PROOF POPUP ====================
+        (function() {
+            var people = [
+                { name: "Alise M.", loc: "Portland, USA", detail: "Mom of a 6-month-old baby", i: "A" },
+                { name: "Mei L.", loc: "Singapore", detail: "Pregnant, week 28", i: "M" },
+                { name: "Sofia R.", loc: "Berlin, Germany", detail: "Mom of a 3-month-old", i: "S" },
+                { name: "Yuki T.", loc: "Tokyo, Japan", detail: "Pregnant, week 34", i: "Y" },
+                { name: "Fatima A.", loc: "Dubai, UAE", detail: "Mom of an 11-month-old baby", i: "F" },
+                { name: "Emma W.", loc: "London, UK", detail: "Mom of a 4-month-old", i: "E" },
+                { name: "Ana C.", loc: "Sao Paulo, Brazil", detail: "Pregnant, week 22", i: "A" },
+                { name: "Priya S.", loc: "Mumbai, India", detail: "Mom of an 8-month-old baby", i: "P" },
+                { name: "Chloe D.", loc: "Paris, France", detail: "Mom of a 2-month-old", i: "C" },
+                { name: "Olivia H.", loc: "Sydney, Australia", detail: "Pregnant, week 30", i: "O" },
+                { name: "Nadia K.", loc: "Stockholm, Sweden", detail: "Mom of a 5-month-old", i: "N" },
+                { name: "Isabella V.", loc: "Madrid, Spain", detail: "Mom of a 9-month-old baby", i: "I" },
+                { name: "Zuri K.", loc: "Nairobi, Kenya", detail: "Pregnant, week 26", i: "Z" },
+                { name: "Carmen L.", loc: "Mexico City, Mexico", detail: "Mom of a 7-month-old", i: "C" },
+                { name: "Amara J.", loc: "Atlanta, USA", detail: "Mom of a 10-month-old baby", i: "A" },
+                { name: "Linh N.", loc: "Ho Chi Minh City, Vietnam", detail: "Pregnant, week 32", i: "L" },
+                { name: "Hannah B.", loc: "Toronto, Canada", detail: "Mom of a 1-month-old", i: "H" },
+                { name: "Mia F.", loc: "Copenhagen, Denmark", detail: "Mom of a 5-month-old baby", i: "M" }
+            ];
+            var times = ["just now","1 min ago","2 min ago","3 min ago","5 min ago","8 min ago","12 min ago"];
+            var colors = [
+                "linear-gradient(135deg,#E8846A,#D4604A)",
+                "linear-gradient(135deg,#7BA68D,#5C8A6F)",
+                "linear-gradient(135deg,#F4A886,#E8846A)",
+                "linear-gradient(135deg,#6B8DD6,#5470B8)",
+                "linear-gradient(135deg,#D4604A,#B84A38)"
+            ];
+            var popup = document.getElementById('socialProofPopup');
+            var used = [];
+
+            function show() {
+                var idx;
+                do { idx = Math.floor(Math.random() * people.length); }
+                while (used.includes(idx) && used.length < people.length);
+                used.push(idx);
+                if (used.length > 5) used.shift();
+
+                var p = people[idx];
+                document.getElementById('sppAvatar').textContent = p.i;
+                document.getElementById('sppAvatar').style.background = colors[Math.floor(Math.random()*colors.length)];
+                document.getElementById('sppName').textContent = p.name;
+                document.getElementById('sppLocation').textContent = p.loc;
+                document.getElementById('sppDetail').textContent = p.detail;
+                document.getElementById('sppTime').textContent = times[Math.floor(Math.random()*times.length)];
+
+                popup.classList.add('show');
+                setTimeout(function() { popup.classList.remove('show'); }, 7000);
+                setTimeout(show, (Math.floor(Math.random()*11)+15)*1000);
+            }
+
+            setTimeout(show, 8000);
+            window.closeSocialProof = function() { popup.classList.remove('show'); };
+        })();
+
+
+        // ==================== EXIT CONFIRMATION MODAL ====================
+        function showExitModal() {
+            document.getElementById('exitModal').classList.add('show');
+        }
+        function closeExitModal() {
+            document.getElementById('exitModal').classList.remove('show');
+        }
+        // Close on overlay click
+        document.getElementById('exitModal').addEventListener('click', function(e) {
+            if (e.target === this) closeExitModal();
+        });
+    
+
+        // Pregnant/Newborn toggle logic
+        var isPregnant = false;
+
+        // Fields to SKIP validation when pregnant
+        var pregnantSkipFields = {
+            2: ['deliveryMethod', 'feedingMethod', 'solidFoods', 'teethingStatus', 'mobilityStatus'],
+            3: ['vaccinationStatus', 'breastfeeding', 'postpartumRecovery', 'pediatricianFrequency', 'lastDentalCheckup'],
+            4: ['organicFoodChoice', 'babyDigestiveIssues'],
+            5: ['babySleep24h', 'nightWakings', 'pacifierUse'],
+            6: ['babySymptoms', 'babyMood', 'babySkinCondition', 'babyEyeHearingCheck', 'postpartumRecoveryAreas', 'babySocialInteraction'],
+            7: ['weightPercentile', 'growthConcerns']
+        };
+
+        function togglePregnantMode(pregnant) {
+            isPregnant = pregnant;
+            document.querySelectorAll('[data-pregnant-hide]').forEach(function(el) {
+                if (pregnant) {
+                    el.classList.add('pregnant-hidden');
+                } else {
+                    el.classList.remove('pregnant-hidden');
+                }
+            });
+        }
+
+        // Listen for babyStatus chip clicks
+        document.addEventListener('click', function(e) {
+            var chip = e.target.closest('.chip');
+            if (!chip) return;
+            var group = chip.closest('[data-field="babyStatus"]');
+            if (!group) return;
+            var val = chip.getAttribute('data-value');
+            togglePregnantMode(val === 'Pregnant');
+        });
+
+        // Override validateStep to skip hidden fields
+        var _originalRequiredFields = JSON.parse(JSON.stringify(requiredFields));
+        var _origValidateStep = validateStep;
+        validateStep = function(step) {
+            // Temporarily adjust requiredFields if pregnant
+            if (isPregnant && pregnantSkipFields[step]) {
+                requiredFields[step] = _originalRequiredFields[step].filter(function(f) {
+                    return pregnantSkipFields[step].indexOf(f) === -1;
+                });
+            } else {
+                requiredFields[step] = _originalRequiredFields[step].slice();
+            }
+            return _origValidateStep(step);
+        };
+</script>
+</body>
+</html>
