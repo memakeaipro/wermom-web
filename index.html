@@ -970,11 +970,30 @@ nav.scrolled {
 .who-card {
   background: var(--white);
   border-radius: 24px;
-  padding: 48px 40px;
+  padding: 0;
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.04);
   transition: all 0.5s var(--ease-out);
+}
+.who-card-img {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+.who-card .card-icon { display: none !important; }
+.who-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease-out);
+}
+.who-card:hover .who-card-img img {
+  transform: scale(1.05);
+}
+.who-card-body {
+  padding: 32px 40px 48px;
 }
 .who-card:hover {
   transform: translateY(-4px);
@@ -1065,68 +1084,105 @@ nav.scrolled {
 }
 
 .steps-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   margin-top: 56px;
   position: relative;
-}
-.steps-grid::before {
-  content: '';
-  position: absolute;
-  top: 48px;
-  left: 15%;
-  right: 15%;
-  height: 1px;
-  background: repeating-linear-gradient(90deg, var(--light-gray), var(--light-gray) 8px, transparent 8px, transparent 16px);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .step-card {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0;
+  align-items: stretch;
   position: relative;
   z-index: 2;
 }
+.step-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
 .step-num {
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 24px;
-  border-radius: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-num);
   font-variant-numeric: tabular-nums;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--white);
   position: relative;
+  z-index: 2;
+  flex-shrink: 0;
 }
+.step-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(to bottom, var(--light-gray), transparent);
+  margin-top: 12px;
+}
+.step-card:last-child .step-line { display: none; }
+
 .step-card:nth-child(1) .step-num {
   background: linear-gradient(135deg, var(--peach), var(--rose));
+  box-shadow: 0 8px 24px rgba(217,118,93,0.25);
 }
 .step-card:nth-child(2) .step-num {
   background: linear-gradient(135deg, var(--sage), var(--sage-deep));
+  box-shadow: 0 8px 24px rgba(123,166,141,0.25);
 }
 .step-card:nth-child(3) .step-num {
   background: linear-gradient(135deg, var(--midnight), var(--charcoal));
-}
-.step-num::after {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 28px;
-  border: 1px dashed var(--light-gray);
+  box-shadow: 0 8px 24px rgba(26,26,46,0.25);
 }
 
-.step-card h3 {
-  margin-bottom: 12px;
+.step-content {
+  background: var(--cream);
+  border-radius: 20px;
+  padding: 36px 40px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--ease-out);
 }
-.step-card p {
+.step-content:hover {
+  transform: translateX(6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+}
+.step-content::before {
+  content: attr(data-step);
+  position: absolute;
+  top: -20px;
+  right: 24px;
+  font-family: var(--font-display);
+  font-size: 7rem;
+  font-weight: 700;
+  color: rgba(0,0,0,0.03);
+  line-height: 1;
+  pointer-events: none;
+}
+.step-card:nth-child(1) .step-content { background: linear-gradient(135deg, #FFF5F0, #FFF0EB); }
+.step-card:nth-child(2) .step-content { background: linear-gradient(135deg, #F0F7F2, #E8F2EB); }
+.step-card:nth-child(3) .step-content { background: linear-gradient(135deg, #F0F0F5, #E8E8F0); }
+
+.step-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+.step-content p {
   color: var(--slate);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   line-height: 1.7;
-  max-width: 300px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* ==================== SECTION 4: DAILY LOG PREVIEW ==================== */
@@ -1722,10 +1778,17 @@ nav.scrolled {
 .chat-messages {
   padding: 24px;
   min-height: 340px;
+  max-height: 520px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  scroll-behavior: smooth;
 }
+.chat-messages::-webkit-scrollbar { width: 5px; }
+.chat-messages::-webkit-scrollbar-track { background: transparent; }
+.chat-messages::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 10px; }
+.chat-messages::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.2); }
 .chat-msg {
   max-width: 80%;
   padding: 14px 18px;
@@ -2073,9 +2136,49 @@ nav.scrolled {
   position: relative;
 }
 .gs-hero-visual .gs-hero-image {
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   border-radius: 20px;
   overflow: hidden;
+}
+.gs-hero-video-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+}
+.gs-hero-video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.1) translateY(3%);
+}
+#gs-video-pause-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(8px);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+#gs-video-pause-btn:hover {
+  opacity: 1;
+}
+#gs-video-pause-btn svg {
+  fill: #fff;
+  width: 18px;
+  height: 18px;
 }
 .getstarted-layout {
   display: grid;
@@ -2441,6 +2544,10 @@ footer {
   .footer-grid { grid-template-columns: 1fr 1fr; }
 
   .steps-grid::before { display: none; }
+  .step-card { grid-template-columns: 60px 1fr; }
+  .step-num { width: 44px; height: 44px; font-size: 1rem; }
+  .step-content { padding: 24px 20px; margin-bottom: 16px; }
+  .step-content::before { font-size: 5rem; top: -14px; right: 14px; }
 
   .hero-benefits h1 { font-size: 1.8rem; }
   .hero-showcase { min-height: auto; }
@@ -2465,13 +2572,14 @@ footer {
   .proof-stats { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; }
-  .gs-hero-visual .gs-hero-image { aspect-ratio: 4/3; }
+  .gs-hero-visual .gs-hero-image { aspect-ratio: 16/9; }
   .getstarted-categories { gap: 8px; }
   .gs-cat { padding: 10px 14px; }
   .gs-cat-icon { width: 34px; height: 34px; }
   .gs-cat-info h4 { font-size: 0.8rem; }
   .gs-cat-info p { display: none; }
-  .who-carousel-track .who-card { padding: 24px 16px; }
+  .who-carousel-track .who-card { padding: 0; }
+  .who-carousel-track .who-card .who-card-body { padding: 24px 16px; }
   .reports-carousel-track .report-card { padding: 18px 14px; }
 }
 
@@ -3331,8 +3439,8 @@ body::after {
   100% { transform: translateX(calc(-50% - 10px)); }
 }
 .expert-review-card {
-  flex: 0 0 300px;
-  height: 400px;
+  flex: 0 0 390px;
+  height: 520px;
   border-radius: 18px;
   position: relative;
   overflow: hidden;
@@ -3363,33 +3471,33 @@ body::after {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 20px;
+  padding: 24px;
   z-index: 3;
   color: var(--white);
 }
 .erc-stars {
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 2px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: #FFD700;
 }
 .erc-text {
-  font-size: 0.82rem;
-  line-height: 1.5;
-  margin-bottom: 12px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-bottom: 14px;
   opacity: 0.92;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 .erc-author {
   font-weight: 600;
-  font-size: 0.85rem;
-  margin-bottom: 2px;
+  font-size: 0.95rem;
+  margin-bottom: 3px;
 }
 .erc-role {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   opacity: 0.7;
 }
 
@@ -3443,8 +3551,8 @@ body::after {
   100% { transform: translateX(0); }
 }
 .photo-review-card {
-  flex: 0 0 280px;
-  height: 380px;
+  flex: 0 0 364px;
+  height: 494px;
   border-radius: 18px;
   position: relative;
   overflow: hidden;
@@ -3472,33 +3580,33 @@ body::after {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 18px;
+  padding: 22px;
   z-index: 3;
   color: var(--white);
 }
 .prc-stars {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   letter-spacing: 2px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   color: #FFD700;
 }
 .prc-text {
-  font-size: 0.78rem;
-  line-height: 1.5;
-  margin-bottom: 10px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin-bottom: 12px;
   opacity: 0.92;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 .prc-author {
   font-weight: 600;
-  font-size: 0.82rem;
-  margin-bottom: 2px;
+  font-size: 0.92rem;
+  margin-bottom: 3px;
 }
 .prc-location {
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   opacity: 0.7;
 }
 
@@ -3653,8 +3761,8 @@ body::after {
 }
 
 @media (max-width: 768px) {
-  .expert-review-card { flex: 0 0 260px; height: 350px; }
-  .photo-review-card { flex: 0 0 240px; height: 340px; }
+  .expert-review-card { flex: 0 0 300px; height: 400px; }
+  .photo-review-card { flex: 0 0 280px; height: 380px; }
   .reviews-grid { column-count: 2; }
   .expert-carousel-track { gap: 14px; }
   .photo-carousel-track { gap: 14px; }
@@ -4295,7 +4403,7 @@ footer::before {
   .chatbot-section .container { width: 100%; padding: 0 12px; }
   .chatbot-grid { grid-template-columns: 1fr !important; gap: 32px; }
   .chat-window { border-radius: 20px; }
-  .chat-messages { padding: 16px; min-height: 280px; }
+  .chat-messages { padding: 16px; min-height: 280px; max-height: 420px; }
   .chat-msg { max-width: 88%; font-size: 0.84rem; padding: 12px 14px; }
   .chat-input-area { padding: 12px 16px; }
   .chat-preset-area { padding: 8px 16px 12px; }
@@ -4803,6 +4911,125 @@ footer::before {
   .nav-cta { display: none; }
 }
 
+
+/* ==================== PHOTO SHOWCASE CARDS ==================== */
+.showcase-card.has-photo {
+  padding: 0 !important;
+  justify-content: flex-end !important;
+  align-items: stretch !important;
+  text-align: left !important;
+  background: #1a1a2e !important;
+  border-bottom: none !important;
+}
+
+/* Full-bleed photo */
+.sc-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.sc-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.sc-photo.pos-top img { object-position: center 20%; }
+.sc-photo.pos-center img { object-position: center center; }
+
+/* Dark gradient at bottom for text readability */
+.sc-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(20, 20, 36, 0.88) 0%,
+    rgba(20, 20, 36, 0.65) 28%,
+    rgba(20, 20, 36, 0.25) 50%,
+    rgba(20, 20, 36, 0.05) 65%,
+    transparent 80%
+  );
+  pointer-events: none;
+}
+
+/* Content pinned to bottom */
+.sc-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 28px 24px;
+  color: #fff;
+}
+.sc-content .showcase-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.sc-content .showcase-desc {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  max-width: 300px;
+  margin-bottom: 16px;
+}
+.sc-content .showcase-stats {
+  display: flex;
+  gap: 8px;
+  margin-top: 0;
+}
+.sc-content .showcase-stat {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 14px;
+  border-radius: 10px;
+  text-align: center;
+}
+.sc-content .showcase-stat-val {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.sc-content .showcase-stat-label {
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.55);
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Remove old showcase-card centered styles for .has-photo */
+.showcase-card.has-photo .showcase-icon,
+.showcase-card.has-photo > .showcase-title,
+.showcase-card.has-photo > .showcase-desc,
+.showcase-card.has-photo > .showcase-stats {
+  display: none !important;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .showcase-card.has-photo { min-height: 320px; }
+  .sc-content { padding: 0 24px 20px; }
+}
+@media (max-width: 768px) {
+  .showcase-card.has-photo { min-height: 280px; }
+  .sc-content .showcase-title { font-size: 1.15rem; }
+  .sc-content .showcase-desc { font-size: 0.78rem; max-width: 100%; }
+  .sc-content .showcase-stat { padding: 6px 11px; }
+  .sc-content .showcase-stat-val { font-size: 0.95rem; }
+}
+@media (max-width: 480px) {
+  .showcase-card.has-photo { min-height: 250px; }
+  .sc-content { padding: 0 18px 16px; }
+}
+
 </style>
 </head>
 <body>
@@ -4933,47 +5160,53 @@ footer::before {
     <!-- RIGHT: Two Showcase Cards -->
     <div class="hero-showcase">
       <!-- Card 1: Pregnancy -->
-      <div class="showcase-card">
-        <div class="showcase-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5c0 2-1 3-2 4l-1 2v2h-4v-2l-1-2c-1-1-2-2-2-4a5 5 0 0 1 5-5z"/><path d="M9 15v2a3 3 0 0 0 6 0v-2"/><path d="M12 18v4"/></svg>
+      <div class="showcase-card has-photo">
+        <div class="sc-photo pos-top">
+          <img src="Image/hf_20260325_060649_f8ac1f84-5959-4447-b9f1-1a620dfc50dc.png" alt="Pregnant mother in nursery">
         </div>
-        <div class="showcase-title">Pregnancy Companion</div>
-        <div class="showcase-desc">We walk beside you every week — tracking symptoms, guiding nutrition, and keeping both you and baby on the healthiest path.</div>
-        <div class="showcase-stats">
-          <div class="showcase-stat">
-            <div class="showcase-stat-val">9.2</div>
-            <div class="showcase-stat-label">Health Score</div>
-          </div>
-          <div class="showcase-stat">
-            <div class="showcase-stat-val">40</div>
-            <div class="showcase-stat-label">Weeks Tracked</div>
-          </div>
-          <div class="showcase-stat">
-            <div class="showcase-stat-val">24h</div>
-            <div class="showcase-stat-label">Expert Support</div>
+        <div class="sc-overlay"></div>
+        <div class="sc-content">
+          <div class="showcase-title">Pregnancy Companion</div>
+          <div class="showcase-desc">Tracking symptoms, guiding nutrition, and keeping both you and baby on the healthiest path.</div>
+          <div class="showcase-stats">
+            <div class="showcase-stat">
+              <div class="showcase-stat-val">9.2</div>
+              <div class="showcase-stat-label">Health Score</div>
+            </div>
+            <div class="showcase-stat">
+              <div class="showcase-stat-val">40</div>
+              <div class="showcase-stat-label">Weeks Tracked</div>
+            </div>
+            <div class="showcase-stat">
+              <div class="showcase-stat-val">24h</div>
+              <div class="showcase-stat-label">Expert Support</div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Card 2: Baby -->
-      <div class="showcase-card">
-        <div class="showcase-icon">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2"/><path d="M9.5 7.5c.5.5 1.5.5 2 0"/></svg>
+      <div class="showcase-card has-photo">
+        <div class="sc-photo pos-center">
+          <img src="Image/hf_20260325_061153_acaaeb6f-d705-4a19-a959-6e2f61c71569 (1).jpeg" alt="Mother and baby">
         </div>
-        <div class="showcase-title">Baby Health Dashboard</div>
-        <div class="showcase-desc">Feeding, sleep, growth, milestones — our team scores and analyzes every detail so nothing slips through the cracks.</div>
-        <div class="showcase-stats">
-          <div class="showcase-stat">
-            <div class="showcase-stat-val">102</div>
-            <div class="showcase-stat-label">Metrics</div>
-          </div>
-          <div class="showcase-stat">
-            <div class="showcase-stat-val">8.5</div>
-            <div class="showcase-stat-label">Nutrition</div>
-          </div>
-          <div class="showcase-stat">
-            <div class="showcase-stat-val">9.0</div>
-            <div class="showcase-stat-label">Sleep</div>
+        <div class="sc-overlay"></div>
+        <div class="sc-content">
+          <div class="showcase-title">Baby Health Dashboard</div>
+          <div class="showcase-desc">Our team scores and analyzes every detail so nothing slips through the cracks.</div>
+          <div class="showcase-stats">
+            <div class="showcase-stat">
+              <div class="showcase-stat-val">102</div>
+              <div class="showcase-stat-label">Metrics</div>
+            </div>
+            <div class="showcase-stat">
+              <div class="showcase-stat-val">8.5</div>
+              <div class="showcase-stat-label">Nutrition</div>
+            </div>
+            <div class="showcase-stat">
+              <div class="showcase-stat-val">9.0</div>
+              <div class="showcase-stat-label">Sleep</div>
+            </div>
           </div>
         </div>
       </div>
@@ -5090,35 +5323,10 @@ footer::before {
     </div>
     <div class="who-grid">
       <div class="who-card pregnant reveal reveal-delay-1">
-        <div class="card-icon"><svg width="24" height="24"><use href="#ico-pregnant"/></svg></div>
-        <h3>Expecting Moms</h3>
-        <p class="card-desc">Week 6 to 40. We walk with you through every trimester — explaining what's normal, flagging what's not, and making sure both you and baby stay on track.</p>
-        <ul class="who-features">
-          <li>Week-by-week development guidance from our experts</li>
-          <li>Ultrasound & blood test interpretation</li>
-          <li>Trimester-specific nutrition designed for you</li>
-          <li>Warning signs explained calmly and clearly</li>
-          <li>Safe exercise plans for every stage</li>
-        </ul>
-      </div>
-      <div class="who-card baby reveal reveal-delay-2">
-        <div class="card-icon"><svg width="24" height="24"><use href="#ico-baby"/></svg></div>
-        <h3>New Moms</h3>
-        <p class="card-desc">Baby 0 to 6 years. Every feed, every nap, every growth spurt — we monitor it all and tell you exactly how your child is doing, every day.</p>
-        <ul class="who-features">
-          <li>Daily nutrition & feeding analysis</li>
-          <li>Sleep patterns compared against WHO standards</li>
-          <li>Growth charts with clinical-grade Z-scores</li>
-          <li>Early pattern detection that catches issues fast</li>
-          <li>Meal plans tailored to your baby's exact age</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Mobile Carousel -->
-    <div class="who-carousel-wrapper">
-      <div class="who-carousel-track" id="who-carousel-track">
-        <div class="who-card pregnant">
+        <div class="who-card-img">
+          <img src="Image/hf_20260325_063154_81daaa23-61c0-4678-b090-cedc6c79478a.png" alt="Expecting mom using phone">
+        </div>
+        <div class="who-card-body">
           <div class="card-icon"><svg width="24" height="24"><use href="#ico-pregnant"/></svg></div>
           <h3>Expecting Moms</h3>
           <p class="card-desc">Week 6 to 40. We walk with you through every trimester — explaining what's normal, flagging what's not, and making sure both you and baby stay on track.</p>
@@ -5130,7 +5338,12 @@ footer::before {
             <li>Safe exercise plans for every stage</li>
           </ul>
         </div>
-        <div class="who-card baby">
+      </div>
+      <div class="who-card baby reveal reveal-delay-2">
+        <div class="who-card-img">
+          <img src="Image/hf_20260325_061909_6ee54816-82bb-44c3-a802-d1179af90dc8.png" alt="Mom playing with baby">
+        </div>
+        <div class="who-card-body">
           <div class="card-icon"><svg width="24" height="24"><use href="#ico-baby"/></svg></div>
           <h3>New Moms</h3>
           <p class="card-desc">Baby 0 to 6 years. Every feed, every nap, every growth spurt — we monitor it all and tell you exactly how your child is doing, every day.</p>
@@ -5141,6 +5354,46 @@ footer::before {
             <li>Early pattern detection that catches issues fast</li>
             <li>Meal plans tailored to your baby's exact age</li>
           </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Carousel -->
+    <div class="who-carousel-wrapper">
+      <div class="who-carousel-track" id="who-carousel-track">
+        <div class="who-card pregnant">
+          <div class="who-card-img">
+            <img src="Image/hf_20260325_063154_81daaa23-61c0-4678-b090-cedc6c79478a.png" alt="Expecting mom using phone">
+          </div>
+          <div class="who-card-body">
+            <div class="card-icon"><svg width="24" height="24"><use href="#ico-pregnant"/></svg></div>
+            <h3>Expecting Moms</h3>
+            <p class="card-desc">Week 6 to 40. We walk with you through every trimester — explaining what's normal, flagging what's not, and making sure both you and baby stay on track.</p>
+            <ul class="who-features">
+              <li>Week-by-week development guidance from our experts</li>
+              <li>Ultrasound & blood test interpretation</li>
+              <li>Trimester-specific nutrition designed for you</li>
+              <li>Warning signs explained calmly and clearly</li>
+              <li>Safe exercise plans for every stage</li>
+            </ul>
+          </div>
+        </div>
+        <div class="who-card baby">
+          <div class="who-card-img">
+            <img src="Image/hf_20260325_061909_6ee54816-82bb-44c3-a802-d1179af90dc8.png" alt="Mom playing with baby">
+          </div>
+          <div class="who-card-body">
+            <div class="card-icon"><svg width="24" height="24"><use href="#ico-baby"/></svg></div>
+            <h3>New Moms</h3>
+            <p class="card-desc">Baby 0 to 6 years. Every feed, every nap, every growth spurt — we monitor it all and tell you exactly how your child is doing, every day.</p>
+            <ul class="who-features">
+              <li>Daily nutrition & feeding analysis</li>
+              <li>Sleep patterns compared against WHO standards</li>
+              <li>Growth charts with clinical-grade Z-scores</li>
+              <li>Early pattern detection that catches issues fast</li>
+              <li>Meal plans tailored to your baby's exact age</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="carousel-arrow-hint">
@@ -5161,19 +5414,34 @@ footer::before {
     </div>
     <div class="steps-grid">
       <div class="step-card reveal reveal-delay-1">
-        <div class="step-num">1</div>
-        <h3>Tell Us About Your Day</h3>
-        <p>Meals, sleep, symptoms, mood — just quick taps and a few notes. It takes under 2 minutes, and we take it from there.</p>
+        <div class="step-left">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content" data-step="01">
+          <h3>Tell Us About Your Day</h3>
+          <p>Meals, sleep, symptoms, mood — just quick taps and a few notes. It takes under 2 minutes, and we take it from there.</p>
+        </div>
       </div>
       <div class="step-card reveal reveal-delay-2">
-        <div class="step-num">2</div>
-        <h3>Our Experts Review Everything</h3>
-        <p>Within 24 hours, our team cross-references your data with the latest pediatric research and sends you personalized feedback via app and email.</p>
+        <div class="step-left">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content" data-step="02">
+          <h3>Our Experts Review Everything</h3>
+          <p>Within 24 hours, our team cross-references your data with the latest pediatric research and sends you personalized feedback via app and email.</p>
+        </div>
       </div>
       <div class="step-card reveal reveal-delay-3">
-        <div class="step-num">3</div>
-        <h3>Get Your Reports & Alerts</h3>
-        <p>Daily, weekly, and monthly reports with clear, actionable guidance. Plus smart alerts the moment we notice something shifting.</p>
+        <div class="step-left">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content" data-step="03">
+          <h3>Get Your Reports & Alerts</h3>
+          <p>Daily, weekly, and monthly reports with clear, actionable guidance. Plus smart alerts the moment we notice something shifting.</p>
+        </div>
       </div>
     </div>
     <div style="text-align:center; margin-top:48px;" class="reveal">
@@ -5806,7 +6074,18 @@ footer::before {
       <div class="expert-carousel-track">
         <!-- Expert 1 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(160deg, #8B6F5D 0%, #C4A882 40%, #E8D5C0 100%);"></div>
+          <div class="erc-img"><img src="Image/hf_20260325_070805_630bf88f-7219-4c45-b7b4-7c6088528549.jpeg" alt="Dr. Matthias Vogel" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">WHO-calibrated growth charts done right.</div>
+            <div class="erc-author">Dr. Matthias Vogel</div>
+            <div class="erc-role">Growth Specialist, University Children’s Hospital Zurich</div>
+          </div>
+        </div>
+        <!-- Expert 2 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070808_34caea56-c713-435a-b0ec-a01485ef01ef.png" alt="Dr. Astrid Lindqvist" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -5815,141 +6094,9 @@ footer::before {
             <div class="erc-role">Pediatrician, Karolinska Institutet, Stockholm</div>
           </div>
         </div>
-        <!-- Expert 2 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(145deg, #7A5D4F 0%, #B89968 50%, #D4C5A9 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Finally, a tool that bridges the gap between clinic visits and daily life.</div>
-            <div class="erc-author">Dr. Elena Moreau</div>
-            <div class="erc-role">OB-GYN, Hôpital Necker, Paris</div>
-          </div>
-        </div>
         <!-- Expert 3 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(140deg, #4A6741 0%, #7BA68D 50%, #B8D4C0 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">The nutritional tracking is remarkably thorough.</div>
-            <div class="erc-author">Dr. Hannah Weber</div>
-            <div class="erc-role">Nutritionist, Charité, Berlin</div>
-          </div>
-        </div>
-        <!-- Expert 4 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(170deg, #6B4C3B 0%, #A67C5B 45%, #D4B896 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Early pattern detection saves lives. This is exactly that.</div>
-            <div class="erc-author">Dr. Lars Henriksen</div>
-            <div class="erc-role">Neonatologist, Rigshospitalet, Copenhagen</div>
-          </div>
-        </div>
-        <!-- Expert 5 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(155deg, #A67C6D 0%, #D4A89C 50%, #E8C5B8 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">The developmental milestone tracking is clinically sound.</div>
-            <div class="erc-author">Dr. Sophie Dubois</div>
-            <div class="erc-role">Pediatric Neurologist, Pitié-Salpêtrière, Paris</div>
-          </div>
-        </div>
-        <!-- Expert 6 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(150deg, #5A6B5B 0%, #8A9E8D 40%, #BDD4C8 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">WHO-calibrated growth charts done right.</div>
-            <div class="erc-author">Dr. Matthias Vogel</div>
-            <div class="erc-role">Growth Specialist, University Children's Hospital Zurich</div>
-          </div>
-        </div>
-        <!-- Expert 7 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(165deg, #8B7355 0%, #C4A877 45%, #E8D5B8 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Evidence-based prenatal guidance I'd recommend to my own patients.</div>
-            <div class="erc-author">Dr. Ingrid Bakker</div>
-            <div class="erc-role">Maternal Care, Erasmus MC, Rotterdam</div>
-          </div>
-        </div>
-        <!-- Expert 8 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(142deg, #6B5B4A 0%, #9E8B7A 50%, #D4B8A0 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">The multi-dimensional health scoring is genuinely innovative.</div>
-            <div class="erc-author">Dr. Fiona MacLeod</div>
-            <div class="erc-role">Pediatrician, Great Ormond Street Hospital, London</div>
-          </div>
-        </div>
-        <!-- Expert 9 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(158deg, #7A5B6B 0%, #B887A8 45%, #D8B8C8 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Mental health integration in early care is long overdue.</div>
-            <div class="erc-author">Dr. Anna Kowalski</div>
-            <div class="erc-role">Child Psychologist, Karolinska, Stockholm</div>
-          </div>
-        </div>
-        <!-- Expert 10 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(148deg, #4F5A6B 0%, #7A8FA0 50%, #B8D4E0 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Vaccination compliance and immunity tracking in one place.</div>
-            <div class="erc-author">Dr. Henrik Strand</div>
-            <div class="erc-role">Immunologist, Oslo University Hospital</div>
-          </div>
-        </div>
-        <!-- Expert 11 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(162deg, #9B7B6B 0%, #D4B093 50%, #E8D0B8 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Feeding tracking this detailed changes outcomes.</div>
-            <div class="erc-author">Dr. Claire Fontaine</div>
-            <div class="erc-role">Lactation Consultant, Hôpital Robert-Debré, Paris</div>
-          </div>
-        </div>
-        <!-- Expert 12 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(152deg, #6A5B4F 0%, #A89478 45%, #D4B89C 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Sleep pattern analysis that actually matches clinical standards.</div>
-            <div class="erc-author">Dr. Thomas Brenner</div>
-            <div class="erc-role">Pediatric Sleep Specialist, LMU Munich</div>
-          </div>
-        </div>
-        <!-- Expert 13 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(146deg, #5A6B5F 0%, #8BA69B 50%, #C0D8D0 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Catches developmental gaps weeks before standard check-ups.</div>
-            <div class="erc-author">Dr. Maja Lindström</div>
-            <div class="erc-role">Developmental Pediatrician, Uppsala University, Sweden</div>
-          </div>
-        </div>
-        <!-- Expert 14 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(168deg, #8B6B5B 0%, #C4957B 45%, #E0C4A0 100%);"></div>
+          <div class="erc-img"><img src="Image/hf_20260325_070814_fc9c8819-08de-4609-b746-1414143cb052.jpeg" alt="Dr. Pierre Lambert" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -5958,21 +6105,153 @@ footer::before {
             <div class="erc-role">Pediatric Gastroenterologist, Hôpitaux de Marseille</div>
           </div>
         </div>
-        <!-- Expert 15 -->
+        <!-- Expert 4 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(154deg, #7A6B8B 0%, #B0A5C8 50%, #D8D0E8 100%);"></div>
+          <div class="erc-img"><img src="Image/hf_20260325_070817_3622ef75-2d87-403a-a570-655c26616d67.jpeg" alt="Dr. Eva Schneider" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
             <div class="erc-text">This is what modern well-child care should look like.</div>
             <div class="erc-author">Dr. Eva Schneider</div>
             <div class="erc-role">Pediatrician, Vienna General Hospital</div>
+          </div>
+        </div>
+        <!-- Expert 5 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070724_5c1edc6e-8e4a-4ef6-a5bf-a8280f54d58f.png" alt="Dr. Maja Lindström" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Catches developmental gaps weeks before standard check-ups.</div>
+            <div class="erc-author">Dr. Maja Lindström</div>
+            <div class="erc-role">Developmental Pediatrician, Uppsala University, Sweden</div>
+          </div>
+        </div>
+        <!-- Expert 6 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070727_9e3b7829-9791-420e-9cfa-d6017fd0f6dc.png" alt="Dr. Sophie Dubois" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">The developmental milestone tracking is clinically sound.</div>
+            <div class="erc-author">Dr. Sophie Dubois</div>
+            <div class="erc-role">Pediatric Neurologist, Pitié-Salpêtrière, Paris</div>
+          </div>
+        </div>
+        <!-- Expert 7 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070731_4431da30-0f03-4baf-ad6e-7ebc73c23296.jpeg" alt="Dr. Hannah Weber" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">The nutritional tracking is remarkably thorough.</div>
+            <div class="erc-author">Dr. Hannah Weber</div>
+            <div class="erc-role">Nutritionist, Charité, Berlin</div>
+          </div>
+        </div>
+        <!-- Expert 8 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070735_a31fa8bc-5f3b-49a2-b892-02dea8c6d718.jpeg" alt="Dr. Lars Henriksen" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Early pattern detection saves lives. This is exactly that.</div>
+            <div class="erc-author">Dr. Lars Henriksen</div>
+            <div class="erc-role">Neonatologist, Rigshospitalet, Copenhagen</div>
+          </div>
+        </div>
+        <!-- Expert 9 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070739_a1de3634-0448-4cf4-ae41-3e8452c3a4b3.jpeg" alt="Dr. Elena Moreau" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Finally, a tool that bridges the gap between clinic visits and daily life.</div>
+            <div class="erc-author">Dr. Elena Moreau</div>
+            <div class="erc-role">OB-GYN, Hôpital Necker, Paris</div>
+          </div>
+        </div>
+        <!-- Expert 10 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070747_759c7f02-69ac-4c00-86f3-0ef5a6da2273.jpeg" alt="Dr. Ingrid Bakker" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Evidence-based prenatal guidance I’d recommend to my own patients.</div>
+            <div class="erc-author">Dr. Ingrid Bakker</div>
+            <div class="erc-role">Maternal Care, Erasmus MC, Rotterdam</div>
+          </div>
+        </div>
+        <!-- Expert 11 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070751_90b30df2-6660-4415-b34e-f6bba2354f75.jpeg" alt="Dr. Fiona MacLeod" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">The multi-dimensional health scoring is genuinely innovative.</div>
+            <div class="erc-author">Dr. Fiona MacLeod</div>
+            <div class="erc-role">Pediatrician, Great Ormond Street Hospital, London</div>
+          </div>
+        </div>
+        <!-- Expert 12 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070755_673f6a04-4242-4eb2-922d-a9ac7d6d5eb6.jpeg" alt="Dr. Anna Kowalski" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Mental health integration in early care is long overdue.</div>
+            <div class="erc-author">Dr. Anna Kowalski</div>
+            <div class="erc-role">Child Psychologist, Karolinska, Stockholm</div>
+          </div>
+        </div>
+        <!-- Expert 13 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070755_7fb0f7d4-2d24-4198-9bcb-423a73826b17.png" alt="Dr. Lena Müller" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Sleep pattern analysis that actually matches clinical standards.</div>
+            <div class="erc-author">Dr. Lena Müller</div>
+            <div class="erc-role">Pediatric Sleep Specialist, LMU Munich</div>
+          </div>
+        </div>
+        <!-- Expert 14 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070758_bc2574f7-3809-4745-8eaa-d1ff60525d83.jpeg" alt="Dr. Henrik Strand" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Vaccination compliance and immunity tracking in one place.</div>
+            <div class="erc-author">Dr. Henrik Strand</div>
+            <div class="erc-role">Immunologist, Oslo University Hospital</div>
+          </div>
+        </div>
+        <!-- Expert 15 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070801_218398d5-96eb-487b-a085-1ed6ffec8cc8.jpeg" alt="Dr. Claire Fontaine" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Feeding tracking this detailed changes outcomes.</div>
+            <div class="erc-author">Dr. Claire Fontaine</div>
+            <div class="erc-role">Lactation Consultant, Hôpital Robert-Debré, Paris</div>
           </div>
         </div>
         <!-- Duplicate for seamless loop -->
         <!-- Expert 1 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(160deg, #8B6F5D 0%, #C4A882 40%, #E8D5C0 100%);"></div>
+          <div class="erc-img"><img src="Image/hf_20260325_070805_630bf88f-7219-4c45-b7b4-7c6088528549.jpeg" alt="Dr. Matthias Vogel" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">WHO-calibrated growth charts done right.</div>
+            <div class="erc-author">Dr. Matthias Vogel</div>
+            <div class="erc-role">Growth Specialist, University Children’s Hospital Zurich</div>
+          </div>
+        </div>
+        <!-- Expert 2 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070808_34caea56-c713-435a-b0ec-a01485ef01ef.png" alt="Dr. Astrid Lindqvist" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -5981,141 +6260,9 @@ footer::before {
             <div class="erc-role">Pediatrician, Karolinska Institutet, Stockholm</div>
           </div>
         </div>
-        <!-- Expert 2 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(145deg, #7A5D4F 0%, #B89968 50%, #D4C5A9 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Finally, a tool that bridges the gap between clinic visits and daily life.</div>
-            <div class="erc-author">Dr. Elena Moreau</div>
-            <div class="erc-role">OB-GYN, Hôpital Necker, Paris</div>
-          </div>
-        </div>
         <!-- Expert 3 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(140deg, #4A6741 0%, #7BA68D 50%, #B8D4C0 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">The nutritional tracking is remarkably thorough.</div>
-            <div class="erc-author">Dr. Hannah Weber</div>
-            <div class="erc-role">Nutritionist, Charité, Berlin</div>
-          </div>
-        </div>
-        <!-- Expert 4 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(170deg, #6B4C3B 0%, #A67C5B 45%, #D4B896 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Early pattern detection saves lives. This is exactly that.</div>
-            <div class="erc-author">Dr. Lars Henriksen</div>
-            <div class="erc-role">Neonatologist, Rigshospitalet, Copenhagen</div>
-          </div>
-        </div>
-        <!-- Expert 5 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(155deg, #A67C6D 0%, #D4A89C 50%, #E8C5B8 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">The developmental milestone tracking is clinically sound.</div>
-            <div class="erc-author">Dr. Sophie Dubois</div>
-            <div class="erc-role">Pediatric Neurologist, Pitié-Salpêtrière, Paris</div>
-          </div>
-        </div>
-        <!-- Expert 6 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(150deg, #5A6B5B 0%, #8A9E8D 40%, #BDD4C8 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">WHO-calibrated growth charts done right.</div>
-            <div class="erc-author">Dr. Matthias Vogel</div>
-            <div class="erc-role">Growth Specialist, University Children's Hospital Zurich</div>
-          </div>
-        </div>
-        <!-- Expert 7 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(165deg, #8B7355 0%, #C4A877 45%, #E8D5B8 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Evidence-based prenatal guidance I'd recommend to my own patients.</div>
-            <div class="erc-author">Dr. Ingrid Bakker</div>
-            <div class="erc-role">Maternal Care, Erasmus MC, Rotterdam</div>
-          </div>
-        </div>
-        <!-- Expert 8 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(142deg, #6B5B4A 0%, #9E8B7A 50%, #D4B8A0 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">The multi-dimensional health scoring is genuinely innovative.</div>
-            <div class="erc-author">Dr. Fiona MacLeod</div>
-            <div class="erc-role">Pediatrician, Great Ormond Street Hospital, London</div>
-          </div>
-        </div>
-        <!-- Expert 9 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(158deg, #7A5B6B 0%, #B887A8 45%, #D8B8C8 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Mental health integration in early care is long overdue.</div>
-            <div class="erc-author">Dr. Anna Kowalski</div>
-            <div class="erc-role">Child Psychologist, Karolinska, Stockholm</div>
-          </div>
-        </div>
-        <!-- Expert 10 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(148deg, #4F5A6B 0%, #7A8FA0 50%, #B8D4E0 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Vaccination compliance and immunity tracking in one place.</div>
-            <div class="erc-author">Dr. Henrik Strand</div>
-            <div class="erc-role">Immunologist, Oslo University Hospital</div>
-          </div>
-        </div>
-        <!-- Expert 11 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(162deg, #9B7B6B 0%, #D4B093 50%, #E8D0B8 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Feeding tracking this detailed changes outcomes.</div>
-            <div class="erc-author">Dr. Claire Fontaine</div>
-            <div class="erc-role">Lactation Consultant, Hôpital Robert-Debré, Paris</div>
-          </div>
-        </div>
-        <!-- Expert 12 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(152deg, #6A5B4F 0%, #A89478 45%, #D4B89C 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Sleep pattern analysis that actually matches clinical standards.</div>
-            <div class="erc-author">Dr. Thomas Brenner</div>
-            <div class="erc-role">Pediatric Sleep Specialist, LMU Munich</div>
-          </div>
-        </div>
-        <!-- Expert 13 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(146deg, #5A6B5F 0%, #8BA69B 50%, #C0D8D0 100%);"></div>
-          <div class="erc-overlay"></div>
-          <div class="erc-content">
-            <div class="erc-stars">★★★★★</div>
-            <div class="erc-text">Catches developmental gaps weeks before standard check-ups.</div>
-            <div class="erc-author">Dr. Maja Lindström</div>
-            <div class="erc-role">Developmental Pediatrician, Uppsala University, Sweden</div>
-          </div>
-        </div>
-        <!-- Expert 14 -->
-        <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(168deg, #8B6B5B 0%, #C4957B 45%, #E0C4A0 100%);"></div>
+          <div class="erc-img"><img src="Image/hf_20260325_070814_fc9c8819-08de-4609-b746-1414143cb052.jpeg" alt="Dr. Pierre Lambert" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6124,15 +6271,136 @@ footer::before {
             <div class="erc-role">Pediatric Gastroenterologist, Hôpitaux de Marseille</div>
           </div>
         </div>
-        <!-- Expert 15 -->
+        <!-- Expert 4 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img" style="background: linear-gradient(154deg, #7A6B8B 0%, #B0A5C8 50%, #D8D0E8 100%);"></div>
+          <div class="erc-img"><img src="Image/hf_20260325_070817_3622ef75-2d87-403a-a570-655c26616d67.jpeg" alt="Dr. Eva Schneider" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
             <div class="erc-text">This is what modern well-child care should look like.</div>
             <div class="erc-author">Dr. Eva Schneider</div>
             <div class="erc-role">Pediatrician, Vienna General Hospital</div>
+          </div>
+        </div>
+        <!-- Expert 5 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070724_5c1edc6e-8e4a-4ef6-a5bf-a8280f54d58f.png" alt="Dr. Maja Lindström" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Catches developmental gaps weeks before standard check-ups.</div>
+            <div class="erc-author">Dr. Maja Lindström</div>
+            <div class="erc-role">Developmental Pediatrician, Uppsala University, Sweden</div>
+          </div>
+        </div>
+        <!-- Expert 6 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070727_9e3b7829-9791-420e-9cfa-d6017fd0f6dc.png" alt="Dr. Sophie Dubois" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">The developmental milestone tracking is clinically sound.</div>
+            <div class="erc-author">Dr. Sophie Dubois</div>
+            <div class="erc-role">Pediatric Neurologist, Pitié-Salpêtrière, Paris</div>
+          </div>
+        </div>
+        <!-- Expert 7 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070731_4431da30-0f03-4baf-ad6e-7ebc73c23296.jpeg" alt="Dr. Hannah Weber" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">The nutritional tracking is remarkably thorough.</div>
+            <div class="erc-author">Dr. Hannah Weber</div>
+            <div class="erc-role">Nutritionist, Charité, Berlin</div>
+          </div>
+        </div>
+        <!-- Expert 8 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070735_a31fa8bc-5f3b-49a2-b892-02dea8c6d718.jpeg" alt="Dr. Lars Henriksen" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Early pattern detection saves lives. This is exactly that.</div>
+            <div class="erc-author">Dr. Lars Henriksen</div>
+            <div class="erc-role">Neonatologist, Rigshospitalet, Copenhagen</div>
+          </div>
+        </div>
+        <!-- Expert 9 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070739_a1de3634-0448-4cf4-ae41-3e8452c3a4b3.jpeg" alt="Dr. Elena Moreau" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Finally, a tool that bridges the gap between clinic visits and daily life.</div>
+            <div class="erc-author">Dr. Elena Moreau</div>
+            <div class="erc-role">OB-GYN, Hôpital Necker, Paris</div>
+          </div>
+        </div>
+        <!-- Expert 10 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070747_759c7f02-69ac-4c00-86f3-0ef5a6da2273.jpeg" alt="Dr. Ingrid Bakker" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Evidence-based prenatal guidance I’d recommend to my own patients.</div>
+            <div class="erc-author">Dr. Ingrid Bakker</div>
+            <div class="erc-role">Maternal Care, Erasmus MC, Rotterdam</div>
+          </div>
+        </div>
+        <!-- Expert 11 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070751_90b30df2-6660-4415-b34e-f6bba2354f75.jpeg" alt="Dr. Fiona MacLeod" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">The multi-dimensional health scoring is genuinely innovative.</div>
+            <div class="erc-author">Dr. Fiona MacLeod</div>
+            <div class="erc-role">Pediatrician, Great Ormond Street Hospital, London</div>
+          </div>
+        </div>
+        <!-- Expert 12 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070755_673f6a04-4242-4eb2-922d-a9ac7d6d5eb6.jpeg" alt="Dr. Anna Kowalski" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Mental health integration in early care is long overdue.</div>
+            <div class="erc-author">Dr. Anna Kowalski</div>
+            <div class="erc-role">Child Psychologist, Karolinska, Stockholm</div>
+          </div>
+        </div>
+        <!-- Expert 13 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070755_7fb0f7d4-2d24-4198-9bcb-423a73826b17.png" alt="Dr. Lena Müller" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Sleep pattern analysis that actually matches clinical standards.</div>
+            <div class="erc-author">Dr. Lena Müller</div>
+            <div class="erc-role">Pediatric Sleep Specialist, LMU Munich</div>
+          </div>
+        </div>
+        <!-- Expert 14 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070758_bc2574f7-3809-4745-8eaa-d1ff60525d83.jpeg" alt="Dr. Henrik Strand" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Vaccination compliance and immunity tracking in one place.</div>
+            <div class="erc-author">Dr. Henrik Strand</div>
+            <div class="erc-role">Immunologist, Oslo University Hospital</div>
+          </div>
+        </div>
+        <!-- Expert 15 -->
+        <div class="expert-review-card" onclick="toggleCarousel(this)">
+          <div class="erc-img"><img src="Image/hf_20260325_070801_218398d5-96eb-487b-a085-1ed6ffec8cc8.jpeg" alt="Dr. Claire Fontaine" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-overlay"></div>
+          <div class="erc-content">
+            <div class="erc-stars">★★★★★</div>
+            <div class="erc-text">Feeding tracking this detailed changes outcomes.</div>
+            <div class="erc-author">Dr. Claire Fontaine</div>
+            <div class="erc-role">Lactation Consultant, Hôpital Robert-Debré, Paris</div>
           </div>
         </div>
       </div>
@@ -6151,14 +6419,14 @@ footer::before {
   <div class="container">
     <div class="section-center reveal">
       <div class="section-label" style="justify-content:center;">Real Families</div>
-      <h2>Real families, real stories.</h2>
-      <p class="subtitle">Every day, families share how Wermom changed the way they care for their children.</p>
+      <h2 style="text-align:center;">Real families, real stories.</h2>
+      <p class="subtitle" style="text-align:center; margin-left:auto; margin-right:auto;">Every day, families share how Wermom changed the way they care for their children.</p>
     </div>
     <div class="photo-carousel-container">
       <div class="photo-carousel-track">
         <!-- Review 1 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(158deg, #9B8B7B 0%, #D4B89C 50%, #E8D0B8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_072906_b4f604b5-e5cd-4f75-9157-9b323d65c4d6.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6169,7 +6437,7 @@ footer::before {
         </div>
         <!-- Review 2 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(145deg, #8A7B6B 0%, #C4A882 50%, #D8C0A8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_072858_6c29f788-411a-4d5b-8d88-24eaa62dc6a6.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6180,7 +6448,7 @@ footer::before {
         </div>
         <!-- Review 3 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(162deg, #6B7A8B 0%, #9BB0C8 50%, #C8D8E8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_072902_ffb0edef-dd4e-43f8-aac8-b39cca1a2057.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6191,7 +6459,7 @@ footer::before {
         </div>
         <!-- Review 4 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(155deg, #7A6B5B 0%, #B8936B 50%, #D4B896 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162315_c0115fb0-8673-4e11-98a0-0bd766117cf8.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6202,7 +6470,7 @@ footer::before {
         </div>
         <!-- Review 5 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(148deg, #5A7B6B 0%, #8BA89B 50%, #B8D4C8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162648_98b159be-7671-4156-803a-6f717418822f.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6213,7 +6481,7 @@ footer::before {
         </div>
         <!-- Review 6 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(168deg, #A8856B 0%, #D4A577 50%, #E8B896 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162027_19204a40-4f16-4e80-8c5d-095b8c505d49.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6224,7 +6492,7 @@ footer::before {
         </div>
         <!-- Review 7 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(152deg, #9B7B8B 0%, #D4A8C0 50%, #E8C8D8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162036_848a71ff-1f25-4049-beb3-8f324a7082b0.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6235,7 +6503,7 @@ footer::before {
         </div>
         <!-- Review 8 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(160deg, #5B6B7A 0%, #8B9FAA 50%, #B8CDD8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162231_a91f25d0-3738-4ba5-b127-110d6385c333.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6246,7 +6514,7 @@ footer::before {
         </div>
         <!-- Review 9 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(146deg, #7B6B9B 0%, #A887B8 50%, #C8B8D8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162125_e29dd7a0-1465-4a45-b1f9-6da23b211bad.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6257,7 +6525,7 @@ footer::before {
         </div>
         <!-- Review 10 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(165deg, #9B7B6B 0%, #D4B893 50%, #E8D0A8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162509_072d48ce-147e-4e4f-abc9-fd116f8202fe.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6268,7 +6536,7 @@ footer::before {
         </div>
         <!-- Review 11 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(150deg, #6A7B8B 0%, #99AAB8 50%, #C0D0D8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162220_2ede7feb-eeed-421b-8c04-ae22a61c8304.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6279,7 +6547,7 @@ footer::before {
         </div>
         <!-- Review 12 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(158deg, #8B7A6B 0%, #C4A17B 50%, #D8B896 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162231_a91f25d0-3738-4ba5-b127-110d6385c333.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6290,7 +6558,7 @@ footer::before {
         </div>
         <!-- Review 13 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(154deg, #5B7A9B 0%, #8BAA98 50%, #B8CDA0 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162315_c0115fb0-8673-4e11-98a0-0bd766117cf8.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6301,7 +6569,7 @@ footer::before {
         </div>
         <!-- Review 14 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(170deg, #9A8A7A 0%, #D0B891 50%, #E0C8A8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162321_07b57ca2-0bed-472f-b40d-cf52ac157761.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6312,7 +6580,7 @@ footer::before {
         </div>
         <!-- Review 15 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(147deg, #7A6A8B 0%, #B39AC8 50%, #D0B8D8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162522_931d9119-b6b8-4b86-825b-00895c0844a1.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6323,7 +6591,7 @@ footer::before {
         </div>
         <!-- Review 16 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(163deg, #7B9A6B 0%, #A8B89B 50%, #C8D8B8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162328_22224d41-07c0-404c-a9e3-e08398e14615.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6334,7 +6602,7 @@ footer::before {
         </div>
         <!-- Review 17 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(156deg, #A88B7B 0%, #D4B89B 50%, #E0CBA8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162509_072d48ce-147e-4e4f-abc9-fd116f8202fe.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6345,7 +6613,7 @@ footer::before {
         </div>
         <!-- Review 18 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(161deg, #6A7A9B 0%, #99B0C8 50%, #B8D0D8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162516_48c0f2eb-c2d0-4e49-8f9d-c5bce9702d19.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6356,7 +6624,7 @@ footer::before {
         </div>
         <!-- Review 19 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(149deg, #7B8A9B 0%, #AAB8C8 50%, #C8D8E0 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162522_931d9119-b6b8-4b86-825b-00895c0844a1.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6367,7 +6635,7 @@ footer::before {
         </div>
         <!-- Review 20 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(167deg, #8A7B6B 0%, #C4927B 50%, #D8A896 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162533_41fca230-46e4-4141-b866-3f26cfc033f5.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6378,7 +6646,7 @@ footer::before {
         </div>
         <!-- Review 21 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(151deg, #6B8A7B 0%, #99B0A0 50%, #B8D0B8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162648_98b159be-7671-4156-803a-6f717418822f.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6389,7 +6657,7 @@ footer::before {
         </div>
         <!-- Review 22 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(159deg, #9B8B7B 0%, #D0A88B 50%, #E0B8A0 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162027_19204a40-4f16-4e80-8c5d-095b8c505d49.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6400,7 +6668,7 @@ footer::before {
         </div>
         <!-- Review 23 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(155deg, #7A9A8B 0%, #A8C8B8 50%, #C8D8C8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162125_e29dd7a0-1465-4a45-b1f9-6da23b211bad.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6411,7 +6679,7 @@ footer::before {
         </div>
         <!-- Review 24 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(164deg, #8A7A9B 0%, #B8A0C8 50%, #D0B8D8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162220_2ede7feb-eeed-421b-8c04-ae22a61c8304.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6422,7 +6690,7 @@ footer::before {
         </div>
         <!-- Review 25 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(148deg, #7B7A8B 0%, #AAA0B8 50%, #C8B8D0 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_162328_22224d41-07c0-404c-a9e3-e08398e14615.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6434,7 +6702,7 @@ footer::before {
         <!-- Duplicate for seamless loop -->
         <!-- Review 1 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img" style="background: linear-gradient(158deg, #9B8B7B 0%, #D4B89C 50%, #E8D0B8 100%);"></div>
+          <div class="prc-img"><img src="Image/hf_20260325_072906_b4f604b5-e5cd-4f75-9157-9b323d65c4d6.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -7395,7 +7663,15 @@ footer::before {
       </div>
       <div class="gs-hero-visual">
         <div class="gs-hero-image" style="margin:0;">
-          <div class="gs-hero-img" style="background: linear-gradient(135deg, rgba(244,168,134,0.15), rgba(123,166,141,0.15)), linear-gradient(to bottom right, var(--blush), var(--sage-light));"></div>
+          <div class="gs-hero-video-wrap">
+            <video id="gs-hero-video" playsinline preload="metadata" loop>
+              <source src="Image/vid1.mp4" type="video/mp4">
+            </video>
+            <button id="gs-video-pause-btn">
+              <svg class="pause-ico" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+              <svg class="play-ico" viewBox="0 0 24 24" style="display:none;"><polygon points="6,4 20,12 6,20"/></svg>
+            </button>
+          </div>
         </div>
         <div style="text-align:center; margin-top:12px;">
           <a href="#pricing" class="gs-assessment-link" onclick="event.preventDefault(); var el = document.getElementById('gs-email'); if(el){ var y = el.getBoundingClientRect().top + window.pageYOffset - 100; window.scrollTo({top: y, behavior:'smooth'}); setTimeout(function(){ el.focus(); }, 600); }">Do the Free Assessment &rarr;</a>
@@ -8296,6 +8572,73 @@ document.getElementById('mobile-menu').addEventListener('click', function(e) {
       }
     });
   });
+})();
+
+// ==================== VIDEO AUTO-PLAY ON SCROLL ====================
+(function() {
+  var vid = document.getElementById('gs-hero-video');
+  if (!vid) return;
+  var started = false;
+  var userPaused = false;
+  var pauseBtn = document.getElementById('gs-video-pause-btn');
+  var pauseIco = pauseBtn ? pauseBtn.querySelector('.pause-ico') : null;
+  var playIco = pauseBtn ? pauseBtn.querySelector('.play-ico') : null;
+
+  function showPause() { if(pauseIco) pauseIco.style.display='block'; if(playIco) playIco.style.display='none'; }
+  function showPlay() { if(pauseIco) pauseIco.style.display='none'; if(playIco) playIco.style.display='block'; }
+
+  // Pause/Play button
+  if (pauseBtn) {
+    pauseBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (vid.paused) {
+        vid.muted = false;
+        vid.play();
+        userPaused = false;
+        showPause();
+      } else {
+        vid.pause();
+        userPaused = true;
+        showPlay();
+      }
+    });
+  }
+
+  // Start muted on scroll (browser allows this), then unmute on first click anywhere
+  var videoObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !started) {
+        started = true;
+        vid.muted = true;
+        vid.play().catch(function(){});
+        showPause();
+      }
+    });
+  }, { threshold: 0.2 });
+  videoObserver.observe(vid);
+
+  // Unmute on first user interaction anywhere on page
+  var unmuted = false;
+  function tryUnmute() {
+    if (!unmuted && !vid.paused) {
+      vid.muted = false;
+      unmuted = true;
+    }
+    document.removeEventListener('click', tryUnmute);
+    document.removeEventListener('touchstart', tryUnmute);
+    document.removeEventListener('scroll', tryUnmuteScroll);
+  }
+  function tryUnmuteScroll() {
+    if (!unmuted && !vid.paused && started) {
+      vid.muted = false;
+      unmuted = true;
+      document.removeEventListener('scroll', tryUnmuteScroll);
+    }
+  }
+  document.addEventListener('click', tryUnmute);
+  document.addEventListener('touchstart', tryUnmute);
+  document.addEventListener('scroll', tryUnmuteScroll, { passive: true });
 })();
 
 </script>
