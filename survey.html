@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- WEB-07: Security headers via meta tags -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>Wermom - Health Survey</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -2440,17 +2443,25 @@
             showStep(1);
         });
 
+        // WEB-06: Read lead data from sessionStorage instead of URL params
         function readURLParams() {
-            const params = new URLSearchParams(window.location.search);
-            const fullName = params.get('name');
-            const email = params.get('email');
-            const phone = params.get('phone');
-            const country = params.get('country');
-
-            if (fullName) document.getElementById('fullName').value = fullName;
-            if (email) document.getElementById('email').value = email;
-            if (phone) document.getElementById('phone').value = phone;
-            if (country) document.getElementById('country').value = country;
+            try {
+                var lead = JSON.parse(sessionStorage.getItem('wermom_lead') || '{}');
+                if (lead.name) document.getElementById('fullName').value = lead.name;
+                if (lead.email) document.getElementById('email').value = lead.email;
+                if (lead.phone) document.getElementById('phone').value = lead.phone;
+                if (lead.country) document.getElementById('country').value = lead.country;
+                // Clear after reading so it doesn't persist
+                sessionStorage.removeItem('wermom_lead');
+            } catch(e) { /* no pre-fill data */ }
+            // Fallback: still support URL params for backward compatibility
+            var params = new URLSearchParams(window.location.search);
+            if (params.get('name') && !document.getElementById('fullName').value) {
+                document.getElementById('fullName').value = params.get('name') || '';
+                document.getElementById('email').value = params.get('email') || '';
+                document.getElementById('phone').value = params.get('phone') || '';
+                document.getElementById('country').value = params.get('country') || '';
+            }
         }
 
         function setupChipListeners() {
@@ -2636,22 +2647,26 @@
                 { title: "Measurements & Growth", fields: ['babyCurrentWeight7', 'babyCurrentHeight7', 'weightPercentile', 'growthConcerns'] }
             ];
 
-            let html = '';
+            // WEB-02: Build summary using DOM methods instead of innerHTML to prevent XSS
+            summaryContent.textContent = ''; // Clear safely
             categories.forEach(cat => {
                 cat.fields.forEach(field => {
                     if (formData[field]) {
                         const label = field.charAt(0).toUpperCase() + field.slice(1);
-                        html += `
-                            <div class="summary-item">
-                                <span class="summary-label">${label}</span>
-                                <span class="summary-value">${formData[field]}</span>
-                            </div>
-                        `;
+                        const item = document.createElement('div');
+                        item.className = 'summary-item';
+                        const labelSpan = document.createElement('span');
+                        labelSpan.className = 'summary-label';
+                        labelSpan.textContent = label;
+                        const valueSpan = document.createElement('span');
+                        valueSpan.className = 'summary-value';
+                        valueSpan.textContent = String(formData[field]);
+                        item.appendChild(labelSpan);
+                        item.appendChild(valueSpan);
+                        summaryContent.appendChild(item);
                     }
                 });
             });
-
-            summaryContent.innerHTML = html;
         }
 
         // ==================== BACKEND API CONFIG ====================
@@ -2749,7 +2764,7 @@
 
         async function submitSurvey() {
             collectFormData();
-            console.log('Survey Data:', formData);
+            // WEB-03: Never log sensitive data to console
 
             // Show loading state on submit button
             const submitBtn = document.querySelector('.btn-next');
@@ -2762,18 +2777,13 @@
             try {
                 // Send data to backend FIRST, wait for response
                 const result = await sendToBackend(formData);
-                console.log('Survey submitted to backend:', result);
+                // WEB-03: Don't log response with auth tokens
 
-                // ═══ Store auth tokens for app deep-link ═══
-                // Backend now returns auth tokens so the app can auto-login
+                // WEB-04: Store auth tokens in memory only (not sessionStorage/window global)
+                // Tokens are passed directly to deep link — no persistent web storage
+                var _authTokens = null;
                 if (result.data && result.data.auth) {
-                    window.__wermomAuth = result.data.auth;
-                    // Store in sessionStorage for the "Open App" button
-                    try {
-                        sessionStorage.setItem('wermom_auth', JSON.stringify(result.data.auth));
-                        sessionStorage.setItem('wermom_userId', result.data.userId);
-                        sessionStorage.setItem('wermom_babyId', result.data.babyId);
-                    } catch(e) { /* storage not available */ }
+                    _authTokens = result.data.auth;
                 }
 
                 // Only show success screen AFTER backend confirms
@@ -2854,13 +2864,13 @@
                 password: data.accountPassword || '',
 
                 // Payment info (will be processed by backend/Stripe)
+                // WEB-01: Payment data — NEVER send raw card numbers
+                // In production, replace with Stripe.js tokenization (stripe.createToken)
+                // For now, we only send a placeholder — card fields are for UX demo only
                 payment: {
-                    cardName: data.cardName || '',
                     cardLast4: (data.cardNumber || '').replace(/\s/g, '').slice(-4),
-                    cardExpiry: data.cardExpiry || '',
-                    // Note: Full card number should be tokenized via Stripe.js in production
-                    // For now we send it to backend which would use Stripe server-side
-                    cardToken: 'tok_demo_' + Date.now() // Placeholder — replace with Stripe token
+                    cardToken: 'tok_pending_stripe_integration',
+                    // Card number, CVC, expiry are NOT sent to backend
                 },
                 trialStart: new Date().toISOString(),
 
@@ -2885,8 +2895,8 @@
 
         // ==================== OPEN APP (Deep Link) ====================
         function openWermomApp() {
-            // Try deep link first (for users with app installed)
-            const auth = window.__wermomAuth || {};
+            // WEB-04: Use memory-only auth (no window global, no sessionStorage)
+            const auth = _authTokens || {};
             const deepLink = `wermom://auth?token=${encodeURIComponent(auth.accessToken || '')}&refresh=${encodeURIComponent(auth.refreshToken || '')}`;
 
             // Try to open the app via deep link

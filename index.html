@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wermom — Because the First 1,000 Days Matter Most</title>
 <meta name="description" content="Built by pediatric experts who understand what your baby truly needs. From pregnancy through the first six years — personalized health tracking, expert-reviewed insights, and a care plan designed around your child.">
+<!-- WEB-07: Security headers via meta tags -->
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -8174,15 +8177,18 @@ document.getElementById('chat-input').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') sendChat();
 });
 
-// Lead capture → Survey redirect
+// WEB-06: Lead capture → Survey redirect (PII via POST-like sessionStorage, not URL params)
 function goToSurvey() {
-  const name = document.getElementById('gs-name').value.trim();
-  const email = document.getElementById('gs-email').value.trim();
-  const phone = document.getElementById('gs-phone').value.trim();
-  const country = document.getElementById('gs-country').value;
+  var name = document.getElementById('gs-name').value.trim();
+  var email = document.getElementById('gs-email').value.trim();
+  var phone = document.getElementById('gs-phone').value.trim();
+  var country = document.getElementById('gs-country').value;
   if (!name || !email) { alert('Please fill in your name and email.'); return; }
-  const params = new URLSearchParams({ name, email, phone, country });
-  window.location.href = 'survey.html?' + params.toString();
+  // WEB-06: Store in sessionStorage instead of URL params to prevent PII in browser history/logs
+  try {
+    sessionStorage.setItem('wermom_lead', JSON.stringify({ name: name, email: email, phone: phone, country: country }));
+  } catch(e) { /* fallback: proceed without pre-fill */ }
+  window.location.href = 'survey.html';
 }
 
 // ==================== SMOOTH SCROLL FOR ANCHOR LINKS ====================
