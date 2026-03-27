@@ -1,75 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 680" width="375" height="680">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 520" width="280" height="520">
   <defs>
-    <linearGradient id="pinkGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#E91E8C"/>
-      <stop offset="100%" stop-color="#FF6B9D"/>
-    </linearGradient>
-    <filter id="shadow1" x="-5%" y="-5%" width="110%" height="115%">
-      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#000" flood-opacity="0.06"/>
-    </filter>
+    <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E91E8C"/><stop offset="100%" stop-color="#FF6B9D"/></linearGradient>
+    <clipPath id="sc3"><rect x="12" y="12" width="256" height="496" rx="28"/></clipPath>
   </defs>
+  <rect width="280" height="520" rx="36" fill="#1a1a2e" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <g clip-path="url(#sc3)">
+    <rect x="12" y="12" width="256" height="496" fill="#F8F6F9"/>
+    <rect x="12" y="12" width="256" height="36" fill="rgba(248,246,249,0.95)"/>
+    <text x="140" y="32" font-family="-apple-system,Helvetica" font-size="11" font-weight="600" fill="#1F2937" text-anchor="middle">9:41</text>
+    <rect x="100" y="12" width="80" height="24" rx="12" fill="#1a1a2e"/>
 
-  <!-- Background -->
-  <rect width="375" height="680" fill="#F8F6F9"/>
+    <!-- Tab Bar -->
+    <rect x="12" y="48" width="256" height="40" fill="#F8F6F9"/>
+    <line x1="12" y1="88" x2="268" y2="88" stroke="#F0ECEF" stroke-width="0.5"/>
+    <text x="80" y="72" font-family="-apple-system,Helvetica" font-size="13" font-weight="600" fill="#E91E8C" text-anchor="middle">Baby</text>
+    <line x1="52" y1="84" x2="108" y2="84" stroke="#E91E8C" stroke-width="2"/>
+    <text x="200" y="72" font-family="-apple-system,Helvetica" font-size="13" font-weight="600" fill="#999" text-anchor="middle">Mom</text>
 
-  <!-- Tab Bar -->
-  <rect x="0" y="0" width="375" height="56" fill="#F8F6F9"/>
-  <line x1="0" y1="56" x2="375" y2="56" stroke="#F0ECEF" stroke-width="1"/>
-  <text x="94" y="36" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" font-weight="600" fill="#E91E8C" text-anchor="middle">Baby</text>
-  <line x1="50" y1="50" x2="138" y2="50" stroke="#E91E8C" stroke-width="2"/>
-  <text x="281" y="36" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" font-weight="600" fill="#999" text-anchor="middle">Mom</text>
+    <!-- Measurements -->
+    <text x="24" y="110" font-family="-apple-system,Helvetica" font-size="11" font-weight="700" fill="#1A1A1A">Measurements</text>
+    <rect x="20" y="118" width="118" height="44" rx="10" fill="white" stroke="#F0ECEF" stroke-width="0.5"/>
+    <text x="28" y="132" font-family="-apple-system,Helvetica" font-size="9" font-weight="600" fill="#999">Weight (kg)</text>
+    <text x="28" y="152" font-family="-apple-system,Helvetica" font-size="13" fill="#1A1A1A">7.8</text>
+    <rect x="142" y="118" width="118" height="44" rx="10" fill="white" stroke="#F0ECEF" stroke-width="0.5"/>
+    <text x="150" y="132" font-family="-apple-system,Helvetica" font-size="9" font-weight="600" fill="#999">Height (cm)</text>
+    <text x="150" y="152" font-family="-apple-system,Helvetica" font-size="13" fill="#1A1A1A">68.5</text>
 
-  <!-- Measurements Section -->
-  <text x="24" y="88" font-family="-apple-system, SF Pro Text, Helvetica" font-size="14" font-weight="700" fill="#1A1A1A">Measurements</text>
-  <rect x="16" y="98" width="167" height="60" rx="12" fill="white" stroke="#F0ECEF" stroke-width="1"/>
-  <text x="28" y="114" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="600" fill="#999">Weight (kg)</text>
-  <text x="28" y="142" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" fill="#1A1A1A">7.8</text>
+    <!-- Meals -->
+    <text x="24" y="184" font-family="-apple-system,Helvetica" font-size="11" font-weight="700" fill="#1A1A1A">Meals Today</text>
+    <rect x="20" y="192" width="240" height="34" rx="10" fill="white" stroke="#F0ECEF" stroke-width="0.5"/>
+    <text x="30" y="214" font-family="-apple-system,Helvetica" font-size="12" fill="#1A1A1A">Oatmeal with banana</text>
+    <rect x="20" y="232" width="240" height="34" rx="10" fill="white" stroke="#F0ECEF" stroke-width="0.5"/>
+    <text x="30" y="254" font-family="-apple-system,Helvetica" font-size="12" fill="#1A1A1A">Rice porridge, chicken, carrot</text>
+    <rect x="20" y="272" width="240" height="34" rx="10" fill="white" stroke="#F0ECEF" stroke-width="0.5"/>
+    <text x="30" y="294" font-family="-apple-system,Helvetica" font-size="12" fill="#CCC">Snack</text>
+    <rect x="20" y="312" width="240" height="34" rx="10" fill="white" stroke="#F0ECEF" stroke-width="0.5"/>
+    <text x="30" y="334" font-family="-apple-system,Helvetica" font-size="12" fill="#CCC">Dinner</text>
 
-  <rect x="192" y="98" width="167" height="60" rx="12" fill="white" stroke="#F0ECEF" stroke-width="1"/>
-  <text x="204" y="114" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="600" fill="#999">Height (cm)</text>
-  <text x="204" y="142" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" fill="#1A1A1A">68.5</text>
+    <!-- Milk -->
+    <text x="24" y="368" font-family="-apple-system,Helvetica" font-size="11" font-weight="700" fill="#1A1A1A">Milk</text>
+    <rect x="20" y="376" width="118" height="34" rx="10" fill="white" stroke="#F0ECEF" stroke-width="0.5"/>
+    <text x="30" y="398" font-family="-apple-system,Helvetica" font-size="12" fill="#1A1A1A">Aptamil</text>
+    <rect x="142" y="376" width="118" height="34" rx="10" fill="white" stroke="#F0ECEF" stroke-width="0.5"/>
+    <text x="152" y="398" font-family="-apple-system,Helvetica" font-size="12" fill="#1A1A1A">Formula</text>
 
-  <!-- Meals Section -->
-  <text x="24" y="186" font-family="-apple-system, SF Pro Text, Helvetica" font-size="14" font-weight="700" fill="#1A1A1A">Meals Today</text>
+    <!-- Feelings -->
+    <text x="24" y="434" font-family="-apple-system,Helvetica" font-size="11" font-weight="700" fill="#1A1A1A">Feelings</text>
+    <rect x="20" y="442" width="50" height="26" rx="8" fill="#E91E8C"/>
+    <text x="45" y="459" font-family="-apple-system,Helvetica" font-size="10" font-weight="600" fill="white" text-anchor="middle">Happy</text>
+    <rect x="74" y="442" width="46" height="26" rx="8" fill="#F5F3F6" stroke="#E8E4EA" stroke-width="0.5"/>
+    <text x="97" y="459" font-family="-apple-system,Helvetica" font-size="10" font-weight="600" fill="#666" text-anchor="middle">Calm</text>
+    <rect x="124" y="442" width="44" height="26" rx="8" fill="#E91E8C"/>
+    <text x="146" y="459" font-family="-apple-system,Helvetica" font-size="10" font-weight="600" fill="white" text-anchor="middle">Alert</text>
+    <rect x="172" y="442" width="46" height="26" rx="8" fill="#F5F3F6" stroke="#E8E4EA" stroke-width="0.5"/>
+    <text x="195" y="459" font-family="-apple-system,Helvetica" font-size="10" font-weight="600" fill="#666" text-anchor="middle">Fussy</text>
 
-  <rect x="16" y="196" width="343" height="44" rx="12" fill="white" stroke="#F0ECEF" stroke-width="1"/>
-  <text x="32" y="224" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" fill="#1A1A1A">Oatmeal with banana</text>
-
-  <rect x="16" y="248" width="343" height="44" rx="12" fill="white" stroke="#F0ECEF" stroke-width="1"/>
-  <text x="32" y="276" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" fill="#1A1A1A">Rice porridge, chicken, carrot</text>
-
-  <rect x="16" y="300" width="343" height="44" rx="12" fill="white" stroke="#F0ECEF" stroke-width="1"/>
-  <text x="32" y="328" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" fill="#CCC">Snack</text>
-
-  <rect x="16" y="352" width="343" height="44" rx="12" fill="white" stroke="#F0ECEF" stroke-width="1"/>
-  <text x="32" y="380" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" fill="#CCC">Dinner</text>
-
-  <!-- Milk Section -->
-  <text x="24" y="422" font-family="-apple-system, SF Pro Text, Helvetica" font-size="14" font-weight="700" fill="#1A1A1A">Milk</text>
-  <rect x="16" y="432" width="167" height="44" rx="12" fill="white" stroke="#F0ECEF" stroke-width="1"/>
-  <text x="32" y="460" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" fill="#1A1A1A">Aptamil</text>
-  <rect x="192" y="432" width="167" height="44" rx="12" fill="white" stroke="#F0ECEF" stroke-width="1"/>
-  <text x="208" y="460" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" fill="#1A1A1A">Formula</text>
-
-  <rect x="16" y="484" width="167" height="44" rx="12" fill="white" stroke="#F0ECEF" stroke-width="1"/>
-  <text x="32" y="512" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" fill="#1A1A1A">180 ml</text>
-  <rect x="192" y="484" width="167" height="44" rx="12" fill="white" stroke="#F0ECEF" stroke-width="1"/>
-  <text x="208" y="512" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" fill="#1A1A1A">4x/day</text>
-
-  <!-- Feelings Section -->
-  <text x="24" y="556" font-family="-apple-system, SF Pro Text, Helvetica" font-size="14" font-weight="700" fill="#1A1A1A">Feelings &amp; Mood</text>
-  <rect x="16" y="566" width="66" height="34" rx="8" fill="#E91E8C"/>
-  <text x="49" y="588" font-family="-apple-system, SF Pro Text, Helvetica" font-size="13" font-weight="600" fill="white" text-anchor="middle">Happy</text>
-  <rect x="90" y="566" width="60" height="34" rx="8" fill="#F5F3F6" stroke="#E8E4EA" stroke-width="1"/>
-  <text x="120" y="588" font-family="-apple-system, SF Pro Text, Helvetica" font-size="13" font-weight="600" fill="#666" text-anchor="middle">Calm</text>
-  <rect x="158" y="566" width="58" height="34" rx="8" fill="#E91E8C"/>
-  <text x="187" y="588" font-family="-apple-system, SF Pro Text, Helvetica" font-size="13" font-weight="600" fill="white" text-anchor="middle">Alert</text>
-  <rect x="224" y="566" width="62" height="34" rx="8" fill="#F5F3F6" stroke="#E8E4EA" stroke-width="1"/>
-  <text x="255" y="588" font-family="-apple-system, SF Pro Text, Helvetica" font-size="13" font-weight="600" fill="#666" text-anchor="middle">Fussy</text>
-  <rect x="294" y="566" width="65" height="34" rx="8" fill="#F5F3F6" stroke="#E8E4EA" stroke-width="1"/>
-  <text x="326" y="588" font-family="-apple-system, SF Pro Text, Helvetica" font-size="13" font-weight="600" fill="#666" text-anchor="middle">Sleepy</text>
-
-  <!-- Submit Button -->
-  <rect x="16" y="624" width="343" height="48" rx="16" fill="url(#pinkGrad)"/>
-  <text x="187" y="654" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" font-weight="700" fill="white" text-anchor="middle">Submit Baby Log</text>
+    <!-- Submit -->
+    <rect x="20" y="480" width="240" height="36" rx="12" fill="url(#pg)"/>
+    <text x="140" y="503" font-family="-apple-system,Helvetica" font-size="13" font-weight="700" fill="white" text-anchor="middle">Submit Baby Log</text>
+  </g>
+  <rect x="105" y="500" width="70" height="4" rx="2" fill="rgba(255,255,255,0.15)"/>
 </svg>
