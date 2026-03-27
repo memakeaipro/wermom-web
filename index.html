@@ -5165,9 +5165,9 @@ footer::before {
   </a>
   <ul class="nav-links">
     <li><a href="#who">Who It's For</a></li>
-    <li><a href="#features">How It Works</a></li>
+    <li><a href="#features">Smart Tools</a></li>
     <li><a href="#experts">Backed by Experts</a></li>
-    <li><a href=".chatbot-section" class="nav-talk-expert" onclick="event.preventDefault(); document.querySelector('.chatbot-section').scrollIntoView({behavior:'smooth'});">Talk to Expert</a></li>
+    <li><a href="#chat" class="nav-talk-expert" onclick="event.preventDefault(); document.getElementById('chat').scrollIntoView({behavior:'smooth'});">Talk to Expert</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
@@ -5188,9 +5188,8 @@ footer::before {
     </div>
     <ul class="mobile-menu-links">
       <li><a href="#who" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-pregnant"/></svg>Who It's For</a></li>
-      <li><a href="#how" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-chart"/></svg>How It Works</a></li>
-      <li><a href="#features" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-zap"/></svg>Daily Log</a></li>
-      <li class="mm-highlight"><a href=".chatbot-section" onclick="closeMobileMenu(); setTimeout(()=>document.querySelector('.chatbot-section').scrollIntoView({behavior:'smooth'}),100)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>Talk to AI Expert</a></li>
+      <li><a href="#features" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-zap"/></svg>Smart Tools</a></li>
+      <li class="mm-highlight"><a href="#chat" onclick="closeMobileMenu(); setTimeout(()=>document.getElementById('chat').scrollIntoView({behavior:'smooth'}),100)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>Talk to AI Expert</a></li>
       <li><a href="#experts" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-doctor"/></svg>Our Experts</a></li>
       <li><a href="#reviews" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-heart-pulse"/></svg>Reviews</a></li>
       <li><a href="#faq" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>FAQ</a></li>
@@ -5523,7 +5522,7 @@ footer::before {
 
 
 <!-- ==================== SECTION 6: AI CHATBOT ==================== -->
-<section class="chatbot-section">
+<section class="chatbot-section" id="chat">
   <div class="container">
     <div class="chatbot-hero-grid reveal">
       <div class="chatbot-hero-text">
@@ -5631,7 +5630,7 @@ footer::before {
 </section>
 
 <!-- ==================== SECTION 5: APP FEATURES ==================== -->
-<section class="reports-section">
+<section class="reports-section" id="features">
   <div class="container">
     <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto;">
       <div class="section-label" style="justify-content:center;">04 &mdash; Smart Tools</div>
@@ -7948,10 +7947,10 @@ footer::before {
       </div>
       <div class="footer-col">
         <h4>Product</h4>
-        <a href="#features">Daily Log</a>
-        <a href="#">AI Reports</a>
-        <a href="#">Chatbot</a>
-        <a href="#">Shop</a>
+        <a href="#features">Smart Tools</a>
+        <a href="#chat">AI Expert Chat</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#experts">Our Experts</a>
         <a href="#pricing">Get Started</a>
       </div>
       <div class="footer-col">
