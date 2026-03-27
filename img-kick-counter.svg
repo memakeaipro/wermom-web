@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 680" width="375" height="680">
+  <defs>
+    <linearGradient id="pinkGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E91E8C"/>
+      <stop offset="100%" stop-color="#F34B9B"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="shadow1" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#E91E8C" flood-opacity="0.15"/>
+    </filter>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="375" height="680" fill="#FDF2F8" rx="0"/>
+
+  <!-- Header -->
+  <text x="24" y="52" font-family="-apple-system, SF Pro Display, Helvetica" font-size="32" font-weight="700" fill="#1F2937">Kick Counter</text>
+  <text x="24" y="74" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" font-weight="500" fill="#6B7280">Track your baby's movements</text>
+
+  <!-- Counter Card -->
+  <rect x="16" y="96" width="343" height="220" rx="16" fill="white" filter="url(#shadow1)"/>
+  <text x="187" y="195" font-family="-apple-system, SF Pro Display, Helvetica" font-size="92" font-weight="800" fill="#E91E8C" text-anchor="middle">7</text>
+  <text x="187" y="222" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" font-weight="600" fill="#6B7280" text-anchor="middle">kicks</text>
+  <text x="187" y="266" font-family="-apple-system, SF Pro Display, Helvetica" font-size="48" font-weight="700" fill="#E91E8C" text-anchor="middle">03:24</text>
+  <text x="187" y="290" font-family="-apple-system, SF Pro Text, Helvetica" font-size="14" font-weight="600" fill="#6B7280" text-anchor="middle">elapsed time</text>
+
+  <!-- Active Kick Button (Green) -->
+  <rect x="16" y="336" width="343" height="180" rx="20" fill="url(#greenGrad)"/>
+  <text x="187" y="420" font-family="-apple-system, SF Pro Display, Helvetica" font-size="64" font-weight="800" fill="white" text-anchor="middle">7</text>
+  <text x="187" y="460" font-family="-apple-system, SF Pro Display, Helvetica" font-size="18" font-weight="700" fill="white" text-anchor="middle" letter-spacing="1">TAP FOR EACH KICK</text>
+
+  <!-- Stop Button -->
+  <rect x="16" y="530" width="343" height="48" rx="12" fill="#EF4444"/>
+  <text x="187" y="560" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" font-weight="700" fill="white" text-anchor="middle">Stop Session</text>
+
+  <!-- Info Card -->
+  <rect x="16" y="594" width="343" height="76" rx="16" fill="#FFF5F9" filter="url(#shadow2)"/>
+  <rect x="16" y="594" width="4" height="76" rx="2" fill="#E91E8C"/>
+  <circle cx="42" cy="618" r="12" fill="none" stroke="#E91E8C" stroke-width="1.5"/>
+  <text x="42" y="622" font-family="-apple-system" font-size="12" fill="#E91E8C" text-anchor="middle">i</text>
+  <text x="60" y="618" font-family="-apple-system, SF Pro Text, Helvetica" font-size="14" font-weight="700" fill="#1F2937">How to Count Kicks</text>
+  <text x="28" y="644" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="500" fill="#1F2937">Lie on your side after having a meal or snack</text>
+  <text x="28" y="660" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="500" fill="#1F2937">10+ movements in 1-2 hours is a healthy sign</text>
+</svg>
