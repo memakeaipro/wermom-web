@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- WEB-07: Security headers via meta tags -->
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <title>Wermom - Free Expert Report</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Wermom - Health Survey</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -62,11 +58,13 @@
         }
 
         .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--rose);
+            display: flex;
+            align-items: center;
             text-decoration: none;
+        }
+        .nav-logo img {
+            height: 40px;
+            width: auto;
         }
 
         .nav-back {
@@ -167,6 +165,24 @@
 
         .step-line.current {
             background: linear-gradient(90deg, #f2a68e, var(--light-gray));
+        }
+
+        .step-indicator.special-step {
+            background: linear-gradient(135deg, #FFF1E8 0%, #FFE4D6 100%);
+            border: 2px solid rgba(232, 132, 106, 0.25);
+            color: #e8846a;
+        }
+
+        .step-indicator.special-step.active {
+            background: linear-gradient(135deg, #e8846a 0%, #f2a68e 100%);
+            color: var(--white);
+            border-color: transparent;
+        }
+
+        .step-indicator.special-step.completed {
+            background: linear-gradient(135deg, #f2a68e 0%, #e8846a 100%);
+            color: var(--white);
+            border-color: transparent;
         }
 
         /* Progress Bar */
@@ -762,8 +778,8 @@
                 padding: 1rem 1.5rem;
             }
 
-            .nav-logo {
-                font-size: 1.25rem;
+            .nav-logo img {
+                height: 32px;
             }
 
             .layout-wrapper {
@@ -835,28 +851,30 @@
 
         /* ==================== ADDED: SOCIAL PROOF ==================== */
         .reports-sent-banner {
-            background: linear-gradient(135deg, var(--midnight) 0%, var(--charcoal) 100%);
-            color: var(--white);
+            background: linear-gradient(135deg, #FFE4D6 0%, #FFF1E8 100%);
+            color: var(--midnight);
             padding: 16px 20px;
             border-radius: 12px;
             text-align: center;
+            border: 1px solid rgba(232,132,106,0.15);
         }
         .reports-sent-number {
             font-family: 'DM Sans', sans-serif;
             font-size: 1.6rem;
             font-weight: 700;
-            color: var(--peach);
+            color: var(--rose-deep);
             display: block;
             line-height: 1.2;
         }
         .reports-sent-text {
             font-size: 0.8rem;
-            color: rgba(255,255,255,0.6);
+            color: var(--charcoal);
             margin-top: 4px;
+            font-weight: 500;
         }
         .reports-sent-sub {
             font-size: 0.7rem;
-            color: rgba(255,255,255,0.35);
+            color: var(--slate);
             margin-top: 6px;
             font-style: italic;
         }
@@ -1119,7 +1137,7 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <a href="#" class="nav-logo" onclick="event.preventDefault(); showExitModal();" style="display:inline-flex;align-items:center;gap:8px;"><img src="logo.svg" alt="Wermom" height="32" style="display:block;"></a>
+        <a href="#" class="nav-logo" onclick="event.preventDefault(); showExitModal();"><img src="Image/wermom-logo-cropped.svg" alt="Wermom"></a>
     </nav>
 
     <!-- Main Layout Container -->
@@ -1162,9 +1180,13 @@
                 <div class="step-line" data-after="6"></div>
                 <div class="step-indicator" data-step="7">7</div>
                 <div class="step-line" data-after="7"></div>
-                <div class="step-indicator" data-step="8">🔐</div>
+                <div class="step-indicator special-step" data-step="8">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
                 <div class="step-line" data-after="8"></div>
-                <div class="step-indicator" data-step="9">💳</div>
+                <div class="step-indicator special-step" data-step="9">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                </div>
             </div>
 
             <!-- Form -->
@@ -1992,7 +2014,7 @@
                     <div class="form-group">
                         <div class="checkbox-group">
                             <input type="checkbox" id="termsCheckbox" name="termsCheckbox" required>
-                            <label for="termsCheckbox" class="checkbox-label">I agree to Wermom's <a href="privacy-policy.html" target="_blank" style="color:var(--rose);text-decoration:underline;">Privacy Policy</a>, <a href="terms-of-service.html" target="_blank" style="color:var(--rose);text-decoration:underline;">Terms of Service</a> & <a href="cancellation-policy.html" target="_blank" style="color:var(--rose);text-decoration:underline;">Cancellation Policy</a>, and consent to receive my free health assessment report via email.</label>
+                            <label for="termsCheckbox" class="checkbox-label">I agree to Wermom's terms & privacy policy and consent to receive my free health assessment report via email.</label>
                         </div>
                         <div class="error-message">Please agree to terms to continue</div>
                     </div>
@@ -2444,25 +2466,17 @@
             showStep(1);
         });
 
-        // WEB-06: Read lead data from sessionStorage instead of URL params
         function readURLParams() {
-            try {
-                var lead = JSON.parse(sessionStorage.getItem('wermom_lead') || '{}');
-                if (lead.name) document.getElementById('fullName').value = lead.name;
-                if (lead.email) document.getElementById('email').value = lead.email;
-                if (lead.phone) document.getElementById('phone').value = lead.phone;
-                if (lead.country) document.getElementById('country').value = lead.country;
-                // Clear after reading so it doesn't persist
-                sessionStorage.removeItem('wermom_lead');
-            } catch(e) { /* no pre-fill data */ }
-            // Fallback: still support URL params for backward compatibility
-            var params = new URLSearchParams(window.location.search);
-            if (params.get('name') && !document.getElementById('fullName').value) {
-                document.getElementById('fullName').value = params.get('name') || '';
-                document.getElementById('email').value = params.get('email') || '';
-                document.getElementById('phone').value = params.get('phone') || '';
-                document.getElementById('country').value = params.get('country') || '';
-            }
+            const params = new URLSearchParams(window.location.search);
+            const fullName = params.get('name');
+            const email = params.get('email');
+            const phone = params.get('phone');
+            const country = params.get('country');
+
+            if (fullName) document.getElementById('fullName').value = fullName;
+            if (email) document.getElementById('email').value = email;
+            if (phone) document.getElementById('phone').value = phone;
+            if (country) document.getElementById('country').value = country;
         }
 
         function setupChipListeners() {
@@ -2648,26 +2662,22 @@
                 { title: "Measurements & Growth", fields: ['babyCurrentWeight7', 'babyCurrentHeight7', 'weightPercentile', 'growthConcerns'] }
             ];
 
-            // WEB-02: Build summary using DOM methods instead of innerHTML to prevent XSS
-            summaryContent.textContent = ''; // Clear safely
+            let html = '';
             categories.forEach(cat => {
                 cat.fields.forEach(field => {
                     if (formData[field]) {
                         const label = field.charAt(0).toUpperCase() + field.slice(1);
-                        const item = document.createElement('div');
-                        item.className = 'summary-item';
-                        const labelSpan = document.createElement('span');
-                        labelSpan.className = 'summary-label';
-                        labelSpan.textContent = label;
-                        const valueSpan = document.createElement('span');
-                        valueSpan.className = 'summary-value';
-                        valueSpan.textContent = String(formData[field]);
-                        item.appendChild(labelSpan);
-                        item.appendChild(valueSpan);
-                        summaryContent.appendChild(item);
+                        html += `
+                            <div class="summary-item">
+                                <span class="summary-label">${label}</span>
+                                <span class="summary-value">${formData[field]}</span>
+                            </div>
+                        `;
                     }
                 });
             });
+
+            summaryContent.innerHTML = html;
         }
 
         // ==================== BACKEND API CONFIG ====================
@@ -2765,7 +2775,7 @@
 
         async function submitSurvey() {
             collectFormData();
-            // WEB-03: Never log sensitive data to console
+            console.log('Survey Data:', formData);
 
             // Show loading state on submit button
             const submitBtn = document.querySelector('.btn-next');
@@ -2778,13 +2788,18 @@
             try {
                 // Send data to backend FIRST, wait for response
                 const result = await sendToBackend(formData);
-                // WEB-03: Don't log response with auth tokens
+                console.log('Survey submitted to backend:', result);
 
-                // WEB-04: Store auth tokens in memory only (not sessionStorage/window global)
-                // Tokens are passed directly to deep link — no persistent web storage
-                var _authTokens = null;
+                // ═══ Store auth tokens for app deep-link ═══
+                // Backend now returns auth tokens so the app can auto-login
                 if (result.data && result.data.auth) {
-                    _authTokens = result.data.auth;
+                    window.__wermomAuth = result.data.auth;
+                    // Store in sessionStorage for the "Open App" button
+                    try {
+                        sessionStorage.setItem('wermom_auth', JSON.stringify(result.data.auth));
+                        sessionStorage.setItem('wermom_userId', result.data.userId);
+                        sessionStorage.setItem('wermom_babyId', result.data.babyId);
+                    } catch(e) { /* storage not available */ }
                 }
 
                 // Only show success screen AFTER backend confirms
@@ -2865,13 +2880,13 @@
                 password: data.accountPassword || '',
 
                 // Payment info (will be processed by backend/Stripe)
-                // WEB-01: Payment data — NEVER send raw card numbers
-                // In production, replace with Stripe.js tokenization (stripe.createToken)
-                // For now, we only send a placeholder — card fields are for UX demo only
                 payment: {
+                    cardName: data.cardName || '',
                     cardLast4: (data.cardNumber || '').replace(/\s/g, '').slice(-4),
-                    cardToken: 'tok_pending_stripe_integration',
-                    // Card number, CVC, expiry are NOT sent to backend
+                    cardExpiry: data.cardExpiry || '',
+                    // Note: Full card number should be tokenized via Stripe.js in production
+                    // For now we send it to backend which would use Stripe server-side
+                    cardToken: 'tok_demo_' + Date.now() // Placeholder — replace with Stripe token
                 },
                 trialStart: new Date().toISOString(),
 
@@ -2896,8 +2911,8 @@
 
         // ==================== OPEN APP (Deep Link) ====================
         function openWermomApp() {
-            // WEB-04: Use memory-only auth (no window global, no sessionStorage)
-            const auth = _authTokens || {};
+            // Try deep link first (for users with app installed)
+            const auth = window.__wermomAuth || {};
             const deepLink = `wermom://auth?token=${encodeURIComponent(auth.accessToken || '')}&refresh=${encodeURIComponent(auth.refreshToken || '')}`;
 
             // Try to open the app via deep link
