@@ -5522,177 +5522,111 @@ footer::before {
   </div>
 </section>
 
-<!-- ==================== SECTION 4: DAILY LOG PREVIEW ==================== -->
-<section class="dailylog-section" id="features">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-label">03 &mdash; Daily Log</div>
-      <h2>Where the magic starts.</h2>
-      <p class="subtitle">Try it yourself — enter your baby's info below and get an instant health snapshot. This is just a taste of what Wermom can do.</p>
-    </div>
-    <div class="dailylog-grid">
-      <div class="log-demo reveal reveal-delay-1">
-        <div class="log-demo-header">
-          <div class="log-demo-title">Baby Daily Log</div>
-          <div class="log-demo-date">Mar 20, 2026</div>
-        </div>
-        <div class="log-field">
-          <label>Baby's Weight</label>
-          <input type="text" class="log-input" placeholder="e.g. 8.2 kg" id="weight-input">
-        </div>
-        <div class="log-field">
-          <label>Baby's Age</label>
-          <input type="text" class="log-input" placeholder="e.g. 8 months" id="age-input">
-        </div>
-        <div class="log-field">
-          <label>Meals Today</label>
-          <input type="text" class="log-input" placeholder="e.g. Rice porridge with pumpkin, steamed broccoli" id="meal-input">
-        </div>
-        <div class="log-field">
-          <label>Milk</label>
-          <input type="text" class="log-input" placeholder="e.g. Aptamil Stage 2, 180ml x 3 times" id="milk-input">
-        </div>
-        <div class="log-field">
-          <label>Hours of Sleep</label>
-          <input type="text" class="log-input" placeholder="e.g. 11 hours" id="sleep-input">
-        </div>
-        <div class="log-field">
-          <label>How's Baby Today?</label>
-          <div class="mood-chips">
-            <div class="mood-chip" onclick="this.classList.toggle('active')">Great</div>
-            <div class="mood-chip" onclick="this.classList.toggle('active')">Normal</div>
-            <div class="mood-chip" onclick="this.classList.toggle('active')">Fussy</div>
-            <div class="mood-chip" onclick="this.classList.toggle('active')">Teething</div>
-            <div class="mood-chip" onclick="this.classList.toggle('active')">Runny Nose</div>
-            <div class="mood-chip" onclick="this.classList.toggle('active')">Poor Sleep</div>
-          </div>
-        </div>
-        <button class="log-submit" onclick="showAIOutput()">Get Your Health Score</button>
-        <div class="log-loading" id="log-loading">
-          <div class="log-loading-spinner"></div>
-          <p>Analyzing your baby's health data...</p>
-        </div>
-        <div class="ai-output" id="ai-output">
-          <div class="ai-output-header">
-            <div class="ai-sparkle">&#x2728;</div>
-            <span>Quick Health Snapshot</span>
-          </div>
-          <div class="ai-overall-score">
-            <div class="ai-overall-circle">
-              <div class="ai-overall-num" id="overall-score">--</div>
-              <div class="ai-overall-label">out of 100</div>
-            </div>
-          </div>
-          <div class="ai-score-bars">
-            <div class="ai-bar-item">
-              <div class="ai-bar-top">
-                <span class="ai-bar-name">Diet Quality</span>
-                <span class="ai-bar-val" id="diet-score">--</span>
-              </div>
-              <div class="ai-bar-track"><div class="ai-bar-fill" id="diet-bar" style="width:0%;background:var(--sage);"></div></div>
-              <div class="ai-bar-note" id="diet-note"></div>
-            </div>
-            <div class="ai-bar-item">
-              <div class="ai-bar-top">
-                <span class="ai-bar-name">Weight Status</span>
-                <span class="ai-bar-val" id="weight-score">--</span>
-              </div>
-              <div class="ai-bar-track"><div class="ai-bar-fill" id="weight-bar" style="width:0%;background:var(--peach);"></div></div>
-              <div class="ai-bar-note" id="weight-note"></div>
-            </div>
-            <div class="ai-bar-item">
-              <div class="ai-bar-top">
-                <span class="ai-bar-name">Sleep Quality</span>
-                <span class="ai-bar-val" id="sleep-score">--</span>
-              </div>
-              <div class="ai-bar-track"><div class="ai-bar-fill" id="sleep-bar" style="width:0%;background:var(--rose);"></div></div>
-              <div class="ai-bar-note" id="sleep-note"></div>
-            </div>
-          </div>
-          <div class="ai-insight" id="ai-insight-text"></div>
-          <div class="ai-cta-box">
-            <p><strong>This is just a quick snapshot.</strong> The full Wermom assessment is <span style="color:var(--rose);font-weight:600;">10× more detailed</span> — with personalized meal plans, growth curve analysis, development milestones, and daily guidance for both mom &amp; baby.</p>
-            <a href="#pricing" class="btn-primary">
-              <span>Get Your Free Detailed Assessment</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="dailylog-features reveal reveal-delay-2">
-        <div class="dl-feature">
-          <div class="dl-feature-icon"><svg width="18" height="18"><use href="#ico-zap"/></svg></div>
-          <div>
-            <h4>Expert Eyes on Every Entry</h4>
-            <p>Our team personally reviews your logs against pediatric databases and WHO standards — then sends you tailored feedback via app and email within 24 hours.</p>
-          </div>
-        </div>
-        <div class="dl-feature">
-          <div class="dl-feature-icon"><svg width="18" height="18"><use href="#ico-chart"/></svg></div>
-          <div>
-            <h4>Scores That Actually Mean Something</h4>
-            <p>Nutrition, sleep, and health — each scored on a clear 10-point scale. You'll always know where things stand and where to focus next.</p>
-          </div>
-        </div>
-        <div class="dl-feature">
-          <div class="dl-feature-icon"><svg width="18" height="18"><use href="#ico-bowl"/></svg></div>
-          <div>
-            <h4>Tomorrow's Menu, Already Planned</h4>
-            <p>We don't just analyze — we give you a complete meal plan for tomorrow, breakfast through dinner, with recipes built around what your baby actually needs.</p>
-          </div>
-        </div>
-        <div class="dl-feature">
-          <div class="dl-feature-icon"><svg width="18" height="18"><use href="#ico-siren"/></svg></div>
-          <div>
-            <h4>We'll Tell You Before It's Obvious</h4>
-            <p>Our pattern detection catches what the eye misses: gradual weight changes, emerging sleep regressions, recurring symptoms — flagged early so you can act, not react.</p>
-          </div>
-        </div>
-      </div>
 
-    <!-- Mobile Accordion -->
-    <div class="dl-accordion">
-      <div class="dl-acc-item open" onclick="toggleDlAcc(this)">
-        <div class="dl-acc-header">
-          <div class="dl-acc-icon"><svg width="18" height="18"><use href="#ico-zap"/></svg></div>
-          <h4>Expert Eyes on Every Entry</h4>
-          <svg class="dl-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="dl-acc-body">
-          <p>Our team personally reviews your logs against pediatric databases and WHO standards — then sends you tailored feedback via app and email within 24 hours.</p>
-        </div>
+<!-- ==================== SECTION 6: AI CHATBOT ==================== -->
+<section class="chatbot-section">
+  <div class="container">
+    <div class="chatbot-hero-grid reveal">
+      <div class="chatbot-hero-text">
+        <div class="section-label">05 &mdash; Your Personal Expert</div>
+        <h2>An expert who already knows<br>everything about your baby.</h2>
+        <p class="subtitle">Wermom AI remembers every meal, every nap, every symptom you've ever logged. When you ask a question, the answer isn't generic — it's built on your child's complete history, from day one.</p>
+        <p class="chatbot-availability">Available 24/7, anytime you need — trained and backed by 500+ pediatric experts worldwide.</p>
       </div>
-      <div class="dl-acc-item" onclick="toggleDlAcc(this)">
-        <div class="dl-acc-header">
-          <div class="dl-acc-icon"><svg width="18" height="18"><use href="#ico-chart"/></svg></div>
-          <h4>Scores That Actually Mean Something</h4>
-          <svg class="dl-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="chatbot-hero-video">
+        <div class="chatbot-video-phone">
+          <video id="expertVideo" class="chatbot-video" playsinline preload="metadata" loop>
+            <source src="vid/vid2.mp4" type="video/mp4">
+          </video>
+          <button class="chatbot-video-unmute" id="expertVideoUnmute" aria-label="Unmute video">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          </button>
         </div>
-        <div class="dl-acc-body">
-          <p>Nutrition, sleep, and health — each scored on a clear 10-point scale. You'll always know where things stand and where to focus next.</p>
-        </div>
-      </div>
-      <div class="dl-acc-item" onclick="toggleDlAcc(this)">
-        <div class="dl-acc-header">
-          <div class="dl-acc-icon"><svg width="18" height="18"><use href="#ico-bowl"/></svg></div>
-          <h4>Tomorrow's Menu, Already Planned</h4>
-          <svg class="dl-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="dl-acc-body">
-          <p>We don't just analyze — we give you a complete meal plan for tomorrow, breakfast through dinner, with recipes built around what your baby actually needs.</p>
-        </div>
-      </div>
-      <div class="dl-acc-item" onclick="toggleDlAcc(this)">
-        <div class="dl-acc-header">
-          <div class="dl-acc-icon"><svg width="18" height="18"><use href="#ico-siren"/></svg></div>
-          <h4>We'll Tell You Before It's Obvious</h4>
-          <svg class="dl-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="dl-acc-body">
-          <p>Our pattern detection catches what the eye misses: gradual weight changes, emerging sleep regressions, recurring symptoms — flagged early so you can act, not react.</p>
+        <div style="text-align:center; margin-top:20px;">
+          <a href="#chat-presets-inside" class="btn-primary" onclick="event.preventDefault();var el=document.getElementById('chat-presets-inside');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});}">
+            <span>Try Wermom Expert Chat</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </div>
+    <div class="chatbot-grid">
+      <div class="chat-window reveal reveal-delay-1">
+        <div class="chat-topbar">
+          <div class="chat-avatar">W</div>
+          <div class="chat-topbar-info">
+            <div class="chat-name">Wermom AI</div>
+            <div class="chat-status">Online &bull; 247 data points from Emma's logs</div>
+          </div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+          <div class="chat-msg user" style="animation-delay:0.2s">My 8-month-old wakes up 4 times a night. Is this normal?</div>
+          <div class="chat-msg ai" style="animation-delay:0.6s">
+            I checked Emma's sleep logs from the past 14 days. She's averaging 9.5 hours total — that's below the WHO's 12-14 hour recommendation for 8 months.<br><br>
+            Looking at her history: the 4x waking pattern started 5 days ago, right when you logged her teething symptoms and the drooling increase. This correlation is very common during tooth eruption — her irritability score also jumped from 2 to 7 in that period.<br><br>
+            <strong>Based on Emma's data:</strong> Try a cooled teething ring 15 min before bed, keep her room at 68-72&deg;F (you logged 74&deg;F last week — slightly warm), and stick with the 7:30pm bedtime that worked well for her in weeks 2-4.
+            <span class="citation">Cross-referenced with Emma's 247 data points &bull; 3 peer-reviewed studies</span>
+          </div>
+        </div>
+        <div class="chat-preset-area" id="chat-presets-inside">
+          <div class="chat-preset-label">Try asking</div>
+          <button class="chat-preset-btn" onclick="askPreset(this)" data-answer="Based on Emma's data, she's at the <strong>62nd percentile</strong> for weight — perfectly healthy and consistent over the last 4 months. She gained 420g this month, tracking along the WHO median.<br><br>Weight-for-length ratio is <strong>0.8 SD above median</strong> — ideal. Caloric intake of ~750 kcal/day matches her activity level.<br><br><strong>Recommendation:</strong> Continue current patterns. Next growth spurt expected month 9–10.">Is my baby's weight on track?</button>
+          <button class="chat-preset-btn" onclick="askPreset(this)" data-answer="For Emma at 8 months, top 3 brain foods to add:<br><br>1. <strong>Salmon/sardines</strong> — DHA omega-3, #1 for neural connectivity.<br>2. <strong>Egg yolks</strong> — rich in choline for memory.<br>3. <strong>Avocado + blueberries</strong> — healthy fats + antioxidants.<br><br><em>Source: AAP 2024, cross-referenced with Emma's 247 data points.</em>">Best foods for brain development</button>
+          <button class="chat-preset-btn" onclick="askPreset(this)" data-answer="WHO recommends solids at <strong>6 months</strong>. Emma started at 6 months 4 days — right on schedule!<br><br>She's handling Stage 1 purees well. Tongue-thrust reflex diminished (noted March 3).<br><br><strong>Next steps:</strong> Introduce mashed textures within 2 weeks. Try soft broccoli florets or scrambled egg.">When to start solid foods</button>
+        </div>
+        <div class="chat-input-area">
+          <input type="text" class="chat-input-field" placeholder="Ask anything about your baby..." id="chat-input">
+          <button class="chat-send-btn" onclick="sendChat()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="chatbot-features reveal reveal-delay-2">
+        <div class="section-label">What You Can Ask</div>
+        <div class="cb-feature">
+          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-apple"/></svg></div>
+          <div>
+            <h4>Nutrition &amp; Diet</h4>
+            <p>"Is my baby eating enough iron?" "What foods help with constipation?" "Can she eat strawberries at 7 months?"</p>
+          </div>
+        </div>
+        <div class="cb-feature">
+          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-moon"/></svg></div>
+          <div>
+            <h4>Sleep &amp; Routines</h4>
+            <p>"How do I sleep train gently?" "Is 10 hours enough for a 1-year-old?" "Why is she fighting naps?"</p>
+          </div>
+        </div>
+        <div class="cb-feature">
+          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-stethoscope"/></svg></div>
+          <div>
+            <h4>Symptoms &amp; Health</h4>
+            <p>"She has a rash on her cheeks after eating." "Fever of 38.5, should I worry?" "Green stool for 2 days."</p>
+          </div>
+        </div>
+        <div class="cb-feature">
+          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-target"/></svg></div>
+          <div>
+            <h4>Development &amp; Milestones</h4>
+            <p>"Should my 10-month-old be crawling?" "Best toys for cognitive development?" "When do babies start talking?"</p>
+          </div>
+        </div>
+        <div class="cb-feature">
+          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-heart-pulse"/></svg></div>
+          <div>
+            <h4>Emergency &amp; Peace of Mind</h4>
+            <p>"Baby fell off the bed, what do I check?" "She swallowed a small toy piece." "Fever won't go down after Tylenol — what now?"</p>
+          </div>
+        </div>
+        <div class="cb-feature">
+          <div class="cb-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div>
+            <h4>Mom Community Chat</h4>
+            <p>"Any moms dealing with 4-month sleep regression?" "Best formula for gassy babies?" Join thousands of moms sharing real experiences 24/7.</p>
+          </div>
+        </div>
+        <p style="font-size:0.78rem; color:var(--warm-gray); margin-top:16px; font-style:italic;">Every answer is personalized to your child's data — not generic advice. Wermom helps you have richer conversations with your doctor, but always consult them for diagnosis and treatment.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -6123,100 +6057,6 @@ footer::before {
         <span>Try Wermom Free</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== SECTION 6: AI CHATBOT ==================== -->
-<section class="chatbot-section">
-  <div class="container">
-    <div class="chatbot-hero-grid reveal">
-      <div class="chatbot-hero-text">
-        <div class="section-label">05 &mdash; Your Personal Expert</div>
-        <h2>An expert who already knows<br>everything about your baby.</h2>
-        <p class="subtitle">Wermom AI remembers every meal, every nap, every symptom you've ever logged. When you ask a question, the answer isn't generic — it's built on your child's complete history, from day one.</p>
-        <p class="chatbot-availability">Available 24/7, anytime you need — trained and backed by 500+ pediatric experts worldwide.</p>
-      </div>
-      <div class="chatbot-hero-video">
-        <div class="chatbot-video-phone">
-          <video id="expertVideo" class="chatbot-video" playsinline preload="metadata" loop>
-            <source src="vid/vid2.mp4" type="video/mp4">
-          </video>
-          <button class="chatbot-video-unmute" id="expertVideoUnmute" aria-label="Unmute video">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-          </button>
-        </div>
-        <div style="text-align:center; margin-top:20px;">
-          <a href="#chat-presets-inside" class="btn-primary" onclick="event.preventDefault();var el=document.getElementById('chat-presets-inside');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});}">
-            <span>Try Wermom Expert Chat</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="chatbot-grid">
-      <div class="chat-window reveal reveal-delay-1">
-        <div class="chat-topbar">
-          <div class="chat-avatar">W</div>
-          <div class="chat-topbar-info">
-            <div class="chat-name">Wermom AI</div>
-            <div class="chat-status">Online &bull; 247 data points from Emma's logs</div>
-          </div>
-        </div>
-        <div class="chat-messages" id="chat-messages">
-          <div class="chat-msg user" style="animation-delay:0.2s">My 8-month-old wakes up 4 times a night. Is this normal?</div>
-          <div class="chat-msg ai" style="animation-delay:0.6s">
-            I checked Emma's sleep logs from the past 14 days. She's averaging 9.5 hours total — that's below the WHO's 12-14 hour recommendation for 8 months.<br><br>
-            Looking at her history: the 4x waking pattern started 5 days ago, right when you logged her teething symptoms and the drooling increase. This correlation is very common during tooth eruption — her irritability score also jumped from 2 to 7 in that period.<br><br>
-            <strong>Based on Emma's data:</strong> Try a cooled teething ring 15 min before bed, keep her room at 68-72&deg;F (you logged 74&deg;F last week — slightly warm), and stick with the 7:30pm bedtime that worked well for her in weeks 2-4.
-            <span class="citation">Cross-referenced with Emma's 247 data points &bull; 3 peer-reviewed studies</span>
-          </div>
-        </div>
-        <div class="chat-preset-area" id="chat-presets-inside">
-          <div class="chat-preset-label">Try asking</div>
-          <button class="chat-preset-btn" onclick="askPreset(this)" data-answer="Based on Emma's data, she's at the <strong>62nd percentile</strong> for weight — perfectly healthy and consistent over the last 4 months. She gained 420g this month, tracking along the WHO median.<br><br>Weight-for-length ratio is <strong>0.8 SD above median</strong> — ideal. Caloric intake of ~750 kcal/day matches her activity level.<br><br><strong>Recommendation:</strong> Continue current patterns. Next growth spurt expected month 9–10.">Is my baby's weight on track?</button>
-          <button class="chat-preset-btn" onclick="askPreset(this)" data-answer="For Emma at 8 months, top 3 brain foods to add:<br><br>1. <strong>Salmon/sardines</strong> — DHA omega-3, #1 for neural connectivity.<br>2. <strong>Egg yolks</strong> — rich in choline for memory.<br>3. <strong>Avocado + blueberries</strong> — healthy fats + antioxidants.<br><br><em>Source: AAP 2024, cross-referenced with Emma's 247 data points.</em>">Best foods for brain development</button>
-          <button class="chat-preset-btn" onclick="askPreset(this)" data-answer="WHO recommends solids at <strong>6 months</strong>. Emma started at 6 months 4 days — right on schedule!<br><br>She's handling Stage 1 purees well. Tongue-thrust reflex diminished (noted March 3).<br><br><strong>Next steps:</strong> Introduce mashed textures within 2 weeks. Try soft broccoli florets or scrambled egg.">When to start solid foods</button>
-        </div>
-        <div class="chat-input-area">
-          <input type="text" class="chat-input-field" placeholder="Ask anything about your baby..." id="chat-input">
-          <button class="chat-send-btn" onclick="sendChat()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-          </button>
-        </div>
-      </div>
-      <div class="chatbot-features reveal reveal-delay-2">
-        <div class="section-label">What You Can Ask</div>
-        <div class="cb-feature">
-          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-apple"/></svg></div>
-          <div>
-            <h4>Nutrition &amp; Diet</h4>
-            <p>"Is my baby eating enough iron?" "What foods help with constipation?" "Can she eat strawberries at 7 months?"</p>
-          </div>
-        </div>
-        <div class="cb-feature">
-          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-moon"/></svg></div>
-          <div>
-            <h4>Sleep &amp; Routines</h4>
-            <p>"How do I sleep train gently?" "Is 10 hours enough for a 1-year-old?" "Why is she fighting naps?"</p>
-          </div>
-        </div>
-        <div class="cb-feature">
-          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-stethoscope"/></svg></div>
-          <div>
-            <h4>Symptoms &amp; Health</h4>
-            <p>"She has a rash on her cheeks after eating." "Fever of 38.5, should I worry?" "Green stool for 2 days."</p>
-          </div>
-        </div>
-        <div class="cb-feature">
-          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-target"/></svg></div>
-          <div>
-            <h4>Development &amp; Milestones</h4>
-            <p>"Should my 10-month-old be crawling?" "Best toys for cognitive development?" "When do babies start talking?"</p>
-          </div>
-        </div>
-        <p style="font-size:0.78rem; color:var(--warm-gray); margin-top:16px; font-style:italic;">Every answer is personalized to your child's data — not generic advice. Wermom helps you have richer conversations with your doctor, but always consult them for diagnosis and treatment.</p>
-      </div>
     </div>
   </div>
 </section>
