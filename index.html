@@ -757,6 +757,29 @@ nav.scrolled {
   left: calc(50% + 22px);
 }
 
+/* How it works compact */
+.how-compact { text-align: center; max-width: 800px; margin: 56px auto 0; }
+.how-compact .section-label { margin-bottom: 24px; }
+.how-compact-steps { display: flex; align-items: flex-start; justify-content: center; gap: 0; }
+.how-compact-step { flex: 1; max-width: 240px; padding: 0 16px; }
+.how-compact-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--rose-deep); color: #fff;
+  font-weight: 700; font-size: 0.9rem;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 12px;
+}
+.how-compact-step h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; color: var(--charcoal); }
+.how-compact-step p { font-size: 0.8rem; color: var(--slate); line-height: 1.55; }
+.how-compact-divider {
+  width: 40px; height: 2px; background: var(--blush);
+  margin-top: 18px; flex-shrink: 0; border-radius: 1px;
+}
+@media (max-width: 600px) {
+  .how-compact-steps { flex-direction: column; align-items: center; gap: 20px; }
+  .how-compact-divider { width: 2px; height: 24px; }
+}
+
 /* Expert quote */
 .expert-quote {
   max-width: 900px;
@@ -5364,6 +5387,30 @@ footer::before {
       </a>
     </div>
 
+    <!-- How It Works (compact) -->
+    <div class="how-compact reveal" style="margin-top:56px;">
+      <div class="section-label" style="justify-content:center;">How It Works</div>
+      <div class="how-compact-steps">
+        <div class="how-compact-step">
+          <div class="how-compact-num">1</div>
+          <h4>Log Your Day</h4>
+          <p>Quick taps — meals, sleep, symptoms. Under 2 minutes.</p>
+        </div>
+        <div class="how-compact-divider"></div>
+        <div class="how-compact-step">
+          <div class="how-compact-num">2</div>
+          <h4>Experts Review</h4>
+          <p>Our team cross-references your data with 500+ pediatric studies within 24h.</p>
+        </div>
+        <div class="how-compact-divider"></div>
+        <div class="how-compact-step">
+          <div class="how-compact-num">3</div>
+          <h4>Get Reports &amp; Alerts</h4>
+          <p>Daily scores, actionable guidance, and early warnings when something shifts.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Expert Quote -->
     <div class="expert-quote reveal">
       <div class="expert-img"><svg width="28" height="28" style="color:var(--white);"><use href="#ico-doctor"/></svg></div>
@@ -5473,54 +5520,6 @@ footer::before {
   </div>
 </section>
 
-<!-- ==================== SECTION 3: HOW IT WORKS ==================== -->
-<section class="how-section" id="how">
-  <div class="container">
-    <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto;">
-      <div class="section-label" style="justify-content:center;">02 &mdash; How It Works</div>
-      <h2>Three simple steps.<br>Life-changing results.</h2>
-      <p class="subtitle" style="margin:0 auto;">Less than 3 minutes of your day. That's all we need to give your baby care backed by 500+ pediatric studies.</p>
-    </div>
-    <div class="steps-grid">
-      <div class="step-card reveal reveal-delay-1">
-        <div class="step-left">
-          <div class="step-num">1</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content" data-step="01">
-          <h3>Tell Us About Your Day</h3>
-          <p>Meals, sleep, symptoms, mood — just quick taps and a few notes. It takes under 2 minutes, and we take it from there.</p>
-        </div>
-      </div>
-      <div class="step-card reveal reveal-delay-2">
-        <div class="step-left">
-          <div class="step-num">2</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content" data-step="02">
-          <h3>Our Experts Review Everything</h3>
-          <p>Within 24 hours, our team cross-references your data with the latest pediatric research and sends you personalized feedback via app and email.</p>
-        </div>
-      </div>
-      <div class="step-card reveal reveal-delay-3">
-        <div class="step-left">
-          <div class="step-num">3</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content" data-step="03">
-          <h3>Get Your Reports & Alerts</h3>
-          <p>Daily, weekly, and monthly reports with clear, actionable guidance. Plus smart alerts the moment we notice something shifting.</p>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:48px;" class="reveal">
-      <a href="#pricing" class="btn-primary">
-        <span>Begin Your Free Assessment</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
 
 
 <!-- ==================== SECTION 6: AI CHATBOT ==================== -->
