@@ -1917,6 +1917,53 @@ nav.scrolled {
   line-height: 1.6;
 }
 
+/* Video in section 05 */
+.chatbot-video-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chatbot-video-phone {
+  position: relative;
+  width: 300px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.12), 0 4px 20px rgba(0,0,0,0.06);
+  background: #000;
+  aspect-ratio: 9/16;
+}
+.chatbot-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.chatbot-video-unmute {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  z-index: 2;
+}
+.chatbot-video-unmute:hover { background: rgba(0,0,0,0.75); transform: scale(1.08); }
+.chatbot-video-unmute.playing svg { display: none; }
+.chatbot-video-unmute.playing::after {
+  content: '';
+  width: 18px; height: 18px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='11 5 6 9 2 9 2 15 6 15 11 19 11 5'/%3E%3Cpath d='M19.07 4.93a10 10 0 0 1 0 14.14'/%3E%3Cpath d='M15.54 8.46a5 5 0 0 1 0 7.07'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
 /* ==================== SECTION 7: SHOP ==================== */
 .shop-section {
   padding: var(--section-pad) 0;
@@ -6115,38 +6162,15 @@ footer::before {
           </button>
         </div>
       </div>
-      <div class="chatbot-features reveal reveal-delay-2">
-        <div class="section-label">What You Can Ask</div>
-        <div class="cb-feature">
-          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-apple"/></svg></div>
-          <div>
-            <h4>Nutrition & Diet</h4>
-            <p>"Is my baby eating enough iron?" "What foods help with constipation?" "Can she eat strawberries at 7 months?"</p>
-          </div>
+      <div class="chatbot-video-wrap reveal reveal-delay-2">
+        <div class="chatbot-video-phone">
+          <video id="expertVideo" class="chatbot-video" playsinline preload="metadata" loop>
+            <source src="vid/vid1.mp4" type="video/mp4">
+          </video>
+          <button class="chatbot-video-unmute" id="expertVideoUnmute" aria-label="Unmute video">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          </button>
         </div>
-        <div class="cb-feature">
-          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-moon"/></svg></div>
-          <div>
-            <h4>Sleep & Routines</h4>
-            <p>"How do I sleep train gently?" "Is 10 hours enough for a 1-year-old?" "Why is she fighting naps?"</p>
-          </div>
-        </div>
-        <div class="cb-feature">
-          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-stethoscope"/></svg></div>
-          <div>
-            <h4>Symptoms & Health</h4>
-            <p>"She has a rash on her cheeks after eating." "Fever of 38.5, should I worry?" "Green stool for 2 days."</p>
-          </div>
-        </div>
-        <div class="cb-feature">
-          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-target"/></svg></div>
-          <div>
-            <h4>Development & Milestones</h4>
-            <p>"Should my 10-month-old be crawling?" "Best toys for cognitive development?" "When do babies start talking?"</p>
-          </div>
-        </div>
-
-        <p style="font-size:0.78rem; color:var(--warm-gray); margin-top:16px; font-style:italic;">Every answer is personalized to your child's data — not generic advice. Wermom helps you have richer conversations with your doctor, but always consult them for diagnosis and treatment.</p>
       </div>
     </div>
   </div>
@@ -8782,6 +8806,60 @@ document.getElementById('mobile-menu').addEventListener('click', function(e) {
   document.addEventListener('click', tryUnmute);
   document.addEventListener('touchstart', tryUnmute);
   document.addEventListener('scroll', tryUnmuteScroll, { passive: true });
+})();
+
+// ==================== EXPERT VIDEO (Section 05) — autoplay + unmute on scroll ====================
+(function() {
+  var ev = document.getElementById('expertVideo');
+  var btn = document.getElementById('expertVideoUnmute');
+  if (!ev || !btn) return;
+
+  var evStarted = false;
+  var evUnmuted = false;
+
+  // Auto-play muted when scrolled into view
+  var evObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        if (!evStarted) {
+          evStarted = true;
+          ev.muted = true;
+          ev.play().catch(function(){});
+        } else if (ev.paused) {
+          ev.play().catch(function(){});
+        }
+      } else {
+        if (!ev.paused) ev.pause();
+      }
+    });
+  }, { threshold: 0.3 });
+  evObs.observe(ev);
+
+  // Try to unmute once user has interacted with page
+  function evTryUnmute() {
+    if (!evUnmuted && evStarted) {
+      ev.muted = false;
+      evUnmuted = true;
+      btn.classList.add('playing');
+      document.removeEventListener('click', evTryUnmute);
+      document.removeEventListener('touchstart', evTryUnmute);
+    }
+  }
+  document.addEventListener('click', evTryUnmute);
+  document.addEventListener('touchstart', evTryUnmute);
+
+  // Toggle mute button
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (ev.muted) {
+      ev.muted = false;
+      evUnmuted = true;
+      btn.classList.add('playing');
+    } else {
+      ev.muted = true;
+      btn.classList.remove('playing');
+    }
+  });
 })();
 
 </script>
