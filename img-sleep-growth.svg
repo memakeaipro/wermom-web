@@ -1,124 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 680" width="375" height="680">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 520" width="280" height="520">
   <defs>
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#F8F9FA"/>
-      <stop offset="100%" stop-color="#FFFFFF"/>
-    </linearGradient>
-    <filter id="shadow1" x="-5%" y="-5%" width="110%" height="115%">
-      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#000" flood-opacity="0.06"/>
-    </filter>
+    <clipPath id="sc6"><rect x="12" y="12" width="256" height="496" rx="28"/></clipPath>
   </defs>
+  <rect width="280" height="520" rx="36" fill="#1a1a2e" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <g clip-path="url(#sc6)">
+    <rect x="12" y="12" width="256" height="496" fill="#F8F9FA"/>
+    <rect x="12" y="12" width="256" height="36" fill="rgba(248,249,250,0.95)"/>
+    <text x="140" y="32" font-family="-apple-system,Helvetica" font-size="11" font-weight="600" fill="#1F2937" text-anchor="middle">9:41</text>
+    <rect x="100" y="12" width="80" height="24" rx="12" fill="#1a1a2e"/>
 
-  <!-- Background -->
-  <rect width="375" height="680" fill="url(#bgGrad)"/>
+    <!-- Header -->
+    <rect x="12" y="48" width="256" height="48" fill="white"/>
+    <line x1="12" y1="96" x2="268" y2="96" stroke="#F0F0F0" stroke-width="0.5"/>
+    <text x="24" y="72" font-family="-apple-system,Helvetica" font-size="18" font-weight="700" fill="#000">Track Growth</text>
+    <text x="24" y="88" font-family="-apple-system,Helvetica" font-size="10" fill="#666">WHO standard percentile charts</text>
 
-  <!-- Header -->
-  <rect x="0" y="0" width="375" height="72" fill="white"/>
-  <line x1="0" y1="72" x2="375" y2="72" stroke="#F0F0F0" stroke-width="1"/>
-  <text x="56" y="34" font-family="-apple-system, SF Pro Display, Helvetica" font-size="24" font-weight="700" fill="#000">Track Growth</text>
-  <text x="56" y="56" font-family="-apple-system, SF Pro Text, Helvetica" font-size="13" font-weight="500" fill="#666">WHO standard percentile charts</text>
+    <!-- Tabs -->
+    <rect x="20" y="104" width="240" height="30" rx="8" fill="#F0F0F0"/>
+    <rect x="23" y="107" width="56" height="24" rx="6" fill="white" stroke="#E91E8C" stroke-width="1.5"/>
+    <text x="51" y="123" font-family="-apple-system,Helvetica" font-size="10" font-weight="600" fill="#E91E8C" text-anchor="middle">Weight</text>
+    <text x="111" y="123" font-family="-apple-system,Helvetica" font-size="10" fill="#999" text-anchor="middle">Height</text>
+    <text x="171" y="123" font-family="-apple-system,Helvetica" font-size="10" fill="#999" text-anchor="middle">Head</text>
+    <text x="231" y="123" font-family="-apple-system,Helvetica" font-size="10" fill="#999" text-anchor="middle">Summary</text>
 
-  <!-- Tab Bar -->
-  <rect x="20" y="88" width="335" height="40" rx="12" fill="#F0F0F0"/>
-  <rect x="24" y="92" width="78" height="32" rx="8" fill="white" stroke="#E91E8C" stroke-width="2"/>
-  <text x="63" y="112" font-family="-apple-system" font-size="12" font-weight="600" fill="#E91E8C" text-anchor="middle">Weight</text>
-  <text x="146" y="112" font-family="-apple-system" font-size="12" font-weight="500" fill="#999" text-anchor="middle">Height</text>
-  <text x="225" y="112" font-family="-apple-system" font-size="12" font-weight="500" fill="#999" text-anchor="middle">Head</text>
-  <text x="310" y="112" font-family="-apple-system" font-size="12" font-weight="500" fill="#999" text-anchor="middle">Summary</text>
+    <!-- Stats -->
+    <rect x="20" y="144" width="75" height="54" rx="10" fill="white"/>
+    <text x="57" y="162" font-family="-apple-system,Helvetica" font-size="9" fill="#999" text-anchor="middle">At Birth</text>
+    <text x="57" y="180" font-family="-apple-system,Helvetica" font-size="16" font-weight="700" fill="#000" text-anchor="middle">3.2</text>
+    <text x="57" y="192" font-family="-apple-system,Helvetica" font-size="8" fill="#CCC" text-anchor="middle">Jan 15</text>
 
-  <!-- Stats Row -->
-  <rect x="16" y="144" width="107" height="74" rx="12" fill="white" filter="url(#shadow1)"/>
-  <text x="69" y="168" font-family="-apple-system" font-size="11" font-weight="500" fill="#999" text-anchor="middle">At Birth</text>
-  <text x="69" y="192" font-family="-apple-system, SF Pro Display" font-size="18" font-weight="700" fill="#000" text-anchor="middle">3.2</text>
-  <text x="69" y="207" font-family="-apple-system" font-size="10" fill="#CCC" text-anchor="middle">Jan 15</text>
+    <rect x="102" y="144" width="75" height="54" rx="10" fill="white"/>
+    <text x="139" y="162" font-family="-apple-system,Helvetica" font-size="9" fill="#999" text-anchor="middle">Current</text>
+    <text x="139" y="180" font-family="-apple-system,Helvetica" font-size="16" font-weight="700" fill="#000" text-anchor="middle">7.8</text>
+    <text x="139" y="192" font-family="-apple-system,Helvetica" font-size="8" fill="#CCC" text-anchor="middle">Sep 15</text>
 
-  <rect x="134" y="144" width="107" height="74" rx="12" fill="white" filter="url(#shadow1)"/>
-  <text x="187" y="168" font-family="-apple-system" font-size="11" font-weight="500" fill="#999" text-anchor="middle">Current</text>
-  <text x="187" y="192" font-family="-apple-system, SF Pro Display" font-size="18" font-weight="700" fill="#000" text-anchor="middle">7.8</text>
-  <text x="187" y="207" font-family="-apple-system" font-size="10" fill="#CCC" text-anchor="middle">Sep 15</text>
+    <rect x="184" y="144" width="76" height="54" rx="10" fill="white"/>
+    <text x="222" y="162" font-family="-apple-system,Helvetica" font-size="9" fill="#999" text-anchor="middle">Change</text>
+    <text x="222" y="180" font-family="-apple-system,Helvetica" font-size="16" font-weight="700" fill="#10B981" text-anchor="middle">+4.6</text>
+    <text x="222" y="192" font-family="-apple-system,Helvetica" font-size="8" fill="#999" text-anchor="middle">143.8%</text>
 
-  <rect x="252" y="144" width="107" height="74" rx="12" fill="white" filter="url(#shadow1)"/>
-  <text x="305" y="168" font-family="-apple-system" font-size="11" font-weight="500" fill="#999" text-anchor="middle">Change</text>
-  <text x="305" y="192" font-family="-apple-system, SF Pro Display" font-size="18" font-weight="700" fill="#10B981" text-anchor="middle">+4.6</text>
-  <text x="305" y="207" font-family="-apple-system" font-size="10" fill="#999" text-anchor="middle">143.8% growth</text>
+    <!-- Percentile Badge -->
+    <rect x="20" y="206" width="240" height="22" rx="6" fill="#F0FDF4" stroke="#DCFCE7" stroke-width="0.5"/>
+    <circle cx="32" cy="217" r="6" fill="#10B981"/>
+    <text x="32" y="220" font-family="-apple-system" font-size="8" fill="white" text-anchor="middle">&#10003;</text>
+    <text x="44" y="221" font-family="-apple-system,Helvetica" font-size="9" font-weight="600" fill="#10B981">50th-85th percentile (High Average)</text>
 
-  <!-- Percentile Badge -->
-  <rect x="20" y="232" width="335" height="30" rx="8" fill="#F0FDF4" stroke="#DCFCE7" stroke-width="1"/>
-  <circle cx="36" cy="247" r="8" fill="#10B981"/>
-  <text x="36" y="251" font-family="-apple-system" font-size="10" fill="white" text-anchor="middle">&#10003;</text>
-  <text x="52" y="251" font-family="-apple-system, SF Pro Text" font-size="13" font-weight="600" fill="#10B981">Baby's percentile: 50th-85th (High Average)</text>
+    <!-- Growth Chart -->
+    <rect x="20" y="236" width="240" height="180" rx="12" fill="white"/>
+    <text x="32" y="256" font-family="-apple-system,Helvetica" font-size="11" font-weight="700" fill="#000">Growth Trajectory</text>
 
-  <!-- Growth Chart -->
-  <rect x="16" y="276" width="343" height="260" rx="16" fill="white" filter="url(#shadow1)"/>
-  <text x="32" y="304" font-family="-apple-system, SF Pro Text" font-size="14" font-weight="700" fill="#000">Growth Trajectory</text>
+    <!-- Chart Bars -->
+    <rect x="36" y="278" width="24" height="14" rx="2" fill="rgba(239,68,68,0.12)"/>
+    <rect x="36" y="268" width="24" height="16" rx="2" fill="rgba(249,115,22,0.12)"/>
+    <rect x="36" y="292" width="24" height="22" rx="2" fill="rgba(34,197,94,0.12)"/>
+    <rect x="36" y="314" width="24" height="14" rx="2" fill="rgba(59,130,246,0.12)"/>
+    <circle cx="48" cy="298" r="4" fill="#E91E8C"/>
 
-  <!-- Chart Bars (simplified WHO bands) -->
-  <!-- Month 0 -->
-  <rect x="44" y="326" width="28" height="20" rx="2" fill="rgba(239,68,68,0.15)"/>
-  <rect x="44" y="316" width="28" height="24" rx="2" fill="rgba(249,115,22,0.15)"/>
-  <rect x="44" y="346" width="28" height="30" rx="2" fill="rgba(34,197,94,0.15)"/>
-  <rect x="44" y="376" width="28" height="20" rx="2" fill="rgba(59,130,246,0.15)"/>
-  <circle cx="58" cy="340" r="6" fill="#E91E8C"/>
+    <rect x="68" y="272" width="24" height="16" rx="2" fill="rgba(239,68,68,0.12)"/>
+    <rect x="68" y="260" width="24" height="20" rx="2" fill="rgba(249,115,22,0.12)"/>
+    <rect x="68" y="288" width="24" height="26" rx="2" fill="rgba(34,197,94,0.12)"/>
+    <rect x="68" y="314" width="24" height="16" rx="2" fill="rgba(59,130,246,0.12)"/>
+    <circle cx="80" cy="302" r="4" fill="#E91E8C"/>
 
-  <!-- Month 2 -->
-  <rect x="84" y="318" width="28" height="22" rx="2" fill="rgba(239,68,68,0.15)"/>
-  <rect x="84" y="308" width="28" height="28" rx="2" fill="rgba(249,115,22,0.15)"/>
-  <rect x="84" y="340" width="28" height="34" rx="2" fill="rgba(34,197,94,0.15)"/>
-  <rect x="84" y="374" width="28" height="24" rx="2" fill="rgba(59,130,246,0.15)"/>
-  <circle cx="98" cy="352" r="6" fill="#E91E8C"/>
+    <rect x="100" y="266" width="24" height="18" rx="2" fill="rgba(239,68,68,0.12)"/>
+    <rect x="100" y="252" width="24" height="22" rx="2" fill="rgba(249,115,22,0.12)"/>
+    <rect x="100" y="284" width="24" height="28" rx="2" fill="rgba(34,197,94,0.12)"/>
+    <rect x="100" y="312" width="24" height="18" rx="2" fill="rgba(59,130,246,0.12)"/>
+    <circle cx="112" cy="306" r="4" fill="#E91E8C"/>
 
-  <!-- Month 4 -->
-  <rect x="124" y="312" width="28" height="24" rx="2" fill="rgba(239,68,68,0.15)"/>
-  <rect x="124" y="300" width="28" height="30" rx="2" fill="rgba(249,115,22,0.15)"/>
-  <rect x="124" y="336" width="28" height="36" rx="2" fill="rgba(34,197,94,0.15)"/>
-  <rect x="124" y="372" width="28" height="26" rx="2" fill="rgba(59,130,246,0.15)"/>
-  <circle cx="138" cy="360" r="6" fill="#E91E8C"/>
+    <rect x="132" y="260" width="24" height="20" rx="2" fill="rgba(239,68,68,0.12)"/>
+    <rect x="132" y="244" width="24" height="24" rx="2" fill="rgba(249,115,22,0.12)"/>
+    <rect x="132" y="280" width="24" height="30" rx="2" fill="rgba(34,197,94,0.12)"/>
+    <rect x="132" y="310" width="24" height="20" rx="2" fill="rgba(59,130,246,0.12)"/>
+    <circle cx="144" cy="306" r="4" fill="#E91E8C"/>
 
-  <!-- Month 6 -->
-  <rect x="164" y="306" width="28" height="26" rx="2" fill="rgba(239,68,68,0.15)"/>
-  <rect x="164" y="292" width="28" height="34" rx="2" fill="rgba(249,115,22,0.15)"/>
-  <rect x="164" y="332" width="28" height="38" rx="2" fill="rgba(34,197,94,0.15)"/>
-  <rect x="164" y="370" width="28" height="28" rx="2" fill="rgba(59,130,246,0.15)"/>
-  <circle cx="178" cy="362" r="6" fill="#E91E8C"/>
+    <rect x="164" y="254" width="24" height="22" rx="2" fill="rgba(239,68,68,0.12)"/>
+    <rect x="164" y="236" width="24" height="26" rx="2" fill="rgba(249,115,22,0.12)"/>
+    <rect x="164" y="276" width="24" height="32" rx="2" fill="rgba(34,197,94,0.12)"/>
+    <rect x="164" y="308" width="24" height="22" rx="2" fill="rgba(59,130,246,0.12)"/>
+    <circle cx="176" cy="304" r="4" fill="#E91E8C"/>
 
-  <!-- Month 8 -->
-  <rect x="204" y="300" width="28" height="28" rx="2" fill="rgba(239,68,68,0.15)"/>
-  <rect x="204" y="284" width="28" height="36" rx="2" fill="rgba(249,115,22,0.15)"/>
-  <rect x="204" y="328" width="28" height="40" rx="2" fill="rgba(34,197,94,0.15)"/>
-  <rect x="204" y="368" width="28" height="30" rx="2" fill="rgba(59,130,246,0.15)"/>
-  <circle cx="218" cy="364" r="6" fill="#E91E8C"/>
+    <!-- Month labels -->
+    <text x="48" y="344" font-family="-apple-system" font-size="8" fill="#999" text-anchor="middle">0m</text>
+    <text x="80" y="344" font-family="-apple-system" font-size="8" fill="#999" text-anchor="middle">2m</text>
+    <text x="112" y="344" font-family="-apple-system" font-size="8" fill="#999" text-anchor="middle">4m</text>
+    <text x="144" y="344" font-family="-apple-system" font-size="8" fill="#999" text-anchor="middle">6m</text>
+    <text x="176" y="344" font-family="-apple-system" font-size="8" fill="#999" text-anchor="middle">8m</text>
 
-  <!-- Month labels -->
-  <text x="58" y="418" font-family="-apple-system" font-size="10" fill="#999" text-anchor="middle">0m</text>
-  <text x="98" y="418" font-family="-apple-system" font-size="10" fill="#999" text-anchor="middle">2m</text>
-  <text x="138" y="418" font-family="-apple-system" font-size="10" fill="#999" text-anchor="middle">4m</text>
-  <text x="178" y="418" font-family="-apple-system" font-size="10" fill="#999" text-anchor="middle">6m</text>
-  <text x="218" y="418" font-family="-apple-system" font-size="10" fill="#999" text-anchor="middle">8m</text>
+    <!-- Legend -->
+    <rect x="32" y="356" width="8" height="8" rx="2" fill="rgba(239,68,68,0.15)"/>
+    <text x="44" y="363" font-family="-apple-system" font-size="7" fill="#666">Below</text>
+    <rect x="74" y="356" width="8" height="8" rx="2" fill="rgba(34,197,94,0.15)"/>
+    <text x="86" y="363" font-family="-apple-system" font-size="7" fill="#666">High Avg</text>
+    <rect x="124" y="356" width="8" height="8" rx="2" fill="rgba(59,130,246,0.15)"/>
+    <text x="136" y="363" font-family="-apple-system" font-size="7" fill="#666">Above</text>
+    <circle cx="170" cy="360" r="3" fill="#E91E8C"/>
+    <text x="178" y="363" font-family="-apple-system" font-size="7" fill="#666">Baby</text>
 
-  <!-- Legend -->
-  <rect x="32" y="434" width="12" height="12" rx="2" fill="rgba(239,68,68,0.15)"/>
-  <text x="50" y="444" font-family="-apple-system" font-size="10" fill="#666">Below Avg</text>
-  <rect x="114" y="434" width="12" height="12" rx="2" fill="rgba(34,197,94,0.15)"/>
-  <text x="132" y="444" font-family="-apple-system" font-size="10" fill="#666">High Avg</text>
-  <rect x="196" y="434" width="12" height="12" rx="2" fill="rgba(59,130,246,0.15)"/>
-  <text x="214" y="444" font-family="-apple-system" font-size="10" fill="#666">Above Avg</text>
-  <circle cx="282" cy="440" r="4" fill="#E91E8C"/>
-  <text x="292" y="444" font-family="-apple-system" font-size="10" fill="#666">Baby</text>
-
-  <!-- Measurement Table -->
-  <rect x="16" y="556" width="343" height="114" rx="16" fill="white" filter="url(#shadow1)"/>
-  <text x="32" y="582" font-family="-apple-system, SF Pro Text" font-size="14" font-weight="700" fill="#000">Measurement History</text>
-
-  <rect x="16" y="592" width="343" height="28" fill="#F9F9F9"/>
-  <text x="32" y="610" font-family="-apple-system" font-size="11" font-weight="600" fill="#999">Month</text>
-  <text x="120" y="610" font-family="-apple-system" font-size="11" font-weight="600" fill="#999">Value (kg)</text>
-  <text x="220" y="610" font-family="-apple-system" font-size="11" font-weight="600" fill="#999">Percentile</text>
-
-  <text x="32" y="638" font-family="-apple-system" font-size="12" fill="#333">8m</text>
-  <text x="120" y="638" font-family="-apple-system" font-size="12" fill="#333">7.8</text>
-  <text x="220" y="638" font-family="-apple-system" font-size="12" fill="#666">50th-85th</text>
-
-  <text x="32" y="660" font-family="-apple-system" font-size="12" fill="#333">6m</text>
-  <text x="120" y="660" font-family="-apple-system" font-size="12" fill="#333">7.1</text>
-  <text x="220" y="660" font-family="-apple-system" font-size="12" fill="#666">50th-85th</text>
+    <!-- Measurement Table -->
+    <rect x="20" y="424" width="240" height="80" rx="12" fill="white"/>
+    <text x="32" y="444" font-family="-apple-system,Helvetica" font-size="11" font-weight="700" fill="#000">Measurement History</text>
+    <rect x="20" y="452" width="240" height="20" fill="#F9F9F9"/>
+    <text x="32" y="466" font-family="-apple-system" font-size="8" font-weight="600" fill="#999">Month</text>
+    <text x="100" y="466" font-family="-apple-system" font-size="8" font-weight="600" fill="#999">Value (kg)</text>
+    <text x="180" y="466" font-family="-apple-system" font-size="8" font-weight="600" fill="#999">Percentile</text>
+    <text x="32" y="484" font-family="-apple-system" font-size="9" fill="#333">8m</text>
+    <text x="100" y="484" font-family="-apple-system" font-size="9" fill="#333">7.8</text>
+    <text x="180" y="484" font-family="-apple-system" font-size="9" fill="#666">50th-85th</text>
+    <text x="32" y="498" font-family="-apple-system" font-size="9" fill="#333">6m</text>
+    <text x="100" y="498" font-family="-apple-system" font-size="9" fill="#333">7.1</text>
+    <text x="180" y="498" font-family="-apple-system" font-size="9" fill="#666">50th-85th</text>
+  </g>
+  <rect x="105" y="500" width="70" height="4" rx="2" fill="rgba(255,255,255,0.15)"/>
 </svg>
