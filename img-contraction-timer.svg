@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 680" width="375" height="680">
+  <defs>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+    <filter id="shadow1" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#E91E8C" flood-opacity="0.15"/>
+    </filter>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#000" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="375" height="680" fill="#FDF2F8"/>
+
+  <!-- Timer Card -->
+  <rect x="16" y="24" width="343" height="150" rx="16" fill="white" filter="url(#shadow1)"/>
+  <text x="187" y="102" font-family="'Courier New', monospace" font-size="72" font-weight="700" fill="#1F2937" text-anchor="middle" letter-spacing="2">0:45</text>
+  <text x="187" y="132" font-family="-apple-system, SF Pro Text, Helvetica" font-size="14" font-weight="500" fill="#6B7280" text-anchor="middle">Contraction in progress...</text>
+
+  <!-- Red Button -->
+  <rect x="16" y="194" width="343" height="52" rx="16" fill="url(#redGrad)"/>
+  <text x="187" y="226" font-family="-apple-system, SF Pro Text, Helvetica" font-size="18" font-weight="600" fill="white" text-anchor="middle">Contraction Started</text>
+
+  <!-- Stats Row -->
+  <rect x="16" y="266" width="107" height="72" rx="12" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="69" y="296" font-family="-apple-system, SF Pro Display, Helvetica" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">5</text>
+  <text x="69" y="316" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="500" fill="#6B7280" text-anchor="middle">Total Count</text>
+
+  <rect x="134" y="266" width="107" height="72" rx="12" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="187" y="296" font-family="-apple-system, SF Pro Display, Helvetica" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">52s</text>
+  <text x="187" y="316" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="500" fill="#6B7280" text-anchor="middle">Avg Duration</text>
+
+  <rect x="252" y="266" width="107" height="72" rx="12" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="305" y="296" font-family="-apple-system, SF Pro Display, Helvetica" font-size="24" font-weight="700" fill="#1F2937" text-anchor="middle">4:30</text>
+  <text x="305" y="316" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="500" fill="#6B7280" text-anchor="middle">Avg Interval</text>
+
+  <!-- Phase Card - Active Labor -->
+  <rect x="16" y="356" width="343" height="100" rx="16" fill="#FEE2E2" filter="url(#shadow2)"/>
+  <rect x="16" y="356" width="4" height="100" rx="2" fill="#EF4444"/>
+  <text x="56" y="390" font-family="-apple-system" font-size="28">&#9888;</text>
+  <text x="82" y="392" font-family="-apple-system, SF Pro Display, Helvetica" font-size="18" font-weight="600" fill="#EF4444">Active Labor</text>
+  <text x="28" y="416" font-family="-apple-system, SF Pro Text, Helvetica" font-size="14" font-weight="500" fill="#6B7280">Go to hospital now</text>
+  <rect x="28" y="430" width="319" height="16" rx="8" fill="#EF4444"/>
+  <text x="187" y="443" font-family="-apple-system, SF Pro Text, Helvetica" font-size="11" font-weight="600" fill="white" text-anchor="middle">Go to Hospital Info</text>
+
+  <!-- Contraction Log -->
+  <rect x="16" y="474" width="343" height="196" rx="16" fill="white" filter="url(#shadow2)"/>
+  <text x="32" y="502" font-family="-apple-system, SF Pro Text, Helvetica" font-size="16" font-weight="700" fill="#1F2937">Contraction Log</text>
+
+  <!-- Table Header -->
+  <text x="32" y="530" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="600" fill="#6B7280">#</text>
+  <text x="70" y="530" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="600" fill="#6B7280">Time</text>
+  <text x="160" y="530" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="600" fill="#6B7280">Duration</text>
+  <text x="260" y="530" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="600" fill="#6B7280">Interval</text>
+  <line x1="28" y1="538" x2="347" y2="538" stroke="#E5E7EB" stroke-width="2"/>
+
+  <!-- Row 1 -->
+  <rect x="16" y="542" width="343" height="36" fill="#F9FAFB"/>
+  <text x="32" y="564" font-family="-apple-system" font-size="13" font-weight="600" fill="#1F2937">1</text>
+  <text x="70" y="564" font-family="-apple-system" font-size="13" font-weight="500" fill="#1F2937">08:15</text>
+  <text x="160" y="564" font-family="-apple-system" font-size="13" font-weight="500" fill="#1F2937">48s</text>
+  <text x="260" y="564" font-family="-apple-system" font-size="13" font-weight="500" fill="#1F2937">--</text>
+
+  <!-- Row 2 -->
+  <text x="32" y="596" font-family="-apple-system" font-size="13" font-weight="600" fill="#1F2937">2</text>
+  <text x="70" y="596" font-family="-apple-system" font-size="13" font-weight="500" fill="#1F2937">08:20</text>
+  <text x="160" y="596" font-family="-apple-system" font-size="13" font-weight="500" fill="#1F2937">55s</text>
+  <text x="260" y="596" font-family="-apple-system" font-size="13" font-weight="500" fill="#1F2937">4:32</text>
+
+  <!-- Row 3 -->
+  <rect x="16" y="606" width="343" height="36" fill="#F9FAFB"/>
+  <text x="32" y="628" font-family="-apple-system" font-size="13" font-weight="600" fill="#1F2937">3</text>
+  <text x="70" y="628" font-family="-apple-system" font-size="13" font-weight="500" fill="#1F2937">08:25</text>
+  <text x="160" y="628" font-family="-apple-system" font-size="13" font-weight="500" fill="#1F2937">52s</text>
+  <text x="260" y="628" font-family="-apple-system" font-size="13" font-weight="500" fill="#1F2937">4:18</text>
+
+  <!-- Row 4 -->
+  <text x="32" y="658" font-family="-apple-system" font-size="13" font-weight="600" fill="#1F2937">4</text>
+  <text x="70" y="658" font-family="-apple-system" font-size="13" font-weight="500" fill="#1F2937">08:30</text>
+  <text x="160" y="658" font-family="-apple-system" font-size="13" font-weight="500" fill="#1F2937">50s</text>
+  <text x="260" y="658" font-family="-apple-system" font-size="13" font-weight="500" fill="#1F2937">4:45</text>
+</svg>
