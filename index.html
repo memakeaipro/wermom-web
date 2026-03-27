@@ -5654,69 +5654,125 @@ footer::before {
       <p class="subtitle">From pregnancy tracking to daily baby care &mdash; powerful tools that watch over your family so you can enjoy the moments.</p>
     </div>
 
-    <!-- ===== FEATURE GRID ===== -->
-    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:24px; margin-top:48px;" class="reveal">
+    <!-- ===== FEATURE CAROUSEL (mobile: swipe horizontal loop, desktop: 3-col grid) ===== -->
+    <style>
+      .tools-track{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+      .tool-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:32px 24px 28px;text-align:center;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;flex-shrink:0;}
+      .tool-card:hover{transform:translateY(-4px);border-color:rgba(248,159,164,0.3);box-shadow:0 12px 40px rgba(233,30,140,0.08);}
+      .tool-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+      .tool-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:rgba(255,255,255,0.9);margin-bottom:8px;}
+      .tool-card p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:16px;}
+      .tool-cta{display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;color:rgba(248,159,164,0.7);letter-spacing:0.3px;transition:color 0.3s;}
+      .tool-card:hover .tool-cta{color:#F89FA4;}
+      .tool-cta svg{transition:transform 0.3s;}.tool-card:hover .tool-cta svg{transform:translateX(3px);}
+      .tools-dots{display:none;justify-content:center;gap:8px;margin-top:20px;}
+      .tools-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.15);transition:all 0.3s;cursor:pointer;}
+      .tools-dot.active{background:#F89FA4;width:24px;border-radius:4px;}
+      @media(max-width:768px){
+        .tools-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:16px;padding:0 4px 16px;scrollbar-width:none;grid-template-columns:none;margin-top:32px;}
+        .tools-track::-webkit-scrollbar{display:none;}
+        .tool-card{min-width:280px;max-width:300px;scroll-snap-align:center;}
+        .tools-dots{display:flex;}
+      }
+    </style>
 
-      <!-- Feature 1: Kick Counter -->
-      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:16px; padding:32px 24px; text-align:center; transition:transform 0.3s, border-color 0.3s; overflow:hidden;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(248,159,164,0.3)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(255,255,255,0.06)'">
-        <div style="width:56px;height:56px;border-radius:14px;background:rgba(123,166,141,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+    <div class="tools-track reveal" id="toolsTrack">
+      <!-- 1: Kick Counter -->
+      <div class="tool-card">
+        <div class="tool-icon" style="background:rgba(123,166,141,0.12);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="1.8" stroke-linecap="round"><path d="M12 21c-4-3-8-6.5-8-10.5a5 5 0 0 1 10 0h0a5 5 0 0 1 10 0c0 4-4 7.5-8 10.5l-2 1.5"/><circle cx="12" cy="10" r="2" fill="none" stroke="#7BA68D" stroke-width="1.5"/></svg>
         </div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;color:rgba(255,255,255,0.9);margin-bottom:8px;">Kick Counter</h3>
-        <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:16px;">Count and time every kick from week 24+. Get alerts if movement patterns change. Peace of mind, one tap at a time.</p>
-        <div style="margin:0 auto;max-width:180px;filter:drop-shadow(0 8px 32px rgba(233,30,140,0.2));"><img src="img-kick-counter.svg" alt="Kick Counter Screen" style="width:100%;display:block;"/></div>
+        <h3>Kick Counter</h3>
+        <p>Count and time every kick from week 24+. Get alerts if movement patterns change. Peace of mind, one tap at a time.</p>
+        <span class="tool-cta">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
-
-      <!-- Feature 2: Contraction Timer -->
-      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:16px; padding:32px 24px; text-align:center; transition:transform 0.3s, border-color 0.3s; overflow:hidden;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(248,159,164,0.3)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(255,255,255,0.06)'">
-        <div style="width:56px;height:56px;border-radius:14px;background:rgba(232,132,106,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+      <!-- 2: Contraction Timer -->
+      <div class="tool-card">
+        <div class="tool-icon" style="background:rgba(232,132,106,0.12);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;color:rgba(255,255,255,0.9);margin-bottom:8px;">Contraction Timer</h3>
-        <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:16px;">Track frequency, duration, and intervals. The app tells you when it's time to go to the hospital &mdash; no guessing.</p>
-        <div style="margin:0 auto;max-width:180px;filter:drop-shadow(0 8px 32px rgba(239,68,68,0.2));"><img src="img-contraction-timer.svg" alt="Contraction Timer Screen" style="width:100%;display:block;"/></div>
+        <h3>Contraction Timer</h3>
+        <p>Track frequency, duration, and intervals. The app tells you when it's time to go to the hospital &mdash; no guessing.</p>
+        <span class="tool-cta">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
-
-      <!-- Feature 3: Daily Nutrition -->
-      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:16px; padding:32px 24px; text-align:center; transition:transform 0.3s, border-color 0.3s; overflow:hidden;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(248,159,164,0.3)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(255,255,255,0.06)'">
-        <div style="width:56px;height:56px;border-radius:14px;background:rgba(107,141,214,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+      <!-- 3: Nutrition Tracking -->
+      <div class="tool-card">
+        <div class="tool-icon" style="background:rgba(107,141,214,0.12);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6B8DD6" stroke-width="1.8" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
         </div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;color:rgba(255,255,255,0.9);margin-bottom:8px;">Nutrition Tracking</h3>
-        <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:16px;">Log breastfeeding, formula, solids. Track iron, calcium, DHA intake. Personalized meal plans based on baby's age.</p>
-        <div style="margin:0 auto;max-width:180px;filter:drop-shadow(0 8px 32px rgba(107,141,214,0.2));"><img src="img-nutrition-tracking.svg" alt="Nutrition Tracking Screen" style="width:100%;display:block;"/></div>
+        <h3>Nutrition Tracking</h3>
+        <p>Log breastfeeding, formula, solids. Track iron, calcium, DHA intake. Personalized meal plans based on baby's age.</p>
+        <span class="tool-cta">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
-
-      <!-- Feature 4: Stool & Health Monitor -->
-      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:16px; padding:32px 24px; text-align:center; transition:transform 0.3s, border-color 0.3s; overflow:hidden;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(248,159,164,0.3)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(255,255,255,0.06)'">
-        <div style="width:56px;height:56px;border-radius:14px;background:rgba(248,159,164,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+      <!-- 4: Stool & Health Monitor -->
+      <div class="tool-card">
+        <div class="tool-icon" style="background:rgba(248,159,164,0.12);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F89FA4" stroke-width="1.8" stroke-linecap="round"><path d="M9 2h6l1 7H8L9 2z"/><path d="M8 9c-2 1-4 3-4 6 0 4 3.5 7 8 7s8-3 8-7c0-3-2-5-4-6"/><circle cx="10" cy="15" r="1.5" fill="#F89FA4" opacity="0.4"/><circle cx="15" cy="14" r="1" fill="#F89FA4" opacity="0.3"/></svg>
         </div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;color:rgba(255,255,255,0.9);margin-bottom:8px;">Stool &amp; Health Monitor</h3>
-        <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:16px;">Record frequency, color, and consistency. Combined with temperature data, our AI detects early signs of illness before symptoms become obvious.</p>
-        <div style="margin:0 auto;max-width:180px;filter:drop-shadow(0 8px 32px rgba(248,159,164,0.2));"><img src="img-stool-health.svg" alt="Stool Health Monitor Screen" style="width:100%;display:block;"/></div>
+        <h3>Stool &amp; Health Monitor</h3>
+        <p>Record frequency, color, and consistency. Combined with temperature data, our AI detects early signs of illness before symptoms become obvious.</p>
+        <span class="tool-cta">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
-
-      <!-- Feature 5: Early Warning System -->
-      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:16px; padding:32px 24px; text-align:center; transition:transform 0.3s, border-color 0.3s; overflow:hidden;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(248,159,164,0.3)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(255,255,255,0.06)'">
-        <div style="width:56px;height:56px;border-radius:14px;background:rgba(214,91,98,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+      <!-- 5: Early Warning Alerts -->
+      <div class="tool-card">
+        <div class="tool-icon" style="background:rgba(214,91,98,0.12);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D65B62" stroke-width="1.8" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="#D65B62"/></svg>
         </div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;color:rgba(255,255,255,0.9);margin-bottom:8px;">Early Warning Alerts</h3>
-        <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:16px;">AI cross-references stool changes, temperature spikes, sleep disruption, and feeding patterns to flag potential health issues 24-48 hours early.</p>
-        <div style="margin:0 auto;max-width:180px;filter:drop-shadow(0 8px 32px rgba(214,91,98,0.2));"><img src="img-early-warning.svg" alt="Early Warning Alerts Screen" style="width:100%;display:block;"/></div>
+        <h3>Early Warning Alerts</h3>
+        <p>AI cross-references stool changes, temperature spikes, sleep disruption, and feeding patterns to flag potential health issues 24-48 hours early.</p>
+        <span class="tool-cta">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
-
-      <!-- Feature 6: Sleep & Growth -->
-      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:16px; padding:32px 24px; text-align:center; transition:transform 0.3s, border-color 0.3s; overflow:hidden;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(248,159,164,0.3)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(255,255,255,0.06)'">
-        <div style="width:56px;height:56px;border-radius:14px;background:rgba(123,166,141,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+      <!-- 6: Sleep & Growth Tracker -->
+      <div class="tool-card">
+        <div class="tool-icon" style="background:rgba(123,166,141,0.12);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;color:rgba(255,255,255,0.9);margin-bottom:8px;">Sleep &amp; Growth Tracker</h3>
-        <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:16px;">Track naps, night sleep, and growth measurements. WHO percentile charts updated in real-time. Spot sleep regressions early.</p>
-        <div style="margin:0 auto;max-width:180px;filter:drop-shadow(0 8px 32px rgba(123,166,141,0.2));"><img src="img-sleep-growth.svg" alt="Sleep Growth Tracker Screen" style="width:100%;display:block;"/></div>
+        <h3>Sleep &amp; Growth Tracker</h3>
+        <p>Track naps, night sleep, and growth measurements. WHO percentile charts updated in real-time. Spot sleep regressions early.</p>
+        <span class="tool-cta">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
     </div>
+
+    <!-- Carousel dots (mobile only) -->
+    <div class="tools-dots" id="toolsDots">
+      <span class="tools-dot active"></span><span class="tools-dot"></span><span class="tools-dot"></span><span class="tools-dot"></span><span class="tools-dot"></span><span class="tools-dot"></span>
+    </div>
+
+    <!-- Carousel loop JS -->
+    <script>
+    (function(){
+      var track=document.getElementById('toolsTrack');
+      var dots=document.querySelectorAll('.tools-dot');
+      if(!track||!dots.length)return;
+      // Update dots on scroll
+      track.addEventListener('scroll',function(){
+        var cards=track.querySelectorAll('.tool-card');
+        var scrollLeft=track.scrollLeft;
+        var cardWidth=cards[0].offsetWidth+16;
+        var idx=Math.round(scrollLeft/cardWidth);
+        idx=Math.max(0,Math.min(idx,dots.length-1));
+        dots.forEach(function(d,i){d.classList.toggle('active',i===idx);});
+      });
+      // Click dot to scroll
+      dots.forEach(function(dot,i){
+        dot.addEventListener('click',function(){
+          var cards=track.querySelectorAll('.tool-card');
+          var cardWidth=cards[0].offsetWidth+16;
+          track.scrollTo({left:i*cardWidth,behavior:'smooth'});
+        });
+      });
+      // Infinite loop: when reaching end, jump to start; when at start scrolling left, jump to end
+      var loopTimeout;
+      track.addEventListener('scrollend',function(){
+        clearTimeout(loopTimeout);
+        loopTimeout=setTimeout(function(){
+          if(track.scrollLeft+track.offsetWidth>=track.scrollWidth-10){
+            track.scrollTo({left:0,behavior:'smooth'});
+          }
+        },2000);
+      });
+    })();
+    </script>
 
     <div class="reveal" style="text-align:center; margin-top:48px;">
     <div style="display:none;" class="reports-showcase">
