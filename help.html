@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - Wermom</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FFF9F5;
+            --cream-deep: #FFF1E8;
+            --blush: #FFE4D6;
+            --rose: #F89FA4;
+            --rose-deep: #D4604A;
+            --sage: #7BA68D;
+            --charcoal: #2D2D3F;
+            --slate: #4A4A5E;
+            --warm-gray: #8A8A9A;
+            --footer-bg: #1a1a2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            border-bottom: 1px solid var(--blush);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: var(--rose-deep);
+        }
+
+        .nav-back {
+            color: var(--slate);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-back:hover {
+            color: var(--rose);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--cream-deep) 0%, var(--blush) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--slate);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 3rem;
+        }
+
+        .faq-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--rose);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem;
+            background-color: var(--cream);
+            border: none;
+            border-left: 4px solid var(--rose);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: var(--blush);
+        }
+
+        .faq-question.active {
+            background-color: var(--rose);
+            color: white;
+            border-left-color: var(--rose-deep);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 1.25rem;
+            color: var(--slate);
+            line-height: 1.7;
+        }
+
+        /* Support Ticket Section */
+        .support-section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .support-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--rose);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            padding: 0.75rem;
+            border: 1px solid var(--blush);
+            border-radius: 6px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            color: var(--charcoal);
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--rose);
+            box-shadow: 0 0 0 3px rgba(248, 159, 164, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        input[type="file"] {
+            padding: 0.5rem;
+            color: var(--slate);
+        }
+
+        .submit-btn {
+            grid-column: 1 / -1;
+            padding: 0.875rem 2rem;
+            background-color: var(--rose);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--rose-deep);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        .support-note {
+            background-color: var(--cream-deep);
+            border-left: 4px solid var(--sage);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--slate);
+        }
+
+        .support-note strong {
+            color: var(--charcoal);
+        }
+
+        /* Success Message */
+        .success-message {
+            background-color: var(--sage);
+            color: white;
+            padding: 1.25rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-message strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--footer-bg);
+            color: #b0b0c0;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #b0b0c0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--rose);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-section h2 {
+                font-size: 1.5rem;
+            }
+
+            main {
+                padding: 0 1rem;
+            }
+
+            .support-section {
+                padding: 1.5rem;
+            }
+
+            .faq-question {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.25rem;
+            }
+
+            header {
+                padding: 2rem 1rem;
+            }
+
+            .nav-left {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .faq-question {
+                padding: 1rem;
+            }
+
+            .faq-answer p {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-left">
+            <a href="index.html" class="logo">Wermom</a>
+            <a href="index.html" class="nav-back">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Help Center</h1>
+        <p>We're here to help. Browse common questions or submit a support ticket.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Getting Started FAQ -->
+        <section class="faq-section">
+            <h2>Getting Started</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I create an account?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Creating an account is easy! Visit our homepage and click "Sign Up." Enter your email address, create a secure password, and follow the verification steps. Once verified, you can start using Wermom right away. If you already have an account, simply click "Log In" instead.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How does the wellness assessment work?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our wellness assessment is a personalized questionnaire that helps our AI understand your health goals, lifestyle, and wellness needs. You'll answer questions about your physical health, mental wellbeing, sleep, nutrition, and more. Based on your responses, Wermom generates a customized wellness report with actionable insights and recommendations tailored specifically to you.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What do I need to get started?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All you need is an email address and a few minutes to set up your account and complete your wellness assessment. You can access Wermom on any device with a web browser. No special software or hardware is required. We recommend having a quiet space where you can thoughtfully answer the assessment questions for the best results.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I update my assessment later?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Your wellness journey is ongoing, and we encourage you to update your assessment periodically. You can retake the assessment anytime from your account dashboard to reflect changes in your health, goals, or lifestyle. This helps Wermom provide increasingly personalized recommendations over time.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is my personal information secure?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, your security and privacy are our top priority. All data is encrypted in transit and at rest using industry-standard protocols. We comply with HIPAA, GDPR, and other privacy regulations. Your assessment responses and personal information are never shared with third parties without your explicit consent.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Account & Billing FAQ -->
+        <section class="faq-section">
+            <h2>Account & Billing</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I change my subscription plan?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can upgrade or downgrade your plan anytime from your account settings. Go to "Subscription" in your account dashboard and select the plan you'd like to switch to. Changes take effect immediately, and we'll prorate any charges based on your billing cycle.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I cancel my subscription?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, you can cancel anytime from your account settings. There are no cancellation fees or long-term contracts required. Your access continues through the end of your current billing period. We'd love to hear your feedback if you choose to leave—you can share your thoughts in the cancellation survey.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What payment methods do you accept?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept all major credit and debit cards (Visa, Mastercard, American Express, and Discover), as well as digital payment methods like PayPal and Google Pay. Your payment information is processed securely through encrypted channels and is never stored on our servers.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I get a refund?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day money-back guarantee on annual plans. If you're not satisfied with Wermom within 30 days of purchase, contact our support team at support@wermom.com for a full refund, no questions asked. For monthly plans, refunds are available within 7 days of your billing date.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I update my billing information?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can update your billing address, payment method, and other account details in the "Billing" section of your account settings. Changes take effect immediately for future charges. If you need help updating your information, our support team is happy to assist.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Features FAQ -->
+        <section class="faq-section">
+            <h2>App Features</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How does the AI chat feature work?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our AI chat feature provides personalized wellness support based on your assessment and health goals. You can ask questions about nutrition, fitness, mental health, sleep, and more. The AI learns from your preferences and previous conversations to provide increasingly relevant advice. All conversations are private and secure.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What information is included in my wellness report?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your wellness report includes a comprehensive overview of your health profile, personalized recommendations across key wellness areas, progress tracking over time, and actionable steps you can take. Reports can be viewed online or downloaded as PDF documents for easy sharing with healthcare providers if desired.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I share my wellness report with my doctor?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! You can download your wellness report as a PDF and share it with your healthcare provider. Your report includes all relevant health insights and recommendations. However, please note that Wermom is a wellness tool and not a substitute for professional medical advice. Always consult with your doctor about health concerns.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How is my data privacy protected?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We take data privacy extremely seriously. All personal health information is encrypted using military-grade encryption. We comply with HIPAA, GDPR, and CCPA regulations. Your data is never sold to third parties. You have full control over your information and can request deletion at any time.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What devices can I use to access Wermom?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Wermom works on any device with a modern web browser, including smartphones, tablets, and desktop computers. Your account and all your data are synced across devices, so you can start something on your phone and continue on your laptop seamlessly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Ticket Form -->
+        <section class="support-section">
+            <h2>Submit a Support Ticket</h2>
+            <p style="color: var(--slate); margin-top: 0.5rem;">Have a question we haven't answered? Get in touch with our support team.</p>
+
+            <div class="success-message" id="successMessage">
+                <strong>Success!</strong>
+                Your ticket has been submitted! We'll get back to you within 2-3 business days at the email address you provided.
+            </div>
+
+            <form id="supportForm" class="form-grid">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select a category...</option>
+                        <option value="account-issue">Account Issue</option>
+                        <option value="bug-report">Bug Report</option>
+                        <option value="feature-request">Feature Request</option>
+                        <option value="billing-question">Billing Question</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" placeholder="Brief description of your issue" required>
+                </div>
+
+                <div class="form-group full">
+                    <label for="description">Description *</label>
+                    <textarea id="description" name="description" placeholder="Please provide as much detail as possible to help us assist you faster..." required></textarea>
+                </div>
+
+                <div class="form-group full">
+                    <label for="attachment">Attachment (Optional)</label>
+                    <input type="file" id="attachment" name="attachment">
+                    <small style="color: var(--warm-gray); margin-top: 0.25rem; display: block;">Max file size: 5MB. Accepted formats: PDF, JPG, PNG, GIF</small>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Support Ticket</button>
+            </form>
+
+            <div class="support-note">
+                <strong>Response time:</strong> We typically respond within 2-3 business days. For urgent matters, email <a href="mailto:support@wermom.com" style="color: var(--rose-deep);">support@wermom.com</a> directly.
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Wermom. All rights reserved.</p>
+        <p><a href="index.html">Home</a> | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a> | <a href="#contact">Contact Us</a></p>
+    </footer>
+
+    <script>
+        // FAQ Accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
+
+                // Close all other answers
+                document.querySelectorAll('.faq-question.active').forEach(q => {
+                    if (q !== this) {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('active');
+                    }
+                });
+
+                // Toggle current answer
+                this.classList.toggle('active');
+                answer.classList.toggle('active');
+            });
+        });
+
+        // Support form submission
+        const supportForm = document.getElementById('supportForm');
+        const successMessage = document.getElementById('successMessage');
+
+        supportForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(supportForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                category: formData.get('category'),
+                subject: formData.get('subject'),
+                description: formData.get('description'),
+                timestamp: new Date().toISOString()
+            };
+
+            // In a real application, this would send data to a backend server
+            console.log('Support ticket submitted:', data);
+
+            // Show success message
+            successMessage.classList.add('show');
+
+            // Reset form
+            supportForm.reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    </script>
+</body>
+</html>
