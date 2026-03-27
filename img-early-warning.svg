@@ -1,70 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 680" width="375" height="680">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 520" width="280" height="520">
   <defs>
-    <linearGradient id="pinkGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#E91E8C"/>
-      <stop offset="100%" stop-color="#FF6B9D"/>
-    </linearGradient>
-    <filter id="shadow1" x="-5%" y="-5%" width="110%" height="115%">
-      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#000" flood-opacity="0.06"/>
-    </filter>
+    <linearGradient id="pg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E91E8C"/><stop offset="100%" stop-color="#FF6B9D"/></linearGradient>
+    <clipPath id="sc5"><rect x="12" y="12" width="256" height="496" rx="28"/></clipPath>
   </defs>
+  <rect width="280" height="520" rx="36" fill="#1a1a2e" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <g clip-path="url(#sc5)">
+    <rect x="12" y="12" width="256" height="496" fill="#F8F6F9"/>
+    <!-- Status bar -->
+    <rect x="12" y="12" width="256" height="36" fill="rgba(248,246,249,0.95)"/>
+    <text x="140" y="32" font-family="-apple-system,Helvetica" font-size="11" font-weight="600" fill="#1F2937" text-anchor="middle">9:41</text>
+    <rect x="100" y="12" width="80" height="24" rx="12" fill="#1a1a2e"/>
 
-  <!-- Background -->
-  <rect width="375" height="680" fill="#F8F6F9"/>
+    <!-- Header gradient -->
+    <rect x="12" y="48" width="256" height="68" fill="url(#pg3)"/>
+    <text x="24" y="72" font-family="-apple-system,Helvetica" font-size="18" font-weight="700" fill="white">Early Warning</text>
+    <text x="24" y="90" font-family="-apple-system,Helvetica" font-size="10" font-weight="500" fill="rgba(255,255,255,0.8)">AI-powered health alerts for your baby</text>
+    <text x="24" y="106" font-family="-apple-system,Helvetica" font-size="9" fill="rgba(255,255,255,0.6)">Last updated: 2 hours ago</text>
 
-  <!-- Header -->
-  <rect x="0" y="0" width="375" height="96" fill="url(#pinkGrad)"/>
-  <text x="24" y="42" font-family="-apple-system, SF Pro Display, Helvetica" font-size="24" font-weight="700" fill="white">Early Warning</text>
-  <text x="24" y="66" font-family="-apple-system, SF Pro Text, Helvetica" font-size="14" font-weight="500" fill="rgba(255,255,255,0.8)">AI-powered health alerts for your baby</text>
-  <text x="24" y="86" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="500" fill="rgba(255,255,255,0.6)">Last updated: 2 hours ago</text>
+    <!-- Overall Status -->
+    <rect x="20" y="126" width="240" height="50" rx="12" fill="white"/>
+    <text x="32" y="148" font-family="-apple-system,Helvetica" font-size="12" font-weight="700" fill="#1A1A1A">Overall Status</text>
+    <rect x="190" y="136" width="60" height="20" rx="10" fill="#D1FAE5"/>
+    <text x="220" y="150" font-family="-apple-system,Helvetica" font-size="9" font-weight="700" fill="#10B981" text-anchor="middle">All Clear</text>
+    <text x="32" y="166" font-family="-apple-system,Helvetica" font-size="10" fill="#6B7280">No concerning patterns detected</text>
 
-  <!-- Overall Status -->
-  <rect x="16" y="112" width="343" height="76" rx="16" fill="white" filter="url(#shadow1)"/>
-  <rect x="260" y="126" width="84" height="28" rx="14" fill="#D1FAE5"/>
-  <text x="302" y="144" font-family="-apple-system" font-size="13" font-weight="700" fill="#10B981" text-anchor="middle">All Clear</text>
-  <text x="32" y="142" font-family="-apple-system, SF Pro Text, Helvetica" font-size="15" font-weight="700" fill="#1A1A1A">Overall Status</text>
-  <text x="32" y="168" font-family="-apple-system, SF Pro Text, Helvetica" font-size="13" font-weight="500" fill="#6B7280">No concerning patterns detected</text>
+    <!-- Alert 1 Green -->
+    <rect x="20" y="186" width="240" height="64" rx="12" fill="white"/>
+    <rect x="20" y="186" width="3" height="64" rx="1.5" fill="#10B981"/>
+    <circle cx="40" cy="206" r="10" fill="#D1FAE5"/>
+    <text x="40" y="210" font-family="-apple-system" font-size="10" fill="#10B981" text-anchor="middle">&#10003;</text>
+    <text x="58" y="208" font-family="-apple-system,Helvetica" font-size="11" font-weight="700" fill="#1A1A1A">Stool Pattern</text>
+    <text x="58" y="224" font-family="-apple-system,Helvetica" font-size="9" fill="#6B7280">Regular frequency (3x/day), normal color</text>
+    <text x="58" y="240" font-family="-apple-system,Helvetica" font-size="9" font-weight="500" fill="#10B981">Consistent with last 7 days</text>
 
-  <!-- Alert Cards -->
-  <!-- Alert 1 - Green -->
-  <rect x="16" y="204" width="343" height="88" rx="16" fill="white" filter="url(#shadow1)"/>
-  <rect x="16" y="204" width="4" height="88" rx="2" fill="#10B981"/>
-  <circle cx="44" cy="228" r="14" fill="#D1FAE5"/>
-  <text x="44" y="233" font-family="-apple-system" font-size="14" fill="#10B981" text-anchor="middle">&#10003;</text>
-  <text x="68" y="232" font-family="-apple-system, SF Pro Text, Helvetica" font-size="14" font-weight="700" fill="#1A1A1A">Stool Pattern</text>
-  <text x="68" y="254" font-family="-apple-system, SF Pro Text, Helvetica" font-size="13" font-weight="500" fill="#6B7280">Regular frequency (3x/day), normal color</text>
-  <text x="68" y="276" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="500" fill="#10B981">Consistent with last 7 days</text>
+    <!-- Alert 2 Yellow -->
+    <rect x="20" y="260" width="240" height="64" rx="12" fill="white"/>
+    <rect x="20" y="260" width="3" height="64" rx="1.5" fill="#F59E0B"/>
+    <circle cx="40" cy="280" r="10" fill="#FEF3C7"/>
+    <text x="40" y="284" font-family="-apple-system" font-size="12" fill="#F59E0B" text-anchor="middle" font-weight="700">!</text>
+    <text x="58" y="282" font-family="-apple-system,Helvetica" font-size="11" font-weight="700" fill="#1A1A1A">Temperature Trend</text>
+    <text x="58" y="298" font-family="-apple-system,Helvetica" font-size="9" fill="#6B7280">Evening elevation (37.4C) for 2 days</text>
+    <text x="58" y="314" font-family="-apple-system,Helvetica" font-size="9" font-weight="500" fill="#F59E0B">Monitor closely, likely teething</text>
 
-  <!-- Alert 2 - Yellow Warning -->
-  <rect x="16" y="308" width="343" height="88" rx="16" fill="white" filter="url(#shadow1)"/>
-  <rect x="16" y="308" width="4" height="88" rx="2" fill="#F59E0B"/>
-  <circle cx="44" cy="332" r="14" fill="#FEF3C7"/>
-  <text x="44" y="338" font-family="-apple-system" font-size="16" fill="#F59E0B" text-anchor="middle">!</text>
-  <text x="68" y="336" font-family="-apple-system, SF Pro Text, Helvetica" font-size="14" font-weight="700" fill="#1A1A1A">Temperature Trend</text>
-  <text x="68" y="358" font-family="-apple-system, SF Pro Text, Helvetica" font-size="13" font-weight="500" fill="#6B7280">Slight evening elevation (37.4C) for 2 days</text>
-  <text x="68" y="380" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="500" fill="#F59E0B">Monitor closely, likely teething-related</text>
+    <!-- Alert 3 Green -->
+    <rect x="20" y="334" width="240" height="64" rx="12" fill="white"/>
+    <rect x="20" y="334" width="3" height="64" rx="1.5" fill="#10B981"/>
+    <circle cx="40" cy="354" r="10" fill="#D1FAE5"/>
+    <text x="40" y="358" font-family="-apple-system" font-size="10" fill="#10B981" text-anchor="middle">&#10003;</text>
+    <text x="58" y="356" font-family="-apple-system,Helvetica" font-size="11" font-weight="700" fill="#1A1A1A">Sleep Quality</text>
+    <text x="58" y="372" font-family="-apple-system,Helvetica" font-size="9" fill="#6B7280">11.5 hrs total, 2 night wakings</text>
+    <text x="58" y="388" font-family="-apple-system,Helvetica" font-size="9" font-weight="500" fill="#10B981">Within expected range for 8 months</text>
 
-  <!-- Alert 3 - Green -->
-  <rect x="16" y="412" width="343" height="88" rx="16" fill="white" filter="url(#shadow1)"/>
-  <rect x="16" y="412" width="4" height="88" rx="2" fill="#10B981"/>
-  <circle cx="44" cy="436" r="14" fill="#D1FAE5"/>
-  <text x="44" y="441" font-family="-apple-system" font-size="14" fill="#10B981" text-anchor="middle">&#10003;</text>
-  <text x="68" y="440" font-family="-apple-system, SF Pro Text, Helvetica" font-size="14" font-weight="700" fill="#1A1A1A">Sleep Quality</text>
-  <text x="68" y="462" font-family="-apple-system, SF Pro Text, Helvetica" font-size="13" font-weight="500" fill="#6B7280">11.5 hrs total, 2 night wakings (normal)</text>
-  <text x="68" y="484" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="500" fill="#10B981">Within expected range for 8 months</text>
+    <!-- Alert 4 Green -->
+    <rect x="20" y="408" width="240" height="64" rx="12" fill="white"/>
+    <rect x="20" y="408" width="3" height="64" rx="1.5" fill="#10B981"/>
+    <circle cx="40" cy="428" r="10" fill="#D1FAE5"/>
+    <text x="40" y="432" font-family="-apple-system" font-size="10" fill="#10B981" text-anchor="middle">&#10003;</text>
+    <text x="58" y="430" font-family="-apple-system,Helvetica" font-size="11" font-weight="700" fill="#1A1A1A">Feeding Pattern</text>
+    <text x="58" y="446" font-family="-apple-system,Helvetica" font-size="9" fill="#6B7280">4 meals + 4 bottles, adequate intake</text>
+    <text x="58" y="462" font-family="-apple-system,Helvetica" font-size="9" font-weight="500" fill="#10B981">Iron and DHA levels on track</text>
 
-  <!-- Alert 4 - Green -->
-  <rect x="16" y="516" width="343" height="88" rx="16" fill="white" filter="url(#shadow1)"/>
-  <rect x="16" y="516" width="4" height="88" rx="2" fill="#10B981"/>
-  <circle cx="44" cy="540" r="14" fill="#D1FAE5"/>
-  <text x="44" y="545" font-family="-apple-system" font-size="14" fill="#10B981" text-anchor="middle">&#10003;</text>
-  <text x="68" y="544" font-family="-apple-system, SF Pro Text, Helvetica" font-size="14" font-weight="700" fill="#1A1A1A">Feeding Pattern</text>
-  <text x="68" y="566" font-family="-apple-system, SF Pro Text, Helvetica" font-size="13" font-weight="500" fill="#6B7280">4 meals + 4 bottles, adequate intake</text>
-  <text x="68" y="588" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="500" fill="#10B981">Iron and DHA levels on track</text>
-
-  <!-- Tip -->
-  <rect x="16" y="620" width="343" height="50" rx="16" fill="rgba(233,30,140,0.05)"/>
-  <rect x="16" y="620" width="4" height="50" rx="2" fill="#E91E8C"/>
-  <text x="32" y="642" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="600" fill="#E91E8C">AI cross-references all data 24-48 hours ahead</text>
-  <text x="32" y="660" font-family="-apple-system, SF Pro Text, Helvetica" font-size="12" font-weight="500" fill="#666">to detect potential issues before symptoms appear</text>
+    <!-- Tip -->
+    <rect x="20" y="482" width="240" height="24" rx="8" fill="rgba(233,30,140,0.05)"/>
+    <rect x="20" y="482" width="3" height="24" rx="1.5" fill="#E91E8C"/>
+    <text x="32" y="498" font-family="-apple-system,Helvetica" font-size="8" font-weight="600" fill="#E91E8C">AI cross-references all data 24-48 hours ahead</text>
+  </g>
+  <rect x="105" y="500" width="70" height="4" rx="2" fill="rgba(255,255,255,0.15)"/>
 </svg>
