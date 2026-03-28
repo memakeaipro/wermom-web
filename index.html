@@ -237,12 +237,20 @@ nav.scrolled {
   gap: 16px;
 }
 .nav-login {
+  padding: 10px 24px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--slate);
-  transition: color 0.3s;
+  color: #fff;
+  background: linear-gradient(135deg, #e8846a, #d4604a);
+  border-radius: 100px;
+  transition: all 0.3s var(--ease-out);
 }
-.nav-login:hover { color: var(--midnight); }
+.nav-login:hover {
+  background: linear-gradient(135deg, #d4604a, #c24a3a);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(232,132,106,0.3);
+  color: #fff;
+}
 .nav-start {
   padding: 10px 24px;
   background: var(--midnight);
