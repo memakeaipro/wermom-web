@@ -2753,7 +2753,10 @@
 
         function collectFormData() {
             document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"], select, textarea').forEach(input => {
-                formData[input.id] = input.value;
+                // Only overwrite if input has a value (preserve debug/prefilled data)
+                if (input.value || !formData[input.id]) {
+                    formData[input.id] = input.value;
+                }
             });
 
             document.querySelectorAll('[data-field]').forEach(group => {
@@ -3256,7 +3259,8 @@
 
             if (!response.ok) {
                 const errorData = await response.json().catch(() => ({}));
-                throw new Error(errorData.error || 'Server error ' + response.status);
+                const details = errorData.details ? (Array.isArray(errorData.details) ? errorData.details.join(', ') : errorData.details) : '';
+                throw new Error((errorData.error || 'Server error ' + response.status) + (details ? ': ' + details : ''));
             }
 
             return await response.json();
