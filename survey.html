@@ -2588,7 +2588,29 @@
             readURLParams();
             setupChipListeners();
             setupButtonListeners();
-            showStep(1);
+
+            // DEBUG: Jump to any step via ?step=8 or ?step=9
+            const _dbgParams = new URLSearchParams(window.location.search);
+            const _dbgStep = parseInt(_dbgParams.get('step'));
+            if (_dbgStep && _dbgStep >= 1 && _dbgStep <= totalSteps) {
+                formData.fullName = 'Test User';
+                formData.email = 'test@wermom.com';
+                formData.phone = '0901234567';
+                formData.country = 'Vietnam';
+                formData.age = '28';
+                formData.height = '160';
+                formData.weight = '55';
+                formData.bloodType = 'O+';
+                formData.currentStatus = 'postpartum';
+                formData.pregnancies = '1';
+                formData.babyName = 'Emma';
+                formData.babyStatus = 'born';
+                formData.babyDOB = '2025-08-15';
+                formData.babyGender = 'Girl';
+                currentStep = _dbgStep;
+            }
+
+            showStep(currentStep);
         });
 
         function readURLParams() {
@@ -3375,30 +3397,6 @@
             return _origValidateStep(step);
         };
 
-        // === DEBUG: Jump to any step (add ?step=8 to URL) ===
-        (function() {
-            const params = new URLSearchParams(window.location.search);
-            const jumpTo = parseInt(params.get('step'));
-            if (jumpTo && jumpTo >= 1 && jumpTo <= totalSteps) {
-                // Fill fake data so validation doesn't block
-                formData.fullName = 'Test User';
-                formData.email = 'test@wermom.com';
-                formData.phone = '0901234567';
-                formData.country = 'Vietnam';
-                formData.age = '28';
-                formData.height = '160';
-                formData.weight = '55';
-                formData.bloodType = 'O+';
-                formData.currentStatus = 'postpartum';
-                formData.pregnancies = '1';
-                formData.babyName = 'Emma';
-                formData.babyStatus = 'born';
-                formData.babyDOB = '2025-08-15';
-                formData.babyGender = 'Girl';
-                currentStep = jumpTo;
-                showStep(currentStep);
-            }
-        })();
 </script>
 </body>
 </html>
