@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wermom - Health Survey</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://js.stripe.com/v3/"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -2241,7 +2242,7 @@
                         </div>
                     </div>
 
-                    <!-- Payment Form -->
+                    <!-- Payment Form (Stripe Elements) -->
                     <div style="background:#fff;border:1.5px solid var(--light-gray);border-radius:16px;padding:24px 28px;">
                         <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
@@ -2259,25 +2260,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="required" for="cardNumber">Card Number</label>
-                            <div style="position:relative;">
-                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" inputmode="numeric">
-                                <div id="cardBrand" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:1.3rem;"></div>
-                            </div>
-                            <div class="error-message">Please enter a valid card number</div>
-                        </div>
-
-                        <div style="display:flex;gap:16px;">
-                            <div class="form-group" style="flex:1;">
-                                <label class="required" for="cardExpiry">Expiry Date</label>
-                                <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM / YY" maxlength="7" inputmode="numeric">
-                                <div class="error-message">Invalid expiry</div>
-                            </div>
-                            <div class="form-group" style="flex:1;">
-                                <label class="required" for="cardCVC">CVC</label>
-                                <input type="text" id="cardCVC" name="cardCVC" placeholder="123" maxlength="4" inputmode="numeric">
-                                <div class="error-message">Invalid CVC</div>
-                            </div>
+                            <label class="required">Card Information</label>
+                            <div id="stripe-card-element" style="padding:14px 16px;border:1.5px solid var(--light-gray);border-radius:8px;background:#fff;transition:border-color 0.3s ease,box-shadow 0.3s ease;"></div>
+                            <div id="stripe-card-errors" class="error-message" style="display:none;"></div>
                         </div>
                     </div>
 
@@ -2422,11 +2407,28 @@
             6: ['momDiscomfort', 'stressLevel', 'mood', 'supportSystem', 'babySymptoms', 'babyMood', 'biggestConcern'],
             7: ['weightPercentile', 'growthConcerns', 'termsCheckbox'],
             8: ['accountPassword', 'accountPasswordConfirm'],
-            9: ['cardName', 'cardNumber', 'cardExpiry', 'cardCVC']
+            9: ['cardName'] // Stripe Elements handles card validation
         };
 
         let currentStep = 1;
         const totalSteps = 9;
+
+        // ==================== STRIPE ELEMENTS SETUP ====================
+        const stripePublishableKey = 'pk_test_51TEKVFDaU35zEL5FJMdNiVYUNP50AgGv8VWRGdvFK2QmATV1J5yZbgXONnBJGurRdd8iFpEDUcAEKOJgLiovbAaQ00ExD16JBd';
+        const stripeInstance = Stripe(stripePublishableKey);
+        const stripeElements = stripeInstance.elements();
+        const stripeCardElement = stripeElements.create('card', {
+            style: {
+                base: {
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: '15px',
+                    color: '#1A1A2E',
+                    '::placeholder': { color: '#8A8A9A' }
+                },
+                invalid: { color: '#D4604A' }
+            }
+        });
+        let stripeCardMounted = false;
 
         // Sidebar content data
         const sidebarData = {
@@ -2823,6 +2825,21 @@
             } else if (step === totalSteps) {
                 // Hide bottom button group — Step 9 has its own inline submit button
                 document.getElementById('buttonGroup').style.display = 'none';
+                // Mount Stripe card element
+                if (!stripeCardMounted) {
+                    stripeCardElement.mount('#stripe-card-element');
+                    stripeCardMounted = true;
+                    stripeCardElement.on('change', function(event) {
+                        const errEl = document.getElementById('stripe-card-errors');
+                        if (event.error) {
+                            errEl.textContent = event.error.message;
+                            errEl.style.display = 'block';
+                        } else {
+                            errEl.textContent = '';
+                            errEl.style.display = 'none';
+                        }
+                    });
+                }
             } else {
                 document.getElementById('buttonGroup').style.display = '';
                 nextBtn.textContent = 'Next →';
@@ -3049,23 +3066,7 @@
                 document.getElementById('pwUpper').style.color = upperOk ? 'var(--sage)' : '#ccc';
                 document.getElementById('pwNumber').style.color = numOk ? 'var(--sage)' : '#ccc';
             }
-            // Card number formatting
-            if (e.target.id === 'cardNumber') {
-                let v = e.target.value.replace(/\D/g, '').substring(0, 16);
-                e.target.value = v.replace(/(.{4})/g, '$1 ').trim();
-                // Card brand detection
-                const brand = document.getElementById('cardBrand');
-                if (v.startsWith('4')) brand.textContent = '💳 Visa';
-                else if (/^5[1-5]/.test(v) || /^2[2-7]/.test(v)) brand.textContent = '💳 MC';
-                else if (/^3[47]/.test(v)) brand.textContent = '💳 Amex';
-                else brand.textContent = '';
-            }
-            // Expiry formatting
-            if (e.target.id === 'cardExpiry') {
-                let v = e.target.value.replace(/\D/g, '').substring(0, 4);
-                if (v.length >= 3) v = v.substring(0, 2) + ' / ' + v.substring(2);
-                e.target.value = v;
-            }
+            // Card formatting removed — Stripe Elements handles this
         });
 
         function validateStep8() {
@@ -3096,29 +3097,15 @@
         function validateStep9() {
             let valid = true;
             const name = document.getElementById('cardName').value.trim();
-            const num = document.getElementById('cardNumber').value.replace(/\s/g, '');
-            const exp = document.getElementById('cardExpiry').value.replace(/\s/g, '');
-            const cvc = document.getElementById('cardCVC').value.trim();
 
             // Clear errors
-            document.querySelectorAll('.step[data-step="9"] .error-message').forEach(e => e.classList.remove('show'));
+            document.querySelectorAll('.step[data-step="9"] .error-message').forEach(e => { e.classList.remove('show'); e.style.display = ''; });
 
             if (!name) {
                 document.getElementById('cardName').parentElement.querySelector('.error-message').classList.add('show');
                 valid = false;
             }
-            if (num.length < 13 || !/^\d+$/.test(num)) {
-                document.getElementById('cardNumber').closest('.form-group').querySelector('.error-message').classList.add('show');
-                valid = false;
-            }
-            if (!/^\d{2}\/\d{2}$/.test(exp)) {
-                document.getElementById('cardExpiry').parentElement.querySelector('.error-message').classList.add('show');
-                valid = false;
-            }
-            if (cvc.length < 3 || !/^\d+$/.test(cvc)) {
-                document.getElementById('cardCVC').parentElement.querySelector('.error-message').classList.add('show');
-                valid = false;
-            }
+            // Stripe Elements handles card validation internally
             return valid;
         }
 
@@ -3128,16 +3115,37 @@
             collectFormData();
             console.log('Survey Data:', formData);
 
-            // Show loading state on submit button
-            const submitBtn = document.querySelector('.btn-next');
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Submitting...';
-                submitBtn.style.opacity = '0.7';
-            }
+            // Show loading state on both submit buttons
+            const inlineBtn = document.getElementById('step9SubmitBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            if (inlineBtn) { inlineBtn.disabled = true; inlineBtn.textContent = 'Processing payment...'; inlineBtn.style.opacity = '0.7'; }
+            if (nextBtn) { nextBtn.disabled = true; }
 
             try {
-                // Send data to backend FIRST, wait for response
+                // ─── STRIPE: Create PaymentMethod from card element ───
+                const cardName = document.getElementById('cardName').value.trim();
+                const { paymentMethod, error: stripeError } = await stripeInstance.createPaymentMethod({
+                    type: 'card',
+                    card: stripeCardElement,
+                    billing_details: {
+                        name: cardName,
+                        email: formData.email
+                    }
+                });
+
+                if (stripeError) {
+                    const errEl = document.getElementById('stripe-card-errors');
+                    errEl.textContent = stripeError.message;
+                    errEl.style.display = 'block';
+                    if (inlineBtn) { inlineBtn.disabled = false; inlineBtn.textContent = 'Start Free Trial & Get My Report'; inlineBtn.style.opacity = '1'; }
+                    if (nextBtn) { nextBtn.disabled = false; }
+                    return;
+                }
+
+                // Add paymentMethodId to formData
+                formData.paymentMethodId = paymentMethod.id;
+
+                // Send data to backend (Stripe subscription + account creation)
                 const result = await sendToBackend(formData);
                 console.log('Survey submitted to backend:', result);
 
@@ -3195,12 +3203,10 @@
 
             } catch (err) {
                 console.error('Backend submission failed:', err);
-                // Show error to user instead of fake success
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Submit';
-                    submitBtn.style.opacity = '1';
-                }
+                const inlineBtnErr = document.getElementById('step9SubmitBtn');
+                const nextBtnErr = document.getElementById('nextBtn');
+                if (inlineBtnErr) { inlineBtnErr.disabled = false; inlineBtnErr.textContent = 'Start Free Trial & Get My Report'; inlineBtnErr.style.opacity = '1'; }
+                if (nextBtnErr) { nextBtnErr.disabled = false; }
                 alert('Something went wrong: ' + err.message + '\n\nPlease check your information and try again.');
             }
         }
@@ -3230,15 +3236,8 @@
                 // Account creation
                 password: data.accountPassword || '',
 
-                // Payment info (will be processed by backend/Stripe)
-                payment: {
-                    cardName: data.cardName || '',
-                    cardLast4: (data.cardNumber || '').replace(/\s/g, '').slice(-4),
-                    cardExpiry: data.cardExpiry || '',
-                    // Note: Full card number should be tokenized via Stripe.js in production
-                    // For now we send it to backend which would use Stripe server-side
-                    cardToken: 'tok_demo_' + Date.now() // Placeholder — replace with Stripe token
-                },
+                // Stripe payment method (tokenized by Stripe.js — no raw card data)
+                paymentMethodId: data.paymentMethodId || '',
                 trialStart: new Date().toISOString(),
 
                 // Full survey data as JSON (ALL 80+ fields preserved)
