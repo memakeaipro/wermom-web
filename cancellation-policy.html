@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cancellation Policy — Wermom</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Wermom Cancellation and Refund Policy - Understand your subscription cancellation rights, refund eligibility, and consumer protection rights.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Cancellation & Refund Policy | Wermom">
+    <meta property="og:description" content="Transparent cancellation and refund terms for Wermom baby health tracking app.">
+    <meta property="og:type" content="website">
+    <title>Cancellation & Refund Policy | Wermom</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
     <style>
         * {
             margin: 0;
@@ -13,197 +19,653 @@
         }
 
         :root {
-            --cream: #FFF9F5;
-            --rose: #E8846A;
-            --rose-deep: #D4604A;
-            --sage: #7BA68D;
-            --sage-deep: #5C8A6F;
-            --midnight: #1A1A2E;
-            --charcoal: #2D2D3F;
-            --warm-gray: #8A8A9A;
-            --light-gray: #E8E6E3;
+            --cream: #faf8f3;
+            --rose: #f89fa4;
+            --sage: #a8b8a8;
+            --midnight: #1a1a1a;
+            --light-gray: #f5f3f0;
+            --border-gray: #e8e6e3;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background-color: var(--cream);
             color: var(--midnight);
-            font-family: 'Inter', sans-serif;
             line-height: 1.6;
         }
 
-        /* Sticky Navigation */
+        /* Navigation */
         nav {
+            background-color: white;
+            border-bottom: 1px solid var(--border-gray);
             position: sticky;
             top: 0;
-            background-color: var(--cream);
-            border-bottom: 1px solid var(--light-gray);
-            padding: 16px 0;
             z-index: 100;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
-        nav-content {
+        nav .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            max-width: 720px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 1rem 2rem;
         }
 
-        nav img {
-            height: 34px;
+        nav a.logo {
+            display: inline-flex;
+            text-decoration: none;
+            color: var(--midnight);
+        }
+
+        nav svg {
+            height: 44px;
             width: auto;
         }
 
-        nav a {
-            color: var(--rose);
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav .nav-links a {
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            transition: color 0.2s ease;
+            color: var(--midnight);
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
 
-        nav a:hover {
-            color: var(--rose-deep);
+        nav .nav-links a:hover {
+            color: var(--rose);
         }
 
-        /* Main Content */
-        main {
-            max-width: 720px;
+        @media (max-width: 768px) {
+            nav .nav-links {
+                display: none;
+            }
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 48px 24px;
+            padding: 0 2rem;
         }
 
-        header {
-            margin-bottom: 48px;
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, var(--cream) 0%, rgba(248, 159, 164, 0.08) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
         }
 
-        h1 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 32px;
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
             font-weight: 700;
             color: var(--midnight);
-            margin-bottom: 12px;
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
-        .last-updated {
-            font-size: 14px;
-            color: var(--warm-gray);
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        /* Content section */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            gap: 3rem;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-content {
+            grid-column: 1;
+        }
+
+        .sidebar {
+            grid-column: 2;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        @media (max-width: 1024px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sidebar {
+                grid-column: 1;
+                position: static;
+            }
+        }
+
+        /* Table of contents */
+        .toc {
+            background-color: white;
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .toc h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--midnight);
+        }
+
+        .toc ol {
+            list-style: decimal;
+            margin-left: 1.5rem;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: var(--rose);
+            font-size: 0.9rem;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
         }
 
         /* Sections */
         section {
-            margin-bottom: 48px;
-            padding-left: 20px;
-            border-left: 3px solid rgba(232, 132, 106, 0.15);
+            margin-bottom: 3rem;
+            scroll-margin-top: 100px;
         }
 
         h2 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--midnight);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--rose);
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
             font-weight: 600;
             color: var(--midnight);
-            margin-bottom: 16px;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         p {
-            margin-bottom: 16px;
-            font-size: 15px;
-            line-height: 1.7;
-            color: var(--charcoal);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.8;
         }
 
-        p:last-child {
+        ul, ol {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: var(--midnight);
+            font-weight: 600;
+        }
+
+        /* Highlight boxes */
+        .highlight {
+            background-color: rgba(248, 159, 164, 0.1);
+            border-left: 4px solid var(--rose);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight.sage {
+            background-color: rgba(168, 184, 168, 0.08);
+            border-left-color: var(--sage);
+        }
+
+        .highlight p {
             margin-bottom: 0;
+        }
+
+        .highlight ul {
+            margin-left: 1.5rem;
+        }
+
+        .highlight li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Key section styling */
+        .key-section {
+            background-color: white;
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 1.5rem 0;
         }
 
         /* Footer */
         footer {
-            background-color: var(--light-gray);
-            padding: 32px 24px;
+            background-color: white;
+            border-top: 1px solid var(--border-gray);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--midnight);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            text-decoration: none;
+            color: var(--rose);
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: var(--midnight);
+        }
+
+        .footer-bottom {
             text-align: center;
-            color: var(--warm-gray);
-            font-size: 14px;
+            font-size: 0.85rem;
+            color: #777;
+            padding-top: 1rem;
         }
 
-        footer p {
-            margin-bottom: 8px;
-            color: var(--warm-gray);
+        /* Contact section */
+        .contact-box {
+            background-color: rgba(248, 159, 164, 0.05);
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
         }
 
-        footer a {
+        .contact-box h3 {
+            margin-top: 0;
+        }
+
+        .contact-box a {
             color: var(--rose);
             text-decoration: none;
-            transition: color 0.2s ease;
+            font-weight: 600;
         }
 
-        footer a:hover {
-            color: var(--rose-deep);
+        .contact-box a:hover {
+            text-decoration: underline;
         }
 
-        footer p:last-child {
-            margin-bottom: 0;
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            .key-section {
+                padding: 1.5rem;
+            }
+
+            footer {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            nav, .sidebar, footer {
+                display: none;
+            }
+
+            body {
+                background-color: white;
+            }
+
+            h2 {
+                page-break-after: avoid;
+            }
+
+            .highlight {
+                page-break-inside: avoid;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <nav-content>
-            <img src="logo.svg" alt="Wermom">
-            <a href="javascript:history.back()">← Back</a>
-        </nav-content>
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" zoomAndPan="magnify" viewBox="100 128 560 180" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><g/><clipPath id="cp07a6e95bfd"><path d="M 589 145 L 647 145 L 647 218.207031 L 589 218.207031 Z M 589 145 " clip-rule="nonzero"/></clipPath><clipPath id="cp51dae0ff44"><rect x="0" width="504" y="0" height="159"/></clipPath></defs><path fill="#f89fa4" d="M 589.601562 186.917969 C 591.550781 188.0625 593.933594 188.78125 595.992188 189.804688 C 602.117188 192.847656 608.710938 196.519531 612.742188 202.320312 C 613.152344 202.914062 616.1875 207.832031 616 208.160156 C 619.679688 201.738281 622.433594 195.3125 626.84375 189.253906 C 631.800781 182.457031 636.757812 174.933594 639.136719 166.84375 C 640.613281 162.4375 640.976562 154.914062 636.757812 151.792969 C 629.429688 146.125 622.628906 156.132812 619.117188 161.457031 C 617.628906 163.710938 616.207031 167.296875 613.621094 168.496094 C 613.324219 168.640625 613.058594 168.730469 612.828125 168.761719 L 612.792969 168.917969 C 612.792969 168.871094 612.785156 168.816406 612.773438 168.773438 C 612.53125 166.371094 611.914062 164.078125 611 161.976562 C 605.5 149.152344 589.339844 143.035156 580.84375 159.550781 C 575.28125 170.171875 581.328125 179.867188 589.601562 186.917969 " fill-opacity="1" fill-rule="nonzero"/><g clip-path="url(#cp07a6e95bfd)"><path fill="#f8a1a6" d="M 619.117188 161.457031 C 622.628906 156.132812 629.429688 146.125 636.757812 151.792969 C 640.976562 154.914062 640.613281 162.4375 639.136719 166.84375 C 636.757812 174.929688 631.800781 182.457031 626.839844 189.253906 C 622.433594 195.3125 619.679688 201.738281 616 208.160156 C 616.1875 207.832031 613.152344 202.914062 612.742188 202.320312 C 608.710938 196.519531 602.117188 192.847656 595.992188 189.804688 C 593.933594 188.78125 591.550781 188.0625 589.601562 186.917969 C 590.339844 187.546875 591.089844 188.164062 591.859375 188.746094 C 602.328125 197.011719 610.039062 205.824219 614.445312 218.492188 C 622.710938 199.214844 648.050781 182.6875 646.949219 160.101562 C 645.296875 134.210938 618.304688 145.78125 613.894531 164.507812 L 612.828125 168.761719 C 613.058594 168.726562 613.324219 168.640625 613.621094 168.496094 C 616.207031 167.296875 617.628906 163.710938 619.117188 161.457031 " fill-opacity="1" fill-rule="nonzero"/></g><g transform="matrix(1, 0, 0, 1, 109, 143)"><g clip-path="url(#cp51dae0ff44)"><g fill="#000000" fill-opacity="1"><g transform="translate(3.646284, 121.568027)"><g><path d="M -2 -63.046875 L 27.9375 -63.046875 L 27.9375 -57.453125 L 27 -57.453125 C 25.40625 -57.453125 24.609375 -56.742188 24.609375 -55.328125 C 24.609375 -54.878906 24.695312 -54.429688 24.875 -53.984375 C 25.050781 -53.546875 25.226562 -53.0625 25.40625 -52.53125 L 41.234375 -20.875 L 49.734375 -39.5 L 44.015625 -50.9375 C 43.222656 -52.707031 42.140625 -54.234375 40.765625 -55.515625 C 39.390625 -56.804688 37.726562 -57.453125 35.78125 -57.453125 L 34.84375 -57.453125 L 34.84375 -63.046875 L 64.765625 -63.046875 L 64.765625 -57.453125 L 63.84375 -57.453125 C 62.25 -57.453125 61.453125 -56.742188 61.453125 -55.328125 C 61.453125 -54.878906 61.539062 -54.429688 61.71875 -53.984375 C 61.894531 -53.546875 62.113281 -53.0625 62.375 -52.53125 L 77.671875 -21.546875 L 88.171875 -48.9375 C 88.617188 -50.09375 88.84375 -51.160156 88.84375 -52.140625 C 88.84375 -54.265625 87.890625 -55.679688 85.984375 -56.390625 C 84.078125 -57.097656 81.972656 -57.453125 79.671875 -57.453125 L 78.734375 -57.453125 L 78.734375 -63.046875 L 105.46875 -63.046875 L 105.46875 -57.453125 L 104.53125 -57.453125 C 103.289062 -57.453125 102.023438 -56.941406 100.734375 -55.921875 C 99.453125 -54.898438 98.320312 -53.679688 97.34375 -52.265625 C 96.375 -50.847656 95.625 -49.519531 95.09375 -48.28125 L 74.75 0 L 69.5625 0 L 52.796875 -33.25 L 37.640625 0 L 32.578125 0 L 7.1875 -50.9375 C 6.300781 -52.707031 5.191406 -54.234375 3.859375 -55.515625 C 2.523438 -56.804688 0.882812 -57.453125 -1.0625 -57.453125 L -2 -57.453125 Z M -2 -63.046875 "/></g></g></g><g fill="#000000" fill-opacity="1"><g transform="translate(108.972919, 121.568027)"><g><path d="M 2.921875 -31.125 C 2.921875 -36.976562 4.003906 -42.382812 6.171875 -47.34375 C 8.347656 -52.3125 11.585938 -56.300781 15.890625 -59.3125 C 20.191406 -62.332031 25.488281 -63.84375 31.78125 -63.84375 C 37.632812 -63.84375 42.488281 -62.625 46.34375 -60.1875 C 50.207031 -57.75 53.09375 -54.441406 55 -50.265625 C 56.90625 -46.097656 57.859375 -41.398438 57.859375 -36.171875 L 57.859375 -34.046875 L 20.75 -34.046875 C 20.75 -30.585938 21.300781 -27.0625 22.40625 -23.46875 C 23.519531 -19.882812 25.335938 -16.867188 27.859375 -14.421875 C 30.390625 -11.984375 33.691406 -10.765625 37.765625 -10.765625 C 40.960938 -10.765625 44.066406 -11.5625 47.078125 -13.15625 C 50.097656 -14.757812 52.445312 -16.9375 54.125 -19.6875 L 58.25 -17.15625 C 55.5 -11.476562 52.195312 -6.976562 48.34375 -3.65625 C 44.488281 -0.332031 39.191406 1.328125 32.453125 1.328125 C 26.160156 1.328125 20.796875 -0.132812 16.359375 -3.0625 C 11.921875 -5.988281 8.570312 -9.910156 6.3125 -14.828125 C 4.050781 -19.753906 2.921875 -25.1875 2.921875 -31.125 Z M 21.015625 -39.640625 L 40.828125 -39.640625 C 40.648438 -42.648438 40.179688 -45.570312 39.421875 -48.40625 C 38.671875 -51.25 37.628906 -53.625 36.296875 -55.53125 C 34.972656 -57.4375 33.25 -58.390625 31.125 -58.390625 C 29 -58.390625 27.25 -57.367188 25.875 -55.328125 C 24.5 -53.285156 23.429688 -50.820312 22.671875 -47.9375 C 21.921875 -45.0625 21.367188 -42.296875 21.015625 -39.640625 Z M 21.015625 -39.640625 "/></g></g></g><g fill="#f8a1a6" fill-opacity="1"><g transform="translate(170.69153, 121.568027)"><g><path d="M 30.71875 0 L 1.203125 0 L 1.203125 -5.71875 L 2.125 -5.71875 C 4.164062 -5.71875 5.5625 -6.09375 6.3125 -6.84375 C 7.070312 -7.601562 7.453125 -8.957031 7.453125 -10.90625 L 7.453125 -44.953125 C 7.453125 -46.992188 7.070312 -48.390625 6.3125 -49.140625 C 5.5625 -49.898438 4.164062 -50.28125 2.125 -50.28125 L 1.203125 -50.28125 L 1.203125 -55.734375 L 24.46875 -62.90625 L 24.46875 -57.453125 C 26.414062 -59.578125 28.71875 -61.171875 31.375 -62.234375 C 34.039062 -63.304688 36.882812 -63.84375 39.90625 -63.84375 C 42.644531 -63.84375 45.34375 -63.351562 48 -62.375 C 50.664062 -61.394531 52.707031 -59.625 54.125 -57.0625 C 54.570312 -56.257812 54.972656 -55.414062 55.328125 -54.53125 C 55.679688 -53.644531 55.859375 -52.710938 55.859375 -51.734375 C 55.859375 -49.335938 54.992188 -47.492188 53.265625 -46.203125 C 51.535156 -44.921875 49.5625 -44.28125 47.34375 -44.28125 C 44.59375 -44.28125 42.289062 -45.390625 40.4375 -47.609375 C 40.257812 -47.878906 40.035156 -48.164062 39.765625 -48.46875 C 39.503906 -48.78125 39.285156 -49.070312 39.109375 -49.34375 C 38.210938 -50.582031 37.300781 -51.625 36.375 -52.46875 C 35.445312 -53.3125 34.050781 -53.734375 32.1875 -53.734375 C 29.789062 -53.734375 27.90625 -52.84375 26.53125 -51.0625 C 25.15625 -49.289062 24.46875 -47.253906 24.46875 -44.953125 L 24.46875 -10.90625 C 24.46875 -8.957031 24.84375 -7.601562 25.59375 -6.84375 C 26.351562 -6.09375 27.753906 -5.71875 29.796875 -5.71875 L 30.71875 -5.71875 Z M 30.71875 0 "/></g></g></g><g fill="#000000" fill-opacity="1"><g transform="translate(226.955191, 121.568027)"><g><path d="M 30.1875 0 L 0.671875 0 L 0.671875 -5.71875 L 1.59375 -5.71875 C 3.632812 -5.632812 5.03125 -5.988281 5.78125 -6.78125 C 6.539062 -7.582031 6.921875 -8.957031 6.921875 -10.90625 L 6.921875 -44.953125 C 6.921875 -46.992188 6.539062 -48.390625 5.78125 -49.140625 C 5.03125 -49.898438 3.632812 -50.28125 1.59375 -50.28125 L 0.671875 -50.28125 L 0.671875 -55.734375 L 23.9375 -62.90625 L 23.9375 -58.921875 C 26.238281 -60.609375 28.765625 -61.847656 31.515625 -62.640625 C 34.265625 -63.441406 37.015625 -63.84375 39.765625 -63.84375 C 43.316406 -63.84375 46.796875 -63.285156 50.203125 -62.171875 C 53.617188 -61.066406 56.300781 -58.921875 58.25 -55.734375 C 60.644531 -58.472656 63.503906 -60.507812 66.828125 -61.84375 C 70.148438 -63.175781 73.675781 -63.84375 77.40625 -63.84375 C 83.695312 -63.84375 88.613281 -62.289062 92.15625 -59.1875 C 95.707031 -56.082031 97.484375 -51.425781 97.484375 -45.21875 L 97.484375 -10.90625 C 97.484375 -8.957031 97.859375 -7.582031 98.609375 -6.78125 C 99.367188 -5.988281 100.769531 -5.632812 102.8125 -5.71875 L 103.734375 -5.71875 L 103.734375 0 L 74.21875 0 L 74.21875 -5.71875 L 75.140625 -5.71875 C 77.179688 -5.632812 78.554688 -5.988281 79.265625 -6.78125 C 79.972656 -7.582031 80.328125 -8.957031 80.328125 -10.90625 L 80.328125 -44.953125 C 80.328125 -47.960938 79.617188 -50.734375 78.203125 -53.265625 C 76.785156 -55.796875 74.4375 -57.0625 71.15625 -57.0625 C 69.207031 -57.0625 67.457031 -56.460938 65.90625 -55.265625 C 64.351562 -54.066406 63.109375 -52.554688 62.171875 -50.734375 C 61.242188 -48.921875 60.78125 -47.082031 60.78125 -45.21875 L 60.78125 -10.90625 C 60.78125 -8.957031 61.15625 -7.582031 61.90625 -6.78125 C 62.664062 -5.988281 64.019531 -5.632812 65.96875 -5.71875 L 66.90625 -5.71875 L 66.90625 0 L 37.375 0 L 37.375 -5.71875 L 38.296875 -5.71875 C 40.335938 -5.632812 41.734375 -5.988281 42.484375 -6.78125 C 43.242188 -7.582031 43.625 -8.957031 43.625 -10.90625 L 43.625 -44.953125 C 43.625 -48.503906 42.957031 -51.410156 41.625 -53.671875 C 40.300781 -55.929688 37.734375 -57.0625 33.921875 -57.0625 C 31.878906 -57.0625 30.101562 -56.4375 28.59375 -55.1875 C 27.082031 -53.945312 25.925781 -52.394531 25.125 -50.53125 C 24.332031 -48.675781 23.9375 -46.816406 23.9375 -44.953125 L 23.9375 -10.90625 C 23.9375 -8.957031 24.3125 -7.582031 25.0625 -6.78125 C 25.820312 -5.988281 27.222656 -5.632812 29.265625 -5.71875 L 30.1875 -5.71875 Z M 30.1875 0 "/></g></g></g><g fill="#000000" fill-opacity="1"><g transform="translate(332.281826, 121.568027)"><g><path d="M 32.578125 1.328125 C 25.671875 1.328125 20.019531 -0.175781 15.625 -3.1875 C 11.238281 -6.207031 8.003906 -10.195312 5.921875 -15.15625 C 3.835938 -20.125 2.796875 -25.578125 2.796875 -31.515625 C 2.796875 -37.546875 3.835938 -43 5.921875 -47.875 C 8.003906 -52.75 11.238281 -56.628906 15.625 -59.515625 C 20.019531 -62.398438 25.671875 -63.84375 32.578125 -63.84375 C 39.492188 -63.84375 45.171875 -62.421875 49.609375 -59.578125 C 54.046875 -56.742188 57.304688 -52.890625 59.390625 -48.015625 C 61.472656 -43.140625 62.515625 -37.640625 62.515625 -31.515625 C 62.515625 -25.578125 61.445312 -20.125 59.3125 -15.15625 C 57.1875 -10.195312 53.925781 -6.207031 49.53125 -3.1875 C 45.144531 -0.175781 39.492188 1.328125 32.578125 1.328125 Z M 20.75 -31.515625 C 20.75 -29.566406 20.859375 -27.0625 21.078125 -24 C 21.296875 -20.945312 21.757812 -17.890625 22.46875 -14.828125 C 23.1875 -11.765625 24.363281 -9.191406 26 -7.109375 C 27.644531 -5.023438 29.835938 -3.984375 32.578125 -3.984375 C 35.421875 -3.984375 37.640625 -5.023438 39.234375 -7.109375 C 40.828125 -9.191406 42 -11.765625 42.75 -14.828125 C 43.507812 -17.890625 44 -20.945312 44.21875 -24 C 44.445312 -27.0625 44.5625 -29.566406 44.5625 -31.515625 C 44.5625 -33.472656 44.445312 -35.957031 44.21875 -38.96875 C 44 -41.976562 43.507812 -44.988281 42.75 -48 C 42 -51.019531 40.828125 -53.550781 39.234375 -55.59375 C 37.640625 -57.632812 35.421875 -58.65625 32.578125 -58.65625 C 29.835938 -58.65625 27.644531 -57.632812 26 -55.59375 C 24.363281 -53.550781 23.1875 -51.019531 22.46875 -48 C 21.757812 -44.988281 21.296875 -41.976562 21.078125 -38.96875 C 20.859375 -35.957031 20.75 -33.472656 20.75 -31.515625 Z M 20.75 -31.515625 "/></g></g></g><g fill="#000000" fill-opacity="1"><g transform="translate(397.313038, 121.568027)"><g><path d="M 30.1875 0 L 0.671875 0 L 0.671875 -5.71875 L 1.59375 -5.71875 C 3.632812 -5.632812 5.03125 -5.988281 5.78125 -6.78125 C 6.539062 -7.582031 6.921875 -8.957031 6.921875 -10.90625 L 6.921875 -44.953125 C 6.921875 -46.992188 6.539062 -48.390625 5.78125 -49.140625 C 5.03125 -49.898438 3.632812 -50.28125 1.59375 -50.28125 L 0.671875 -50.28125 L 0.671875 -55.734375 L 23.9375 -62.90625 L 23.9375 -58.921875 C 26.238281 -60.609375 28.765625 -61.847656 31.515625 -62.640625 C 34.265625 -63.441406 37.015625 -63.84375 39.765625 -63.84375 C 43.316406 -63.84375 46.796875 -63.285156 50.203125 -62.171875 C 53.617188 -61.066406 56.300781 -58.921875 58.25 -55.734375 C 60.644531 -58.472656 63.503906 -60.507812 66.828125 -61.84375 C 70.148438 -63.175781 73.675781 -63.84375 77.40625 -63.84375 C 83.695312 -63.84375 88.613281 -62.289062 92.15625 -59.1875 C 95.707031 -56.082031 97.484375 -51.425781 97.484375 -45.21875 L 97.484375 -10.90625 C 97.484375 -8.957031 97.859375 -7.582031 98.609375 -6.78125 C 99.367188 -5.988281 100.769531 -5.632812 102.8125 -5.71875 L 103.734375 -5.71875 L 103.734375 0 L 74.21875 0 L 74.21875 -5.71875 L 75.140625 -5.71875 C 77.179688 -5.632812 78.554688 -5.988281 79.265625 -6.78125 C 79.972656 -7.582031 80.328125 -8.957031 80.328125 -10.90625 L 80.328125 -44.953125 C 80.328125 -47.960938 79.617188 -50.734375 78.203125 -53.265625 C 76.785156 -55.796875 74.4375 -57.0625 71.15625 -57.0625 C 69.207031 -57.0625 67.457031 -56.460938 65.90625 -55.265625 C 64.351562 -54.066406 63.109375 -52.554688 62.171875 -50.734375 C 61.242188 -48.921875 60.78125 -47.082031 60.78125 -45.21875 L 60.78125 -10.90625 C 60.78125 -8.957031 61.15625 -7.582031 61.90625 -6.78125 C 62.664062 -5.988281 64.019531 -5.632812 65.96875 -5.71875 L 66.90625 -5.71875 L 66.90625 0 L 37.375 0 L 37.375 -5.71875 L 38.296875 -5.71875 C 40.335938 -5.632812 41.734375 -5.988281 42.484375 -6.78125 C 43.242188 -7.582031 43.625 -8.957031 43.625 -10.90625 L 43.625 -44.953125 C 43.625 -48.503906 42.957031 -51.410156 41.625 -53.671875 C 40.300781 -55.929688 37.734375 -57.0625 33.921875 -57.0625 C 31.878906 -57.0625 30.101562 -56.4375 28.59375 -55.1875 C 27.082031 -53.945312 25.925781 -52.394531 25.125 -50.53125 C 24.332031 -48.675781 23.9375 -46.816406 23.9375 -44.953125 L 23.9375 -10.90625 C 23.9375 -8.957031 24.3125 -7.582031 25.0625 -6.78125 C 25.820312 -5.988281 27.222656 -5.632812 29.265625 -5.71875 L 30.1875 -5.71875 Z M 30.1875 0 "/></g></g></g></g></g></svg>
+            </a>
+        </div>
     </nav>
 
-    <main>
-        <header>
-            <h1>Cancellation Policy</h1>
-            <p class="last-updated">Last updated: March 27, 2026</p>
-        </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Cancellation & Refund Policy</h1>
+            <p>Clear, transparent terms for managing your Wermom subscription and understanding your rights.</p>
+        </div>
+    </section>
 
-        <section>
-            <h2>1. Overview</h2>
-            <p>Wermom is committed to offering a flexible cancellation policy that puts you in control. You can cancel your subscription at any time from your account settings without penalties or complicated procedures. We understand that circumstances change, and we want to make it as easy as possible for you to manage your subscription.</p>
-        </section>
+    <!-- Main Content -->
+    <div class="content">
+        <main class="main-content">
+            <!-- Section 1: Overview -->
+            <section id="overview">
+                <h2>1. Overview</h2>
+                <p>Wermom is a subscription-based baby health tracking app designed for parents from pregnancy through the first six years of a child's life. We offer flexible subscription plans and provide a free trial period to evaluate the service before committing to a paid plan.</p>
+                <p>This policy explains how you can cancel your subscription, the refund terms that apply, and your consumer protection rights. We want you to feel confident in your subscription with us.</p>
+            </section>
 
-        <section>
-            <h2>2. Free Trial Cancellation</h2>
-            <p>Wermom offers a 7-day free trial to all new users. A valid payment method is required to sign up, but you will not be charged during the trial period if you cancel before it ends. To avoid any charges, you must cancel your subscription before your 7-day trial period expires. If you cancel during the trial, your card will not be charged and you will not be converted to a paid subscription.</p>
-        </section>
+            <!-- Section 2: Free Trial -->
+            <section id="free-trial">
+                <h2>2. Free Trial Period</h2>
+                <p>Wermom offers all users a free trial period to explore the app's features and evaluate whether it meets your needs.</p>
 
-        <section>
-            <h2>3. Paid Subscription Cancellation</h2>
-            <p>After your free trial period ends, your subscription automatically converts to a paid plan at $299 per year. You can cancel your paid subscription at any time through your account settings. When you cancel, your access to Wermom will continue until the end of your current billing period. After your billing period expires, you will no longer have access to the service. Please note that cancellation does not entitle you to any refunds for the time remaining in your billing period.</p>
-        </section>
+                <h3>Key Points About Your Free Trial:</h3>
+                <ul>
+                    <li><strong>No charge during trial:</strong> You will not be charged any fees during your free trial period.</li>
+                    <li><strong>Cancel anytime:</strong> You may cancel your subscription at any time during your trial period.</li>
+                    <li><strong>No charges for cancellation:</strong> If you cancel during your trial, you will not be charged, and no refund is necessary.</li>
+                    <li><strong>Automatic conversion:</strong> If you do not cancel before your trial period ends, your subscription will automatically convert to a paid plan at the end of the trial.</li>
+                    <li><strong>Pre-conversion notification:</strong> You will receive a notification before your trial period ends and before any charges are applied to inform you of the upcoming conversion and give you the opportunity to cancel if you wish.</li>
+                </ul>
 
-        <section>
-            <h2>4. How to Cancel</h2>
-            <p>Canceling your Wermom subscription is straightforward. Open the Wermom app on your device and navigate to Settings, then select Account. From there, choose Manage Subscription and follow the prompts to cancel your subscription. Alternatively, if you have any difficulties or prefer to cancel via email, you can contact our support team at support@wermom.com and we will process your cancellation request promptly.</p>
-        </section>
+                <div class="highlight">
+                    <p><strong>Important:</strong> Please check your email for trial expiration notices. If you do not wish to be charged, ensure you cancel before your trial period ends.</p>
+                </div>
+            </section>
 
-        <section>
-            <h2>5. Refund Policy</h2>
-            <p>Wermom does not offer refunds after a payment has been processed. If you cancel your subscription during the free trial period, no charge will be applied to your payment method. However, once your paid subscription begins and you are charged, no refunds or credits will be issued, even if you cancel immediately after payment. We also do not offer prorated refunds for partial billing periods—once charged, the full annual subscription fee is non-refundable.</p>
-        </section>
+            <!-- Section 3: Cancellation -->
+            <section id="cancellation">
+                <h2>3. Cancellation</h2>
+                <p>You may cancel your Wermom subscription at any time. Here's what you need to know:</p>
 
-        <section>
-            <h2>6. After Cancellation</h2>
-            <p>After you cancel your subscription, you will retain access to Wermom until the end of your current billing period. Your health data will be retained for 30 days following your cancellation date. During this 30-day window, you can request a data export of all your information if you wish to keep a copy. After 30 days, all data associated with your account will be permanently deleted and cannot be recovered. We encourage you to export your data if you think you may want it in the future.</p>
-        </section>
+                <h3>How to Cancel:</h3>
+                <ul>
+                    <li>Cancel through your account settings in the Wermom app or website</li>
+                    <li>Contact us at <strong>hello@wermom.com</strong> and request cancellation</li>
+                </ul>
 
-        <section>
-            <h2>7. Reactivation</h2>
-            <p>If you have canceled your Wermom subscription and wish to use the service again, you can reactivate your account at any time. When you resubscribe, a new subscription will begin with a fresh billing cycle. Please be aware that if your data was permanently deleted following your 30-day grace period after cancellation, it may not be recoverable. We recommend exporting your data before the 30-day window expires if you think you may want to reactivate in the future.</p>
-        </section>
+                <h3>When Cancellation Takes Effect:</h3>
+                <ul>
+                    <li><strong>End of billing period:</strong> Your cancellation becomes effective at the end of your current billing cycle. You will retain full access to all features until that date.</li>
+                    <li><strong>No mid-cycle refunds:</strong> We do not provide refunds or credits for unused portions of your current billing period.</li>
+                </ul>
 
-        <section>
-            <h2>8. Contact</h2>
-            <p>If you have any questions or concerns regarding cancellation, refunds, or any other matters related to this policy, please do not hesitate to reach out to our support team at support@wermom.com. We are here to assist you and will respond to your inquiries as quickly as possible.</p>
-        </section>
-    </main>
+                <h3>Data After Cancellation:</h3>
+                <div class="highlight sage">
+                    <p>After you cancel your subscription, your health data and reports will be retained for <strong>30 days</strong>. After this 30-day period, your data will be permanently deleted from our servers. This grace period allows you time to download or back up your data if needed. Data may be retained longer if required by law.</p>
+                </div>
+            </section>
 
+            <!-- Section 4: Refund Policy (KEY SECTION) -->
+            <section id="refund-policy">
+                <h2>4. Refund Policy</h2>
+                <p>Understanding our refund policy will help you know what to expect when you cancel your subscription.</p>
+
+                <div class="key-section">
+                    <h3>During Free Trial</h3>
+                    <p>If you cancel during your free trial period, there is no charge and no refund is required. Your access will simply end at the conclusion of your trial period.</p>
+                </div>
+
+                <div class="key-section">
+                    <h3>After Free Trial Ends</h3>
+                    <p><strong>Generally, subscriptions are non-refundable.</strong> Once your trial period has ended and you transition to a paid subscription, charges for that billing period are considered final.</p>
+                </div>
+
+                <div class="key-section">
+                    <h3>Critical Limitation: Health Reports & Digital Goods</h3>
+                    <p><strong>Once you have accessed or viewed any health report after your trial period, NO refund will be issued.</strong></p>
+                    <p>Health reports provided through Wermom are digital goods that are consumed upon viewing. By viewing or accessing a health report, you have substantially benefited from the service, and therefore the service has been substantially performed. Refunds cannot be issued in these circumstances.</p>
+                    <p>This applies regardless of the amount of time that has passed since the charge or the reason for your cancellation request.</p>
+                </div>
+
+                <h3>Exceptions Where Refund May Be Considered</h3>
+                <p>Wermom may, at its sole discretion, consider issuing a refund in the following circumstances:</p>
+                <ul>
+                    <li><strong>Technical issues:</strong> If a technical problem prevented you from accessing the service for an extended period, and the issue was not caused by factors outside our control or by misuse of the app on your end</li>
+                    <li><strong>Unauthorized charges:</strong> If you believe a charge was made to your account without authorization (must be reported within 30 days of the charge)</li>
+                    <li><strong>Billing errors:</strong> If we made a clear error in billing or charging you incorrectly</li>
+                </ul>
+
+                <div class="highlight">
+                    <p><strong>Important:</strong> Any potential refund is entirely at Wermom's discretion. Even if one of these exceptions applies, we may choose to offer a partial refund, service credit, or other remedy rather than a full cash refund. There is no guarantee that a refund will be approved.</p>
+                </div>
+
+                <h3>How to Request a Refund</h3>
+                <p>If you believe you qualify for a refund under one of the exceptions listed above, follow the process in Section 5 below.</p>
+            </section>
+
+            <!-- Section 5: How to Request a Refund -->
+            <section id="refund-request">
+                <h2>5. How to Request a Refund</h2>
+                <p>To request a refund, please follow these steps:</p>
+
+                <div class="key-section">
+                    <h3>Submission Process</h3>
+                    <ol>
+                        <li><strong>Email us:</strong> Send your request to <strong>hello@wermom.com</strong></li>
+                        <li><strong>Subject line:</strong> Use "Refund Request" as your email subject</li>
+                        <li><strong>Include the following information:</strong>
+                            <ul>
+                                <li>Your account email address</li>
+                                <li>The date of the charge in question</li>
+                                <li>The amount of the charge</li>
+                                <li>A clear explanation of why you are requesting a refund</li>
+                                <li>Any relevant details (e.g., screenshots of errors, dates of technical issues, etc.)</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h3>Response Timeline</h3>
+                    <ul>
+                        <li><strong>Initial response:</strong> We will respond to your refund request within 5 business days</li>
+                        <li><strong>Refund processing:</strong> If your refund is approved, you will receive the funds within 10 business days, returned to your original payment method</li>
+                        <li><strong>Communication:</strong> We will notify you of the refund status via email</li>
+                    </ul>
+                </div>
+
+                <p><strong>Please note:</strong> Refund requests submitted more than 14 days after the charge date may not be considered. For unauthorized charges, please report within 30 days.</p>
+            </section>
+
+            <!-- Section 6: Price Changes -->
+            <section id="price-changes">
+                <h2>6. Price Changes</h2>
+                <p>Wermom reserves the right to change subscription pricing. Here's how we handle price adjustments:</p>
+
+                <h3>Notice & Existing Subscribers</h3>
+                <ul>
+                    <li><strong>30-day advance notice:</strong> We will provide at least 30 days' notice before any price increase takes effect</li>
+                    <li><strong>Grandfathering:</strong> Existing subscribers will continue to pay the old price until their next renewal date after the 30-day notice period ends</li>
+                    <li><strong>Right to cancel:</strong> You have the right to cancel your subscription before the new price takes effect</li>
+                </ul>
+
+                <div class="highlight sage">
+                    <p>If a price increase is announced, you will receive an email notification with details about the new price and the effective date. You can cancel at any time before the new price applies without penalty.</p>
+                </div>
+            </section>
+
+            <!-- Section 7: Jurisdiction-Specific Rights -->
+            <section id="jurisdiction-specific">
+                <h2>7. Jurisdiction-Specific Consumer Rights</h2>
+                <p>Depending on where you live, you may have additional consumer protection rights that apply to your subscription with Wermom. This section outlines key protections by jurisdiction:</p>
+
+                <h3>Canada</h3>
+                <p>Wermom is incorporated in Ontario, Canada. Consumer protection laws in Canada, including provincial consumer protection legislation, may provide you with additional rights beyond those stated in this policy. <strong>Nothing in this cancellation and refund policy limits or excludes the rights you have under applicable Canadian consumer protection laws.</strong> If you have questions about your rights under Canadian law, please contact us at hello@wermom.com.</p>
+
+                <h3>European Union & United Kingdom</h3>
+                <p>Under the EU Consumer Rights Directive and UK consumer protection law, consumers have a <strong>14-day right of withdrawal</strong> for digital services. However, this right is lost if you have expressly consented to the commencement of performance of the service and acknowledged that you lose the right to withdraw.</p>
+                <p><strong>For Wermom users:</strong> Once you access or view any health report or utilize core features of the app, you are indicating your consent for performance to begin and your acknowledgment of the loss of withdrawal rights. If you wish to exercise your withdrawal right, you must do so before accessing health reports or other key features.</p>
+                <p>If you are located in the EU or UK and have questions about your withdrawal rights, please contact us at hello@wermom.com.</p>
+
+                <h3>United States - California</h3>
+                <p>California's Automatic Renewal Law (ARL) requires clear disclosure before charging for automatic renewals and provides an easy cancellation mechanism. Wermom complies with these requirements by:</p>
+                <ul>
+                    <li>Clearly disclosing subscription terms and pricing before trial conversion</li>
+                    <li>Sending reminder notifications before trial expiration</li>
+                    <li>Providing multiple, easy methods to cancel (app settings or email)</li>
+                    <li>Honoring cancellation requests promptly</li>
+                </ul>
+
+                <h3>Australia</h3>
+                <p>Wermom respects the Australian Consumer Law, which provides statutory guarantees regarding services. <strong>This policy does not exclude, restrict, or modify any statutory guarantees or consumer rights you have under the Australian Consumer Law.</strong> If you believe you have a claim under the Australian Consumer Law, please contact us at hello@wermom.com.</p>
+
+                <h3>General Principle</h3>
+                <p>Where the consumer protection laws of your jurisdiction provide you with greater protection or rights than those stated in this policy, those local laws will prevail.</p>
+            </section>
+
+            <!-- Section 8: Contact -->
+            <section id="contact">
+                <h2>8. Contact Us</h2>
+                <p>If you have questions about this cancellation and refund policy, need to cancel your subscription, or wish to request a refund, please reach out:</p>
+
+                <div class="contact-box">
+                    <h3>Wermom Support</h3>
+                    <p><strong>Email:</strong> <a href="mailto:hello@wermom.com">hello@wermom.com</a></p>
+                    <p><strong>Response time:</strong> We aim to respond to all inquiries within 5 business days.</p>
+                </div>
+
+                <p>We're here to help and want to ensure you have a positive experience with Wermom. Whether you have a technical issue, billing concern, or simply want to cancel, our support team is ready to assist you.</p>
+            </section>
+
+            <!-- Last Updated -->
+            <section style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-gray);">
+                <p style="font-size: 0.9rem; color: #666;">
+                    <strong>Last Updated:</strong> March 2026
+                </p>
+            </section>
+        </main>
+
+        <!-- Sidebar: Table of Contents -->
+        <aside class="sidebar">
+            <div class="toc">
+                <h3>On This Page</h3>
+                <ol>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#free-trial">Free Trial</a></li>
+                    <li><a href="#cancellation">Cancellation</a></li>
+                    <li><a href="#refund-policy">Refund Policy</a></li>
+                    <li><a href="#refund-request">Request a Refund</a></li>
+                    <li><a href="#price-changes">Price Changes</a></li>
+                    <li><a href="#jurisdiction-specific">Jurisdiction-Specific Rights</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ol>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Wermom. All rights reserved.</p>
-        <p>For more information, visit our <a href="terms-of-service.html">Terms of Service</a>, <a href="privacy-policy.html">Privacy Policy</a>, or contact <a href="mailto:support@wermom.com">support@wermom.com</a></p>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="cancellation-policy.html">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="mailto:hello@wermom.com">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Wermom Inc. All rights reserved. Wermom is incorporated in Ontario, Canada.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
