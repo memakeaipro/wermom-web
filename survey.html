@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wermom - Health Survey</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -64,7 +63,7 @@
             text-decoration: none;
         }
         .nav-logo img {
-            height: 52px;
+            height: 40px;
             width: auto;
         }
 
@@ -1138,7 +1137,7 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <a href="#" class="nav-logo" onclick="event.preventDefault(); showExitModal();"><img src="logo.svg" alt="Wermom"></a>
+        <a href="#" class="nav-logo" onclick="event.preventDefault(); showExitModal();"><img src="img/wermom-logo-cropped.svg" alt="Wermom"></a>
     </nav>
 
     <!-- Main Layout Container -->
@@ -1226,20 +1225,20 @@
 
                     <div class="form-group">
                         <label for="age" class="required">Your Age</label>
-                        <input type="number" id="age" name="age" min="18" max="60" required>
-                        <div class="error-message">Please enter a valid age</div>
+                        <input type="number" id="age" name="age" min="14" max="65" required placeholder="14 – 65">
+                        <div class="error-message">Please enter a valid age (14–65)</div>
                     </div>
 
                     <div class="form-group">
                         <label for="height" class="required">Height (cm)</label>
-                        <input type="number" id="height" name="height" min="100" max="220" required>
-                        <div class="error-message">Please enter your height</div>
+                        <input type="number" id="height" name="height" min="100" max="220" required placeholder="100 – 220">
+                        <div class="error-message">Please enter a valid height (100–220 cm)</div>
                     </div>
 
                     <div class="form-group">
                         <label for="weight" class="required">Current Weight (kg)</label>
-                        <input type="number" id="weight" name="weight" min="30" max="200" step="0.1" required>
-                        <div class="error-message">Please enter your weight</div>
+                        <input type="number" id="weight" name="weight" min="30" max="300" step="0.1" required placeholder="30 – 300">
+                        <div class="error-message">Please enter a valid weight (30–300 kg)</div>
                     </div>
 
                     <div class="form-group">
@@ -1273,8 +1272,8 @@
 
                     <div class="form-group">
                         <label for="pregnancies" class="required">Number of Pregnancies</label>
-                        <input type="number" id="pregnancies" name="pregnancies" min="0" max="20" required>
-                        <div class="error-message">Please enter the number of pregnancies</div>
+                        <input type="number" id="pregnancies" name="pregnancies" min="0" max="10" required placeholder="0 – 10">
+                        <div class="error-message">Please enter a valid number (0–10)</div>
                     </div>
 
                     <div class="form-group">
@@ -1348,22 +1347,22 @@
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="birthWeight">Birth Weight (kg)</label>
-                        <input type="number" id="birthWeight" name="birthWeight" min="1" max="6" step="0.1" placeholder="Optional">
+                        <input type="number" id="birthWeight" name="birthWeight" min="0.5" max="6" step="0.1" placeholder="0.5 – 6 kg">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="currentBabyWeight">Current Weight (kg)</label>
-                        <input type="number" id="currentBabyWeight" name="currentBabyWeight" min="1" max="50" step="0.1" placeholder="Optional">
+                        <input type="number" id="currentBabyWeight" name="currentBabyWeight" min="1" max="30" step="0.1" placeholder="1 – 30 kg">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babyHeight">Current Length/Height (cm)</label>
-                        <input type="number" id="babyHeight" name="babyHeight" min="30" max="200" step="0.1" placeholder="Optional">
+                        <input type="number" id="babyHeight" name="babyHeight" min="25" max="130" step="0.1" placeholder="25 – 130 cm">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="headCircumference">Head Circumference (cm)</label>
-                        <input type="number" id="headCircumference" name="headCircumference" min="25" max="60" step="0.1" placeholder="Optional">
+                        <input type="number" id="headCircumference" name="headCircumference" min="25" max="55" step="0.1" placeholder="25 – 55 cm">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
@@ -1434,14 +1433,14 @@
 
                     <div class="form-group">
                         <label for="prenatalCheckups" class="required">Number of Prenatal Checkups So Far</label>
-                        <input type="number" id="prenatalCheckups" name="prenatalCheckups" min="0" max="50" required>
-                        <div class="error-message">Please enter the number</div>
+                        <input type="number" id="prenatalCheckups" name="prenatalCheckups" min="0" max="30" required placeholder="0 – 30">
+                        <div class="error-message">Please enter a valid number (0–30)</div>
                     </div>
 
                     <div class="form-group">
                         <label for="ultrasounds" class="required">Number of Ultrasounds</label>
-                        <input type="number" id="ultrasounds" name="ultrasounds" min="0" max="50" required>
-                        <div class="error-message">Please enter the number</div>
+                        <input type="number" id="ultrasounds" name="ultrasounds" min="0" max="20" required placeholder="0 – 20">
+                        <div class="error-message">Please enter a valid number (0–20)</div>
                     </div>
 
                     <div class="form-group">
@@ -1533,7 +1532,7 @@
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babyRecentWeight">Baby's Most Recent Weight at Doctor's Visit (kg)</label>
-                        <input type="number" id="babyRecentWeight" name="babyRecentWeight" min="1" max="30" step="0.1" placeholder="Optional">
+                        <input type="number" id="babyRecentWeight" name="babyRecentWeight" min="1" max="30" step="0.1" placeholder="1 – 30 kg">
                     </div>
 
                     <div class="form-group">
@@ -1704,8 +1703,8 @@
 
                     <div class="form-group">
                         <label for="momSleepHours" class="required">Mom's Sleep Hours Per Night</label>
-                        <input type="number" id="momSleepHours" name="momSleepHours" min="0" max="12" step="0.5" required>
-                        <div class="error-message">Please enter sleep hours</div>
+                        <input type="number" id="momSleepHours" name="momSleepHours" min="0" max="16" step="0.5" required placeholder="0 – 16">
+                        <div class="error-message">Please enter valid sleep hours (0–16)</div>
                     </div>
 
                     <div class="form-group">
@@ -1721,14 +1720,14 @@
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babySleep24h" class="required">Baby's Total Sleep Per 24h (hours)</label>
-                        <input type="number" id="babySleep24h" name="babySleep24h" min="0" max="24" step="0.5" required>
-                        <div class="error-message">Please enter sleep hours</div>
+                        <input type="number" id="babySleep24h" name="babySleep24h" min="0" max="24" step="0.5" required placeholder="0 – 24">
+                        <div class="error-message">Please enter valid sleep hours (0–24)</div>
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="nightWakings" class="required">Number of Night Wakings</label>
-                        <input type="number" id="nightWakings" name="nightWakings" min="0" max="20" required>
-                        <div class="error-message">Please enter the number</div>
+                        <input type="number" id="nightWakings" name="nightWakings" min="0" max="15" required placeholder="0 – 15">
+                        <div class="error-message">Please enter a valid number (0–15)</div>
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
@@ -1965,17 +1964,17 @@
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babyCurrentWeight7">Baby's Latest Weight (kg)</label>
-                        <input type="number" id="babyCurrentWeight7" name="babyCurrentWeight7" min="1" max="30" step="0.1" placeholder="Most recent measurement">
+                        <input type="number" id="babyCurrentWeight7" name="babyCurrentWeight7" min="1" max="30" step="0.1" placeholder="1 – 30 kg">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babyCurrentHeight7">Baby's Latest Height/Length (cm)</label>
-                        <input type="number" id="babyCurrentHeight7" name="babyCurrentHeight7" min="30" max="130" step="0.1" placeholder="Most recent measurement">
+                        <input type="number" id="babyCurrentHeight7" name="babyCurrentHeight7" min="25" max="130" step="0.1" placeholder="25 – 130 cm">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="headCirc7">Head Circumference (cm)</label>
-                        <input type="number" id="headCirc7" name="headCirc7" min="25" max="55" step="0.1" placeholder="If known">
+                        <input type="number" id="headCirc7" name="headCirc7" min="25" max="55" step="0.1" placeholder="25 – 55 cm">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
@@ -2037,7 +2036,9 @@
 
                     <div style="background:linear-gradient(135deg,#fdf5f2,#f0f7f3);border-radius:16px;padding:24px 28px;margin-bottom:24px;">
                         <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-                            <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#e8846a,#f2a68e);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;">✓</div>
+                            <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#e8846a,#f2a68e);display:flex;align-items:center;justify-content:center;color:#fff;">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
                             <div>
                                 <div style="font-weight:600;color:var(--midnight);">Survey Complete!</div>
                                 <div style="font-size:0.85rem;color:var(--warm-gray);">Your data is saved. Now let's secure your account.</div>
@@ -2059,12 +2060,17 @@
                         <label class="required" for="accountPassword">Create Password</label>
                         <div style="position:relative;">
                             <input type="password" id="accountPassword" name="accountPassword" placeholder="At least 8 characters" minlength="8" style="padding-right:48px;">
-                            <button type="button" onclick="togglePasswordVisibility(this)" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--warm-gray);font-size:1.1rem;" title="Show password">👁</button>
+                            <button type="button" onclick="togglePasswordVisibility(this)" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--warm-gray);" title="Show password">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            </button>
                         </div>
                         <div style="margin-top:6px;font-size:0.8rem;color:var(--warm-gray);">
-                            <span id="pwLength" style="color:#ccc;">✓ 8+ characters</span> ·
-                            <span id="pwUpper" style="color:#ccc;">✓ uppercase</span> ·
-                            <span id="pwNumber" style="color:#ccc;">✓ number</span>
+                            <span id="pwLength" style="color:#ccc;">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="vertical-align:-1px;"><polyline points="20 6 9 17 4 12"/></svg> 8+ characters</span> ·
+                            <span id="pwUpper" style="color:#ccc;">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="vertical-align:-1px;"><polyline points="20 6 9 17 4 12"/></svg> uppercase</span> ·
+                            <span id="pwNumber" style="color:#ccc;">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="vertical-align:-1px;"><polyline points="20 6 9 17 4 12"/></svg> number</span>
                         </div>
                         <div class="error-message">Password must be at least 8 characters</div>
                     </div>
@@ -2076,56 +2082,162 @@
                     </div>
 
                     <div style="background:#f0f7f3;border-radius:12px;padding:20px;margin-top:16px;">
-                        <div style="font-weight:600;color:var(--sage-deep);margin-bottom:10px;">🎁 What you'll get with your account:</div>
-                        <div style="display:grid;gap:8px;font-size:0.9rem;color:var(--charcoal);">
-                            <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Your detailed AI health report (PDF)</div>
-                            <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> 7-day free trial of Wermom Premium</div>
-                            <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Daily health tracking & AI analysis</div>
-                            <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> 24/7 AI health chat for moms</div>
-                            <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--sage);">✓</span> Cancel anytime — no commitment</div>
+                        <div style="font-weight:600;color:var(--sage-deep);margin-bottom:10px;display:flex;align-items:center;gap:8px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5" rx="1"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                            What you'll get with your account:
                         </div>
+                        <div style="display:grid;gap:8px;font-size:0.9rem;color:var(--charcoal);">
+                            <div style="display:flex;align-items:center;gap:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Your detailed AI health report (PDF)</div>
+                            <div style="display:flex;align-items:center;gap:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> 7-day free trial of Wermom Access</div>
+                            <div style="display:flex;align-items:center;gap:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Daily health tracking & AI analysis</div>
+                            <div style="display:flex;align-items:center;gap:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> 24/7 AI health chat for moms</div>
+                            <div style="display:flex;align-items:center;gap:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Cancel anytime — no commitment</div>
+                        </div>
+                    </div>
+
+                    <!-- Terms Agreement Checkbox -->
+                    <div style="margin-top:20px;padding:16px 20px;background:#fff;border:1.5px solid var(--light-gray);border-radius:12px;">
+                        <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:0.85rem;color:var(--charcoal);line-height:1.6;">
+                            <input type="checkbox" id="termsAgree" style="margin-top:3px;width:18px;height:18px;accent-color:var(--sage);flex-shrink:0;cursor:pointer;">
+                            <span>By checking this box, I confirm that I have read, understood, and agree to be bound by Wermom's <a href="https://www.wermom.com/terms-of-service.html" target="_blank" style="color:var(--rose);text-decoration:underline;font-weight:500;">Terms of Service</a>, <a href="https://www.wermom.com/privacy-policy.html" target="_blank" style="color:var(--rose);text-decoration:underline;font-weight:500;">Privacy Policy</a>, and <a href="https://www.wermom.com/cancellation-policy.html" target="_blank" style="color:var(--rose);text-decoration:underline;font-weight:500;">Cancellation Policy</a>.</span>
+                        </label>
+                        <div class="error-message" id="termsError" style="margin-left:30px;">Please agree to the Terms of Service, Privacy Policy, and Cancellation Policy to continue.</div>
                     </div>
                 </div>
 
                 <!-- STEP 9: Free Trial + Payment -->
                 <div class="step" data-step="9">
                     <div class="category-header">
-                        <h1 class="category-title">Start Your Free Trial</h1>
-                        <p class="category-description">7 days free — then $9.99/month. Cancel anytime before your trial ends and you won't be charged.</p>
-                        <p class="category-motivation">Your report is being generated right now. Unlock it with your free trial!</p>
+                        <h1 class="category-title">Last step to get your Free Health Report</h1>
+                        <p class="category-description">Become a part of Wermom Access for Free!</p>
                     </div>
 
-                    <!-- Trial Summary Card -->
-                    <div style="background:linear-gradient(135deg,#e8846a,#f2a68e);border-radius:16px;padding:28px;color:#fff;margin-bottom:24px;">
-                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-                            <div>
-                                <div style="font-size:1.6rem;font-weight:700;">Wermom Premium</div>
-                                <div style="opacity:0.9;font-size:0.95rem;">Complete care for mom & baby</div>
-                            </div>
-                            <div style="background:rgba(255,255,255,0.2);border-radius:20px;padding:6px 16px;font-weight:600;font-size:0.85rem;">7 DAYS FREE</div>
+                    <!-- Wermom Card SVG — Metallic Glossy -->
+                    <div style="margin-bottom:28px;perspective:1000px;">
+                        <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px;margin:0 auto;display:block;border-radius:20px;filter:drop-shadow(0 16px 48px rgba(200,90,80,0.35)) drop-shadow(0 4px 12px rgba(0,0,0,0.1));animation:cardFloat 4s ease-in-out infinite;">
+                            <defs>
+                                <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f7b4b8;"><animate attributeName="stop-color" values="#f7b4b8;#e8846a;#f2a090;#f7b4b8" dur="6s" repeatCount="indefinite"/></stop>
+                                    <stop offset="35%" style="stop-color:#e8846a;"><animate attributeName="stop-color" values="#e8846a;#d4604a;#e8846a;#e8846a" dur="6s" repeatCount="indefinite"/></stop>
+                                    <stop offset="65%" style="stop-color:#d4604a;"><animate attributeName="stop-color" values="#d4604a;#c24a3a;#d4604a;#d4604a" dur="6s" repeatCount="indefinite"/></stop>
+                                    <stop offset="100%" style="stop-color:#b8483c;"><animate attributeName="stop-color" values="#b8483c;#d4604a;#c24a3a;#b8483c" dur="6s" repeatCount="indefinite"/></stop>
+                                </linearGradient>
+                                <linearGradient id="specularTop" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="rgba(255,255,255,0.35)"/>
+                                    <stop offset="40%" stop-color="rgba(255,255,255,0.08)"/>
+                                    <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                                </linearGradient>
+                                <linearGradient id="metalSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
+                                    <stop offset="30%" stop-color="rgba(255,255,255,0.06)"/>
+                                    <stop offset="50%" stop-color="rgba(255,255,255,0.18)"/>
+                                    <stop offset="70%" stop-color="rgba(255,255,255,0.06)"/>
+                                    <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                                </linearGradient>
+                                <linearGradient id="shineGrad" x1="0%" y1="0%" x2="100%" y2="20%">
+                                    <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
+                                    <stop offset="40%" stop-color="rgba(255,255,255,0)"/>
+                                    <stop offset="50%" stop-color="rgba(255,255,255,0.25)"/>
+                                    <stop offset="60%" stop-color="rgba(255,255,255,0)"/>
+                                    <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                                </linearGradient>
+                                <linearGradient id="edgeHL" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="rgba(255,255,255,0.4)"/>
+                                    <stop offset="50%" stop-color="rgba(255,255,255,0)"/>
+                                    <stop offset="100%" stop-color="rgba(255,255,255,0.15)"/>
+                                </linearGradient>
+                                <radialGradient id="glowCenter" cx="35%" cy="40%" r="60%">
+                                    <stop offset="0%" stop-color="rgba(255,200,200,0.15)"/>
+                                    <stop offset="100%" stop-color="rgba(255,200,200,0)"/>
+                                </radialGradient>
+                                <clipPath id="cardClip"><rect width="400" height="240" rx="20"/></clipPath>
+                            </defs>
+                            <rect width="400" height="240" rx="20" fill="url(#cardGrad)"/>
+                            <g clip-path="url(#cardClip)">
+                                <rect width="400" height="240" fill="url(#glowCenter)"/>
+                                <rect width="400" height="240" fill="url(#specularTop)"/>
+                                <rect width="400" height="240" fill="url(#metalSheen)"/>
+                                <rect width="400" height="240" fill="url(#shineGrad)" opacity="0.8">
+                                    <animateTransform attributeName="transform" type="translate" values="-500,0;500,0" dur="3.5s" repeatCount="indefinite"/>
+                                </rect>
+                                <line x1="20" y1="1" x2="380" y2="1" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+                                <circle cx="330" cy="55" r="90" fill="rgba(255,255,255,0.04)"/>
+                                <circle cx="370" cy="30" r="55" fill="rgba(255,255,255,0.03)"/>
+                                <circle cx="50" cy="210" r="70" fill="rgba(255,255,255,0.03)"/>
+                                <circle cx="200" cy="120" r="120" fill="rgba(255,255,255,0.015)"/>
+                                <g opacity="0.15" transform="translate(320,20) scale(0.7)"><path d="M20 4.5C20 2 17.5 0 15 0c-2 0-3.5 1-4.5 2.5C9.5 1 8 0 6 0 3.5 0 1 2 1 4.5c0 5.5 9.5 11 9.5 11S20 10 20 4.5z" fill="#fff"/></g>
+                                <g opacity="0.08" transform="translate(355,55) scale(0.45)"><path d="M20 4.5C20 2 17.5 0 15 0c-2 0-3.5 1-4.5 2.5C9.5 1 8 0 6 0 3.5 0 1 2 1 4.5c0 5.5 9.5 11 9.5 11S20 10 20 4.5z" fill="#fff"/></g>
+                                <g opacity="0.06" transform="translate(290,45) scale(0.35)"><path d="M20 4.5C20 2 17.5 0 15 0c-2 0-3.5 1-4.5 2.5C9.5 1 8 0 6 0 3.5 0 1 2 1 4.5c0 5.5 9.5 11 9.5 11S20 10 20 4.5z" fill="#fff"/></g>
+                                <!-- Wermom Logo — top left, using foreignObject for reliable rendering -->
+                                <foreignObject x="18" y="16" width="150" height="40">
+                                    <img xmlns="http://www.w3.org/1999/xhtml" src="img/wermom-logo-white.svg" style="height:30px;width:auto;display:block;" />
+                                </foreignObject>
+                                <!-- Exclusive Access — bottom left, engraved/embossed look -->
+                                <text x="24" y="218" fill="rgba(0,0,0,0.2)" font-family="'Inter',sans-serif" font-size="9" font-weight="700" letter-spacing="3" text-anchor="start">EXCLUSIVE ACCESS</text>
+                                <text x="24" y="217" fill="rgba(255,255,255,0.7)" font-family="'Inter',sans-serif" font-size="9" font-weight="700" letter-spacing="3" text-anchor="start">EXCLUSIVE ACCESS</text>
+                                <text x="24" y="216.2" fill="rgba(255,255,255,0.2)" font-family="'Inter',sans-serif" font-size="9" font-weight="700" letter-spacing="3" text-anchor="start">EXCLUSIVE ACCESS</text>
+                                <!-- $0.82/day — bottom right corner, slightly larger -->
+                                <text x="376" y="217" fill="rgba(255,255,255,0.55)" font-family="'Inter',sans-serif" font-size="10" font-weight="600" letter-spacing="0.3" text-anchor="end">$0.82/day</text>
+                                <line x1="20" y1="239" x2="380" y2="239" stroke="rgba(0,0,0,0.08)" stroke-width="0.5"/>
+                            </g>
+                            <rect width="400" height="240" rx="20" fill="none" stroke="url(#edgeHL)" stroke-width="1"/>
+                        </svg>
+                    </div>
+
+                    <style>
+                        @keyframes cardFloat {
+                            0%, 100% { transform: translateY(0px) rotateX(0deg); }
+                            50% { transform: translateY(-6px) rotateX(1deg); }
+                        }
+                    </style>
+
+                    <!-- Pricing -->
+                    <div style="background:#fff;border:1.5px solid rgba(232,132,106,0.15);border-radius:16px;padding:24px 28px;margin-bottom:20px;text-align:center;">
+                        <div style="font-size:1.05rem;font-weight:600;color:var(--sage-deep);margin-bottom:10px;">Your personalized health report is waiting</div>
+                        <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:6px;">
+                            <span style="font-size:2.6rem;font-weight:800;color:var(--midnight);">$0</span>
+                            <span style="font-size:1rem;color:var(--warm-gray);font-weight:500;">for 7 days</span>
                         </div>
-                        <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:12px;">
-                            <span style="font-size:2.2rem;font-weight:800;">$0</span>
-                            <span style="font-size:1rem;opacity:0.85;">for 7 days</span>
+                        <div style="font-size:0.92rem;color:var(--charcoal);font-weight:500;">Then <strong style="color:var(--rose);">$299/year</strong> <span style="color:var(--warm-gray);">· $0.82/day</span></div>
+                        <div style="font-size:0.85rem;color:var(--sage);font-weight:600;margin-top:4px;">&#8776; <span style="font-size:1.05rem;">&#188;</span> of a coffee cup per day</div>
+                        <div style="font-size:0.78rem;color:var(--warm-gray);margin-top:6px;">Cancel anytime · No hidden fees</div>
+                    </div>
+
+                    <!-- Feature list -->
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px;">
+                        <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(0,0,0,0.05);border-radius:10px;padding:10px 12px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <span style="font-size:0.82rem;font-weight:600;color:var(--charcoal);">Weekly & Monthly Reports</span>
                         </div>
-                        <div style="font-size:0.85rem;opacity:0.8;">Then $9.99/month · Cancel anytime · No hidden fees</div>
-                        <div style="margin-top:16px;display:grid;gap:6px;font-size:0.9rem;">
-                            <div>✓ Personalized AI Health Report (PDF) — delivered within 12h</div>
-                            <div>✓ Daily health tracking with AI analysis</div>
-                            <div>✓ Unlimited AI health chat</div>
-                            <div>✓ Growth charts & milestone tracking</div>
-                            <div>✓ Kick counter & contraction timer (pregnant moms)</div>
-                            <div>✓ Monthly deep-dive reports</div>
+                        <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(0,0,0,0.05);border-radius:10px;padding:10px 12px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                            <span style="font-size:0.82rem;font-weight:600;color:var(--charcoal);">Nutrition Tracking</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(0,0,0,0.05);border-radius:10px;padding:10px 12px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B8DD6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                            <span style="font-size:0.82rem;font-weight:600;color:var(--charcoal);">Sleep Tracking</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(0,0,0,0.05);border-radius:10px;padding:10px 12px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                            <span style="font-size:0.82rem;font-weight:600;color:var(--charcoal);">Growth Tracking</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(0,0,0,0.05);border-radius:10px;padding:10px 12px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            <span style="font-size:0.82rem;font-weight:600;color:var(--charcoal);">Kick & Contraction</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(0,0,0,0.05);border-radius:10px;padding:10px 12px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                            <span style="font-size:0.82rem;font-weight:600;color:var(--charcoal);">Milestone Tracking</span>
                         </div>
                     </div>
 
                     <!-- Payment Form -->
                     <div style="background:#fff;border:1.5px solid var(--light-gray);border-radius:16px;padding:24px 28px;">
                         <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
                             <span style="font-weight:600;color:var(--midnight);">Payment Details</span>
                             <div style="margin-left:auto;display:flex;gap:6px;align-items:center;">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--sage)" stroke="none"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                                 <span style="font-size:0.8rem;color:var(--sage-deep);">SSL Secured</span>
                             </div>
                         </div>
@@ -2161,26 +2273,34 @@
 
                     <!-- Trust Badges -->
                     <div style="display:flex;justify-content:center;gap:24px;margin-top:20px;padding:16px 0;">
-                        <div style="text-align:center;font-size:0.8rem;color:var(--warm-gray);">
-                            <div style="font-size:1.3rem;">🔒</div>
+                        <div style="text-align:center;font-size:0.78rem;color:var(--warm-gray);">
+                            <div style="width:36px;height:36px;border-radius:50%;background:rgba(123,166,141,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 4px;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            </div>
                             256-bit SSL
                         </div>
-                        <div style="text-align:center;font-size:0.8rem;color:var(--warm-gray);">
-                            <div style="font-size:1.3rem;">💳</div>
+                        <div style="text-align:center;font-size:0.78rem;color:var(--warm-gray);">
+                            <div style="width:36px;height:36px;border-radius:50%;background:rgba(232,132,106,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 4px;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                            </div>
                             PCI Compliant
                         </div>
-                        <div style="text-align:center;font-size:0.8rem;color:var(--warm-gray);">
-                            <div style="font-size:1.3rem;">🛡️</div>
+                        <div style="text-align:center;font-size:0.78rem;color:var(--warm-gray);">
+                            <div style="width:36px;height:36px;border-radius:50%;background:rgba(123,166,141,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 4px;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
                             Cancel Anytime
                         </div>
-                        <div style="text-align:center;font-size:0.8rem;color:var(--warm-gray);">
-                            <div style="font-size:1.3rem;">💰</div>
-                            Money-Back Guarantee
+                        <div style="text-align:center;font-size:0.78rem;color:var(--warm-gray);">
+                            <div style="width:36px;height:36px;border-radius:50%;background:rgba(232,132,106,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 4px;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            7-Day Free Trial
                         </div>
                     </div>
 
                     <div style="background:#f0f7f3;border-radius:12px;padding:16px 20px;margin-top:8px;font-size:0.85rem;color:var(--sage-deep);line-height:1.6;">
-                        <strong>How it works:</strong> Your card will not be charged today. After your 7-day free trial, your subscription will be $9.99/month. You can cancel at any time in your account settings — if you cancel before the trial ends, you won't be charged at all.
+                        <strong>How it works:</strong> Your card will not be charged today. After your 7-day free trial, your subscription will be $299/year ($0.82/day). Cancel anytime in your account settings — if you cancel before the trial ends, you won't be charged at all. No refund after payment.
                     </div>
                 </div>
             </form>
@@ -2189,9 +2309,6 @@
             <div id="buttonGroup" class="button-group">
                 <button type="button" id="prevBtn" class="btn-secondary hidden">← Previous</button>
                 <button type="button" id="nextBtn" class="btn-primary">Next →</button>
-            </div>
-            <div style="text-align:center;margin-top:24px;opacity:0.5;">
-                <img src="logo.svg" alt="Wermom" height="36" style="display:inline-block;">
             </div>
         </div>
 
@@ -2504,6 +2621,27 @@
             document.getElementById('prevBtn').addEventListener('click', prevStep);
         }
 
+        // Range rules for all numeric fields
+        const rangeRules = {
+            age:                { min: 14,  max: 65,  label: 'Age must be between 14 and 65' },
+            height:             { min: 100, max: 220, label: 'Height must be between 100 and 220 cm' },
+            weight:             { min: 30,  max: 300, label: 'Weight must be between 30 and 300 kg' },
+            pregnancies:        { min: 0,   max: 10,  label: 'Number of pregnancies must be between 0 and 10' },
+            birthWeight:        { min: 0.5, max: 6,   label: 'Birth weight must be between 0.5 and 6 kg' },
+            currentBabyWeight:  { min: 1,   max: 30,  label: 'Baby weight must be between 1 and 30 kg' },
+            babyHeight:         { min: 25,  max: 130, label: 'Baby height must be between 25 and 130 cm' },
+            headCircumference:  { min: 25,  max: 55,  label: 'Head circumference must be between 25 and 55 cm' },
+            prenatalCheckups:   { min: 0,   max: 30,  label: 'Checkups must be between 0 and 30' },
+            ultrasounds:        { min: 0,   max: 20,  label: 'Ultrasounds must be between 0 and 20' },
+            babyRecentWeight:   { min: 1,   max: 30,  label: 'Baby weight must be between 1 and 30 kg' },
+            momSleepHours:      { min: 0,   max: 16,  label: 'Sleep hours must be between 0 and 16' },
+            babySleep24h:       { min: 0,   max: 24,  label: 'Sleep hours must be between 0 and 24' },
+            nightWakings:       { min: 0,   max: 15,  label: 'Night wakings must be between 0 and 15' },
+            babyCurrentWeight7: { min: 1,   max: 30,  label: 'Baby weight must be between 1 and 30 kg' },
+            babyCurrentHeight7: { min: 25,  max: 130, label: 'Baby height must be between 25 and 130 cm' },
+            headCirc7:          { min: 25,  max: 55,  label: 'Head circumference must be between 25 and 55 cm' }
+        };
+
         function validateStep(step) {
             let isValid = true;
             const required = requiredFields[step] || [];
@@ -2529,7 +2667,41 @@
                     isValid = false;
                     const errorMsg = element.parentElement.querySelector('.error-message');
                     if (errorMsg) errorMsg.classList.add('show');
+                } else if (element.type === 'number' && rangeRules[field]) {
+                    const val = parseFloat(element.value);
+                    const rule = rangeRules[field];
+                    if (isNaN(val) || val < rule.min || val > rule.max) {
+                        isValid = false;
+                        const errorMsg = element.parentElement.querySelector('.error-message');
+                        if (errorMsg) {
+                            errorMsg.textContent = rule.label;
+                            errorMsg.classList.add('show');
+                        }
+                    }
                 }
+            }
+
+            // Also validate any OPTIONAL number fields that have values in the current step
+            const stepEl = document.querySelector(`.step[data-step="${step}"]`);
+            if (stepEl) {
+                stepEl.querySelectorAll('input[type="number"]').forEach(input => {
+                    if (input.value && rangeRules[input.id]) {
+                        const val = parseFloat(input.value);
+                        const rule = rangeRules[input.id];
+                        if (isNaN(val) || val < rule.min || val > rule.max) {
+                            isValid = false;
+                            let errorMsg = input.parentElement.querySelector('.error-message');
+                            if (!errorMsg) {
+                                errorMsg = document.createElement('div');
+                                errorMsg.className = 'error-message';
+                                input.parentElement.appendChild(errorMsg);
+                            }
+                            errorMsg.textContent = rule.label;
+                            errorMsg.classList.add('show');
+                            errorMsg.style.display = 'block';
+                        }
+                    }
+                });
             }
 
             return isValid;
@@ -2697,6 +2869,136 @@
             }
         }
 
+        // Real-time range validation for number inputs
+        document.addEventListener('input', function(e) {
+            if (e.target.type === 'number' && rangeRules[e.target.id]) {
+                const rule = rangeRules[e.target.id];
+                const val = parseFloat(e.target.value);
+                const errorMsg = e.target.parentElement.querySelector('.error-message');
+                if (e.target.value !== '' && !isNaN(val)) {
+                    if (val < rule.min || val > rule.max) {
+                        e.target.style.borderColor = 'var(--rose)';
+                        e.target.style.background = 'rgba(232,132,106,0.04)';
+                        if (errorMsg) {
+                            errorMsg.textContent = rule.label;
+                            errorMsg.classList.add('show');
+                            errorMsg.style.display = 'block';
+                        }
+                    } else {
+                        e.target.style.borderColor = 'var(--sage)';
+                        e.target.style.background = '';
+                        if (errorMsg) {
+                            errorMsg.classList.remove('show');
+                            errorMsg.style.display = '';
+                        }
+                    }
+                } else {
+                    e.target.style.borderColor = '';
+                    e.target.style.background = '';
+                    if (errorMsg) {
+                        errorMsg.classList.remove('show');
+                        errorMsg.style.display = '';
+                    }
+                }
+            }
+        });
+
+        // Prevent typing beyond max digit length for number fields
+        document.addEventListener('keydown', function(e) {
+            if (e.target.type === 'number' && rangeRules[e.target.id]) {
+                const rule = rangeRules[e.target.id];
+                const maxDigits = String(Math.floor(rule.max)).length + 2; // +2 for decimal
+                if (e.target.value.length >= maxDigits && !['Backspace','Delete','ArrowLeft','ArrowRight','Tab','.'].includes(e.key) && !e.ctrlKey && !e.metaKey) {
+                    e.preventDefault();
+                }
+            }
+        });
+
+        // Auto-clamp on blur: if value exceeds range, snap to nearest valid value
+        document.addEventListener('blur', function(e) {
+            if (e.target.type === 'number' && rangeRules[e.target.id] && e.target.value !== '') {
+                const rule = rangeRules[e.target.id];
+                let val = parseFloat(e.target.value);
+                if (!isNaN(val)) {
+                    if (val > rule.max) {
+                        e.target.value = rule.max;
+                        e.target.style.borderColor = '';
+                        e.target.style.background = '';
+                        const errorMsg = e.target.parentElement.querySelector('.error-message');
+                        if (errorMsg) { errorMsg.classList.remove('show'); errorMsg.style.display = ''; }
+                    } else if (val < rule.min) {
+                        e.target.value = rule.min;
+                        e.target.style.borderColor = '';
+                        e.target.style.background = '';
+                        const errorMsg = e.target.parentElement.querySelector('.error-message');
+                        if (errorMsg) { errorMsg.classList.remove('show'); errorMsg.style.display = ''; }
+                    }
+                }
+            }
+        }, true);
+
+        // Email validation
+        document.addEventListener('blur', function(e) {
+            if (e.target.id === 'email' && e.target.value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const errorMsg = e.target.parentElement.querySelector('.error-message');
+                if (!emailRegex.test(e.target.value)) {
+                    e.target.style.borderColor = 'var(--rose)';
+                    if (errorMsg) {
+                        errorMsg.textContent = 'Please enter a valid email address';
+                        errorMsg.classList.add('show');
+                        errorMsg.style.display = 'block';
+                    }
+                } else {
+                    e.target.style.borderColor = 'var(--sage)';
+                    if (errorMsg) { errorMsg.classList.remove('show'); errorMsg.style.display = ''; }
+                }
+            }
+        }, true);
+
+        // Phone validation (basic — at least 7 digits)
+        document.addEventListener('blur', function(e) {
+            if (e.target.id === 'phone' && e.target.value) {
+                const digits = e.target.value.replace(/\D/g, '');
+                const errorMsg = e.target.parentElement.querySelector('.error-message');
+                if (digits.length < 7 || digits.length > 15) {
+                    e.target.style.borderColor = 'var(--rose)';
+                    if (errorMsg) {
+                        errorMsg.textContent = 'Please enter a valid phone number';
+                        errorMsg.classList.add('show');
+                        errorMsg.style.display = 'block';
+                    }
+                } else {
+                    e.target.style.borderColor = 'var(--sage)';
+                    if (errorMsg) { errorMsg.classList.remove('show'); errorMsg.style.display = ''; }
+                }
+            }
+        }, true);
+
+        // Date validation — baby DOB cannot be in the far future or far past
+        document.addEventListener('change', function(e) {
+            if (e.target.id === 'babyDOB' && e.target.value) {
+                const dob = new Date(e.target.value);
+                const today = new Date();
+                const maxFuture = new Date();
+                maxFuture.setMonth(maxFuture.getMonth() + 10); // max 10 months in future
+                const maxPast = new Date();
+                maxPast.setFullYear(maxPast.getFullYear() - 7); // max 7 years in past
+                const errorMsg = e.target.parentElement.querySelector('.error-message');
+                if (dob > maxFuture || dob < maxPast) {
+                    e.target.style.borderColor = 'var(--rose)';
+                    if (errorMsg) {
+                        errorMsg.textContent = 'Please enter a realistic date';
+                        errorMsg.classList.add('show');
+                        errorMsg.style.display = 'block';
+                    }
+                } else {
+                    e.target.style.borderColor = 'var(--sage)';
+                    if (errorMsg) { errorMsg.classList.remove('show'); errorMsg.style.display = ''; }
+                }
+            }
+        });
+
         // Live password strength indicators
         document.addEventListener('input', function(e) {
             if (e.target.id === 'accountPassword') {
@@ -2741,6 +3043,12 @@
             }
             if (pw !== pw2) {
                 document.getElementById('passwordMatchError').classList.add('show');
+                valid = false;
+            }
+            // Terms agreement checkbox
+            const termsCheckbox = document.getElementById('termsAgree');
+            if (termsCheckbox && !termsCheckbox.checked) {
+                document.getElementById('termsError').classList.add('show');
                 valid = false;
             }
             return valid;

@@ -1,1212 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — Wermom</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <meta name="description" content="Wermom's Privacy Policy. We protect your family's data with enterprise-grade security and transparency.">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* ==================== DESIGN TOKENS ==================== */
-    :root {
-      --cream: #FFF9F5;
-      --cream-deep: #FFF1E8;
-      --blush: #FFE4D6;
-      --peach: #F4A886;
-      --rose: #E8846A;
-      --rose-deep: #D4604A;
-      --sage: #7BA68D;
-      --sage-light: #E8F2EC;
-      --sage-deep: #5C8A6F;
-      --midnight: #1A1A2E;
-      --charcoal: #2D2D3F;
-      --slate: #4A4A5E;
-      --warm-gray: #8A8A9A;
-      --light-gray: #E8E6E3;
-      --white: #FFFFFF;
-
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: 'Space Mono', monospace;
-
-      --container: min(900px, 92vw);
-      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* ==================== RESET & BASE ==================== */
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body {
-      font-family: var(--font-body);
-      color: var(--midnight);
-      background: var(--cream);
-      line-height: 1.8;
-      overflow-x: hidden;
-    }
-
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: var(--rose-deep); transition: color 0.3s; }
-    a:hover { color: var(--rose); }
-    button { cursor: pointer; border: none; background: none; font-family: inherit; }
-
-    .container { width: var(--container); margin: 0 auto; }
-
-    /* ==================== NAVIGATION ==================== */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 0 5vw;
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(255, 249, 245, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(0,0,0,0.04);
-      transition: all 0.4s;
-    }
-
-    nav.scrolled {
-      height: 64px;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.06);
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.5rem;
-      color: var(--midnight);
-    }
-
-    .nav-logo svg {
-      width: auto;
-      height: 44px;
-      display: block;
-    }
-
-    .nav-back {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--slate);
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .nav-back:hover {
-      color: var(--midnight);
-    }
-
-    .nav-back::before {
-      content: '←';
-      font-size: 1.1rem;
-    }
-
-    /* ==================== PAGE STRUCTURE ==================== */
-    .page-wrapper {
-      padding-top: 72px;
-      min-height: 100vh;
-    }
-
-    .page-header {
-      padding: 80px 5vw 60px;
-      background: linear-gradient(135deg, rgba(244,168,134,0.05) 0%, rgba(123,166,141,0.03) 100%);
-    }
-
-    .page-header h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      color: var(--midnight);
-      margin-bottom: 16px;
-      letter-spacing: -0.01em;
-    }
-
-    .page-header .updated {
-      font-size: 0.85rem;
-      color: var(--warm-gray);
-      font-weight: 500;
-    }
-
-    /* Table of Contents */
-    .toc-container {
-      padding: 40px 5vw;
-      max-width: var(--container);
-      margin: 0 auto;
-      background: var(--white);
-      border-radius: 12px;
-      margin-bottom: 40px;
-      border: 1px solid var(--light-gray);
-    }
-
-    .toc-title {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      color: var(--midnight);
-      margin-bottom: 16px;
-      font-weight: 500;
-    }
-
-    .toc-list {
-      list-style: none;
-      columns: 2;
-      column-gap: 32px;
-    }
-
-    .toc-list li {
-      margin-bottom: 12px;
-      break-inside: avoid;
-    }
-
-    .toc-list a {
-      font-size: 0.9rem;
-      color: var(--rose-deep);
-    }
-
-    .toc-list a:hover {
-      color: var(--rose);
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      .toc-list {
-        columns: 1;
-      }
-    }
-
-    .page-content {
-      padding: 0 5vw 80px;
-      max-width: var(--container);
-      margin: 0 auto;
-    }
-
-    /* ==================== SECTIONS ==================== */
-    .privacy-section {
-      margin-bottom: 56px;
-      padding-bottom: 56px;
-      border-bottom: 1px solid var(--light-gray);
-    }
-
-    .privacy-section:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-      color: var(--midnight);
-      margin-bottom: 24px;
-      letter-spacing: -0.01em;
-      font-weight: 500;
-      scroll-margin-top: 100px;
-    }
-
-    .section-intro {
-      font-size: 0.95rem;
-      color: var(--slate);
-      line-height: 1.85;
-      margin-bottom: 20px;
-    }
-
-    .section-text {
-      font-size: 0.95rem;
-      color: var(--slate);
-      line-height: 1.85;
-      margin-bottom: 16px;
-    }
-
-    .section-text:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Subsections */
-    .subsection {
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(0,0,0,0.04);
-    }
-
-    .subsection-title {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      color: var(--midnight);
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-
-    .subsection-text {
-      font-size: 0.9rem;
-      color: var(--slate);
-      line-height: 1.8;
-      margin-bottom: 12px;
-    }
-
-    /* Lists */
-    .privacy-list {
-      list-style: none;
-      margin: 20px 0;
-      padding: 0;
-    }
-
-    .privacy-list li {
-      padding: 12px 0 12px 28px;
-      position: relative;
-      font-size: 0.95rem;
-      color: var(--slate);
-      line-height: 1.8;
-    }
-
-    .privacy-list li::before {
-      content: '•';
-      position: absolute;
-      left: 8px;
-      color: var(--rose-deep);
-      font-weight: 600;
-      font-size: 1.2rem;
-    }
-
-    /* Highlight boxes */
-    .highlight-box {
-      padding: 24px;
-      background: var(--sage-light);
-      border-left: 4px solid var(--sage-deep);
-      border-radius: 8px;
-      margin: 24px 0;
-    }
-
-    .highlight-box p {
-      font-size: 0.95rem;
-      color: var(--charcoal);
-      line-height: 1.8;
-      margin: 0;
-    }
-
-    .highlight-box strong {
-      color: var(--sage-deep);
-      font-weight: 600;
-    }
-
-    /* Tables */
-    .privacy-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 24px 0;
-      font-size: 0.9rem;
-      line-height: 1.8;
-    }
-
-    .privacy-table th {
-      background: var(--sage-light);
-      color: var(--midnight);
-      padding: 12px 16px;
-      text-align: left;
-      font-weight: 600;
-      border: 1px solid var(--light-gray);
-    }
-
-    .privacy-table td {
-      padding: 12px 16px;
-      border: 1px solid var(--light-gray);
-      color: var(--slate);
-    }
-
-    .privacy-table tr:nth-child(even) {
-      background: rgba(232,242,236,0.3);
-    }
-
-    /* ==================== FOOTER ==================== */
-    .page-footer {
-      padding: 60px 5vw;
-      background: var(--charcoal);
-      color: rgba(255,255,255,0.85);
-      border-top: 1px solid rgba(0,0,0,0.2);
-    }
-
-    .footer-content {
-      max-width: var(--container);
-      margin: 0 auto;
-    }
-
-    .footer-section {
-      margin-bottom: 32px;
-    }
-
-    .footer-section:last-child {
-      margin-bottom: 0;
-    }
-
-    .footer-title {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      color: var(--white);
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-
-    .footer-text {
-      font-size: 0.9rem;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 8px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-      font-size: 0.9rem;
-    }
-
-    .footer-link {
-      color: var(--rose);
-      font-weight: 500;
-    }
-
-    .footer-link:hover {
-      color: var(--peach);
-    }
-
-    /* ==================== RESPONSIVE ==================== */
-    @media (max-width: 768px) {
-      nav {
-        padding: 0 4vw;
-        height: 60px;
-      }
-
-      .nav-logo {
-        font-size: 1.25rem;
-        gap: 8px;
-      }
-
-      .nav-logo svg {
-        width: auto;
-        height: 36px;
-      }
-
-      .page-header {
-        padding: 60px 4vw 40px;
-      }
-
-      .page-header h1 {
-        font-size: 1.8rem;
-        margin-bottom: 12px;
-      }
-
-      .toc-container {
-        padding: 32px 4vw;
-        margin: 32px auto;
-      }
-
-      .page-content {
-        padding: 0 4vw 60px;
-      }
-
-      .section-title {
-        font-size: 1.4rem;
-      }
-
-      .section-text {
-        font-size: 0.9rem;
-      }
-
-      .privacy-list li {
-        padding: 10px 0 10px 24px;
-        font-size: 0.9rem;
-      }
-
-      .privacy-table {
-        font-size: 0.85rem;
-      }
-
-      .privacy-table th,
-      .privacy-table td {
-        padding: 8px 12px;
-      }
-
-      .page-footer {
-        padding: 40px 4vw;
-      }
-
-      .footer-links {
-        flex-direction: column;
-        gap: 12px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .page-header {
-        padding: 40px 4vw 30px;
-      }
-
-      .page-header h1 {
-        font-size: 1.5rem;
-      }
-
-      .toc-container {
-        padding: 24px 4vw;
-        margin: 24px auto;
-      }
-
-      .page-content {
-        padding: 0 4vw 40px;
-      }
-
-      .section-title {
-        font-size: 1.2rem;
-        margin-bottom: 16px;
-      }
-
-      .privacy-section {
-        margin-bottom: 40px;
-        padding-bottom: 40px;
-      }
-
-      .subsection {
-        margin-top: 24px;
-        padding-top: 16px;
-      }
-
-      .highlight-box {
-        padding: 16px;
-        margin: 16px 0;
-      }
-
-      .privacy-table {
-        display: block;
-        overflow-x: auto;
-        font-size: 0.8rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Wermom</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FFF9F5;
+            --rose: #E8846A;
+            --rose-deep: #D4604A;
+            --sage: #7BA68D;
+            --sage-deep: #5C8A6F;
+            --midnight: #1A1A2E;
+            --charcoal: #2D2D3F;
+            --warm-gray: #8A8A9A;
+            --light-gray: #E8E6E3;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--midnight);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Sticky Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--cream);
+            border-bottom: 1px solid var(--light-gray);
+            padding: 16px 0;
+            z-index: 100;
+        }
+
+        nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        nav img {
+            height: 34px;
+            width: auto;
+        }
+
+        nav a {
+            color: var(--rose);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--rose-deep);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        header {
+            margin-bottom: 48px;
+        }
+
+        h1 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--midnight);
+            margin-bottom: 12px;
+        }
+
+        .last-updated {
+            font-size: 14px;
+            color: var(--warm-gray);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 48px;
+            padding-left: 20px;
+            border-left: 3px solid rgba(232, 132, 106, 0.15);
+        }
+
+        h2 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--midnight);
+            margin-bottom: 16px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--charcoal);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--light-gray);
+            padding: 32px 24px;
+            text-align: center;
+            color: var(--warm-gray);
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            color: var(--warm-gray);
+        }
+
+        footer a {
+            color: var(--rose);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--rose-deep);
+        }
+
+        footer p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav id="navbar">
-    <a href="index.html" class="nav-logo">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" zoomAndPan="magnify" viewBox="100 128 560 180" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><g/><clipPath id="07a6e95bfd"><path d="M 589 145 L 647 145 L 647 218.207031 L 589 218.207031 Z M 589 145 " clip-rule="nonzero"/></clipPath><clipPath id="51dae0ff44"><rect x="0" width="504" y="0" height="159"/></clipPath></defs><path fill="#f89fa4" d="M 589.601562 186.917969 C 591.550781 188.0625 593.933594 188.78125 595.992188 189.804688 C 602.117188 192.847656 608.710938 196.519531 612.742188 202.320312 C 613.152344 202.914062 616.1875 207.832031 616 208.160156 C 619.679688 201.738281 622.433594 195.3125 626.84375 189.253906 C 631.800781 182.457031 636.757812 174.933594 639.136719 166.84375 C 640.613281 162.4375 640.976562 154.914062 636.757812 151.792969 C 629.429688 146.125 622.628906 156.132812 619.117188 161.457031 C 617.628906 163.710938 616.207031 167.296875 613.621094 168.496094 C 613.324219 168.640625 613.058594 168.730469 612.828125 168.761719 L 612.792969 168.917969 C 612.792969 168.871094 612.785156 168.816406 612.773438 168.773438 C 612.53125 166.371094 611.914062 164.078125 611 161.976562 C 605.5 149.152344 589.339844 143.035156 580.84375 159.550781 C 575.28125 170.171875 581.328125 179.867188 589.601562 186.917969 " fill-opacity="1" fill-rule="nonzero"/><g clip-path="url(#07a6e95bfd)"><path fill="#f8a1a6" d="M 619.117188 161.457031 C 622.628906 156.132812 629.429688 146.125 636.757812 151.792969 C 640.976562 154.914062 640.613281 162.4375 639.136719 166.84375 C 636.757812 174.929688 631.800781 182.457031 626.839844 189.253906 C 622.433594 195.3125 619.679688 201.738281 616 208.160156 C 616.1875 207.832031 613.152344 202.914062 612.742188 202.320312 C 608.710938 196.519531 602.117188 192.847656 595.992188 189.804688 C 593.933594 188.78125 591.550781 188.0625 589.601562 186.917969 C 590.339844 187.546875 591.089844 188.164062 591.859375 188.746094 C 602.328125 197.011719 610.039062 205.824219 614.445312 218.492188 C 622.710938 199.214844 648.050781 182.6875 646.949219 160.101562 C 645.296875 134.210938 618.304688 145.78125 613.894531 164.507812 L 612.828125 168.761719 C 613.058594 168.726562 613.324219 168.640625 613.621094 168.496094 C 616.207031 167.296875 617.628906 163.710938 619.117188 161.457031 " fill-opacity="1" fill-rule="nonzero"/></g><g transform="matrix(1, 0, 0, 1, 109, 143)"><g clip-path="url(#51dae0ff44)"><g fill="#000000" fill-opacity="1"><g transform="translate(3.646284, 121.568027)"><g><path d="M -2 -63.046875 L 27.9375 -63.046875 L 27.9375 -57.453125 L 27 -57.453125 C 25.40625 -57.453125 24.609375 -56.742188 24.609375 -55.328125 C 24.609375 -54.878906 24.695312 -54.429688 24.875 -53.984375 C 25.050781 -53.546875 25.226562 -53.0625 25.40625 -52.53125 L 41.234375 -20.875 L 49.734375 -39.5 L 44.015625 -50.9375 C 43.222656 -52.707031 42.140625 -54.234375 40.765625 -55.515625 C 39.390625 -56.804688 37.726562 -57.453125 35.78125 -57.453125 L 34.84375 -57.453125 L 34.84375 -63.046875 L 64.765625 -63.046875 L 64.765625 -57.453125 L 63.84375 -57.453125 C 62.25 -57.453125 61.453125 -56.742188 61.453125 -55.328125 C 61.453125 -54.878906 61.539062 -54.429688 61.71875 -53.984375 C 61.894531 -53.546875 62.113281 -53.0625 62.375 -52.53125 L 77.671875 -21.546875 L 88.171875 -48.9375 C 88.617188 -50.09375 88.84375 -51.160156 88.84375 -52.140625 C 88.84375 -54.265625 87.890625 -55.679688 85.984375 -56.390625 C 84.078125 -57.097656 81.972656 -57.453125 79.671875 -57.453125 L 78.734375 -57.453125 L 78.734375 -63.046875 L 105.46875 -63.046875 L 105.46875 -57.453125 L 104.53125 -57.453125 C 103.289062 -57.453125 102.023438 -56.941406 100.734375 -55.921875 C 99.453125 -54.898438 98.320312 -53.679688 97.34375 -52.265625 C 96.375 -50.847656 95.625 -49.519531 95.09375 -48.28125 L 74.75 0 L 69.5625 0 L 52.796875 -33.25 L 37.640625 0 L 32.578125 0 L 7.1875 -50.9375 C 6.300781 -52.707031 5.191406 -54.234375 3.859375 -55.515625 C 2.523438 -56.804688 0.882812 -57.453125 -1.0625 -57.453125 L -2 -57.453125 Z M -2 -63.046875 "/></g></g></g><g fill="#000000" fill-opacity="1"><g transform="translate(108.972919, 121.568027)"><g><path d="M 2.921875 -31.125 C 2.921875 -36.976562 4.003906 -42.382812 6.171875 -47.34375 C 8.347656 -52.3125 11.585938 -56.300781 15.890625 -59.3125 C 20.191406 -62.332031 25.488281 -63.84375 31.78125 -63.84375 C 37.632812 -63.84375 42.488281 -62.625 46.34375 -60.1875 C 50.207031 -57.75 53.09375 -54.441406 55 -50.265625 C 56.90625 -46.097656 57.859375 -41.398438 57.859375 -36.171875 L 57.859375 -34.046875 L 20.75 -34.046875 C 20.75 -30.585938 21.300781 -27.0625 22.40625 -23.46875 C 23.519531 -19.882812 25.335938 -16.867188 27.859375 -14.421875 C 30.390625 -11.984375 33.691406 -10.765625 37.765625 -10.765625 C 40.960938 -10.765625 44.066406 -11.5625 47.078125 -13.15625 C 50.097656 -14.757812 52.445312 -16.9375 54.125 -19.6875 L 58.25 -17.15625 C 55.5 -11.476562 52.195312 -6.976562 48.34375 -3.65625 C 44.488281 -0.332031 39.191406 1.328125 32.453125 1.328125 C 26.160156 1.328125 20.796875 -0.132812 16.359375 -3.0625 C 11.921875 -5.988281 8.570312 -9.910156 6.3125 -14.828125 C 4.050781 -19.753906 2.921875 -25.1875 2.921875 -31.125 Z M 21.015625 -39.640625 L 40.828125 -39.640625 C 40.648438 -42.648438 40.179688 -45.570312 39.421875 -48.40625 C 38.671875 -51.25 37.628906 -53.625 36.296875 -55.53125 C 34.972656 -57.4375 33.25 -58.390625 31.125 -58.390625 C 29 -58.390625 27.25 -57.367188 25.875 -55.328125 C 24.5 -53.285156 23.429688 -50.820312 22.671875 -47.9375 C 21.921875 -45.0625 21.367188 -42.296875 21.015625 -39.640625 Z M 21.015625 -39.640625 "/></g></g></g><g fill="#f8a1a6" fill-opacity="1"><g transform="translate(170.69153, 121.568027)"><g><path d="M 30.71875 0 L 1.203125 0 L 1.203125 -5.71875 L 2.125 -5.71875 C 4.164062 -5.71875 5.5625 -6.09375 6.3125 -6.84375 C 7.070312 -7.601562 7.453125 -8.957031 7.453125 -10.90625 L 7.453125 -44.953125 C 7.453125 -46.992188 7.070312 -48.390625 6.3125 -49.140625 C 5.5625 -49.898438 4.164062 -50.28125 2.125 -50.28125 L 1.203125 -50.28125 L 1.203125 -55.734375 L 24.46875 -62.90625 L 24.46875 -57.453125 C 26.414062 -59.578125 28.71875 -61.171875 31.375 -62.234375 C 34.039062 -63.304688 36.882812 -63.84375 39.90625 -63.84375 C 42.644531 -63.84375 45.34375 -63.351562 48 -62.375 C 50.664062 -61.394531 52.707031 -59.625 54.125 -57.0625 C 54.570312 -56.257812 54.972656 -55.414062 55.328125 -54.53125 C 55.679688 -53.644531 55.859375 -52.710938 55.859375 -51.734375 C 55.859375 -49.335938 54.992188 -47.492188 53.265625 -46.203125 C 51.535156 -44.921875 49.5625 -44.28125 47.34375 -44.28125 C 44.59375 -44.28125 42.289062 -45.390625 40.4375 -47.609375 C 40.257812 -47.878906 40.035156 -48.164062 39.765625 -48.46875 C 39.503906 -48.78125 39.285156 -49.070312 39.109375 -49.34375 C 38.210938 -50.582031 37.300781 -51.625 36.375 -52.46875 C 35.445312 -53.3125 34.050781 -53.734375 32.1875 -53.734375 C 29.789062 -53.734375 27.90625 -52.84375 26.53125 -51.0625 C 25.15625 -49.289062 24.46875 -47.253906 24.46875 -44.953125 L 24.46875 -10.90625 C 24.46875 -8.957031 24.84375 -7.601562 25.59375 -6.84375 C 26.351562 -6.09375 27.753906 -5.71875 29.796875 -5.71875 L 30.71875 -5.71875 Z M 30.71875 0 "/></g></g></g><g fill="#000000" fill-opacity="1"><g transform="translate(226.955191, 121.568027)"><g><path d="M 30.1875 0 L 0.671875 0 L 0.671875 -5.71875 L 1.59375 -5.71875 C 3.632812 -5.632812 5.03125 -5.988281 5.78125 -6.78125 C 6.539062 -7.582031 6.921875 -8.957031 6.921875 -10.90625 L 6.921875 -44.953125 C 6.921875 -46.992188 6.539062 -48.390625 5.78125 -49.140625 C 5.03125 -49.898438 3.632812 -50.28125 1.59375 -50.28125 L 0.671875 -50.28125 L 0.671875 -55.734375 L 23.9375 -62.90625 L 23.9375 -58.921875 C 26.238281 -60.609375 28.765625 -61.847656 31.515625 -62.640625 C 34.265625 -63.441406 37.015625 -63.84375 39.765625 -63.84375 C 43.316406 -63.84375 46.796875 -63.285156 50.203125 -62.171875 C 53.617188 -61.066406 56.300781 -58.921875 58.25 -55.734375 C 60.644531 -58.472656 63.503906 -60.507812 66.828125 -61.84375 C 70.148438 -63.175781 73.675781 -63.84375 77.40625 -63.84375 C 83.695312 -63.84375 88.613281 -62.289062 92.15625 -59.1875 C 95.707031 -56.082031 97.484375 -51.425781 97.484375 -45.21875 L 97.484375 -10.90625 C 97.484375 -8.957031 97.859375 -7.582031 98.609375 -6.78125 C 99.367188 -5.988281 100.769531 -5.632812 102.8125 -5.71875 L 103.734375 -5.71875 L 103.734375 0 L 74.21875 0 L 74.21875 -5.71875 L 75.140625 -5.71875 C 77.179688 -5.632812 78.554688 -5.988281 79.265625 -6.78125 C 79.972656 -7.582031 80.328125 -8.957031 80.328125 -10.90625 L 80.328125 -44.953125 C 80.328125 -47.960938 79.617188 -50.734375 78.203125 -53.265625 C 76.785156 -55.796875 74.4375 -57.0625 71.15625 -57.0625 C 69.207031 -57.0625 67.457031 -56.460938 65.90625 -55.265625 C 64.351562 -54.066406 63.109375 -52.554688 62.171875 -50.734375 C 61.242188 -48.921875 60.78125 -47.082031 60.78125 -45.21875 L 60.78125 -10.90625 C 60.78125 -8.957031 61.15625 -7.582031 61.90625 -6.78125 C 62.664062 -5.988281 64.019531 -5.632812 65.96875 -5.71875 L 66.90625 -5.71875 L 66.90625 0 L 37.375 0 L 37.375 -5.71875 L 38.296875 -5.71875 C 40.335938 -5.632812 41.734375 -5.988281 42.484375 -6.78125 C 43.242188 -7.582031 43.625 -8.957031 43.625 -10.90625 L 43.625 -44.953125 C 43.625 -48.503906 42.957031 -51.410156 41.625 -53.671875 C 40.300781 -55.929688 37.734375 -57.0625 33.921875 -57.0625 C 31.878906 -57.0625 30.101562 -56.4375 28.59375 -55.1875 C 27.082031 -53.945312 25.925781 -52.394531 25.125 -50.53125 C 24.332031 -48.675781 23.9375 -46.816406 23.9375 -44.953125 L 23.9375 -10.90625 C 23.9375 -8.957031 24.3125 -7.582031 25.0625 -6.78125 C 25.820312 -5.988281 27.222656 -5.632812 29.265625 -5.71875 L 30.1875 -5.71875 Z M 30.1875 0 "/></g></g></g><g fill="#000000" fill-opacity="1"><g transform="translate(332.281826, 121.568027)"><g><path d="M 32.578125 1.328125 C 25.671875 1.328125 20.019531 -0.175781 15.625 -3.1875 C 11.238281 -6.207031 8.003906 -10.195312 5.921875 -15.15625 C 3.835938 -20.125 2.796875 -25.578125 2.796875 -31.515625 C 2.796875 -37.546875 3.835938 -43 5.921875 -47.875 C 8.003906 -52.75 11.238281 -56.628906 15.625 -59.515625 C 20.019531 -62.398438 25.671875 -63.84375 32.578125 -63.84375 C 39.492188 -63.84375 45.171875 -62.421875 49.609375 -59.578125 C 54.046875 -56.742188 57.304688 -52.890625 59.390625 -48.015625 C 61.472656 -43.140625 62.515625 -37.640625 62.515625 -31.515625 C 62.515625 -25.578125 61.445312 -20.125 59.3125 -15.15625 C 57.1875 -10.195312 53.925781 -6.207031 49.53125 -3.1875 C 45.144531 -0.175781 39.492188 1.328125 32.578125 1.328125 Z M 20.75 -31.515625 C 20.75 -29.566406 20.859375 -27.0625 21.078125 -24 C 21.296875 -20.945312 21.757812 -17.890625 22.46875 -14.828125 C 23.1875 -11.765625 24.363281 -9.191406 26 -7.109375 C 27.644531 -5.023438 29.835938 -3.984375 32.578125 -3.984375 C 35.421875 -3.984375 37.640625 -5.023438 39.234375 -7.109375 C 40.828125 -9.191406 42 -11.765625 42.75 -14.828125 C 43.507812 -17.890625 44 -20.945312 44.21875 -24 C 44.445312 -27.0625 44.5625 -29.566406 44.5625 -31.515625 C 44.5625 -33.472656 44.445312 -35.957031 44.21875 -38.96875 C 44 -41.976562 43.507812 -44.988281 42.75 -48 C 42 -51.019531 40.828125 -53.550781 39.234375 -55.59375 C 37.640625 -57.632812 35.421875 -58.65625 32.578125 -58.65625 C 29.835938 -58.65625 27.644531 -57.632812 26 -55.59375 C 24.363281 -53.550781 23.1875 -51.019531 22.46875 -48 C 21.757812 -44.988281 21.296875 -41.976562 21.078125 -38.96875 C 20.859375 -35.957031 20.75 -33.472656 20.75 -31.515625 Z M 20.75 -31.515625 "/></g></g></g><g fill="#000000" fill-opacity="1"><g transform="translate(397.313038, 121.568027)"><g><path d="M 30.1875 0 L 0.671875 0 L 0.671875 -5.71875 L 1.59375 -5.71875 C 3.632812 -5.632812 5.03125 -5.988281 5.78125 -6.78125 C 6.539062 -7.582031 6.921875 -8.957031 6.921875 -10.90625 L 6.921875 -44.953125 C 6.921875 -46.992188 6.539062 -48.390625 5.78125 -49.140625 C 5.03125 -49.898438 3.632812 -50.28125 1.59375 -50.28125 L 0.671875 -50.28125 L 0.671875 -55.734375 L 23.9375 -62.90625 L 23.9375 -58.921875 C 26.238281 -60.609375 28.765625 -61.847656 31.515625 -62.640625 C 34.265625 -63.441406 37.015625 -63.84375 39.765625 -63.84375 C 43.316406 -63.84375 46.796875 -63.285156 50.203125 -62.171875 C 53.617188 -61.066406 56.300781 -58.921875 58.25 -55.734375 C 60.644531 -58.472656 63.503906 -60.507812 66.828125 -61.84375 C 70.148438 -63.175781 73.675781 -63.84375 77.40625 -63.84375 C 83.695312 -63.84375 88.613281 -62.289062 92.15625 -59.1875 C 95.707031 -56.082031 97.484375 -51.425781 97.484375 -45.21875 L 97.484375 -10.90625 C 97.484375 -8.957031 97.859375 -7.582031 98.609375 -6.78125 C 99.367188 -5.988281 100.769531 -5.632812 102.8125 -5.71875 L 103.734375 -5.71875 L 103.734375 0 L 74.21875 0 L 74.21875 -5.71875 L 75.140625 -5.71875 C 77.179688 -5.632812 78.554688 -5.988281 79.265625 -6.78125 C 79.972656 -7.582031 80.328125 -8.957031 80.328125 -10.90625 L 80.328125 -44.953125 C 80.328125 -47.960938 79.617188 -50.734375 78.203125 -53.265625 C 76.785156 -55.796875 74.4375 -57.0625 71.15625 -57.0625 C 69.207031 -57.0625 67.457031 -56.460938 65.90625 -55.265625 C 64.351562 -54.066406 63.109375 -52.554688 62.171875 -50.734375 C 61.242188 -48.921875 60.78125 -47.082031 60.78125 -45.21875 L 60.78125 -10.90625 C 60.78125 -8.957031 61.15625 -7.582031 61.90625 -6.78125 C 62.664062 -5.988281 64.019531 -5.632812 65.96875 -5.71875 L 66.90625 -5.71875 L 66.90625 0 L 37.375 0 L 37.375 -5.71875 L 38.296875 -5.71875 C 40.335938 -5.632812 41.734375 -5.988281 42.484375 -6.78125 C 43.242188 -7.582031 43.625 -8.957031 43.625 -10.90625 L 43.625 -44.953125 C 43.625 -48.503906 42.957031 -51.410156 41.625 -53.671875 C 40.300781 -55.929688 37.734375 -57.0625 33.921875 -57.0625 C 31.878906 -57.0625 30.101562 -56.4375 28.59375 -55.1875 C 27.082031 -53.945312 25.925781 -52.394531 25.125 -50.53125 C 24.332031 -48.675781 23.9375 -46.816406 23.9375 -44.953125 L 23.9375 -10.90625 C 23.9375 -8.957031 24.3125 -7.582031 25.0625 -6.78125 C 25.820312 -5.988281 27.222656 -5.632812 29.265625 -5.71875 L 30.1875 -5.71875 Z M 30.1875 0 "/></g></g></g></g></g></svg>
-    </a>
-    <button class="nav-back" onclick="window.location.href='index.html'">Back to Home</button>
-  </nav>
-
-  <!-- Page Wrapper -->
-  <div class="page-wrapper">
-
-    <!-- Header -->
-    <div class="page-header">
-      <div class="container">
-        <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: March 2026</p>
-      </div>
-    </div>
-
-    <!-- Table of Contents -->
-    <div class="toc-container">
-      <div class="container">
-        <h2 class="toc-title">Table of Contents</h2>
-        <ul class="toc-list">
-          <li><a href="#introduction">Introduction</a></li>
-          <li><a href="#information-we-collect">Information We Collect</a></li>
-          <li><a href="#how-we-use">How We Use Your Information</a></li>
-          <li><a href="#data-storage">Data Storage and Security</a></li>
-          <li><a href="#third-party-services">Third-Party Services</a></li>
-          <li><a href="#your-rights">Your Privacy Rights</a></li>
-          <li><a href="#children-data">Children's Data Protection</a></li>
-          <li><a href="#data-retention">Data Retention</a></li>
-          <li><a href="#canada-privacy">Canada (PIPEDA)</a></li>
-          <li><a href="#us-privacy">United States Privacy</a></li>
-          <li><a href="#gdpr">GDPR and EU/UK Privacy</a></li>
-          <li><a href="#global-privacy">Global Privacy Laws</a></li>
-          <li><a href="#health-data">Health Data Provisions</a></li>
-          <li><a href="#contact">Contact & Support</a></li>
-          <li><a href="#policy-updates">Changes to This Policy</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="page-content">
-
-      <!-- Introduction -->
-      <div class="privacy-section" id="introduction">
-        <p class="section-intro">
-          At Wermom, we take your family's privacy and data security with utmost seriousness. This Privacy Policy explains how we collect, use, store, and protect your personal information when you use our baby health tracking app and website. We are incorporated in Ontario, Canada and comply with privacy laws globally, including Canada's Personal Information Protection and Electronic Documents Act (PIPEDA), the European Union's General Data Protection Regulation (GDPR), and applicable U.S. state privacy laws.
-        </p>
-        <p class="section-text">
-          Our mission is to support parents and caregivers with expert-reviewed insights into your child's health and development. To deliver personalized care plans and meaningful health recommendations, we need to understand your family's unique situation. We've designed our data practices to balance this need with your right to privacy and control over your information.
-        </p>
-      </div>
-
-      <!-- 1. Information We Collect -->
-      <div class="privacy-section" id="information-we-collect">
-        <h2 class="section-title">Information We Collect</h2>
-
-        <p class="section-text">
-          We collect information you provide directly and information generated as you use our app. Here's what we gather:
-        </p>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Health and Development Data</h3>
-          <p class="subsection-text">
-            When you use Wermom, you share your baby's health history, growth measurements, developmental milestones, vaccination records, dietary information, sleep patterns, and any health concerns you'd like to track. This health data forms the foundation of your personalized care plan and enables our AI-powered health assistant to provide relevant guidance. We handle this health data as special category data under applicable privacy laws.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Baby Information</h3>
-          <p class="subsection-text">
-            We collect basic information about your child including name, date of birth, sex assigned at birth, and pregnancy/delivery details. This helps us deliver age-appropriate insights and recommendations tailored to your child's developmental stage.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Survey Responses</h3>
-          <p class="subsection-text">
-            You may choose to complete optional surveys about your parenting experience, concerns, and preferences. These responses help us understand what matters most to you and improve our recommendations and features.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Chat and Message History</h3>
-          <p class="subsection-text">
-            When you communicate with our AI health assistant, we store your messages and the assistant's responses. This chat history helps provide context for future conversations and allows us to improve our service quality.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Email Address and Account Information</h3>
-          <p class="subsection-text">
-            We collect your email address to create your account, send notifications, and allow you to recover your account if needed. If you opt in, we may also use your email for relevant product updates and educational content about child health and development.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Usage Information</h3>
-          <p class="subsection-text">
-            We automatically collect information about how you interact with our app, including which features you use, how often you visit, and pages or screens you access. This helps us understand what's working well and where we can improve the experience. This may include cookies and similar tracking technologies through our hosting provider Vercel.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- 2. How We Use Your Information -->
-      <div class="privacy-section" id="how-we-use">
-        <h2 class="section-title">How We Use Your Information</h2>
-
-        <p class="section-text">
-          Your data enables us to deliver the core value of Wermom. We use the information you provide for these purposes:
-        </p>
-
-        <ul class="privacy-list">
-          <li><strong>Personalized Health Reports:</strong> We analyze your baby's health data to generate insights, identify patterns, and create tailored recommendations aligned with pediatric best practices.</li>
-          <li><strong>AI-Powered Chat Assistant:</strong> Your health data and chat history power our conversational assistant, allowing it to provide contextually relevant guidance based on your baby's specific situation.</li>
-          <li><strong>Email Notifications:</strong> With your permission, we send milestone reminders, growth tracking alerts, and other important notifications to help you stay on top of your child's health journey.</li>
-          <li><strong>Service Improvements:</strong> We analyze usage patterns and feedback to improve our app, fix bugs, and develop new features that better serve parents and caregivers.</li>
-          <li><strong>Account Management:</strong> We use your email to verify your identity, handle login requests, and communicate important account-related information.</li>
-          <li><strong>Safety and Compliance:</strong> We may process your information to comply with legal obligations, enforce our terms of service, and protect against fraud or misuse.</li>
-        </ul>
-
-      </div>
-
-      <!-- 3. Data Storage and Security -->
-      <div class="privacy-section" id="data-storage">
-        <h2 class="section-title">Data Storage and Security</h2>
-
-        <p class="section-text">
-          We recognize that your family's health information is highly sensitive. We've implemented enterprise-grade security measures to protect your data:
-        </p>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Database Encryption</h3>
-          <p class="subsection-text">
-            All data is stored in encrypted databases through Supabase, a secure backend-as-a-service platform powered by PostgreSQL. Your health data is encrypted at rest using industry-standard encryption algorithms and never stored in plain text. Supabase infrastructure is hosted on AWS in secure data centers.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Transport Security</h3>
-          <p class="subsection-text">
-            All communication between your device and our servers uses HTTPS encryption with TLS 1.2 or higher, protecting data in transit from interception. We use industry-standard TLS protocols to ensure secure data transmission.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Authentication</h3>
-          <p class="subsection-text">
-            We use secure authentication tokens and session management to ensure only authorized users can access their account and data. Your password is never stored in plain text and is hashed using modern cryptographic algorithms.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Access Controls</h3>
-          <p class="subsection-text">
-            Access to your data is strictly limited to authorized team members who need it to maintain our service. We follow the principle of least privilege and regularly audit access logs to detect and prevent unauthorized access.
-          </p>
-        </div>
-
-        <div class="highlight-box">
-          <p><strong>Note:</strong> While we implement robust security measures, no system is 100% secure. We encourage you to use strong, unique passwords and keep your account credentials private. If you suspect unauthorized access to your account, contact us immediately at <a href="mailto:hello@wermom.com">hello@wermom.com</a>.</p>
-        </div>
-
-      </div>
-
-      <!-- 4. Third-Party Services -->
-      <div class="privacy-section" id="third-party-services">
-        <h2 class="section-title">Third-Party Services</h2>
-
-        <p class="section-text">
-          To deliver our service, we partner with trusted third-party providers. Here's how your data flows and how each provider handles it:
-        </p>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Anthropic AI (Claude)</h3>
-          <p class="subsection-text">
-            Our conversational health assistant is powered by Claude, an AI model from Anthropic. When you chat with our assistant, your messages and your baby's relevant health data are sent to Anthropic's servers to generate personalized responses.
-          </p>
-          <p class="subsection-text">
-            <strong>Key details:</strong> Anthropic does not use conversation data for training or improving Claude models (unless you explicitly opt in to research via a separate request). We only send data necessary for generating your response—we do not share unnecessary personal information like your full name or email. Your conversations may be retained by Anthropic according to their data retention policy. For full details, see <a href="https://www.anthropic.com/privacy" target="_blank">Anthropic's Privacy Policy</a>.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Resend (Email Service)</h3>
-          <p class="subsection-text">
-            We use Resend to send email notifications and updates. Your email address and relevant notification content (such as milestone reminders) are processed by Resend's servers. Resend's Privacy Policy applies to their processing of this data. We configure Resend to minimize data retention and ensure emails are not used for secondary purposes.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Supabase (Database)</h3>
-          <p class="subsection-text">
-            Supabase hosts our database and provides secure storage for your health data. Supabase uses PostgreSQL and applies encryption at rest and in transit. Supabase infrastructure runs on AWS and is subject to Supabase's privacy and security practices. See <a href="https://supabase.com/privacy" target="_blank">Supabase's Privacy Policy</a> for details.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Vercel (Hosting and Analytics)</h3>
-          <p class="subsection-text">
-            Our website is hosted on Vercel, which provides web hosting and basic analytics. Vercel may collect usage data such as pages visited, device information, and IP address to monitor site performance and security. This does not include health data. See <a href="https://vercel.com/privacy" target="_blank">Vercel's Privacy Policy</a> for details on their analytics practices.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Apple App Store and Expo (Mobile Distribution)</h3>
-          <p class="subsection-text">
-            If you download Wermom from the Apple App Store, Apple may collect app usage data and crash logs. These crash logs help us identify and fix bugs. We use Expo for development and push notification infrastructure—Expo may collect development analytics but does not have access to your health data. See Apple's and Expo's privacy policies for details on their data practices.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Other Service Providers</h3>
-          <p class="subsection-text">
-            We may partner with other service providers to deliver analytics, error tracking, or similar services that help us maintain and improve the app. Any such partners are required to implement privacy protections equivalent to our own, sign Data Processing Agreements, and are prohibited from using your data for their own purposes.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- 5. Your Privacy Rights -->
-      <div class="privacy-section" id="your-rights">
-        <h2 class="section-title">Your Privacy Rights</h2>
-
-        <p class="section-text">
-          You have important rights regarding your personal information. The specific rights available depend on your location, but we honor all applicable rights:
-        </p>
-
-        <ul class="privacy-list">
-          <li><strong>Access Your Data:</strong> You can request a complete copy of the personal information we hold about you and your child.</li>
-          <li><strong>Correct Your Data:</strong> If any information is inaccurate, you can request that we correct it.</li>
-          <li><strong>Delete Your Data:</strong> You can request deletion of your account and associated data at any time. We will remove all health records, messages, and personal information from our active systems within 30 days, except where we're legally required to retain it.</li>
-          <li><strong>Export Your Data (Data Portability):</strong> You can request your data in a portable, machine-readable format to facilitate switching to another service or keeping a personal backup.</li>
-          <li><strong>Opt Out of Communications:</strong> You can opt out of marketing emails and notifications at any time through your account settings or by contacting us.</li>
-          <li><strong>Withdraw Consent:</strong> If we process your data based on your consent, you can withdraw that consent at any time. This will not affect the lawfulness of processing before withdrawal.</li>
-          <li><strong>Restrict Processing:</strong> You can request that we limit how we use your data in certain circumstances.</li>
-          <li><strong>Object to Processing:</strong> You can object to our processing of your data for certain purposes, including direct marketing.</li>
-        </ul>
-
-        <p class="section-text">
-          To exercise any of these rights, please contact us at <a href="mailto:hello@wermom.com">hello@wermom.com</a> with details of your request and which jurisdiction's laws apply. We will respond within 30 days (or the required timeframe under applicable law). For EU/UK residents, you can also lodge a complaint with your local data protection authority.
-        </p>
-
-      </div>
-
-      <!-- 6. Children's Data Protection -->
-      <div class="privacy-section" id="children-data">
-        <h2 class="section-title">Children's Data Protection</h2>
-
-        <p class="section-text">
-          Wermom is designed for parents and caregivers to manage their children's health information. We take special care to protect children's privacy in compliance with applicable laws, including the Children's Online Privacy Protection Act (COPPA) in the United States and similar laws globally.
-        </p>
-
-        <ul class="privacy-list">
-          <li>We do not collect data directly from children—only from parents and authorized caregivers on behalf of their children.</li>
-          <li>We do not sell children's personal information to third parties for any purpose.</li>
-          <li>We do not create profiles of children for commercial advertising or marketing purposes.</li>
-          <li>Parents retain full control over their child's data and can request deletion at any time.</li>
-          <li>We do not use children's health data to target behavioral advertising or manipulate children's behavior.</li>
-          <li>We do not disclose children's data to data brokers or other unauthorized third parties.</li>
-        </ul>
-
-        <p class="section-text">
-          Under COPPA, for children under 13, parental consent is required for collection of personal information. Wermom collects data only with parent/guardian consent. If you believe we have collected data from a child in violation of these principles or applicable laws, please contact us immediately at <a href="mailto:hello@wermom.com">hello@wermom.com</a>.
-        </p>
-
-      </div>
-
-      <!-- 7. Data Retention -->
-      <div class="privacy-section" id="data-retention">
-        <h2 class="section-title">Data Retention</h2>
-
-        <p class="section-text">
-          We retain your data for as long as necessary to provide our service and fulfill the purposes outlined in this Privacy Policy. Specifically:
-        </p>
-
-        <ul class="privacy-list">
-          <li><strong>Active Accounts:</strong> We retain all health data, chat history, and account information while your account is active.</li>
-          <li><strong>After Account Deletion:</strong> Once you delete your account, we remove all personal data from our active systems within 30 days, except for data we're required to keep by law or for legitimate business purposes (such as fraud prevention or legal compliance).</li>
-          <li><strong>Backups:</strong> For data backup and recovery purposes, deleted data may be retained in encrypted backup systems for up to 90 days before being permanently purged.</li>
-          <li><strong>Legal Hold:</strong> If we receive a legal order, court order, or regulatory request, we may retain data longer than our standard retention period to comply with that obligation.</li>
-          <li><strong>Anonymous Data:</strong> We may retain anonymized, aggregated data (data that cannot identify you) indefinitely for research and service improvement purposes.</li>
-        </ul>
-
-      </div>
-
-      <!-- 8. Canada (PIPEDA) -->
-      <div class="privacy-section" id="canada-privacy">
-        <h2 class="section-title">Canada (PIPEDA)</h2>
-
-        <p class="section-text">
-          Wermom is incorporated in Ontario, Canada and is subject to the Personal Information Protection and Electronic Documents Act (PIPEDA), Canada's federal privacy law. If you are a Canadian resident, the following rights and principles apply:
-        </p>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Consent Requirement</h3>
-          <p class="subsection-text">
-            Under PIPEDA Principle 1, we obtain your informed consent before collecting or using your personal information, including your baby's health data. For sensitive health information, we require express (explicit) consent. You can withdraw consent at any time, though this may limit our ability to provide the service.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Purpose Limitation</h3>
-          <p class="subsection-text">
-            We collect and use personal information only for the purposes identified and disclosed to you (Principle 2). We do not use your data for unrelated secondary purposes without your consent.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Accountability</h3>
-          <p class="subsection-text">
-            Wermom is responsible for personal information in our control and has designated a Privacy Officer. We are accountable for implementing PIPEDA principles and can be contacted at <a href="mailto:hello@wermom.com">hello@wermom.com</a> regarding privacy inquiries.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Openness (Principle 4)</h3>
-          <p class="subsection-text">
-            We are open and transparent about our privacy practices. This Privacy Policy details how we collect, use, protect, and manage personal information.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Individual Access (Principle 9)</h3>
-          <p class="subsection-text">
-            You have the right to access and review your personal information. You may request corrections if information is inaccurate or incomplete. To exercise this right, contact us at <a href="mailto:hello@wermom.com">hello@wermom.com</a>.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Retention Limitation (Principle 7)</h3>
-          <p class="subsection-text">
-            We retain personal information only as long as necessary for identified purposes. Once your account is deleted, we remove your data within 30 days (except where legally required to retain).
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Right to Challenge Compliance</h3>
-          <p class="subsection-text">
-            If you believe Wermom is not complying with PIPEDA, you may challenge our compliance practices. You can also lodge a complaint with the Office of the Privacy Commissioner of Canada at <a href="https://www.priv.gc.ca" target="_blank">www.priv.gc.ca</a> or call 1-800-282-1376.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- 9. United States Privacy -->
-      <div class="privacy-section" id="us-privacy">
-        <h2 class="section-title">United States Privacy Laws</h2>
-
-        <p class="section-text">
-          If you are a resident of the United States, the following laws and rights apply:
-        </p>
-
-        <div class="subsection">
-          <h3 class="subsection-title">COPPA (Children's Online Privacy Protection Act)</h3>
-          <p class="subsection-text">
-            COPPA protects children under 13 online. Wermom collects health data about children through their parents/guardians only with verifiable parental consent. We do not sell personal information of children under 13. Parents can review, update, or request deletion of their child's information by contacting us at <a href="mailto:hello@wermom.com">hello@wermom.com</a>. For questions about COPPA, see the FTC's guidance at <a href="https://www.ftc.gov/coppa" target="_blank">www.ftc.gov/coppa</a>.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">CCPA / CPRA (California Privacy Rights Act)</h3>
-          <p class="subsection-text">
-            If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA):
-          </p>
-          <ul class="privacy-list">
-            <li><strong>Right to Know:</strong> You can request what personal information we collect, use, and share about you.</li>
-            <li><strong>Right to Delete:</strong> You can request deletion of personal information we collected from you (subject to certain exceptions).</li>
-            <li><strong>Right to Opt-Out:</strong> You can opt out of the "sale or sharing" of personal information (though we do not sell health data for commercial purposes).</li>
-            <li><strong>Right to Correct:</strong> You can request correction of inaccurate personal information.</li>
-            <li><strong>Right to Limit Use:</strong> You can limit how we use sensitive personal information (like health data) to necessary purposes.</li>
-            <li><strong>Non-Discrimination:</strong> We will not discriminate against you for exercising CCPA/CPRA rights.</li>
-          </ul>
-          <p class="subsection-text">To exercise these rights, contact us at <a href="mailto:hello@wermom.com">hello@wermom.com</a>. We will respond within 45 days.</p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">State Privacy Laws (Virginia VCDPA, Colorado CPA, Connecticut CTDPA)</h3>
-          <p class="subsection-text">
-            Similar comprehensive privacy laws apply in Virginia, Colorado, Connecticut, and other states. These laws grant you rights including the right to know, delete, correct, opt-out of sale, and portability of personal information. We honor these rights for all U.S. residents regardless of which specific state law applies to you.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">HIPAA Disclaimer</h3>
-          <p class="subsection-text">
-            Wermom is not a HIPAA-covered entity and does not have a Business Associate relationship with healthcare providers. However, we follow HIPAA-inspired best practices for protecting health information, including encryption, access controls, and audit logging. If you share health information with us, we treat it with the same care and security standards used in the healthcare industry.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">FTC Act Section 5</h3>
-          <p class="subsection-text">
-            We comply with the U.S. Federal Trade Commission Act Section 5, which prohibits unfair or deceptive practices. Our privacy practices as described in this policy are accurate and enforceable.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- 10. GDPR and EU/UK Privacy -->
-      <div class="privacy-section" id="gdpr">
-        <h2 class="section-title">GDPR and EU/UK Privacy</h2>
-
-        <p class="section-text">
-          If you are located in the European Union, European Economic Area, United Kingdom, or other jurisdictions with similar privacy laws (such as GDPR equivalents), the following rights and protections apply:
-        </p>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Legal Basis for Processing</h3>
-          <p class="subsection-text">
-            Under GDPR Article 6, we process your personal data only on one of these legal bases:
-          </p>
-          <ul class="privacy-list">
-            <li><strong>Consent (Article 6(1)(a)):</strong> Your explicit, informed consent to process your data (especially health data under Article 9).</li>
-            <li><strong>Contract (Article 6(1)(b)):</strong> Processing is necessary to perform our service contract with you.</li>
-            <li><strong>Legitimate Interest (Article 6(1)(f)):</strong> Our legitimate interest in providing a secure, functional, and improved service (balanced against your rights).</li>
-            <li><strong>Legal Obligation (Article 6(1)(c)):</strong> Compliance with legal or regulatory obligations.</li>
-          </ul>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Special Category Data (Article 9)</h3>
-          <p class="subsection-text">
-            Health data is a special category of personal information under GDPR Article 9. We process health information only with your explicit consent. You can withdraw consent at any time by contacting us. We do not process health data for automated decision-making or profiling that could affect you.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Data Protection Officer</h3>
-          <p class="subsection-text">
-            We have appointed a Data Protection Officer (DPO) responsible for ensuring compliance with GDPR and similar laws. If you have privacy concerns or believe we've violated GDPR or similar laws, you can contact our DPO at <a href="mailto:hello@wermom.com">hello@wermom.com</a>. You also have the right to lodge a complaint with your local data protection authority (supervisory authority).
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">GDPR Rights (Articles 15-22)</h3>
-          <p class="subsection-text">
-            You have the following rights under GDPR:
-          </p>
-          <ul class="privacy-list">
-            <li><strong>Right of Access (Article 15):</strong> You can request a copy of the personal data we hold about you.</li>
-            <li><strong>Right to Rectification (Article 16):</strong> You can request correction of inaccurate data.</li>
-            <li><strong>Right to Erasure / "Right to Be Forgotten" (Article 17):</strong> You can request deletion of your data, subject to certain exceptions.</li>
-            <li><strong>Right to Restrict Processing (Article 18):</strong> You can request that we limit how we use your data.</li>
-            <li><strong>Right to Data Portability (Article 20):</strong> You can request your data in a portable, machine-readable format.</li>
-            <li><strong>Right to Object (Article 21):</strong> You can object to processing of your data for direct marketing, profiling, or other purposes.</li>
-            <li><strong>Rights Related to Automated Decision-Making (Article 22):</strong> You have the right not to be subject to decisions based solely on automated processing that could affect you.</li>
-          </ul>
-          <p class="subsection-text">To exercise these rights, contact us at <a href="mailto:hello@wermom.com">hello@wermom.com</a>. We will respond within 30 days.</p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Data Transfers Outside the EU/UK</h3>
-          <p class="subsection-text">
-            Your data may be processed in the United States or other countries where our service providers (Anthropic, Supabase, Vercel) operate. By using Wermom, you consent to such transfers. We ensure transfers are protected by:
-          </p>
-          <ul class="privacy-list">
-            <li>Standard Contractual Clauses (SCCs) with our service providers.</li>
-            <li>International Data Transfer Agreements (IDTAs) compliant with UK law.</li>
-            <li>Adequate safeguards to protect your data during transfer.</li>
-          </ul>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Data Processing Agreements</h3>
-          <p class="subsection-text">
-            We have Data Processing Agreements (DPAs) in place with all sub-processors (like Anthropic and Supabase) that outline how they handle personal data on our behalf. A summary of our sub-processors is available upon request.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Data Protection Impact Assessment (DPIA)</h3>
-          <p class="subsection-text">
-            For high-risk processing activities involving health data, we conduct Data Protection Impact Assessments to identify and mitigate privacy risks.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Complaint to Supervisory Authority</h3>
-          <p class="subsection-text">
-            If you believe we are not complying with GDPR or similar laws, you have the right to lodge a complaint with your local data protection authority (supervisory authority), such as:
-          </p>
-          <ul class="privacy-list">
-            <li><strong>EU:</strong> Your national data protection authority (e.g., <a href="https://www.edpb.eu" target="_blank">European Data Protection Board</a>).</li>
-            <li><strong>UK:</strong> Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank">www.ico.org.uk</a>.</li>
-          </ul>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">UK-Specific: International Data Transfer Agreement (IDTA)</h3>
-          <p class="subsection-text">
-            For UK residents, international transfers of personal data to the US and other countries are protected by International Data Transfer Agreements and UK adequacy decisions.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- 11. Global Privacy Laws -->
-      <div class="privacy-section" id="global-privacy">
-        <h2 class="section-title">Global Privacy Laws</h2>
-
-        <p class="section-text">
-          We respect privacy laws globally. If you are a resident of another country with data protection laws, those protections apply to you. Key global frameworks include:
-        </p>
-
-        <table class="privacy-table">
-          <thead>
-            <tr>
-              <th>Jurisdiction</th>
-              <th>Law</th>
-              <th>Key Rights</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Brazil</strong></td>
-              <td>LGPD (Lei Geral de Proteção de Dados)</td>
-              <td>Right to access, correct, delete, opt-out of sale, data portability. Data protection authority (ANPD) oversight.</td>
-            </tr>
-            <tr>
-              <td><strong>Australia</strong></td>
-              <td>Privacy Act 1988 (Privacy Principles)</td>
-              <td>Right to access, correct, request limits on use, complain to Privacy Commissioner (OAIC).</td>
-            </tr>
-            <tr>
-              <td><strong>South Korea</strong></td>
-              <td>PIPA (Personal Information Protection Act)</td>
-              <td>Right to access, correct, delete. Processing requires consent for sensitive data.</td>
-            </tr>
-            <tr>
-              <td><strong>Singapore</strong></td>
-              <td>PDPA (Personal Data Protection Act)</td>
-              <td>Right to access, correct, withdraw consent. PDPC oversight.</td>
-            </tr>
-            <tr>
-              <td><strong>Japan</strong></td>
-              <td>APPI (Act on Protection of Personal Information)</td>
-              <td>Right to access, correct, delete. Prior consent required for health data.</td>
-            </tr>
-          </tbody>
-        </table>
-
-      </div>
-
-      <!-- 12. Health Data Provisions -->
-      <div class="privacy-section" id="health-data">
-        <h2 class="section-title">Health Data Provisions</h2>
-
-        <p class="section-text">
-          Health data receives special treatment under privacy laws globally. We implement enhanced protections:
-        </p>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Explicit Consent for Health Data</h3>
-          <p class="subsection-text">
-            We obtain explicit, informed consent before collecting or processing your child's health information. This consent is separate from general terms of service and is clearly explained. You can withdraw consent at any time.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Enhanced Security for Health Records</h3>
-          <p class="subsection-text">
-            Health data is subject to the highest level of encryption, access controls, and audit logging. We implement security measures consistent with HIPAA standards, even though we are not a covered entity.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">No Sale of Health Data</h3>
-          <p class="subsection-text">
-            We do not sell, rent, or share your child's health data with third parties for commercial purposes, advertising, or any use outside our service. Health data is never used to profile, target, or manipulate.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">HIPAA-Inspired Practices</h3>
-          <p class="subsection-text">
-            Although Wermom is not a HIPAA-covered entity, we follow HIPAA principles including: (1) administrative safeguards (policies and training), (2) physical safeguards (secure infrastructure), and (3) technical safeguards (encryption, access controls, audit logs).
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">No Unauthorized Disclosure</h3>
-          <p class="subsection-text">
-            We do not disclose health data to law enforcement, government agencies, or third parties except: (1) with your explicit consent, (2) as required by law or court order, (3) to protect health or safety in emergencies, or (4) to service providers under strict Data Processing Agreements.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Health Data Breach Notification</h3>
-          <p class="subsection-text">
-            If we experience a breach of health data, we will notify you without unreasonable delay (typically within 30 days) and describe the nature of the breach, what data was affected, and steps we're taking. We will also notify relevant regulators as required by law.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- 13. Contact & Support -->
-      <div class="privacy-section" id="contact">
-        <h2 class="section-title">Contact & Support</h2>
-
-        <p class="section-text">
-          We're committed to being transparent about our privacy practices. If you have questions, concerns, or requests regarding your personal information, data rights, or this Privacy Policy, please reach out to us:
-        </p>
-
-        <div class="subsection">
-          <p class="subsection-text">
-            <strong>Email:</strong> <a href="mailto:hello@wermom.com">hello@wermom.com</a><br>
-            <strong>Mailing Address:</strong> Wermom, Inc., Ontario, Canada<br>
-            <strong>Response Time:</strong> We will respond to all privacy inquiries within 30 business days (or as required by applicable law).
-          </p>
-        </div>
-
-        <p class="section-text">
-          We take all privacy inquiries seriously and will work with you to address any concerns. Your feedback helps us improve our privacy practices and earn your continued trust.
-        </p>
-
-        <div class="subsection">
-          <h3 class="subsection-title">Data Protection Authorities</h3>
-          <p class="subsection-text">
-            If you believe we are not complying with privacy laws, you may contact:
-          </p>
-          <ul class="privacy-list">
-            <li><strong>Canada:</strong> Office of the Privacy Commissioner of Canada (OPC) — <a href="https://www.priv.gc.ca" target="_blank">www.priv.gc.ca</a></li>
-            <li><strong>EU:</strong> Your national data protection authority or the EDPB — <a href="https://www.edpb.eu" target="_blank">www.edpb.eu</a></li>
-            <li><strong>UK:</strong> Information Commissioner's Office (ICO) — <a href="https://www.ico.org.uk" target="_blank">www.ico.org.uk</a></li>
-            <li><strong>US (FTC):</strong> Federal Trade Commission — <a href="https://www.ftc.gov/complaint" target="_blank">www.ftc.gov/complaint</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- 14. Changes to This Privacy Policy -->
-      <div class="privacy-section" id="policy-updates">
-        <h2 class="section-title">Changes to This Privacy Policy</h2>
-
-        <p class="section-text">
-          We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. We'll notify you of material changes by:
-        </p>
-
-        <ul class="privacy-list">
-          <li>Updating the "Last updated" date at the top of this page.</li>
-          <li>Sending you an email notification to the address associated with your account (for material changes).</li>
-          <li>Displaying a prominent notice in the app or on our website (for significant changes).</li>
-        </ul>
-
-        <p class="section-text">
-          Your continued use of Wermom after any changes constitutes your acceptance of the updated Privacy Policy. We encourage you to review this policy periodically to stay informed about how we protect your privacy. If you disagree with any changes, you can delete your account and request deletion of your data.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- Footer -->
-  <div class="page-footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <p class="footer-text">
-          <span class="footer-title">Wermom</span><br>
-          Built by pediatric experts who understand what your baby truly needs.
-        </p>
-      </div>
-      <div class="footer-section">
-        <p class="footer-title">Legal</p>
-        <div class="footer-links">
-          <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
-          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
-          <a href="cancellation-policy.html" class="footer-link">Cancellation Policy</a>
-        </div>
-      </div>
-      <div class="footer-section">
-        <p class="footer-title">Questions?</p>
-        <p class="footer-text">
-          Contact us at <a href="mailto:hello@wermom.com" class="footer-link">hello@wermom.com</a>
-        </p>
-      </div>
-      <div class="footer-section">
-        <p class="footer-text" style="font-size: 0.85rem; opacity: 0.6;">
-          © 2026 Wermom, Inc. All rights reserved. Incorporated in Ontario, Canada.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-  </script>
-
+    <nav>
+        <nav-content>
+            <img src="Image/wermom-logo-cropped.svg" alt="Wermom">
+            <a href="javascript:history.back()">← Back</a>
+        </nav-content>
+    </nav>
+
+    <main>
+        <header>
+            <h1>Privacy Policy — Wermom</h1>
+            <p class="last-updated">Last updated: March 25, 2026</p>
+        </header>
+
+        <section>
+            <h2>Overview</h2>
+            <p>Wermom is a baby and maternal health tracking application. We take your privacy seriously, especially given the sensitive nature of health data for you and your baby.</p>
+        </section>
+
+        <section>
+            <h2>Information We Collect</h2>
+            <p>We collect several categories of information to provide you with personalized health tracking. Your account information includes your email address (used for authentication) and your full name (optional, for personalization). We also collect baby information including baby's name, date of birth or due date, gender, blood type, and birth weight and height measurements.</p>
+            <p>We track comprehensive health and wellness data through your daily logs of feeding, sleep, bowel movements, mood, and symptoms. We also record growth measurements including weight, height, and head circumference. For maternal health, we collect information about blood pressure, weight, water intake, and energy levels. Additionally, we track contraction timing and kick counting data during pregnancy, and you can upload photos as moments within the app.</p>
+            <p>To enable our service features, we collect device information including push notification tokens and device type and OS version for app compatibility purposes.</p>
+        </section>
+
+        <section>
+            <h2>How We Use Your Data</h2>
+            <p>Your data enables us to provide personalized health tracking, displaying your baby's health trends, growth charts, and daily summaries. We use your logged data with our AI assistant to provide personalized nutrition and health advice. We send daily reminders, vaccination schedules, and milestone alerts through notifications, and we generate daily, weekly, monthly, and yearly health reports for your review.</p>
+        </section>
+
+        <section>
+            <h2>Data Storage & Security</h2>
+            <p>All data is stored securely on Supabase (PostgreSQL) with Row Level Security (RLS) enabled to ensure that only you can access your information. Authentication tokens are stored in your device's secure keychain or keystore using expo-secure-store. Data is encrypted in transit using TLS/HTTPS. We do not sell, rent, or share your personal data with third parties. Photos are stored in encrypted cloud storage.</p>
+        </section>
+
+        <section>
+            <h2>Data Retention</h2>
+            <p>Your data is retained as long as your account is active. You can request a full data export at any time from Settings. You can request account deletion, which permanently removes all your data within 30 days.</p>
+        </section>
+
+        <section>
+            <h2>Children's Privacy</h2>
+            <p>While this app tracks information about children (babies), the account holder must be a parent or legal guardian age 18 or older. We do not knowingly collect information directly from children.</p>
+        </section>
+
+        <section>
+            <h2>Third-Party Services</h2>
+            <p>We use Supabase for our database and authentication services (see supabase.com/privacy). Expo is used for app build and push notifications (see expo.dev/privacy). We also use an AI Service where chat conversations are processed by our AI provider to generate responses. Conversations may be stored for quality improvement but are not linked to your identity.</p>
+        </section>
+
+        <section>
+            <h2>Your Rights</h2>
+            <p>You have the right to access your personal data, correct inaccurate data, delete your account and all associated data, export your data in a portable format, and opt out of push notifications.</p>
+        </section>
+
+        <section>
+            <h2>Health Disclaimer</h2>
+            <p>Wermom is NOT a medical device and does NOT provide medical advice. The information provided by the app, including AI-generated responses, is for informational and tracking purposes only. Always consult your pediatrician or healthcare provider for medical decisions regarding your baby or your own health.</p>
+        </section>
+
+        <section>
+            <h2>Changes to This Policy</h2>
+            <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy in the app and updating the "Last updated" date.</p>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <p>For privacy-related questions or data requests, contact us at <a href="mailto:privacy@wermom.app">privacy@wermom.app</a> or <a href="mailto:support@wermom.com">support@wermom.com</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Wermom. All rights reserved.</p>
+        <p>For more information, visit our <a href="terms-of-service.html">Terms of Service</a> or contact <a href="mailto:support@wermom.com">support@wermom.com</a></p>
+    </footer>
 </body>
 </html>
