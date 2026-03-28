@@ -2312,6 +2312,12 @@
                     <div style="background:#f0f7f3;border-radius:12px;padding:16px 20px;margin-top:8px;font-size:0.85rem;color:var(--sage-deep);line-height:1.6;">
                         <strong>How it works:</strong> Your card will not be charged today. After your 7-day free trial, your subscription will be $299/year ($0.82/day). Cancel anytime in your account settings — if you cancel before the trial ends, you won't be charged at all. No refund after payment.
                     </div>
+
+                    <!-- Inline Submit Button for Step 9 -->
+                    <button type="button" id="step9SubmitBtn" onclick="document.getElementById('nextBtn').click();" style="width:100%;margin-top:24px;padding:18px 24px;border:none;border-radius:12px;background:linear-gradient(135deg,#e8846a,#d4604a);color:#fff;font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all 0.3s ease;box-shadow:0 4px 16px rgba(232,132,106,0.3);">
+                        Start Free Trial & Get My Report
+                    </button>
+                    <p style="text-align:center;font-size:0.78rem;color:var(--warm-gray);margin-top:8px;">You won't be charged during the 7-day trial</p>
                 </div>
             </form>
 
@@ -2815,10 +2821,10 @@
                 const acctBaby = document.getElementById('accountBabyName');
                 if (acctBaby) acctBaby.textContent = formData.babyName || '—';
             } else if (step === totalSteps) {
-                nextBtn.textContent = 'Start Free Trial & Get My Report';
-                nextBtn.style.background = 'linear-gradient(135deg,#e8846a,#d4604a)';
-                nextBtn.style.fontSize = '1.05rem';
+                // Hide bottom button group — Step 9 has its own inline submit button
+                document.getElementById('buttonGroup').style.display = 'none';
             } else {
+                document.getElementById('buttonGroup').style.display = '';
                 nextBtn.textContent = 'Next →';
                 nextBtn.style.background = '';
                 nextBtn.style.fontSize = '';
