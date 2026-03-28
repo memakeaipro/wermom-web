@@ -3,109 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wermom — AI-Powered Pregnancy & Baby Health Tracker | Expert-Backed Care</title>
-<meta name="description" content="Track nutrition, monitor kicks & contractions, and get daily AI health reports for mom & baby. Built by pediatric experts from Karolinska, Charité & Great Ormond Street. From pregnancy through age 6.">
-<meta name="keywords" content="pregnancy tracker, baby health app, nutrition tracker pregnancy, kick counter, contraction timer, baby development milestones, toddler health tracker, prenatal care app, baby food tracker, child growth chart, Wermom">
-<meta name="author" content="Wermom">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<link rel="canonical" href="https://wermom.com/">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://wermom.com/">
-<meta property="og:title" content="Wermom — AI-Powered Pregnancy & Baby Health Tracker">
-<meta property="og:description" content="Track nutrition, monitor kicks & contractions, and get daily AI health reports. Built by 15+ pediatric experts. Trusted by 12,000+ families worldwide.">
-<meta property="og:image" content="https://wermom.com/Image/og-cover.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:site_name" content="Wermom">
-<meta property="og:locale" content="en_US">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Wermom — AI-Powered Pregnancy & Baby Health Tracker">
-<meta name="twitter:description" content="Track nutrition, monitor kicks & contractions, and get daily AI health reports. Built by 15+ pediatric experts.">
-<meta name="twitter:image" content="https://wermom.com/Image/og-cover.jpg">
-
-<!-- Structured Data: Organization -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Wermom",
-  "url": "https://wermom.com",
-  "logo": "https://wermom.com/Image/wermom-logo-cropped.svg",
-  "description": "AI-powered pregnancy and baby health tracking platform built by pediatric experts.",
-  "sameAs": []
-}
-</script>
-
-<!-- Structured Data: SoftwareApplication -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Wermom",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web, iOS, Android",
-  "description": "AI-powered pregnancy and baby health tracker with nutrition tracking, kick counter, contraction timer, and expert-reviewed daily reports.",
-  "offers": {
-    "@type": "Offer",
-    "price": "24.99",
-    "priceCurrency": "USD",
-    "description": "Monthly subscription — both mom & baby care included"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "ratingCount": "12000",
-    "bestRating": "5"
-  }
-}
-</script>
-
-<!-- Structured Data: FAQPage (boosts rich snippets) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What does Wermom track during pregnancy?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wermom tracks nutrition for both mom and baby, monitors fetal kicks and contraction patterns, provides daily health scores, and generates AI-powered reports reviewed by pediatric experts from institutions like Karolinska and Charité."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the kick counter and contraction timer work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "One tap to count every kick during a session. The contraction timer tracks duration and intervals between contractions, alerting you when patterns suggest it may be time to contact your healthcare provider."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Wermom backed by real doctors?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Wermom's medical content and algorithms are developed and reviewed by 15+ pediatric specialists from world-renowned institutions including Karolinska Institute, Charité Berlin, Great Ormond Street Hospital London, and Hôpital Necker Paris."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does Wermom cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wermom costs approximately $0.82 per day, covering comprehensive care for both mom and baby from pregnancy through the first six years. A free trial is available."
-      }
-    }
-  ]
-}
-</script>
-
+<title>Wermom - We Are Moms</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Built by pediatric experts who understand what your baby truly needs. From pregnancy through the first six years — personalized health tracking, expert-reviewed insights, and a care plan designed around your child.">
+<!-- WEB-07: Security headers via meta tags -->
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -288,14 +191,29 @@ nav.scrolled {
 }
 
 .nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--midnight);
   display: flex;
   align-items: center;
-  text-decoration: none;
+  gap: 8px;
 }
-.nav-logo img {
-  height: 38px;
-  width: auto;
-  object-fit: contain;
+.nav-logo .bloom {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--peach), var(--rose));
+  border-radius: 50% 50% 50% 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-logo .bloom::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: var(--white);
+  border-radius: 50%;
+  opacity: 0.9;
 }
 
 .nav-links {
@@ -837,6 +755,29 @@ nav.scrolled {
   right: -8px;
   width: 16px;
   left: calc(50% + 22px);
+}
+
+/* How it works compact */
+.how-compact { text-align: center; max-width: 800px; margin: 56px auto 0; }
+.how-compact .section-label { margin-bottom: 24px; }
+.how-compact-steps { display: flex; align-items: flex-start; justify-content: center; gap: 0; }
+.how-compact-step { flex: 1; max-width: 240px; padding: 0 16px; }
+.how-compact-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--rose-deep); color: #fff;
+  font-weight: 700; font-size: 0.9rem;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 12px;
+}
+.how-compact-step h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; color: var(--charcoal); }
+.how-compact-step p { font-size: 0.8rem; color: var(--slate); line-height: 1.55; }
+.how-compact-divider {
+  width: 40px; height: 2px; background: var(--blush);
+  margin-top: 18px; flex-shrink: 0; border-radius: 1px;
+}
+@media (max-width: 600px) {
+  .how-compact-steps { flex-direction: column; align-items: center; gap: 20px; }
+  .how-compact-divider { width: 2px; height: 24px; }
 }
 
 /* Expert quote */
@@ -1791,178 +1732,6 @@ nav.scrolled {
   font-family: var(--font-mono);
 }
 
-/* ==================== FEATURE CARD ELEMENTS ==================== */
-.feat-icon-wrap {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-/* Food log */
-.feat-food-log { margin-top: 8px; }
-.feat-food-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 10px;
-  background: rgba(255,255,255,0.04);
-  border-radius: 8px;
-  margin-bottom: 4px;
-}
-.feat-food-emoji { font-size: 1.2rem; flex-shrink: 0; }
-.feat-food-info { flex: 1; min-width: 0; }
-.feat-food-name {
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.75);
-}
-.feat-food-meta {
-  font-size: 0.58rem;
-  color: rgba(255,255,255,0.35);
-  margin-top: 1px;
-}
-.feat-food-check {
-  color: #7BA68D;
-  font-size: 0.75rem;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-/* Kick counter */
-.feat-kick-counter {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 12px 0;
-}
-.feat-kick-circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(232,132,106,0.15), rgba(244,168,134,0.1));
-  border: 2px solid rgba(232,132,106,0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.feat-kick-number {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: #E8846A;
-  line-height: 1;
-  font-family: 'DM Sans', sans-serif;
-}
-.feat-kick-label {
-  font-size: 0.55rem;
-  color: rgba(255,255,255,0.4);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-top: 2px;
-}
-.feat-kick-stats { flex: 1; }
-.feat-kick-stat { margin-bottom: 6px; }
-.feat-kick-stat-val {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: rgba(255,255,255,0.75);
-  font-family: 'DM Sans', sans-serif;
-}
-.feat-kick-stat-label {
-  font-size: 0.55rem;
-  color: rgba(255,255,255,0.35);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* Contraction timer */
-.feat-contraction-rows { margin-top: 6px; }
-.feat-contraction-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-}
-.feat-ctx-time {
-  font-size: 0.65rem;
-  font-family: var(--font-mono);
-  color: rgba(255,255,255,0.5);
-  width: 36px;
-  flex-shrink: 0;
-}
-.feat-ctx-dur {
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #E8846A;
-  width: 28px;
-  flex-shrink: 0;
-}
-.feat-ctx-bar {
-  flex: 1;
-  height: 4px;
-  background: rgba(255,255,255,0.06);
-  border-radius: 2px;
-  overflow: hidden;
-}
-.feat-ctx-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #E8846A, #F4A886);
-  border-radius: 2px;
-}
-.feat-ctx-interval {
-  font-size: 0.58rem;
-  color: rgba(255,255,255,0.35);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-/* Summary tabs */
-.feat-summary-tabs {
-  display: flex;
-  gap: 4px;
-  background: rgba(255,255,255,0.04);
-  border-radius: 10px;
-  padding: 3px;
-}
-.feat-tab {
-  flex: 1;
-  text-align: center;
-  padding: 7px 12px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.4);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.feat-tab.active {
-  background: linear-gradient(135deg, #E8846A, #F4A886);
-  color: var(--white);
-  box-shadow: 0 2px 8px rgba(232,132,106,0.3);
-}
-.feat-tab:hover:not(.active) {
-  color: rgba(255,255,255,0.6);
-  background: rgba(255,255,255,0.04);
-}
-.feat-tab-content {
-  display: none;
-}
-.feat-tab-content.active {
-  display: block;
-}
-.feat-summary-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 10px;
-}
-
 /* ==================== SECTION 6: AI CHATBOT ==================== */
 .chatbot-section {
   padding: var(--section-pad) 0;
@@ -2169,6 +1938,56 @@ nav.scrolled {
   font-size: 0.85rem;
   color: var(--slate);
   line-height: 1.6;
+}
+
+/* Video in section 05 hero */
+.chatbot-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.chatbot-hero-text { text-align: left; }
+.chatbot-hero-video { position: relative; }
+.chatbot-video-phone {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+}
+.chatbot-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.chatbot-video-unmute {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  z-index: 2;
+}
+.chatbot-video-unmute:hover { background: rgba(0,0,0,0.75); transform: scale(1.08); }
+.chatbot-video-unmute.playing svg { display: none; }
+.chatbot-video-unmute.playing::after {
+  content: '';
+  width: 18px; height: 18px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='11 5 6 9 2 9 2 15 6 15 11 19 11 5'/%3E%3Cpath d='M19.07 4.93a10 10 0 0 1 0 14.14'/%3E%3Cpath d='M15.54 8.46a5 5 0 0 1 0 7.07'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
 /* ==================== SECTION 7: SHOP ==================== */
@@ -2782,6 +2601,7 @@ footer {
 
   .dailylog-grid,
   .chatbot-grid { grid-template-columns: 1fr; }
+  .chatbot-hero-grid { grid-template-columns: 1fr; gap: 32px; }
 
   .shop-highlight { grid-template-columns: 1fr; }
 }
@@ -4114,12 +3934,19 @@ nav.scrolled {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Logo hover animation */
-.nav-logo img {
-  transition: transform 0.3s var(--ease-out);
+/* Logo pulse animation */
+.nav-logo .bloom {
+  transition: all 0.3s var(--ease-out);
 }
-.nav-logo:hover img {
-  transform: scale(1.05);
+
+.nav-logo:hover .bloom {
+  animation: logo-pulse 0.6s var(--ease-spring);
+}
+
+@keyframes logo-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 /* Link underline animation */
@@ -4653,6 +4480,7 @@ footer::before {
   /* ---- CHATBOT: full-width ---- */
   .chatbot-section .container { width: 100%; padding: 0 12px; }
   .chatbot-grid { grid-template-columns: 1fr !important; gap: 32px; }
+  .chatbot-hero-grid { grid-template-columns: 1fr !important; gap: 24px; }
   .chat-window { border-radius: 20px; }
   .chat-messages { padding: 16px; min-height: 280px; max-height: 420px; }
   .chat-msg { max-width: 88%; font-size: 0.84rem; padding: 12px 14px; }
@@ -4973,6 +4801,19 @@ footer::before {
 }
 @media (min-width: 769px) {
   .reports-carousel-wrapper { display: none; }
+}
+
+/* ==================== FEATURE GRID RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .reports-section [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .reports-section [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
 /* ==================== CHAT: PRESET QUESTIONS INSIDE CHAT ==================== */
@@ -5319,16 +5160,15 @@ footer::before {
 <!-- ==================== NAVIGATION ==================== -->
 <nav id="navbar">
   <a href="#" class="nav-logo">
-    <img src="Image/wermom-logo-cropped.svg" alt="Wermom">
+    <img src="logo.svg" alt="Wermom" height="48" style="display:block;">
   </a>
   <ul class="nav-links">
     <li><a href="#who">Who It's For</a></li>
-    <li><a href="#features">How It Works</a></li>
+    <li><a href="#features">Smart Tools</a></li>
     <li><a href="#experts">Backed by Experts</a></li>
-    <li><a href=".chatbot-section" class="nav-talk-expert" onclick="event.preventDefault(); document.querySelector('.chatbot-section').scrollIntoView({behavior:'smooth'});">Talk to Expert</a></li>
+    <li><a href="#chat" class="nav-talk-expert" onclick="event.preventDefault(); document.getElementById('chat').scrollIntoView({behavior:'smooth'});">Talk to Expert</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="blog/">Blog</a></li>
   </ul>
   <div class="nav-cta">
     <a href="#pricing" class="nav-login">Download App</a>
@@ -5347,13 +5187,11 @@ footer::before {
     </div>
     <ul class="mobile-menu-links">
       <li><a href="#who" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-pregnant"/></svg>Who It's For</a></li>
-      <li><a href="#how" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-chart"/></svg>How It Works</a></li>
-      <li><a href="#features" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-zap"/></svg>Daily Log</a></li>
-      <li class="mm-highlight"><a href=".chatbot-section" onclick="closeMobileMenu(); setTimeout(()=>document.querySelector('.chatbot-section').scrollIntoView({behavior:'smooth'}),100)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>Talk to AI Expert</a></li>
+      <li><a href="#features" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-zap"/></svg>Smart Tools</a></li>
+      <li class="mm-highlight"><a href="#chat" onclick="closeMobileMenu(); setTimeout(()=>document.getElementById('chat').scrollIntoView({behavior:'smooth'}),100)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>Talk to AI Expert</a></li>
       <li><a href="#experts" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-doctor"/></svg>Our Experts</a></li>
       <li><a href="#reviews" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-heart-pulse"/></svg>Reviews</a></li>
       <li><a href="#faq" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>FAQ</a></li>
-      <li><a href="blog/" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Blog</a></li>
     </ul>
     <div class="mobile-menu-cta">
       <a href="#pricing" class="btn-primary" onclick="closeMobileMenu()">
@@ -5414,7 +5252,7 @@ footer::before {
       <!-- Card 1: Pregnancy -->
       <div class="showcase-card has-photo">
         <div class="sc-photo pos-top">
-          <img src="Image/hf_20260325_060649_f8ac1f84-5959-4447-b9f1-1a620dfc50dc.png" alt="Pregnant mother in nursery">
+          <img src="img/hf_20260325_060649_f8ac1f84-5959-4447-b9f1-1a620dfc50dc.jpg" alt="Pregnant mother in nursery">
         </div>
         <div class="sc-overlay"></div>
         <div class="sc-content">
@@ -5440,7 +5278,7 @@ footer::before {
       <!-- Card 2: Baby -->
       <div class="showcase-card has-photo">
         <div class="sc-photo pos-center">
-          <img src="Image/hf_20260325_061153_acaaeb6f-d705-4a19-a959-6e2f61c71569 (1).jpeg" alt="Mother and baby">
+          <img src="img/hf_20260325_061153_acaaeb6f-d705-4a19-a959-6e2f61c71569 (1).jpg" alt="Mother and baby">
         </div>
         <div class="sc-overlay"></div>
         <div class="sc-content">
@@ -5547,9 +5385,33 @@ footer::before {
       </a>
     </div>
 
+    <!-- How It Works (compact) -->
+    <div class="how-compact reveal" style="margin-top:56px;">
+      <div class="section-label" style="justify-content:center;">How It Works</div>
+      <div class="how-compact-steps">
+        <div class="how-compact-step">
+          <div class="how-compact-num">1</div>
+          <h4>Log Your Day</h4>
+          <p>Quick taps — meals, sleep, symptoms. Under 2 minutes.</p>
+        </div>
+        <div class="how-compact-divider"></div>
+        <div class="how-compact-step">
+          <div class="how-compact-num">2</div>
+          <h4>Experts Review</h4>
+          <p>Our team cross-references your data with 500+ pediatric studies within 24h.</p>
+        </div>
+        <div class="how-compact-divider"></div>
+        <div class="how-compact-step">
+          <div class="how-compact-num">3</div>
+          <h4>Get Reports &amp; Alerts</h4>
+          <p>Daily scores, actionable guidance, and early warnings when something shifts.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Expert Quote -->
     <div class="expert-quote reveal">
-      <div class="expert-img"><svg width="28" height="28" style="color:var(--white);"><use href="#ico-doctor"/></svg></div>
+      <div class="expert-img" style="padding:0;overflow:hidden;border-radius:12px;"><img src="img/dr-astrid.jpg" alt="Dr. Astrid Lindqvist" width="56" height="56" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;"></div>
       <div>
         <div class="quote-mark">&ldquo;</div>
         <div class="expert-text">What Wermom does is what I wish every parent had access to — continuous, evidence-based monitoring with real expert oversight. This is how modern pediatric care should work.</div>
@@ -5576,7 +5438,7 @@ footer::before {
     <div class="who-grid">
       <div class="who-card pregnant reveal reveal-delay-1">
         <div class="who-card-img">
-          <img src="Image/hf_20260325_063154_81daaa23-61c0-4678-b090-cedc6c79478a.png" alt="Expecting mom using phone">
+          <img src="img/hf_20260325_063154_81daaa23-61c0-4678-b090-cedc6c79478a.jpg" alt="Expecting mom using phone">
         </div>
         <div class="who-card-body">
           <div class="card-icon"><svg width="24" height="24"><use href="#ico-pregnant"/></svg></div>
@@ -5593,7 +5455,7 @@ footer::before {
       </div>
       <div class="who-card baby reveal reveal-delay-2">
         <div class="who-card-img">
-          <img src="Image/hf_20260325_061909_6ee54816-82bb-44c3-a802-d1179af90dc8.png" alt="Mom playing with baby">
+          <img src="img/hf_20260325_061909_6ee54816-82bb-44c3-a802-d1179af90dc8.jpg" alt="Mom playing with baby">
         </div>
         <div class="who-card-body">
           <div class="card-icon"><svg width="24" height="24"><use href="#ico-baby"/></svg></div>
@@ -5615,7 +5477,7 @@ footer::before {
       <div class="who-carousel-track" id="who-carousel-track">
         <div class="who-card pregnant">
           <div class="who-card-img">
-            <img src="Image/hf_20260325_063154_81daaa23-61c0-4678-b090-cedc6c79478a.png" alt="Expecting mom using phone">
+            <img src="img/hf_20260325_063154_81daaa23-61c0-4678-b090-cedc6c79478a.jpg" alt="Expecting mom using phone">
           </div>
           <div class="who-card-body">
             <div class="card-icon"><svg width="24" height="24"><use href="#ico-pregnant"/></svg></div>
@@ -5632,7 +5494,7 @@ footer::before {
         </div>
         <div class="who-card baby">
           <div class="who-card-img">
-            <img src="Image/hf_20260325_061909_6ee54816-82bb-44c3-a802-d1179af90dc8.png" alt="Mom playing with baby">
+            <img src="img/hf_20260325_061909_6ee54816-82bb-44c3-a802-d1179af90dc8.jpg" alt="Mom playing with baby">
           </div>
           <div class="who-card-body">
             <div class="card-icon"><svg width="24" height="24"><use href="#ico-baby"/></svg></div>
@@ -5656,563 +5518,34 @@ footer::before {
   </div>
 </section>
 
-<!-- ==================== SECTION 3: HOW IT WORKS ==================== -->
-<section class="how-section" id="how">
-  <div class="container">
-    <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto;">
-      <div class="section-label" style="justify-content:center;">02 &mdash; How It Works</div>
-      <h2>Three simple steps.<br>Life-changing results.</h2>
-      <p class="subtitle" style="margin:0 auto;">Less than 3 minutes of your day. That's all we need to give your baby care backed by 500+ pediatric studies.</p>
-    </div>
-    <div class="steps-grid">
-      <div class="step-card reveal reveal-delay-1">
-        <div class="step-left">
-          <div class="step-num">1</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content" data-step="01">
-          <h3>Tell Us About Your Day</h3>
-          <p>Meals, sleep, symptoms, mood — just quick taps and a few notes. It takes under 2 minutes, and we take it from there.</p>
-        </div>
-      </div>
-      <div class="step-card reveal reveal-delay-2">
-        <div class="step-left">
-          <div class="step-num">2</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content" data-step="02">
-          <h3>Our Experts Review Everything</h3>
-          <p>Within 24 hours, our team cross-references your data with the latest pediatric research and sends you personalized feedback via app and email.</p>
-        </div>
-      </div>
-      <div class="step-card reveal reveal-delay-3">
-        <div class="step-left">
-          <div class="step-num">3</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content" data-step="03">
-          <h3>Get Your Reports & Alerts</h3>
-          <p>Daily, weekly, and monthly reports with clear, actionable guidance. Plus smart alerts the moment we notice something shifting.</p>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:48px;" class="reveal">
-      <a href="#pricing" class="btn-primary">
-        <span>Begin Your Free Assessment</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
 
-<!-- ==================== SECTION 4: DAILY LOG PREVIEW ==================== -->
-<section class="dailylog-section" id="features">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-label">03 &mdash; Daily Log</div>
-      <h2>Where the magic starts.</h2>
-      <p class="subtitle">Try it yourself — enter your baby's info below and get an instant health snapshot. This is just a taste of what Wermom can do.</p>
-    </div>
-    <div class="dailylog-grid">
-      <div class="log-demo reveal reveal-delay-1">
-        <div class="log-demo-header">
-          <div class="log-demo-title">Baby Daily Log</div>
-          <div class="log-demo-date">Mar 20, 2026</div>
-        </div>
-        <div class="log-field">
-          <label>Baby's Weight</label>
-          <input type="text" class="log-input" placeholder="e.g. 8.2 kg" id="weight-input">
-        </div>
-        <div class="log-field">
-          <label>Baby's Age</label>
-          <input type="text" class="log-input" placeholder="e.g. 8 months" id="age-input">
-        </div>
-        <div class="log-field">
-          <label>Meals Today</label>
-          <input type="text" class="log-input" placeholder="e.g. Rice porridge with pumpkin, steamed broccoli" id="meal-input">
-        </div>
-        <div class="log-field">
-          <label>Milk</label>
-          <input type="text" class="log-input" placeholder="e.g. Aptamil Stage 2, 180ml x 3 times" id="milk-input">
-        </div>
-        <div class="log-field">
-          <label>Hours of Sleep</label>
-          <input type="text" class="log-input" placeholder="e.g. 11 hours" id="sleep-input">
-        </div>
-        <div class="log-field">
-          <label>How's Baby Today?</label>
-          <div class="mood-chips">
-            <div class="mood-chip" onclick="this.classList.toggle('active')">Great</div>
-            <div class="mood-chip" onclick="this.classList.toggle('active')">Normal</div>
-            <div class="mood-chip" onclick="this.classList.toggle('active')">Fussy</div>
-            <div class="mood-chip" onclick="this.classList.toggle('active')">Teething</div>
-            <div class="mood-chip" onclick="this.classList.toggle('active')">Runny Nose</div>
-            <div class="mood-chip" onclick="this.classList.toggle('active')">Poor Sleep</div>
-          </div>
-        </div>
-        <button class="log-submit" onclick="showAIOutput()">Get Your Health Score</button>
-        <div class="log-loading" id="log-loading">
-          <div class="log-loading-spinner"></div>
-          <p>Analyzing your baby's health data...</p>
-        </div>
-        <div class="ai-output" id="ai-output">
-          <div class="ai-output-header">
-            <div class="ai-sparkle">&#x2728;</div>
-            <span>Quick Health Snapshot</span>
-          </div>
-          <div class="ai-overall-score">
-            <div class="ai-overall-circle">
-              <div class="ai-overall-num" id="overall-score">--</div>
-              <div class="ai-overall-label">out of 100</div>
-            </div>
-          </div>
-          <div class="ai-score-bars">
-            <div class="ai-bar-item">
-              <div class="ai-bar-top">
-                <span class="ai-bar-name">Diet Quality</span>
-                <span class="ai-bar-val" id="diet-score">--</span>
-              </div>
-              <div class="ai-bar-track"><div class="ai-bar-fill" id="diet-bar" style="width:0%;background:var(--sage);"></div></div>
-              <div class="ai-bar-note" id="diet-note"></div>
-            </div>
-            <div class="ai-bar-item">
-              <div class="ai-bar-top">
-                <span class="ai-bar-name">Weight Status</span>
-                <span class="ai-bar-val" id="weight-score">--</span>
-              </div>
-              <div class="ai-bar-track"><div class="ai-bar-fill" id="weight-bar" style="width:0%;background:var(--peach);"></div></div>
-              <div class="ai-bar-note" id="weight-note"></div>
-            </div>
-            <div class="ai-bar-item">
-              <div class="ai-bar-top">
-                <span class="ai-bar-name">Sleep Quality</span>
-                <span class="ai-bar-val" id="sleep-score">--</span>
-              </div>
-              <div class="ai-bar-track"><div class="ai-bar-fill" id="sleep-bar" style="width:0%;background:var(--rose);"></div></div>
-              <div class="ai-bar-note" id="sleep-note"></div>
-            </div>
-          </div>
-          <div class="ai-insight" id="ai-insight-text"></div>
-          <div class="ai-cta-box">
-            <p><strong>This is just a quick snapshot.</strong> The full Wermom assessment is <span style="color:var(--rose);font-weight:600;">10× more detailed</span> — with personalized meal plans, growth curve analysis, development milestones, and daily guidance for both mom &amp; baby.</p>
-            <a href="#pricing" class="btn-primary">
-              <span>Get Your Free Detailed Assessment</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="dailylog-features reveal reveal-delay-2">
-        <div class="dl-feature">
-          <div class="dl-feature-icon"><svg width="18" height="18"><use href="#ico-zap"/></svg></div>
-          <div>
-            <h4>Expert Eyes on Every Entry</h4>
-            <p>Our team personally reviews your logs against pediatric databases and WHO standards — then sends you tailored feedback via app and email within 24 hours.</p>
-          </div>
-        </div>
-        <div class="dl-feature">
-          <div class="dl-feature-icon"><svg width="18" height="18"><use href="#ico-chart"/></svg></div>
-          <div>
-            <h4>Scores That Actually Mean Something</h4>
-            <p>Nutrition, sleep, and health — each scored on a clear 10-point scale. You'll always know where things stand and where to focus next.</p>
-          </div>
-        </div>
-        <div class="dl-feature">
-          <div class="dl-feature-icon"><svg width="18" height="18"><use href="#ico-bowl"/></svg></div>
-          <div>
-            <h4>Tomorrow's Menu, Already Planned</h4>
-            <p>We don't just analyze — we give you a complete meal plan for tomorrow, breakfast through dinner, with recipes built around what your baby actually needs.</p>
-          </div>
-        </div>
-        <div class="dl-feature">
-          <div class="dl-feature-icon"><svg width="18" height="18"><use href="#ico-siren"/></svg></div>
-          <div>
-            <h4>We'll Tell You Before It's Obvious</h4>
-            <p>Our pattern detection catches what the eye misses: gradual weight changes, emerging sleep regressions, recurring symptoms — flagged early so you can act, not react.</p>
-          </div>
-        </div>
-      </div>
-
-    <!-- Mobile Accordion -->
-    <div class="dl-accordion">
-      <div class="dl-acc-item open" onclick="toggleDlAcc(this)">
-        <div class="dl-acc-header">
-          <div class="dl-acc-icon"><svg width="18" height="18"><use href="#ico-zap"/></svg></div>
-          <h4>Expert Eyes on Every Entry</h4>
-          <svg class="dl-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="dl-acc-body">
-          <p>Our team personally reviews your logs against pediatric databases and WHO standards — then sends you tailored feedback via app and email within 24 hours.</p>
-        </div>
-      </div>
-      <div class="dl-acc-item" onclick="toggleDlAcc(this)">
-        <div class="dl-acc-header">
-          <div class="dl-acc-icon"><svg width="18" height="18"><use href="#ico-chart"/></svg></div>
-          <h4>Scores That Actually Mean Something</h4>
-          <svg class="dl-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="dl-acc-body">
-          <p>Nutrition, sleep, and health — each scored on a clear 10-point scale. You'll always know where things stand and where to focus next.</p>
-        </div>
-      </div>
-      <div class="dl-acc-item" onclick="toggleDlAcc(this)">
-        <div class="dl-acc-header">
-          <div class="dl-acc-icon"><svg width="18" height="18"><use href="#ico-bowl"/></svg></div>
-          <h4>Tomorrow's Menu, Already Planned</h4>
-          <svg class="dl-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="dl-acc-body">
-          <p>We don't just analyze — we give you a complete meal plan for tomorrow, breakfast through dinner, with recipes built around what your baby actually needs.</p>
-        </div>
-      </div>
-      <div class="dl-acc-item" onclick="toggleDlAcc(this)">
-        <div class="dl-acc-header">
-          <div class="dl-acc-icon"><svg width="18" height="18"><use href="#ico-siren"/></svg></div>
-          <h4>We'll Tell You Before It's Obvious</h4>
-          <svg class="dl-acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="dl-acc-body">
-          <p>Our pattern detection catches what the eye misses: gradual weight changes, emerging sleep regressions, recurring symptoms — flagged early so you can act, not react.</p>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== SECTION 5: KEY FEATURES ==================== -->
-<section class="reports-section">
-  <div class="container">
-    <div class="reveal" style="text-align:center; max-width:640px; margin:0 auto;">
-      <div class="section-label" style="justify-content:center;">04 &mdash; Features</div>
-      <h2>Everything you need,<br>in one place.</h2>
-      <p class="subtitle">Track nutrition, monitor every kick and contraction, and get comprehensive summaries — daily, monthly, yearly.</p>
-    </div>
-    <div class="reports-showcase">
-      <!-- ========== FEATURE 1: NUTRITION TRACKING ========== -->
-      <div class="report-card reveal reveal-delay-1">
-        <div class="feat-icon-wrap" style="background:rgba(123,166,141,0.15);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-        </div>
-        <div class="report-freq">Smart Tracking</div>
-        <h3>Nutrition Tracker</h3>
-        <p>Log meals for mom &amp; baby. AI calculates calories, macros, vitamins — and flags what's missing.</p>
-        <div class="report-preview">
-          <div class="rp-header">
-            <div class="rp-header-left">Today's Nutrition</div>
-            <div class="rp-header-right">Mar 26, 2026</div>
-          </div>
-          <div class="rp-metrics">
-            <div class="rp-metric">
-              <div class="rp-metric-value" style="color:#7BA68D;">1,840<span style="font-size:0.55rem;opacity:0.6;">cal</span></div>
-              <div class="rp-metric-label">Mom Intake</div>
-              <div class="rp-metric-delta rp-delta-up">92% of target</div>
-            </div>
-            <div class="rp-metric">
-              <div class="rp-metric-value" style="color:#F4A886;">680<span style="font-size:0.55rem;opacity:0.6;">cal</span></div>
-              <div class="rp-metric-label">Baby Intake</div>
-              <div class="rp-metric-delta rp-delta-up">&#9650; on target</div>
-            </div>
-          </div>
-
-          <div class="feat-food-log">
-            <div class="feat-food-item">
-              <span class="feat-food-emoji">🥑</span>
-              <div class="feat-food-info">
-                <div class="feat-food-name">Avocado Toast + Egg</div>
-                <div class="feat-food-meta">Breakfast &middot; 420 cal &middot; 18g protein</div>
-              </div>
-              <span class="feat-food-check">&#10003;</span>
-            </div>
-            <div class="feat-food-item">
-              <span class="feat-food-emoji">🍗</span>
-              <div class="feat-food-info">
-                <div class="feat-food-name">Grilled Chicken Salad</div>
-                <div class="feat-food-meta">Lunch &middot; 580 cal &middot; 42g protein</div>
-              </div>
-              <span class="feat-food-check">&#10003;</span>
-            </div>
-            <div class="feat-food-item">
-              <span class="feat-food-emoji">🍠</span>
-              <div class="feat-food-info">
-                <div class="feat-food-name">Sweet Potato Puree</div>
-                <div class="feat-food-meta">Baby lunch &middot; 120 cal &middot; Iron-rich</div>
-              </div>
-              <span class="feat-food-check">&#10003;</span>
-            </div>
-          </div>
-
-          <div class="rp-divider"></div>
-          <div class="rp-section-title" style="color:rgba(255,255,255,0.5);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-zap"/></svg> AI Nutrition Alert</div>
-          <div class="rp-insight rp-insight-warn"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="2" stroke-linecap="round"><use href="#ico-alert"/></svg></span>Folate intake at 78%. Add leafy greens or fortified cereal at dinner.</div>
-          <div class="rp-insight rp-insight-good"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>DHA levels excellent this week — keep up the salmon and chia seeds!</div>
-        </div>
-      </div>
-
-      <!-- ========== FEATURE 2: KICKS & CONTRACTIONS ========== -->
-      <div class="report-card reveal reveal-delay-2">
-        <div class="feat-icon-wrap" style="background:rgba(232,132,106,0.15);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <div class="report-freq">Real-Time</div>
-        <h3>Kicks &amp; Contractions</h3>
-        <p>One tap to count every kick. Track contraction intervals with a built-in timer — know when it's time.</p>
-        <div class="report-preview">
-          <div class="rp-header">
-            <div class="rp-header-left">Kick Counter — Week 32</div>
-            <div class="rp-header-right">Session #4 today</div>
-          </div>
-
-          <!-- Kick counter UI -->
-          <div class="feat-kick-counter">
-            <div class="feat-kick-circle">
-              <div class="feat-kick-number">8</div>
-              <div class="feat-kick-label">kicks</div>
-            </div>
-            <div class="feat-kick-stats">
-              <div class="feat-kick-stat">
-                <div class="feat-kick-stat-val">12 min</div>
-                <div class="feat-kick-stat-label">Session time</div>
-              </div>
-              <div class="feat-kick-stat">
-                <div class="feat-kick-stat-val">1.5 min</div>
-                <div class="feat-kick-stat-label">Avg interval</div>
-              </div>
-              <div class="feat-kick-stat">
-                <div class="feat-kick-stat-val">32</div>
-                <div class="feat-kick-stat-label">Today total</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="rp-divider"></div>
-
-          <!-- Contraction timer -->
-          <div class="rp-section-title" style="color:rgba(255,255,255,0.5);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Contraction Timer</div>
-          <div class="feat-contraction-rows">
-            <div class="feat-contraction-row">
-              <span class="feat-ctx-time">14:32</span>
-              <span class="feat-ctx-dur">48s</span>
-              <div class="feat-ctx-bar"><div class="feat-ctx-fill" style="width:80%;"></div></div>
-              <span class="feat-ctx-interval">6 min apart</span>
-            </div>
-            <div class="feat-contraction-row">
-              <span class="feat-ctx-time">14:26</span>
-              <span class="feat-ctx-dur">52s</span>
-              <div class="feat-ctx-bar"><div class="feat-ctx-fill" style="width:87%;"></div></div>
-              <span class="feat-ctx-interval">7 min apart</span>
-            </div>
-            <div class="feat-contraction-row">
-              <span class="feat-ctx-time">14:19</span>
-              <span class="feat-ctx-dur">45s</span>
-              <div class="feat-ctx-bar"><div class="feat-ctx-fill" style="width:75%;"></div></div>
-              <span class="feat-ctx-interval">8 min apart</span>
-            </div>
-          </div>
-          <div class="rp-insight rp-insight-info" style="margin-top:8px;"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B8DD6" stroke-width="2" stroke-linecap="round"><use href="#ico-brain"/></svg></span>Pattern: contractions getting closer (8→7→6 min). Continue timing — call your doctor if under 5 min for 1 hour.</div>
-        </div>
-      </div>
-
-      <!-- ========== FEATURE 3: SMART SUMMARIES ========== -->
-      <div class="report-card reveal reveal-delay-3">
-        <div class="feat-icon-wrap" style="background:rgba(107,141,214,0.15);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6B8DD6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        </div>
-        <div class="report-freq">Auto-Generated</div>
-        <h3>Smart Summaries</h3>
-        <p>AI compiles everything into clear reports — daily check-ins, monthly deep-dives, yearly milestones.</p>
-        <div class="report-preview">
-          <!-- Summary tabs -->
-          <div class="feat-summary-tabs">
-            <div class="feat-tab active" data-tab="daily">Daily</div>
-            <div class="feat-tab" data-tab="monthly">Monthly</div>
-            <div class="feat-tab" data-tab="yearly">Yearly</div>
-          </div>
-
-          <!-- Daily tab content -->
-          <div class="feat-tab-content active" data-tab="daily">
-            <div class="rp-header" style="margin-top:8px;">
-              <div class="rp-header-left">Today's Summary</div>
-              <div class="rp-header-right">Mar 26, 2026</div>
-            </div>
-            <div class="rp-metrics">
-              <div class="rp-metric">
-                <div class="rp-metric-value" style="color:#7BA68D;">92<span style="font-size:0.55rem;opacity:0.6;">/100</span></div>
-                <div class="rp-metric-label">Health Score</div>
-                <div class="rp-metric-delta rp-delta-up">&#9650; +4</div>
-              </div>
-              <div class="rp-metric">
-                <div class="rp-metric-value" style="color:#F4A886;">10.8<span style="font-size:0.55rem;opacity:0.6;">h</span></div>
-                <div class="rp-metric-label">Sleep</div>
-                <div class="rp-metric-delta rp-delta-up">&#9650; +0.5h</div>
-              </div>
-            </div>
-            <div class="rp-insight rp-insight-good"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Great day! All nutrition targets met. Baby active and alert.</div>
-          </div>
-
-          <!-- Monthly tab content -->
-          <div class="feat-tab-content" data-tab="monthly">
-            <div class="rp-header" style="margin-top:8px;">
-              <div class="rp-header-left">March 2026 Report</div>
-              <div class="rp-header-right">Month 8</div>
-            </div>
-            <div class="rp-metrics">
-              <div class="rp-metric">
-                <div class="rp-metric-value" style="color:#E8846A;">88<span style="font-size:0.55rem;opacity:0.6;">avg</span></div>
-                <div class="rp-metric-label">Monthly Score</div>
-                <div class="rp-metric-delta rp-delta-up">&#9650; +6</div>
-              </div>
-              <div class="rp-metric">
-                <div class="rp-metric-value" style="color:#7BA68D;">62<span style="font-size:0.55rem;opacity:0.6;">nd</span></div>
-                <div class="rp-metric-label">WHO %ile</div>
-                <div class="rp-metric-delta rp-delta-same">&#8212; stable</div>
-              </div>
-            </div>
-            <div class="rp-insight rp-insight-good"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>4 milestones reached. Weight +520g. Crawling starting!</div>
-          </div>
-
-          <!-- Yearly tab content -->
-          <div class="feat-tab-content" data-tab="yearly">
-            <div class="rp-header" style="margin-top:8px;">
-              <div class="rp-header-left">First Year Overview</div>
-              <div class="rp-header-right">2025 – 2026</div>
-            </div>
-            <div class="rp-metrics">
-              <div class="rp-metric">
-                <div class="rp-metric-value" style="color:#6B8DD6;">365<span style="font-size:0.55rem;opacity:0.6;">days</span></div>
-                <div class="rp-metric-label">Tracked</div>
-                <div class="rp-metric-delta rp-delta-up">100%</div>
-              </div>
-              <div class="rp-metric">
-                <div class="rp-metric-value" style="color:#7BA68D;">24<span style="font-size:0.55rem;opacity:0.6;"></span></div>
-                <div class="rp-metric-label">Milestones</div>
-                <div class="rp-metric-delta rp-delta-up">all on track</div>
-              </div>
-            </div>
-            <div class="rp-insight rp-insight-info"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B8DD6" stroke-width="2" stroke-linecap="round"><use href="#ico-brain"/></svg></span>Complete growth journey: 3.2kg → 9.8kg. 48cm → 75cm. 24 milestones achieved.</div>
-          </div>
-
-          <div class="rp-divider" style="margin-top:10px;"></div>
-          <div class="feat-summary-badges">
-            <span class="report-section-tag">Growth</span>
-            <span class="report-section-tag">Nutrition</span>
-            <span class="report-section-tag">Sleep</span>
-            <span class="report-section-tag">Development</span>
-            <span class="report-section-tag">Mom Care</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Mobile Features Carousel -->
-    <div class="reports-carousel-wrapper">
-      <div class="reports-carousel-track" id="reports-carousel-track">
-        <!-- Nutrition -->
-        <div class="report-card">
-          <div class="feat-icon-wrap" style="background:rgba(123,166,141,0.15);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-          </div>
-          <div class="report-freq">Smart Tracking</div>
-          <h3>Nutrition Tracker</h3>
-          <p>Log meals for mom &amp; baby. AI calculates nutrients and flags gaps.</p>
-          <div class="report-preview">
-            <div class="rp-metrics">
-              <div class="rp-metric">
-                <div class="rp-metric-value" style="color:#7BA68D;">1,840<span style="font-size:0.55rem;opacity:0.6;">cal</span></div>
-                <div class="rp-metric-label">Mom Intake</div>
-              </div>
-              <div class="rp-metric">
-                <div class="rp-metric-value" style="color:#F4A886;">680<span style="font-size:0.55rem;opacity:0.6;">cal</span></div>
-                <div class="rp-metric-label">Baby Intake</div>
-              </div>
-            </div>
-            <div class="rp-insight rp-insight-warn"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="2" stroke-linecap="round"><use href="#ico-alert"/></svg></span>Folate at 78%. Add leafy greens at dinner.</div>
-          </div>
-        </div>
-        <!-- Kicks -->
-        <div class="report-card">
-          <div class="feat-icon-wrap" style="background:rgba(232,132,106,0.15);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <div class="report-freq">Real-Time</div>
-          <h3>Kicks &amp; Contractions</h3>
-          <p>One-tap kick counting and contraction timer with smart alerts.</p>
-          <div class="report-preview">
-            <div class="feat-kick-counter">
-              <div class="feat-kick-circle">
-                <div class="feat-kick-number">8</div>
-                <div class="feat-kick-label">kicks</div>
-              </div>
-              <div class="feat-kick-stats">
-                <div class="feat-kick-stat">
-                  <div class="feat-kick-stat-val">12 min</div>
-                  <div class="feat-kick-stat-label">Session</div>
-                </div>
-                <div class="feat-kick-stat">
-                  <div class="feat-kick-stat-val">32</div>
-                  <div class="feat-kick-stat-label">Today</div>
-                </div>
-              </div>
-            </div>
-            <div class="rp-insight rp-insight-info" style="margin-top:8px;"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B8DD6" stroke-width="2" stroke-linecap="round"><use href="#ico-brain"/></svg></span>Contractions getting closer. Continue timing.</div>
-          </div>
-        </div>
-        <!-- Summaries -->
-        <div class="report-card">
-          <div class="feat-icon-wrap" style="background:rgba(107,141,214,0.15);">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B8DD6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          </div>
-          <div class="report-freq">Auto-Generated</div>
-          <h3>Smart Summaries</h3>
-          <p>Daily, monthly, yearly reports compiled automatically by AI.</p>
-          <div class="report-preview">
-            <div class="rp-metrics">
-              <div class="rp-metric">
-                <div class="rp-metric-value" style="color:#7BA68D;">92<span style="font-size:0.55rem;opacity:0.6;">/100</span></div>
-                <div class="rp-metric-label">Health Score</div>
-                <div class="rp-metric-delta rp-delta-up">&#9650; +4</div>
-              </div>
-              <div class="rp-metric">
-                <div class="rp-metric-value" style="color:#6B8DD6;">365<span style="font-size:0.55rem;opacity:0.6;">days</span></div>
-                <div class="rp-metric-label">Tracked</div>
-              </div>
-            </div>
-            <div class="feat-summary-badges">
-              <span class="report-section-tag">Growth</span>
-              <span class="report-section-tag">Nutrition</span>
-              <span class="report-section-tag">Sleep</span>
-              <span class="report-section-tag">Development</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="reports-swipe-hint">
-        <span>Swipe to see more</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </div>
-      <div class="reports-dots">
-        <div class="reports-dot active" data-idx="0"></div>
-        <div class="reports-dot" data-idx="1"></div>
-        <div class="reports-dot" data-idx="2"></div>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:48px;" class="reveal">
-      <a href="#pricing" class="btn-primary">
-        <span>Start Tracking Now</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- ==================== SECTION 6: AI CHATBOT ==================== -->
-<section class="chatbot-section">
+<section class="chatbot-section" id="chat">
   <div class="container">
-    <div class="reveal">
-      <div class="section-label">05 &mdash; Your Personal Expert</div>
-      <h2>An expert who already knows<br>everything about your baby.</h2>
-      <p class="subtitle">Wermom AI remembers every meal, every nap, every symptom you've ever logged. When you ask a question, the answer isn't generic — it's built on your child's complete history, from day one.</p>
-      <p class="chatbot-availability">Available 24/7, anytime you need — trained and backed by 500+ pediatric experts worldwide.</p>
+    <div class="chatbot-hero-grid reveal">
+      <div class="chatbot-hero-text">
+        <div class="section-label">05 &mdash; Your Personal Expert</div>
+        <h2>An expert who already knows<br>everything about your baby.</h2>
+        <p class="subtitle">Wermom AI remembers every meal, every nap, every symptom you've ever logged. When you ask a question, the answer isn't generic — it's built on your child's complete history, from day one.</p>
+        <p class="chatbot-availability">Available 24/7, anytime you need — trained and backed by 500+ pediatric experts worldwide.</p>
+      </div>
+      <div class="chatbot-hero-video">
+        <div class="chatbot-video-phone">
+          <video id="expertVideo" class="chatbot-video" playsinline preload="metadata" loop>
+            <source src="vid/vid2.mp4" type="video/mp4">
+          </video>
+          <button class="chatbot-video-unmute" id="expertVideoUnmute" aria-label="Unmute video">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          </button>
+        </div>
+        <div style="text-align:center; margin-top:20px;">
+          <a href="#chat-presets-inside" class="btn-primary" onclick="event.preventDefault();var el=document.getElementById('chat-presets-inside');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});}">
+            <span>Try Wermom Expert Chat</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
     <div class="chatbot-grid">
       <div class="chat-window reveal reveal-delay-1">
@@ -6250,34 +5583,477 @@ footer::before {
         <div class="cb-feature">
           <div class="cb-icon"><svg width="16" height="16"><use href="#ico-apple"/></svg></div>
           <div>
-            <h4>Nutrition & Diet</h4>
+            <h4>Nutrition &amp; Diet</h4>
             <p>"Is my baby eating enough iron?" "What foods help with constipation?" "Can she eat strawberries at 7 months?"</p>
           </div>
         </div>
         <div class="cb-feature">
           <div class="cb-icon"><svg width="16" height="16"><use href="#ico-moon"/></svg></div>
           <div>
-            <h4>Sleep & Routines</h4>
+            <h4>Sleep &amp; Routines</h4>
             <p>"How do I sleep train gently?" "Is 10 hours enough for a 1-year-old?" "Why is she fighting naps?"</p>
           </div>
         </div>
         <div class="cb-feature">
           <div class="cb-icon"><svg width="16" height="16"><use href="#ico-stethoscope"/></svg></div>
           <div>
-            <h4>Symptoms & Health</h4>
+            <h4>Symptoms &amp; Health</h4>
             <p>"She has a rash on her cheeks after eating." "Fever of 38.5, should I worry?" "Green stool for 2 days."</p>
           </div>
         </div>
         <div class="cb-feature">
           <div class="cb-icon"><svg width="16" height="16"><use href="#ico-target"/></svg></div>
           <div>
-            <h4>Development & Milestones</h4>
+            <h4>Development &amp; Milestones</h4>
             <p>"Should my 10-month-old be crawling?" "Best toys for cognitive development?" "When do babies start talking?"</p>
           </div>
         </div>
-
+        <div class="cb-feature">
+          <div class="cb-icon"><svg width="16" height="16"><use href="#ico-heart-pulse"/></svg></div>
+          <div>
+            <h4>Emergency &amp; Peace of Mind</h4>
+            <p>"Baby fell off the bed, what do I check?" "She swallowed a small toy piece." "Fever won't go down after Tylenol — what now?"</p>
+          </div>
+        </div>
+        <div class="cb-feature">
+          <div class="cb-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div>
+            <h4>Mom Community Chat</h4>
+            <p>"Any moms dealing with 4-month sleep regression?" "Best formula for gassy babies?" Join thousands of moms sharing real experiences 24/7.</p>
+          </div>
+        </div>
         <p style="font-size:0.78rem; color:var(--warm-gray); margin-top:16px; font-style:italic;">Every answer is personalized to your child's data — not generic advice. Wermom helps you have richer conversations with your doctor, but always consult them for diagnosis and treatment.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 5: APP FEATURES ==================== -->
+<section class="reports-section" id="features">
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto;">
+      <div class="section-label" style="justify-content:center;">04 &mdash; Smart Tools</div>
+      <h2>Everything you need,<br>in one app.</h2>
+      <p class="subtitle">From pregnancy tracking to daily baby care &mdash; powerful tools that watch over your family so you can enjoy the moments.</p>
+    </div>
+
+    <!-- ===== FEATURE CAROUSEL (mobile: swipe horizontal loop, desktop: 3-col grid) ===== -->
+    <style>
+      .tools-track{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+      .tool-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:32px 24px 28px;text-align:center;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;flex-shrink:0;}
+      .tool-card:hover{transform:translateY(-4px);border-color:rgba(248,159,164,0.3);box-shadow:0 12px 40px rgba(233,30,140,0.08);}
+      .tool-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+      .tool-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:rgba(255,255,255,0.9);margin-bottom:8px;}
+      .tool-card p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:16px;}
+      .tool-cta{display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;color:rgba(248,159,164,0.7);letter-spacing:0.3px;transition:color 0.3s;text-decoration:none;cursor:pointer;}
+      .tool-card:hover .tool-cta{color:#F89FA4;}
+      .tool-cta svg{transition:transform 0.3s;}.tool-card:hover .tool-cta svg{transform:translateX(3px);}
+      .tools-dots{display:none;justify-content:center;gap:8px;margin-top:20px;}
+      .tools-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.15);transition:all 0.3s;cursor:pointer;}
+      .tools-dot.active{background:#F89FA4;width:24px;border-radius:4px;}
+      @media(max-width:768px){
+        .tools-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:16px;padding:0 4px 16px;scrollbar-width:none;grid-template-columns:none;margin-top:32px;}
+        .tools-track::-webkit-scrollbar{display:none;}
+        .tool-card{min-width:280px;max-width:300px;scroll-snap-align:center;}
+        .tools-dots{display:flex;}
+      }
+    </style>
+
+    <div class="tools-track reveal" id="toolsTrack">
+      <!-- 1: Kick Counter -->
+      <div class="tool-card">
+        <div class="tool-icon" style="background:rgba(123,166,141,0.12);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="1.8" stroke-linecap="round"><path d="M12 21c-4-3-8-6.5-8-10.5a5 5 0 0 1 10 0h0a5 5 0 0 1 10 0c0 4-4 7.5-8 10.5l-2 1.5"/><circle cx="12" cy="10" r="2" fill="none" stroke="#7BA68D" stroke-width="1.5"/></svg>
+        </div>
+        <h3>Kick Counter</h3>
+        <p>Count and time every kick from week 24+. Get alerts if movement patterns change. Peace of mind, one tap at a time.</p>
+        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();var el=document.getElementById('gs-email');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});setTimeout(function(){el.focus();},600);}">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <!-- 2: Contraction Timer -->
+      <div class="tool-card">
+        <div class="tool-icon" style="background:rgba(232,132,106,0.12);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Contraction Timer</h3>
+        <p>Track frequency, duration, and intervals. The app tells you when it's time to go to the hospital &mdash; no guessing.</p>
+        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();var el=document.getElementById('gs-email');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});setTimeout(function(){el.focus();},600);}">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <!-- 3: Nutrition Tracking -->
+      <div class="tool-card">
+        <div class="tool-icon" style="background:rgba(107,141,214,0.12);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6B8DD6" stroke-width="1.8" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <h3>Nutrition Tracking</h3>
+        <p>Log breastfeeding, formula, solids. Track iron, calcium, DHA intake. Personalized meal plans based on baby's age.</p>
+        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();var el=document.getElementById('gs-email');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});setTimeout(function(){el.focus();},600);}">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <!-- 4: Stool & Health Monitor -->
+      <div class="tool-card">
+        <div class="tool-icon" style="background:rgba(248,159,164,0.12);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F89FA4" stroke-width="1.8" stroke-linecap="round"><path d="M9 2h6l1 7H8L9 2z"/><path d="M8 9c-2 1-4 3-4 6 0 4 3.5 7 8 7s8-3 8-7c0-3-2-5-4-6"/><circle cx="10" cy="15" r="1.5" fill="#F89FA4" opacity="0.4"/><circle cx="15" cy="14" r="1" fill="#F89FA4" opacity="0.3"/></svg>
+        </div>
+        <h3>Stool &amp; Health Monitor</h3>
+        <p>Record frequency, color, and consistency. Combined with temperature data, our AI detects early signs of illness before symptoms become obvious.</p>
+        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();var el=document.getElementById('gs-email');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});setTimeout(function(){el.focus();},600);}">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <!-- 5: Early Warning Alerts -->
+      <div class="tool-card">
+        <div class="tool-icon" style="background:rgba(214,91,98,0.12);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D65B62" stroke-width="1.8" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="#D65B62"/></svg>
+        </div>
+        <h3>Early Warning Alerts</h3>
+        <p>AI cross-references stool changes, temperature spikes, sleep disruption, and feeding patterns to flag potential health issues 24-48 hours early.</p>
+        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();var el=document.getElementById('gs-email');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});setTimeout(function(){el.focus();},600);}">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <!-- 6: Sleep & Growth Tracker -->
+      <div class="tool-card">
+        <div class="tool-icon" style="background:rgba(123,166,141,0.12);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </div>
+        <h3>Sleep &amp; Growth Tracker</h3>
+        <p>Track naps, night sleep, and growth measurements. WHO percentile charts updated in real-time. Spot sleep regressions early.</p>
+        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();var el=document.getElementById('gs-email');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});setTimeout(function(){el.focus();},600);}">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <!-- Carousel dots (mobile only) -->
+    <div class="tools-dots" id="toolsDots">
+      <span class="tools-dot active"></span><span class="tools-dot"></span><span class="tools-dot"></span><span class="tools-dot"></span><span class="tools-dot"></span><span class="tools-dot"></span>
+    </div>
+
+    <!-- Carousel loop JS -->
+    <script>
+    (function(){
+      var track=document.getElementById('toolsTrack');
+      var dots=document.querySelectorAll('.tools-dot');
+      if(!track||!dots.length)return;
+      // Update dots on scroll
+      track.addEventListener('scroll',function(){
+        var cards=track.querySelectorAll('.tool-card');
+        var scrollLeft=track.scrollLeft;
+        var cardWidth=cards[0].offsetWidth+16;
+        var idx=Math.round(scrollLeft/cardWidth);
+        idx=Math.max(0,Math.min(idx,dots.length-1));
+        dots.forEach(function(d,i){d.classList.toggle('active',i===idx);});
+      });
+      // Click dot to scroll
+      dots.forEach(function(dot,i){
+        dot.addEventListener('click',function(){
+          var cards=track.querySelectorAll('.tool-card');
+          var cardWidth=cards[0].offsetWidth+16;
+          track.scrollTo({left:i*cardWidth,behavior:'smooth'});
+        });
+      });
+      // Infinite loop: when reaching end, jump to start; when at start scrolling left, jump to end
+      var loopTimeout;
+      track.addEventListener('scrollend',function(){
+        clearTimeout(loopTimeout);
+        loopTimeout=setTimeout(function(){
+          if(track.scrollLeft+track.offsetWidth>=track.scrollWidth-10){
+            track.scrollTo({left:0,behavior:'smooth'});
+          }
+        },2000);
+      });
+    })();
+    </script>
+
+    <div class="reveal" style="text-align:center; margin-top:48px;">
+    <div style="display:none;" class="reports-showcase">
+      <!-- ========== DAILY REPORT CARD ========== -->
+      <div class="report-card reveal reveal-delay-1">
+        <div class="report-freq">Every Day</div>
+        <h3>Daily Report</h3>
+        <p>Today's scores, what we noticed, and 3-4 specific actions for tomorrow.</p>
+        <div class="report-preview">
+          <div class="rp-header">
+            <div class="rp-header-left">Emma's Daily Summary</div>
+            <div class="rp-header-right">Mar 21, 2026</div>
+          </div>
+          <div class="rp-metrics">
+            <div class="rp-metric">
+              <div class="rp-metric-value" style="color:#7BA68D;">87<span style="font-size:0.6rem;opacity:0.6;">/100</span></div>
+              <div class="rp-metric-label">Health Score</div>
+              <div class="rp-metric-delta rp-delta-up">&#9650; +3 vs yesterday</div>
+            </div>
+            <div class="rp-metric">
+              <div class="rp-metric-value" style="color:#F4A886;">11.2<span style="font-size:0.6rem;opacity:0.6;">h</span></div>
+              <div class="rp-metric-label">Sleep Total</div>
+              <div class="rp-metric-delta rp-delta-up">&#9650; +0.8h</div>
+            </div>
+            <div class="rp-metric">
+              <div class="rp-metric-value" style="color:#E8846A;">680<span style="font-size:0.6rem;opacity:0.6;">cal</span></div>
+              <div class="rp-metric-label">Intake</div>
+              <div class="rp-metric-delta rp-delta-same">&#8212; on target</div>
+            </div>
+            <div class="rp-metric">
+              <div class="rp-metric-value" style="color:#6B8DD6;">2<span style="font-size:0.6rem;opacity:0.6;">x</span></div>
+              <div class="rp-metric-label">Night Wakes</div>
+              <div class="rp-metric-delta rp-delta-up">&#9660; -1 (improving)</div>
+            </div>
+          </div>
+
+          <div class="rp-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-chart"/></svg> Category Scores</div>
+          <div class="rp-bar-row"><div class="rp-bar-label">Sleep</div><div class="rp-bar-track"><div class="rp-bar-fill" style="width:82%;background:#7BA68D;"></div></div><div class="rp-bar-val" style="color:#7BA68D;">82</div></div>
+          <div class="rp-bar-row"><div class="rp-bar-label">Nutrition</div><div class="rp-bar-track"><div class="rp-bar-fill" style="width:90%;background:#7BA68D;"></div></div><div class="rp-bar-val" style="color:#7BA68D;">90</div></div>
+          <div class="rp-bar-row"><div class="rp-bar-label">Activity</div><div class="rp-bar-track"><div class="rp-bar-fill" style="width:68%;background:#F4A886;"></div></div><div class="rp-bar-val" style="color:#F4A886;">68</div></div>
+          <div class="rp-bar-row"><div class="rp-bar-label">Hydration</div><div class="rp-bar-track"><div class="rp-bar-fill" style="width:95%;background:#7BA68D;"></div></div><div class="rp-bar-val" style="color:#7BA68D;">95</div></div>
+          <div class="rp-bar-row"><div class="rp-bar-label">Mood</div><div class="rp-bar-track"><div class="rp-bar-fill" style="width:78%;background:#6B8DD6;"></div></div><div class="rp-bar-val" style="color:#6B8DD6;">78</div></div>
+
+          <div class="rp-divider"></div>
+          <div class="rp-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-zap"/></svg> AI Insights</div>
+          <div class="rp-insight rp-insight-good"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Sleep improved significantly — 2 night wakes vs 3 yesterday. The 7:30pm bedtime shift is working.</div>
+          <div class="rp-insight rp-insight-warn"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="2" stroke-linecap="round"><use href="#ico-alert"/></svg></span>Iron intake was 4.2mg today (below 7mg target). Consider adding pureed lentils or fortified cereal tomorrow.</div>
+          <div class="rp-insight rp-insight-info"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B8DD6" stroke-width="2" stroke-linecap="round"><use href="#ico-brain"/></svg></span>Emma is 3 days from expected tooth eruption based on drool pattern. Expect mild fussiness.</div>
+
+          <div class="rp-divider"></div>
+          <div class="rp-actions-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-target"/></svg> Tomorrow's Plan</div>
+          <div class="rp-action"><div class="rp-action-dot" style="background:#7BA68D;"></div>Add iron-rich food to lunch (lentil puree or egg yolk)</div>
+          <div class="rp-action"><div class="rp-action-dot" style="background:#6B8DD6;"></div>Try 15 min tummy time after morning nap</div>
+          <div class="rp-action"><div class="rp-action-dot" style="background:#F4A886;"></div>Offer cooled teething ring before 7:30pm bedtime</div>
+          <a href="#pricing" class="report-detail-btn">See Full Daily Report &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ========== WEEKLY REPORT CARD ========== -->
+      <div class="report-card reveal reveal-delay-2">
+        <div class="report-freq">Every Sunday</div>
+        <h3>Weekly Report</h3>
+        <p>7-day trends, top strengths, areas for improvement, and a full meal plan.</p>
+        <div class="report-preview">
+          <div class="rp-header">
+            <div class="rp-header-left">Week of Mar 15 – 21</div>
+            <div class="rp-header-right">Week 34 of tracking</div>
+          </div>
+
+          <!-- Trend chart -->
+          <svg viewBox="0 0 260 85" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin-bottom:8px;">
+            <line x1="20" y1="75" x2="250" y2="75" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+            <line x1="20" y1="50" x2="250" y2="50" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" stroke-dasharray="3,3"/>
+            <line x1="20" y1="25" x2="250" y2="25" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" stroke-dasharray="3,3"/>
+            <polygon points="20,58 58,50 96,45 134,48 172,38 210,32 248,28 248,75 20,75" fill="url(#wkGrad)" opacity="0.2"/>
+            <polyline points="20,58 58,50 96,45 134,48 172,38 210,32 248,28" stroke="#7BA68D" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="20,52 58,55 96,48 134,40 172,42 210,38 248,35" stroke="#F4A886" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+            <circle cx="248" cy="28" r="3.5" fill="#7BA68D"/><circle cx="248" cy="35" r="3" fill="#F4A886"/>
+            <text x="20" y="84" fill="rgba(255,255,255,0.25)" font-size="6" font-family="Inter">Mon</text>
+            <text x="96" y="84" fill="rgba(255,255,255,0.25)" font-size="6" font-family="Inter">Wed</text>
+            <text x="172" y="84" fill="rgba(255,255,255,0.25)" font-size="6" font-family="Inter">Fri</text>
+            <text x="240" y="84" fill="rgba(255,255,255,0.25)" font-size="6" font-family="Inter">Sun</text>
+            <circle cx="150" cy="8" r="3" fill="#7BA68D"/><text x="157" y="11" fill="rgba(255,255,255,0.4)" font-size="6" font-family="Inter">Baby</text>
+            <circle cx="192" cy="8" r="3" fill="#F4A886"/><text x="199" y="11" fill="rgba(255,255,255,0.4)" font-size="6" font-family="Inter">Mom</text>
+            <defs><linearGradient id="wkGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7BA68D"/><stop offset="100%" stop-color="#7BA68D" stop-opacity="0"/></linearGradient></defs>
+          </svg>
+
+          <div class="rp-metrics">
+            <div class="rp-metric">
+              <div class="rp-metric-value" style="color:#7BA68D;">89<span style="font-size:0.55rem;opacity:0.6;"> avg</span></div>
+              <div class="rp-metric-label">Weekly Score</div>
+              <div class="rp-metric-delta rp-delta-up">&#9650; +5 vs last week</div>
+            </div>
+            <div class="rp-metric">
+              <div class="rp-metric-value" style="color:#F4A886;">7.8<span style="font-size:0.55rem;opacity:0.6;">kg</span></div>
+              <div class="rp-metric-label">Weight</div>
+              <div class="rp-metric-delta rp-delta-up">&#9650; +120g this week</div>
+            </div>
+          </div>
+
+          <div class="rp-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-trending"/></svg> This Week's Wins</div>
+          <div class="rp-insight rp-insight-good"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="2" stroke-linecap="round"><use href="#ico-trending"/></svg></span>Sleep consistency improved 23% — 5 of 7 nights she slept 10+ hours. Best week since Month 6.</div>
+          <div class="rp-insight rp-insight-good"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="2" stroke-linecap="round"><use href="#ico-trending"/></svg></span>Solid food variety: 11 different foods this week (up from 7). Excellent allergen exposure progress.</div>
+
+          <div class="rp-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-alert"/></svg> Areas to Watch</div>
+          <div class="rp-insight rp-insight-warn"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="2" stroke-linecap="round"><use href="#ico-microscope"/></svg></span>Vitamin D intake averaged 280 IU/day (target: 400 IU). Consider supplement or more outdoor time.</div>
+
+          <div class="rp-divider"></div>
+          <div class="rp-actions-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-bowl"/></svg> Next Week's Meal Plan</div>
+          <div class="rp-action"><div class="rp-action-dot" style="background:#7BA68D;"></div><strong style="color:rgba(255,255,255,0.7);">Mon:</strong>&nbsp;Salmon puree + sweet potato (DHA boost)</div>
+          <div class="rp-action"><div class="rp-action-dot" style="background:#F4A886;"></div><strong style="color:rgba(255,255,255,0.7);">Tue:</strong>&nbsp;Lentil & carrot mash (iron + fiber)</div>
+          <div class="rp-action"><div class="rp-action-dot" style="background:#6B8DD6;"></div><strong style="color:rgba(255,255,255,0.7);">Wed:</strong>&nbsp;Egg yolk + avocado (choline + fats)</div>
+          <div class="rp-action"><div class="rp-action-dot" style="background:#7BA68D;"></div><span style="color:rgba(255,255,255,0.35);font-style:italic;">+ 4 more days planned...</span></div>
+          <a href="#pricing" class="report-detail-btn">See Full Weekly Report &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ========== MONTHLY REPORT CARD ========== -->
+      <div class="report-card reveal reveal-delay-3">
+        <div class="report-freq">1st of Month</div>
+        <h3>Monthly Report</h3>
+        <p>A comprehensive deep-dive — the review you'd expect from a world-class pediatric team.</p>
+        <div class="report-preview">
+          <div class="rp-header">
+            <div class="rp-header-left">Month 8 Comprehensive Review</div>
+            <div class="rp-header-right">Feb 2026</div>
+          </div>
+
+          <!-- Radar chart -->
+          <svg viewBox="0 0 260 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin-bottom:6px;">
+            <polygon points="130,10 190,30 190,70 130,90 70,70 70,30" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none"/>
+            <polygon points="130,25 175,38 175,62 130,75 85,62 85,38" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" fill="none"/>
+            <polygon points="130,14 186,34 180,72 130,85 76,65 78,28" fill="rgba(232,132,106,0.12)" stroke="#E8846A" stroke-width="1.5" stroke-linejoin="round"/>
+            <circle cx="130" cy="14" r="3" fill="#E8846A"/><circle cx="186" cy="34" r="3" fill="#E8846A"/>
+            <circle cx="180" cy="72" r="3" fill="#E8846A"/><circle cx="130" cy="85" r="3" fill="#E8846A"/>
+            <circle cx="76" cy="65" r="3" fill="#E8846A"/><circle cx="78" cy="28" r="3" fill="#E8846A"/>
+            <text x="130" y="7" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="6" font-family="Inter">Growth 92</text>
+            <text x="203" y="34" fill="rgba(255,255,255,0.45)" font-size="6" font-family="Inter">Nutrition 88</text>
+            <text x="197" y="76" fill="rgba(255,255,255,0.45)" font-size="6" font-family="Inter">Sleep 85</text>
+            <text x="130" y="97" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-size="6" font-family="Inter">Mental 78</text>
+            <text x="40" y="69" fill="rgba(255,255,255,0.45)" font-size="6" font-family="Inter">Medical 90</text>
+            <text x="42" y="28" fill="rgba(255,255,255,0.45)" font-size="6" font-family="Inter">Motor 82</text>
+          </svg>
+
+          <div class="rp-metrics">
+            <div class="rp-metric">
+              <div class="rp-metric-value" style="color:#E8846A;">86<span style="font-size:0.55rem;opacity:0.6;">/100</span></div>
+              <div class="rp-metric-label">Monthly Score</div>
+              <div class="rp-metric-delta rp-delta-up">&#9650; +4 vs last month</div>
+            </div>
+            <div class="rp-metric">
+              <div class="rp-metric-value" style="color:#7BA68D;">62<span style="font-size:0.55rem;opacity:0.6;">nd</span></div>
+              <div class="rp-metric-label">WHO Percentile</div>
+              <div class="rp-metric-delta rp-delta-same">&#8212; consistent</div>
+            </div>
+          </div>
+
+          <div class="rp-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-trending"/></svg> Growth Trajectory</div>
+          <div class="rp-insight rp-insight-good"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="2" stroke-linecap="round"><use href="#ico-trending"/></svg></span>Weight: 7.8kg (+480g this month). Length: 69cm (+2.1cm). Both tracking along 62nd percentile — perfectly consistent.</div>
+
+          <div class="rp-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-sprout"/></svg> Development Milestones</div>
+          <div class="rp-insight rp-insight-good"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Sitting independently &#10003; | Transferring objects &#10003; | Babbling consonants &#10003; | Responding to name &#10003;</div>
+          <div class="rp-insight rp-insight-info"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B8DD6" stroke-width="2" stroke-linecap="round"><use href="#ico-sprout"/></svg></span>Upcoming: Crawling expected in 2-4 weeks based on current motor progression patterns.</div>
+
+          <div class="rp-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-alert"/></svg> Attention Items</div>
+          <div class="rp-insight rp-insight-warn"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="2" stroke-linecap="round"><use href="#ico-alert"/></svg></span>Iron intake averaged 5.1mg/day (target 7mg). This is the #1 nutritional gap. See meal plan adjustments above.</div>
+          <div class="rp-insight rp-insight-warn"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="2" stroke-linecap="round"><use href="#ico-moon"/></svg></span>Mom's sleep averaged 5.8h — below recommended 7h. Fatigue scores correlating with stress spikes on Thu/Fri.</div>
+        </div>
+        <div class="report-sections-list">
+          <span class="report-section-tag">Growth</span>
+          <span class="report-section-tag">Nutrition</span>
+          <span class="report-section-tag">Sleep</span>
+          <span class="report-section-tag">Development</span>
+          <span class="report-section-tag">Mom Care</span>
+          <span class="report-section-tag">Predictions</span>
+          <span class="report-section-tag">Meal Plan</span>
+          <span class="report-section-tag">Expert Notes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Reports Carousel -->
+    <div class="reports-carousel-wrapper" style="display:none;">
+      <div class="reports-carousel-track" id="reports-carousel-track">
+        <!-- Daily -->
+        <div class="report-card">
+          <div class="report-freq">Every Day</div>
+          <h3>Daily Report</h3>
+          <p>Today's scores, what we noticed, and 3-4 specific actions for tomorrow.</p>
+          <div class="report-preview">
+            <div class="rp-header">
+              <div class="rp-header-left">Emma's Daily Summary</div>
+              <div class="rp-header-right">Mar 21, 2026</div>
+            </div>
+            <div class="rp-metrics">
+              <div class="rp-metric">
+                <div class="rp-metric-value" style="color:#7BA68D;">87<span style="font-size:0.6rem;opacity:0.6;">/100</span></div>
+                <div class="rp-metric-label">Health Score</div>
+                <div class="rp-metric-delta rp-delta-up">&#9650; +3</div>
+              </div>
+              <div class="rp-metric">
+                <div class="rp-metric-value" style="color:#F4A886;">11.2<span style="font-size:0.6rem;opacity:0.6;">h</span></div>
+                <div class="rp-metric-label">Sleep</div>
+                <div class="rp-metric-delta rp-delta-up">&#9650; +0.8h</div>
+              </div>
+            </div>
+            <div class="rp-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-zap"/></svg> AI Insights</div>
+            <div class="rp-insight rp-insight-good"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Sleep improved — 2 wakes vs 3 yesterday.</div>
+            <div class="rp-insight rp-insight-warn"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="2" stroke-linecap="round"><use href="#ico-alert"/></svg></span>Iron intake below target. Add lentils tomorrow.</div>
+            <div class="rp-divider"></div>
+            <div class="rp-actions-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-target"/></svg> Tomorrow's Plan</div>
+            <div class="rp-action"><div class="rp-action-dot" style="background:#7BA68D;"></div>Add iron-rich food to lunch</div>
+            <div class="rp-action"><div class="rp-action-dot" style="background:#6B8DD6;"></div>15 min tummy time after morning nap</div>
+          </div>
+          <a href="#pricing" class="report-detail-btn">See Full Daily Report &rarr;</a>
+        </div>
+        <!-- Weekly -->
+        <div class="report-card">
+          <div class="report-freq">Every Sunday</div>
+          <h3>Weekly Report</h3>
+          <p>7-day trends, top wins, areas to watch, and a full meal plan.</p>
+          <div class="report-preview">
+            <div class="rp-header">
+              <div class="rp-header-left">Week of Mar 15 – 21</div>
+              <div class="rp-header-right">Week 34</div>
+            </div>
+            <div class="rp-metrics">
+              <div class="rp-metric">
+                <div class="rp-metric-value" style="color:#7BA68D;">89<span style="font-size:0.55rem;opacity:0.6;"> avg</span></div>
+                <div class="rp-metric-label">Weekly Score</div>
+                <div class="rp-metric-delta rp-delta-up">&#9650; +5</div>
+              </div>
+              <div class="rp-metric">
+                <div class="rp-metric-value" style="color:#F4A886;">7.8<span style="font-size:0.55rem;opacity:0.6;">kg</span></div>
+                <div class="rp-metric-label">Weight</div>
+                <div class="rp-metric-delta rp-delta-up">&#9650; +120g</div>
+              </div>
+            </div>
+            <div class="rp-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-trending"/></svg> Wins</div>
+            <div class="rp-insight rp-insight-good"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="2" stroke-linecap="round"><use href="#ico-trending"/></svg></span>Sleep +23% consistency. Best week since Month 6.</div>
+            <div class="rp-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-bowl"/></svg> Meal Plan</div>
+            <div class="rp-action"><div class="rp-action-dot" style="background:#7BA68D;"></div><strong style="color:rgba(255,255,255,0.7);">Mon:</strong>&nbsp;Salmon + sweet potato</div>
+            <div class="rp-action"><div class="rp-action-dot" style="background:#F4A886;"></div><strong style="color:rgba(255,255,255,0.7);">Tue:</strong>&nbsp;Lentil & carrot mash</div>
+          </div>
+          <a href="#pricing" class="report-detail-btn">See Full Weekly Report &rarr;</a>
+        </div>
+        <!-- Monthly -->
+        <div class="report-card">
+          <div class="report-freq">1st of Month</div>
+          <h3>Monthly Report</h3>
+          <p>A comprehensive deep-dive — the review from a world-class team.</p>
+          <div class="report-preview">
+            <div class="rp-header">
+              <div class="rp-header-left">Month 8 Review</div>
+              <div class="rp-header-right">Feb 2026</div>
+            </div>
+            <div class="rp-metrics">
+              <div class="rp-metric">
+                <div class="rp-metric-value" style="color:#E8846A;">86<span style="font-size:0.55rem;opacity:0.6;">/100</span></div>
+                <div class="rp-metric-label">Monthly Score</div>
+                <div class="rp-metric-delta rp-delta-up">&#9650; +4</div>
+              </div>
+              <div class="rp-metric">
+                <div class="rp-metric-value" style="color:#7BA68D;">62<span style="font-size:0.55rem;opacity:0.6;">nd</span></div>
+                <div class="rp-metric-label">WHO Percentile</div>
+              </div>
+            </div>
+            <div class="rp-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-sprout"/></svg> Milestones</div>
+            <div class="rp-insight rp-insight-good"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7BA68D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Sitting &#10003; | Transferring &#10003; | Babbling &#10003; | Name response &#10003;</div>
+            <div class="rp-insight rp-insight-info"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B8DD6" stroke-width="2" stroke-linecap="round"><use href="#ico-sprout"/></svg></span>Crawling expected in 2-4 weeks.</div>
+            <div class="rp-section-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px;"><use href="#ico-alert"/></svg> Attention</div>
+            <div class="rp-insight rp-insight-warn"><span class="rp-insight-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8846A" stroke-width="2" stroke-linecap="round"><use href="#ico-alert"/></svg></span>Iron averaged 5.1mg/day (target 7mg).</div>
+          </div>
+          <div class="report-sections-list">
+            <span class="report-section-tag">Growth</span>
+            <span class="report-section-tag">Nutrition</span>
+            <span class="report-section-tag">Sleep</span>
+            <span class="report-section-tag">Development</span>
+            <span class="report-section-tag">Mom Care</span>
+          </div>
+          <a href="#pricing" class="report-detail-btn">See Full Monthly Report &rarr;</a>
+        </div>
+      </div>
+      <div class="reports-swipe-hint">
+        <span>Swipe to see more</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+      <div class="reports-dots">
+        <div class="reports-dot active" data-idx="0"></div>
+        <div class="reports-dot" data-idx="1"></div>
+        <div class="reports-dot" data-idx="2"></div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;" class="reveal">
+      <a href="#pricing" class="btn-primary">
+        <span>Try Wermom Free</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -6343,7 +6119,7 @@ footer::before {
       <div class="expert-carousel-track">
         <!-- Expert 1 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070805_630bf88f-7219-4c45-b7b4-7c6088528549.jpeg" alt="Dr. Matthias Vogel" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070805_630bf88f-7219-4c45-b7b4-7c6088528549.jpg" alt="Dr. Matthias Vogel" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6354,7 +6130,7 @@ footer::before {
         </div>
         <!-- Expert 2 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070808_34caea56-c713-435a-b0ec-a01485ef01ef.png" alt="Dr. Astrid Lindqvist" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070808_34caea56-c713-435a-b0ec-a01485ef01ef.jpg" alt="Dr. Astrid Lindqvist" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6365,7 +6141,7 @@ footer::before {
         </div>
         <!-- Expert 3 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070814_fc9c8819-08de-4609-b746-1414143cb052.jpeg" alt="Dr. Pierre Lambert" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070814_fc9c8819-08de-4609-b746-1414143cb052.jpg" alt="Dr. Pierre Lambert" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6376,7 +6152,7 @@ footer::before {
         </div>
         <!-- Expert 4 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070817_3622ef75-2d87-403a-a570-655c26616d67.jpeg" alt="Dr. Eva Schneider" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070817_3622ef75-2d87-403a-a570-655c26616d67.jpg" alt="Dr. Eva Schneider" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6387,7 +6163,7 @@ footer::before {
         </div>
         <!-- Expert 5 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070724_5c1edc6e-8e4a-4ef6-a5bf-a8280f54d58f.png" alt="Dr. Maja Lindström" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070724_5c1edc6e-8e4a-4ef6-a5bf-a8280f54d58f.jpg" alt="Dr. Maja Lindström" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6398,7 +6174,7 @@ footer::before {
         </div>
         <!-- Expert 6 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070727_9e3b7829-9791-420e-9cfa-d6017fd0f6dc.png" alt="Dr. Sophie Dubois" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070727_9e3b7829-9791-420e-9cfa-d6017fd0f6dc.jpg" alt="Dr. Sophie Dubois" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6409,7 +6185,7 @@ footer::before {
         </div>
         <!-- Expert 7 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070731_4431da30-0f03-4baf-ad6e-7ebc73c23296.jpeg" alt="Dr. Hannah Weber" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070731_4431da30-0f03-4baf-ad6e-7ebc73c23296.jpg" alt="Dr. Hannah Weber" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6420,7 +6196,7 @@ footer::before {
         </div>
         <!-- Expert 8 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070735_a31fa8bc-5f3b-49a2-b892-02dea8c6d718.jpeg" alt="Dr. Lars Henriksen" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070735_a31fa8bc-5f3b-49a2-b892-02dea8c6d718.jpg" alt="Dr. Lars Henriksen" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6431,7 +6207,7 @@ footer::before {
         </div>
         <!-- Expert 9 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070739_a1de3634-0448-4cf4-ae41-3e8452c3a4b3.jpeg" alt="Dr. Elena Moreau" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070739_a1de3634-0448-4cf4-ae41-3e8452c3a4b3.jpg" alt="Dr. Elena Moreau" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6442,7 +6218,7 @@ footer::before {
         </div>
         <!-- Expert 10 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070747_759c7f02-69ac-4c00-86f3-0ef5a6da2273.jpeg" alt="Dr. Ingrid Bakker" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070747_759c7f02-69ac-4c00-86f3-0ef5a6da2273.jpg" alt="Dr. Ingrid Bakker" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6453,7 +6229,7 @@ footer::before {
         </div>
         <!-- Expert 11 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070751_90b30df2-6660-4415-b34e-f6bba2354f75.jpeg" alt="Dr. Fiona MacLeod" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070751_90b30df2-6660-4415-b34e-f6bba2354f75.jpg" alt="Dr. Fiona MacLeod" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6464,7 +6240,7 @@ footer::before {
         </div>
         <!-- Expert 12 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070755_673f6a04-4242-4eb2-922d-a9ac7d6d5eb6.jpeg" alt="Dr. Anna Kowalski" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070755_673f6a04-4242-4eb2-922d-a9ac7d6d5eb6.jpg" alt="Dr. Anna Kowalski" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6475,7 +6251,7 @@ footer::before {
         </div>
         <!-- Expert 13 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070755_7fb0f7d4-2d24-4198-9bcb-423a73826b17.png" alt="Dr. Lena Müller" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070755_7fb0f7d4-2d24-4198-9bcb-423a73826b17.jpg" alt="Dr. Lena Müller" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6486,7 +6262,7 @@ footer::before {
         </div>
         <!-- Expert 14 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070758_bc2574f7-3809-4745-8eaa-d1ff60525d83.jpeg" alt="Dr. Henrik Strand" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070758_bc2574f7-3809-4745-8eaa-d1ff60525d83.jpg" alt="Dr. Henrik Strand" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6497,7 +6273,7 @@ footer::before {
         </div>
         <!-- Expert 15 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070801_218398d5-96eb-487b-a085-1ed6ffec8cc8.jpeg" alt="Dr. Claire Fontaine" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070801_218398d5-96eb-487b-a085-1ed6ffec8cc8.jpg" alt="Dr. Claire Fontaine" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6509,7 +6285,7 @@ footer::before {
         <!-- Duplicate for seamless loop -->
         <!-- Expert 1 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070805_630bf88f-7219-4c45-b7b4-7c6088528549.jpeg" alt="Dr. Matthias Vogel" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070805_630bf88f-7219-4c45-b7b4-7c6088528549.jpg" alt="Dr. Matthias Vogel" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6520,7 +6296,7 @@ footer::before {
         </div>
         <!-- Expert 2 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070808_34caea56-c713-435a-b0ec-a01485ef01ef.png" alt="Dr. Astrid Lindqvist" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070808_34caea56-c713-435a-b0ec-a01485ef01ef.jpg" alt="Dr. Astrid Lindqvist" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6531,7 +6307,7 @@ footer::before {
         </div>
         <!-- Expert 3 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070814_fc9c8819-08de-4609-b746-1414143cb052.jpeg" alt="Dr. Pierre Lambert" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070814_fc9c8819-08de-4609-b746-1414143cb052.jpg" alt="Dr. Pierre Lambert" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6542,7 +6318,7 @@ footer::before {
         </div>
         <!-- Expert 4 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070817_3622ef75-2d87-403a-a570-655c26616d67.jpeg" alt="Dr. Eva Schneider" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070817_3622ef75-2d87-403a-a570-655c26616d67.jpg" alt="Dr. Eva Schneider" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6553,7 +6329,7 @@ footer::before {
         </div>
         <!-- Expert 5 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070724_5c1edc6e-8e4a-4ef6-a5bf-a8280f54d58f.png" alt="Dr. Maja Lindström" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070724_5c1edc6e-8e4a-4ef6-a5bf-a8280f54d58f.jpg" alt="Dr. Maja Lindström" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6564,7 +6340,7 @@ footer::before {
         </div>
         <!-- Expert 6 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070727_9e3b7829-9791-420e-9cfa-d6017fd0f6dc.png" alt="Dr. Sophie Dubois" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070727_9e3b7829-9791-420e-9cfa-d6017fd0f6dc.jpg" alt="Dr. Sophie Dubois" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6575,7 +6351,7 @@ footer::before {
         </div>
         <!-- Expert 7 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070731_4431da30-0f03-4baf-ad6e-7ebc73c23296.jpeg" alt="Dr. Hannah Weber" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070731_4431da30-0f03-4baf-ad6e-7ebc73c23296.jpg" alt="Dr. Hannah Weber" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6586,7 +6362,7 @@ footer::before {
         </div>
         <!-- Expert 8 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070735_a31fa8bc-5f3b-49a2-b892-02dea8c6d718.jpeg" alt="Dr. Lars Henriksen" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070735_a31fa8bc-5f3b-49a2-b892-02dea8c6d718.jpg" alt="Dr. Lars Henriksen" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6597,7 +6373,7 @@ footer::before {
         </div>
         <!-- Expert 9 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070739_a1de3634-0448-4cf4-ae41-3e8452c3a4b3.jpeg" alt="Dr. Elena Moreau" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070739_a1de3634-0448-4cf4-ae41-3e8452c3a4b3.jpg" alt="Dr. Elena Moreau" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6608,7 +6384,7 @@ footer::before {
         </div>
         <!-- Expert 10 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070747_759c7f02-69ac-4c00-86f3-0ef5a6da2273.jpeg" alt="Dr. Ingrid Bakker" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070747_759c7f02-69ac-4c00-86f3-0ef5a6da2273.jpg" alt="Dr. Ingrid Bakker" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6619,7 +6395,7 @@ footer::before {
         </div>
         <!-- Expert 11 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070751_90b30df2-6660-4415-b34e-f6bba2354f75.jpeg" alt="Dr. Fiona MacLeod" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070751_90b30df2-6660-4415-b34e-f6bba2354f75.jpg" alt="Dr. Fiona MacLeod" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6630,7 +6406,7 @@ footer::before {
         </div>
         <!-- Expert 12 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070755_673f6a04-4242-4eb2-922d-a9ac7d6d5eb6.jpeg" alt="Dr. Anna Kowalski" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070755_673f6a04-4242-4eb2-922d-a9ac7d6d5eb6.jpg" alt="Dr. Anna Kowalski" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6641,7 +6417,7 @@ footer::before {
         </div>
         <!-- Expert 13 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070755_7fb0f7d4-2d24-4198-9bcb-423a73826b17.png" alt="Dr. Lena Müller" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070755_7fb0f7d4-2d24-4198-9bcb-423a73826b17.jpg" alt="Dr. Lena Müller" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6652,7 +6428,7 @@ footer::before {
         </div>
         <!-- Expert 14 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070758_bc2574f7-3809-4745-8eaa-d1ff60525d83.jpeg" alt="Dr. Henrik Strand" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070758_bc2574f7-3809-4745-8eaa-d1ff60525d83.jpg" alt="Dr. Henrik Strand" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6663,7 +6439,7 @@ footer::before {
         </div>
         <!-- Expert 15 -->
         <div class="expert-review-card" onclick="toggleCarousel(this)">
-          <div class="erc-img"><img src="Image/hf_20260325_070801_218398d5-96eb-487b-a085-1ed6ffec8cc8.jpeg" alt="Dr. Claire Fontaine" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="erc-img"><img src="img/hf_20260325_070801_218398d5-96eb-487b-a085-1ed6ffec8cc8.jpg" alt="Dr. Claire Fontaine" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="erc-overlay"></div>
           <div class="erc-content">
             <div class="erc-stars">★★★★★</div>
@@ -6695,7 +6471,7 @@ footer::before {
       <div class="photo-carousel-track">
         <!-- Review 1 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_072906_b4f604b5-e5cd-4f75-9157-9b323d65c4d6.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_072906_b4f604b5-e5cd-4f75-9157-9b323d65c4d6.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6706,7 +6482,7 @@ footer::before {
         </div>
         <!-- Review 2 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_072858_6c29f788-411a-4d5b-8d88-24eaa62dc6a6.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_072858_6c29f788-411a-4d5b-8d88-24eaa62dc6a6.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6717,7 +6493,7 @@ footer::before {
         </div>
         <!-- Review 3 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_072902_ffb0edef-dd4e-43f8-aac8-b39cca1a2057.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_072902_ffb0edef-dd4e-43f8-aac8-b39cca1a2057.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6728,7 +6504,7 @@ footer::before {
         </div>
         <!-- Review 4 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162315_c0115fb0-8673-4e11-98a0-0bd766117cf8.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162315_c0115fb0-8673-4e11-98a0-0bd766117cf8.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6739,7 +6515,7 @@ footer::before {
         </div>
         <!-- Review 5 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162648_98b159be-7671-4156-803a-6f717418822f.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162648_98b159be-7671-4156-803a-6f717418822f.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6750,7 +6526,7 @@ footer::before {
         </div>
         <!-- Review 6 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162027_19204a40-4f16-4e80-8c5d-095b8c505d49.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162027_19204a40-4f16-4e80-8c5d-095b8c505d49.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6761,7 +6537,7 @@ footer::before {
         </div>
         <!-- Review 7 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162036_848a71ff-1f25-4049-beb3-8f324a7082b0.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162036_848a71ff-1f25-4049-beb3-8f324a7082b0.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6772,7 +6548,7 @@ footer::before {
         </div>
         <!-- Review 8 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162231_a91f25d0-3738-4ba5-b127-110d6385c333.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162231_a91f25d0-3738-4ba5-b127-110d6385c333.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6783,7 +6559,7 @@ footer::before {
         </div>
         <!-- Review 9 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162125_e29dd7a0-1465-4a45-b1f9-6da23b211bad.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162125_e29dd7a0-1465-4a45-b1f9-6da23b211bad.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6794,7 +6570,7 @@ footer::before {
         </div>
         <!-- Review 10 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162509_072d48ce-147e-4e4f-abc9-fd116f8202fe.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162509_072d48ce-147e-4e4f-abc9-fd116f8202fe.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6805,7 +6581,7 @@ footer::before {
         </div>
         <!-- Review 11 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162220_2ede7feb-eeed-421b-8c04-ae22a61c8304.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162220_2ede7feb-eeed-421b-8c04-ae22a61c8304.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6816,7 +6592,7 @@ footer::before {
         </div>
         <!-- Review 12 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162231_a91f25d0-3738-4ba5-b127-110d6385c333.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162231_a91f25d0-3738-4ba5-b127-110d6385c333.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6827,7 +6603,7 @@ footer::before {
         </div>
         <!-- Review 13 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162315_c0115fb0-8673-4e11-98a0-0bd766117cf8.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162315_c0115fb0-8673-4e11-98a0-0bd766117cf8.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6838,7 +6614,7 @@ footer::before {
         </div>
         <!-- Review 14 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162321_07b57ca2-0bed-472f-b40d-cf52ac157761.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162321_07b57ca2-0bed-472f-b40d-cf52ac157761.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6849,7 +6625,7 @@ footer::before {
         </div>
         <!-- Review 15 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162522_931d9119-b6b8-4b86-825b-00895c0844a1.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162522_931d9119-b6b8-4b86-825b-00895c0844a1.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6860,7 +6636,7 @@ footer::before {
         </div>
         <!-- Review 16 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162328_22224d41-07c0-404c-a9e3-e08398e14615.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162328_22224d41-07c0-404c-a9e3-e08398e14615.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6871,7 +6647,7 @@ footer::before {
         </div>
         <!-- Review 17 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162509_072d48ce-147e-4e4f-abc9-fd116f8202fe.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162509_072d48ce-147e-4e4f-abc9-fd116f8202fe.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6882,7 +6658,7 @@ footer::before {
         </div>
         <!-- Review 18 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162516_48c0f2eb-c2d0-4e49-8f9d-c5bce9702d19.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162516_48c0f2eb-c2d0-4e49-8f9d-c5bce9702d19.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6893,7 +6669,7 @@ footer::before {
         </div>
         <!-- Review 19 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162522_931d9119-b6b8-4b86-825b-00895c0844a1.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162522_931d9119-b6b8-4b86-825b-00895c0844a1.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6904,7 +6680,7 @@ footer::before {
         </div>
         <!-- Review 20 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162533_41fca230-46e4-4141-b866-3f26cfc033f5.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162533_41fca230-46e4-4141-b866-3f26cfc033f5.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6915,7 +6691,7 @@ footer::before {
         </div>
         <!-- Review 21 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162648_98b159be-7671-4156-803a-6f717418822f.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162648_98b159be-7671-4156-803a-6f717418822f.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6926,7 +6702,7 @@ footer::before {
         </div>
         <!-- Review 22 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162027_19204a40-4f16-4e80-8c5d-095b8c505d49.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162027_19204a40-4f16-4e80-8c5d-095b8c505d49.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6937,7 +6713,7 @@ footer::before {
         </div>
         <!-- Review 23 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162125_e29dd7a0-1465-4a45-b1f9-6da23b211bad.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162125_e29dd7a0-1465-4a45-b1f9-6da23b211bad.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6948,7 +6724,7 @@ footer::before {
         </div>
         <!-- Review 24 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162220_2ede7feb-eeed-421b-8c04-ae22a61c8304.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162220_2ede7feb-eeed-421b-8c04-ae22a61c8304.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6959,7 +6735,7 @@ footer::before {
         </div>
         <!-- Review 25 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_162328_22224d41-07c0-404c-a9e3-e08398e14615.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162328_22224d41-07c0-404c-a9e3-e08398e14615.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6971,7 +6747,7 @@ footer::before {
         <!-- Duplicate for seamless loop -->
         <!-- Review 1 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="Image/hf_20260325_072906_b4f604b5-e5cd-4f75-9157-9b323d65c4d6.jpeg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_072906_b4f604b5-e5cd-4f75-9157-9b323d65c4d6.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6997,6 +6773,162 @@ footer::before {
         <span>Start Your Free Assessment</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ==================== SECTION 9: GET STARTED ==================== -->
+<section class="getstarted-section" id="pricing">
+  <div class="container">
+    <div class="gs-hero-split reveal">
+      <div class="gs-hero-text">
+        <div class="section-label">The Heart of Wermom</div>
+        <h2>The more we know,<br><span style="color:var(--rose);">the better we care</span></h2>
+        <p class="subtitle" style="text-align:left;">Great care starts with understanding. Fill in your details, then complete a short health assessment — the same kind of intake form a top pediatric clinic would use. Within 24 hours, our experts will return a <strong>free personalized report</strong> for both mom and baby.</p>
+        <div class="gs-hero-badge" style="display:inline-block; margin-top:20px;">93 questions &middot; 7 categories &middot; 100% free</div>
+      </div>
+      <div class="gs-hero-visual">
+        <div class="gs-hero-image" style="margin:0;">
+          <div class="gs-hero-video-wrap">
+            <video id="gs-hero-video" playsinline preload="metadata" loop>
+              <source src="vid/vid1.mp4" type="video/mp4">
+            </video>
+            <button id="gs-video-pause-btn">
+              <svg class="pause-ico" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+              <svg class="play-ico" viewBox="0 0 24 24" style="display:none;"><polygon points="6,4 20,12 6,20"/></svg>
+            </button>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:12px;">
+          <a href="#pricing" class="gs-assessment-link" onclick="event.preventDefault(); var el = document.getElementById('gs-email'); if(el){ var y = el.getBoundingClientRect().top + window.pageYOffset - 100; window.scrollTo({top: y, behavior:'smooth'}); setTimeout(function(){ el.focus(); }, 600); }">Do the Free Assessment &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="getstarted-layout">
+      <!-- Left: Survey Categories -->
+      <div class="getstarted-categories reveal">
+        <div class="gs-cat">
+          <div class="gs-cat-icon" style="background:var(--blush);"><svg width="18" height="18" style="color:var(--rose-deep);"><use href="#ico-pregnant"/></svg></div>
+          <div class="gs-cat-info">
+            <h4>Mom's Profile</h4>
+            <p>Age, conditions, pregnancy history, medications</p>
+          </div>
+          <span class="gs-cat-count">12 questions</span>
+        </div>
+        <div class="gs-cat">
+          <div class="gs-cat-icon" style="background:var(--sage-light);"><svg width="18" height="18" style="color:var(--sage-deep);"><use href="#ico-baby"/></svg></div>
+          <div class="gs-cat-info">
+            <h4>Baby's Status</h4>
+            <p>Age, weight, feeding, development stage</p>
+          </div>
+          <span class="gs-cat-count">15 questions</span>
+        </div>
+        <div class="gs-cat">
+          <div class="gs-cat-icon" style="background:#EDE9FE;"><svg width="18" height="18" style="color:#7C3AED;"><use href="#ico-stethoscope"/></svg></div>
+          <div class="gs-cat-info">
+            <h4>Medical History</h4>
+            <p>Vaccinations, complications, family history</p>
+          </div>
+          <span class="gs-cat-count">18 questions</span>
+        </div>
+        <div class="gs-cat">
+          <div class="gs-cat-icon" style="background:#FEF3C7;"><svg width="18" height="18" style="color:#D97706;"><use href="#ico-apple"/></svg></div>
+          <div class="gs-cat-info">
+            <h4>Nutrition & Diet</h4>
+            <p>Meals, supplements, baby's feeding</p>
+          </div>
+          <span class="gs-cat-count">14 questions</span>
+        </div>
+        <div class="gs-cat">
+          <div class="gs-cat-icon" style="background:#DBEAFE;"><svg width="18" height="18" style="color:#2563EB;"><use href="#ico-moon"/></svg></div>
+          <div class="gs-cat-info">
+            <h4>Sleep & Energy</h4>
+            <p>Sleep patterns, energy, exercise</p>
+          </div>
+          <span class="gs-cat-count">10 questions</span>
+        </div>
+        <div class="gs-cat">
+          <div class="gs-cat-icon" style="background:#FCE7F3;"><svg width="18" height="18" style="color:#DB2777;"><use href="#ico-heart-pulse"/></svg></div>
+          <div class="gs-cat-info">
+            <h4>Current Health</h4>
+            <p>Symptoms, stress, mood, recovery</p>
+          </div>
+          <span class="gs-cat-count">16 questions</span>
+        </div>
+        <div class="gs-cat">
+          <div class="gs-cat-icon" style="background:#D1FAE5;"><svg width="18" height="18" style="color:#059669;"><use href="#ico-ruler"/></svg></div>
+          <div class="gs-cat-info">
+            <h4>Measurements & Growth</h4>
+            <p>Height, weight, head circumference</p>
+          </div>
+          <span class="gs-cat-count">8 questions</span>
+        </div>
+      </div>
+
+      <!-- Right: Lead Capture Form -->
+      <div class="getstarted-form-card reveal">
+        <div class="getstarted-card-header">
+          <div class="getstarted-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Free Assessment</div>
+          <p class="getstarted-trust">Trusted by <strong>30,000+</strong> mothers worldwide</p>
+        </div>
+        <form class="getstarted-form" onsubmit="event.preventDefault(); goToSurvey();">
+          <div class="gs-field">
+            <label for="gs-name">Your Name</label>
+            <input type="text" class="gs-input" id="gs-name" placeholder="e.g. Sarah Chen" required>
+          </div>
+          <div class="gs-field">
+            <label for="gs-email">Email Address</label>
+            <input type="email" class="gs-input" id="gs-email" placeholder="e.g. sarah@email.com" required>
+          </div>
+          <div class="gs-row">
+            <div class="gs-field">
+              <label for="gs-phone">Phone Number</label>
+              <input type="tel" class="gs-input" id="gs-phone" placeholder="e.g. +1 555 123 4567">
+            </div>
+            <div class="gs-field">
+              <label for="gs-country">Country</label>
+              <select class="gs-input gs-select" id="gs-country" required>
+                <option value="" disabled selected>Select your country</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Canada</option>
+                <option>Australia</option>
+                <option>Brazil</option>
+                <option>Mexico</option>
+                <option>Nigeria</option>
+                <option>South Africa</option>
+                <option>Kenya</option>
+                <option>Ghana</option>
+                <option>Germany</option>
+                <option>France</option>
+                <option>Japan</option>
+                <option>South Korea</option>
+                <option>Singapore</option>
+                <option>Vietnam</option>
+                <option>India</option>
+                <option>Colombia</option>
+                <option>Argentina</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary gs-submit">
+            <span>Continue to Health Survey</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+        <div class="gs-live-counter">
+          <span class="gs-live-dot"></span>
+          <span id="gs-live-count">23</span> people are taking this survey right now
+        </div>
+        <div class="gs-footer">
+          <div class="gs-footer-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Your data is encrypted &amp; GDPR compliant</div>
+          <div class="gs-footer-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Takes 5&ndash;8 minutes to complete</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -7920,160 +7852,6 @@ footer::before {
   </div>
 </section>
 
-<!-- ==================== SECTION 9: GET STARTED ==================== -->
-<section class="getstarted-section" id="pricing">
-  <div class="container">
-    <div class="gs-hero-split reveal">
-      <div class="gs-hero-text">
-        <div class="section-label">The Heart of Wermom</div>
-        <h2>The more we know,<br><span style="color:var(--rose);">the better we care</span></h2>
-        <p class="subtitle" style="text-align:left;">Great care starts with understanding. Fill in your details, then complete a short health assessment — the same kind of intake form a top pediatric clinic would use. Within 24 hours, our experts will return a <strong>free personalized report</strong> for both mom and baby.</p>
-        <div class="gs-hero-badge" style="display:inline-block; margin-top:20px;">93 questions &middot; 7 categories &middot; 100% free</div>
-      </div>
-      <div class="gs-hero-visual">
-        <div class="gs-hero-image" style="margin:0;">
-          <div class="gs-hero-video-wrap">
-            <video id="gs-hero-video" playsinline preload="metadata" loop>
-              <source src="Image/vid1.mp4" type="video/mp4">
-            </video>
-            <button id="gs-video-pause-btn">
-              <svg class="pause-ico" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
-              <svg class="play-ico" viewBox="0 0 24 24" style="display:none;"><polygon points="6,4 20,12 6,20"/></svg>
-            </button>
-          </div>
-        </div>
-        <div style="text-align:center; margin-top:12px;">
-          <a href="#pricing" class="gs-assessment-link" onclick="event.preventDefault(); var el = document.getElementById('gs-email'); if(el){ var y = el.getBoundingClientRect().top + window.pageYOffset - 100; window.scrollTo({top: y, behavior:'smooth'}); setTimeout(function(){ el.focus(); }, 600); }">Do the Free Assessment &rarr;</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="getstarted-layout">
-      <!-- Left: Survey Categories -->
-      <div class="getstarted-categories reveal">
-        <div class="gs-cat">
-          <div class="gs-cat-icon" style="background:var(--blush);"><svg width="18" height="18" style="color:var(--rose-deep);"><use href="#ico-pregnant"/></svg></div>
-          <div class="gs-cat-info">
-            <h4>Mom's Profile</h4>
-            <p>Age, conditions, pregnancy history, medications</p>
-          </div>
-          <span class="gs-cat-count">12 questions</span>
-        </div>
-        <div class="gs-cat">
-          <div class="gs-cat-icon" style="background:var(--sage-light);"><svg width="18" height="18" style="color:var(--sage-deep);"><use href="#ico-baby"/></svg></div>
-          <div class="gs-cat-info">
-            <h4>Baby's Status</h4>
-            <p>Age, weight, feeding, development stage</p>
-          </div>
-          <span class="gs-cat-count">15 questions</span>
-        </div>
-        <div class="gs-cat">
-          <div class="gs-cat-icon" style="background:#EDE9FE;"><svg width="18" height="18" style="color:#7C3AED;"><use href="#ico-stethoscope"/></svg></div>
-          <div class="gs-cat-info">
-            <h4>Medical History</h4>
-            <p>Vaccinations, complications, family history</p>
-          </div>
-          <span class="gs-cat-count">18 questions</span>
-        </div>
-        <div class="gs-cat">
-          <div class="gs-cat-icon" style="background:#FEF3C7;"><svg width="18" height="18" style="color:#D97706;"><use href="#ico-apple"/></svg></div>
-          <div class="gs-cat-info">
-            <h4>Nutrition & Diet</h4>
-            <p>Meals, supplements, baby's feeding</p>
-          </div>
-          <span class="gs-cat-count">14 questions</span>
-        </div>
-        <div class="gs-cat">
-          <div class="gs-cat-icon" style="background:#DBEAFE;"><svg width="18" height="18" style="color:#2563EB;"><use href="#ico-moon"/></svg></div>
-          <div class="gs-cat-info">
-            <h4>Sleep & Energy</h4>
-            <p>Sleep patterns, energy, exercise</p>
-          </div>
-          <span class="gs-cat-count">10 questions</span>
-        </div>
-        <div class="gs-cat">
-          <div class="gs-cat-icon" style="background:#FCE7F3;"><svg width="18" height="18" style="color:#DB2777;"><use href="#ico-heart-pulse"/></svg></div>
-          <div class="gs-cat-info">
-            <h4>Current Health</h4>
-            <p>Symptoms, stress, mood, recovery</p>
-          </div>
-          <span class="gs-cat-count">16 questions</span>
-        </div>
-        <div class="gs-cat">
-          <div class="gs-cat-icon" style="background:#D1FAE5;"><svg width="18" height="18" style="color:#059669;"><use href="#ico-ruler"/></svg></div>
-          <div class="gs-cat-info">
-            <h4>Measurements & Growth</h4>
-            <p>Height, weight, head circumference</p>
-          </div>
-          <span class="gs-cat-count">8 questions</span>
-        </div>
-      </div>
-
-      <!-- Right: Lead Capture Form -->
-      <div class="getstarted-form-card reveal">
-        <div class="getstarted-card-header">
-          <div class="getstarted-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Free Assessment</div>
-          <p class="getstarted-trust">Trusted by <strong>30,000+</strong> mothers worldwide</p>
-        </div>
-        <form class="getstarted-form" onsubmit="event.preventDefault(); goToSurvey();">
-          <div class="gs-field">
-            <label for="gs-name">Your Name</label>
-            <input type="text" class="gs-input" id="gs-name" placeholder="e.g. Sarah Chen" required>
-          </div>
-          <div class="gs-field">
-            <label for="gs-email">Email Address</label>
-            <input type="email" class="gs-input" id="gs-email" placeholder="e.g. sarah@email.com" required>
-          </div>
-          <div class="gs-row">
-            <div class="gs-field">
-              <label for="gs-phone">Phone Number</label>
-              <input type="tel" class="gs-input" id="gs-phone" placeholder="e.g. +1 555 123 4567">
-            </div>
-            <div class="gs-field">
-              <label for="gs-country">Country</label>
-              <select class="gs-input gs-select" id="gs-country" required>
-                <option value="" disabled selected>Select your country</option>
-                <option>United States</option>
-                <option>United Kingdom</option>
-                <option>Canada</option>
-                <option>Australia</option>
-                <option>Brazil</option>
-                <option>Mexico</option>
-                <option>Nigeria</option>
-                <option>South Africa</option>
-                <option>Kenya</option>
-                <option>Ghana</option>
-                <option>Germany</option>
-                <option>France</option>
-                <option>Japan</option>
-                <option>South Korea</option>
-                <option>Singapore</option>
-                <option>Vietnam</option>
-                <option>India</option>
-                <option>Colombia</option>
-                <option>Argentina</option>
-                <option>Other</option>
-              </select>
-            </div>
-          </div>
-          <button type="submit" class="btn-primary gs-submit">
-            <span>Continue to Health Survey</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-        </form>
-        <div class="gs-live-counter">
-          <span class="gs-live-dot"></span>
-          <span id="gs-live-count">23</span> people are taking this survey right now
-        </div>
-        <div class="gs-footer">
-          <div class="gs-footer-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Your data is encrypted &amp; GDPR compliant</div>
-          <div class="gs-footer-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Takes 5&ndash;8 minutes to complete</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ==================== SECTION 10: FAQ ==================== -->
 <section class="faq-section" id="faq">
   <div class="container">
@@ -8160,40 +7938,38 @@ footer::before {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="nav-logo">
-          <img src="Image/wermom-logo-cropped.svg" alt="Wermom">
+        <div class="nav-logo" style="gap:10px;">
+          <img src="logo.svg" alt="Wermom" height="44" style="display:block;">
         </div>
         <p>Your baby's personal health team. From pregnancy through the first six years — expert care, daily insights, and a plan built around your child.</p>
       </div>
       <div class="footer-col">
         <h4>Product</h4>
-        <a href="#features">Daily Log</a>
-        <a href="#">AI Reports</a>
-        <a href="#">Chatbot</a>
-        <a href="#">Shop</a>
+        <a href="#chat">AI Expert Chat</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#experts">Our Experts</a>
         <a href="#pricing">Get Started</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="#">About</a>
-        <a href="blog/">Blog</a>
-        <a href="#">Careers</a>
-        <a href="#">Contact</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Support</h4>
         <a href="#faq">FAQ</a>
-        <a href="#">Help Center</a>
-        <a href="https://www.wermom.com/privacy-policy.html" target="_blank">Privacy Policy</a>
-        <a href="https://www.wermom.com/terms-of-service.html" target="_blank">Terms of Service</a>
+        <a href="help.html">Help Center</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="cancellation-policy.html">Cancellation Policy</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Wermom. All rights reserved.</span>
       <div class="footer-legal">
-        <a href="https://www.wermom.com/privacy-policy.html" target="_blank">Privacy</a>
-        <a href="https://www.wermom.com/terms-of-service.html" target="_blank">Terms</a>
-        <a href="https://www.wermom.com/cancellation-policy.html" target="_blank">Cancellation</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html">Terms</a>
+        <a href="cancellation-policy.html">Refunds</a>
       </div>
     </div>
   </div>
@@ -8442,15 +8218,18 @@ document.getElementById('chat-input').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') sendChat();
 });
 
-// Lead capture → Survey redirect
+// WEB-06: Lead capture → Survey redirect (PII via POST-like sessionStorage, not URL params)
 function goToSurvey() {
-  const name = document.getElementById('gs-name').value.trim();
-  const email = document.getElementById('gs-email').value.trim();
-  const phone = document.getElementById('gs-phone').value.trim();
-  const country = document.getElementById('gs-country').value;
+  var name = document.getElementById('gs-name').value.trim();
+  var email = document.getElementById('gs-email').value.trim();
+  var phone = document.getElementById('gs-phone').value.trim();
+  var country = document.getElementById('gs-country').value;
   if (!name || !email) { alert('Please fill in your name and email.'); return; }
-  const params = new URLSearchParams({ name, email, phone, country });
-  window.location.href = 'wermom-survey.html?' + params.toString();
+  // WEB-06: Store in sessionStorage instead of URL params to prevent PII in browser history/logs
+  try {
+    sessionStorage.setItem('wermom_lead', JSON.stringify({ name: name, email: email, phone: phone, country: country }));
+  } catch(e) { /* fallback: proceed without pre-fill */ }
+  window.location.href = 'survey.html';
 }
 
 // ==================== SMOOTH SCROLL FOR ANCHOR LINKS ====================
@@ -8842,23 +8621,6 @@ document.getElementById('mobile-menu').addEventListener('click', function(e) {
   });
 })();
 
-// ==================== FEATURE SUMMARY TABS ====================
-(function initFeatureTabs() {
-  var tabs = document.querySelectorAll('.feat-tab');
-  if (!tabs.length) return;
-  tabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      var tabName = this.getAttribute('data-tab');
-      var card = this.closest('.report-card');
-      card.querySelectorAll('.feat-tab').forEach(function(t) { t.classList.remove('active'); });
-      card.querySelectorAll('.feat-tab-content').forEach(function(c) { c.classList.remove('active'); });
-      this.classList.add('active');
-      var target = card.querySelector('.feat-tab-content[data-tab="' + tabName + '"]');
-      if (target) target.classList.add('active');
-    });
-  });
-})();
-
 // ==================== VIDEO AUTO-PLAY ON SCROLL ====================
 (function() {
   var vid = document.getElementById('gs-hero-video');
@@ -8924,6 +8686,60 @@ document.getElementById('mobile-menu').addEventListener('click', function(e) {
   document.addEventListener('click', tryUnmute);
   document.addEventListener('touchstart', tryUnmute);
   document.addEventListener('scroll', tryUnmuteScroll, { passive: true });
+})();
+
+// ==================== EXPERT VIDEO (Section 05) — autoplay + unmute on scroll ====================
+(function() {
+  var ev = document.getElementById('expertVideo');
+  var btn = document.getElementById('expertVideoUnmute');
+  if (!ev || !btn) return;
+
+  var evStarted = false;
+  var evUnmuted = false;
+
+  // Auto-play muted when scrolled into view
+  var evObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        if (!evStarted) {
+          evStarted = true;
+          ev.muted = true;
+          ev.play().catch(function(){});
+        } else if (ev.paused) {
+          ev.play().catch(function(){});
+        }
+      } else {
+        if (!ev.paused) ev.pause();
+      }
+    });
+  }, { threshold: 0.3 });
+  evObs.observe(ev);
+
+  // Try to unmute once user has interacted with page
+  function evTryUnmute() {
+    if (!evUnmuted && evStarted) {
+      ev.muted = false;
+      evUnmuted = true;
+      btn.classList.add('playing');
+      document.removeEventListener('click', evTryUnmute);
+      document.removeEventListener('touchstart', evTryUnmute);
+    }
+  }
+  document.addEventListener('click', evTryUnmute);
+  document.addEventListener('touchstart', evTryUnmute);
+
+  // Toggle mute button
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (ev.muted) {
+      ev.muted = false;
+      evUnmuted = true;
+      btn.classList.add('playing');
+    } else {
+      ev.muted = true;
+      btn.classList.remove('playing');
+    }
+  });
 })();
 
 </script>
