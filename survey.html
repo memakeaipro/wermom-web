@@ -2061,7 +2061,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="required" for="accountPassword">Create Password</label>
+                        <label class="required" for="accountPassword" style="display:flex;align-items:center;gap:6px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            Create Password
+                        </label>
                         <div style="position:relative;">
                             <input type="password" id="accountPassword" name="accountPassword" placeholder="At least 8 characters" minlength="8" style="padding-right:48px;">
                             <button type="button" onclick="togglePasswordVisibility(this)" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--warm-gray);" title="Show password">
@@ -2080,7 +2083,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="required" for="accountPasswordConfirm">Confirm Password</label>
+                        <label class="required" for="accountPasswordConfirm" style="display:flex;align-items:center;gap:6px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v4"/><circle cx="12" cy="16" r="1"/></svg>
+                            Confirm Password
+                        </label>
                         <input type="password" id="accountPasswordConfirm" name="accountPasswordConfirm" placeholder="Re-enter your password">
                         <div class="error-message" id="passwordMatchError">Passwords don't match</div>
                     </div>
