@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wermom - Renew Subscription</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --cream: #FFF9F5;
+            --cream-deep: #FFF1E8;
+            --blush: #FFE4D6;
+            --peach: #F4A886;
+            --rose: #E8846A;
+            --rose-deep: #D4604A;
+            --sage: #7BA68D;
+            --sage-light: #E8F2EC;
+            --sage-deep: #5C8A6F;
+            --midnight: #1A1A2E;
+            --charcoal: #2D2D3F;
+            --slate: #4A4A5E;
+            --warm-gray: #8A8A9A;
+            --light-gray: #E8E6E3;
+            --white: #FFFFFF;
+        }
+
+        html, body {
+            width: 100%; height: 100%;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, rgba(255,249,245,0.5) 0%, rgba(232,242,236,0.3) 100%),
+                        radial-gradient(circle at 20% 50%, rgba(255,228,214,0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(123,166,141,0.1) 0%, transparent 50%),
+                        var(--cream);
+            background-attachment: fixed;
+            color: var(--midnight);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--rose-deep);
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: var(--warm-gray);
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 32px;
+            width: 100%;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+
+        .offer-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--sage-light) 0%, #d4eadc 100%);
+            color: var(--sage-deep);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--midnight);
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: var(--slate);
+            font-size: 15px;
+            margin-bottom: 24px;
+        }
+
+        .price-box {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 28px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .price-row:last-child { margin-bottom: 0; }
+
+        .price-label {
+            color: var(--slate);
+            font-size: 14px;
+        }
+
+        .price-original {
+            color: var(--warm-gray);
+            font-size: 14px;
+            text-decoration: line-through;
+        }
+
+        .price-new {
+            color: var(--rose-deep);
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .price-savings {
+            color: var(--sage-deep);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--light-gray);
+            margin: 12px 0;
+        }
+
+        .features {
+            text-align: left;
+            margin-bottom: 28px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 0;
+            font-size: 14px;
+            color: var(--charcoal);
+        }
+
+        .feature svg {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            color: var(--sage);
+        }
+
+        .btn-renew {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--rose) 0%, var(--rose-deep) 100%);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(212, 96, 74, 0.3);
+        }
+
+        .btn-renew:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(212, 96, 74, 0.4);
+        }
+
+        .btn-renew:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-renew .spinner {
+            display: inline-block;
+            width: 18px; height: 18px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .error-msg {
+            color: var(--rose-deep);
+            font-size: 13px;
+            margin-top: 12px;
+            display: none;
+        }
+
+        .cancelled-msg {
+            background: var(--cream-deep);
+            color: var(--slate);
+            font-size: 14px;
+            padding: 12px 16px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .secure-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 16px;
+            color: var(--warm-gray);
+            font-size: 12px;
+        }
+
+        .secure-note svg { width: 14px; height: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Wermom</div>
+        <div class="subtitle">Expert Maternal & Baby Care</div>
+
+        <div class="card">
+            <div class="offer-badge">Special Renewal Offer</div>
+
+            <h2>Extend Your Access</h2>
+            <p>Continue your personalized health journey for another year at a special price.</p>
+
+            <div id="cancelledMsg" class="cancelled-msg" style="display:none;">
+                Payment was cancelled. You can try again whenever you're ready.
+            </div>
+
+            <div class="price-box">
+                <div class="price-row">
+                    <span class="price-label">Standard price</span>
+                    <span class="price-original">$299/year</span>
+                </div>
+                <div class="divider"></div>
+                <div class="price-row">
+                    <span class="price-label">Your renewal price</span>
+                    <span class="price-new">$250/year</span>
+                </div>
+                <div class="price-row">
+                    <span></span>
+                    <span class="price-savings">You save $49!</span>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                    Personalized AI health reports
+                </div>
+                <div class="feature">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                    Daily tracking & insights
+                </div>
+                <div class="feature">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                    Expert chat support 24/7
+                </div>
+                <div class="feature">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                    Baby development milestones
+                </div>
+            </div>
+
+            <button class="btn-renew" id="renewBtn" onclick="startRenewal()">
+                Renew Now — $250/year
+            </button>
+
+            <div class="error-msg" id="errorMsg"></div>
+
+            <div class="secure-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Secured by Stripe. Your card details are encrypted.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const BACKEND_URL = 'https://wermom-backend-production.up.railway.app';
+
+        // Get token from URL param (passed by the app)
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+
+        // Show cancelled message if redirected back from Stripe
+        if (urlParams.get('cancelled') === 'true') {
+            document.getElementById('cancelledMsg').style.display = 'block';
+        }
+
+        // If no token, show error
+        if (!token) {
+            showError('Session expired. Please go back to the app and try again.');
+            document.getElementById('renewBtn').disabled = true;
+        }
+
+        async function startRenewal() {
+            const btn = document.getElementById('renewBtn');
+            const errEl = document.getElementById('errorMsg');
+            errEl.style.display = 'none';
+
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span> Redirecting to payment...';
+
+            try {
+                const resp = await fetch(`${BACKEND_URL}/api/payment/renew`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                const data = await resp.json();
+
+                if (!resp.ok || !data.success) {
+                    throw new Error(data.error || data.details || 'Payment setup failed');
+                }
+
+                // Redirect to Stripe Checkout
+                window.location.href = data.checkoutUrl;
+
+            } catch (err) {
+                showError(err.message);
+                btn.disabled = false;
+                btn.innerHTML = 'Renew Now — $250/year';
+            }
+        }
+
+        function showError(msg) {
+            const el = document.getElementById('errorMsg');
+            el.textContent = msg;
+            el.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
