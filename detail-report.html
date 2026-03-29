@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wermom Report</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:#fef7f0;min-height:100vh}
+.loading{display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:100vh;color:#e8836b}
+.loading .spinner{width:40px;height:40px;border:3px solid #fde8e0;border-top-color:#e8836b;border-radius:50%;animation:spin .8s linear infinite;margin-bottom:1rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error{display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:100vh;text-align:center;padding:2rem}
+.error .icon{font-size:4rem;margin-bottom:1rem}
+.error h1{color:#e8836b;font-size:1.5rem;margin-bottom:.5rem}
+.error p{color:#666;font-size:1rem}
+</style>
+</head>
+<body>
+<div id="loading" class="loading">
+  <div class="spinner"></div>
+  <p>Loading report...</p>
+</div>
+<div id="error" class="error" style="display:none">
+  <div class="icon">📋</div>
+  <h1>Report not found</h1>
+  <p>This report may have expired or the link is invalid.</p>
+</div>
+<div id="report" style="display:none"></div>
+
+<script>
+(async function(){
+  const SUPABASE_URL='https://oyathuqcruqcgpismneh.supabase.co';
+  const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im95YXRodXFjcnVxY2dwaXNtbmVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI5OTMyMTYsImV4cCI6MjA1ODU2OTIxNn0.HHifBFMFv3XVBM1SHFJS2EvJGiVCCfeAUm8uy1J69dM';
+
+  // Extract report ID from URL path: /detail-report/{id}
+  const parts=window.location.pathname.split('/');
+  const idx=parts.indexOf('detail-report');
+  const id=(idx!==-1&&parts[idx+1])?parts[idx+1]:'';
+
+  // Validate UUID
+  if(!id||!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)){
+    document.getElementById('loading').style.display='none';
+    document.getElementById('error').style.display='flex';
+    return;
+  }
+
+  try{
+    const url=`${SUPABASE_URL}/rest/v1/detail_report_pages?id=eq.${id}&select=html_content`;
+    const resp=await fetch(url,{
+      headers:{'apikey':SUPABASE_KEY,'Authorization':`Bearer ${SUPABASE_KEY}`}
+    });
+    const rows=await resp.json();
+
+    if(!rows||!rows.length||!rows[0].html_content){
+      document.getElementById('loading').style.display='none';
+      document.getElementById('error').style.display='flex';
+      return;
+    }
+
+    // Replace entire page with report HTML
+    document.open();
+    document.write(rows[0].html_content);
+    document.close();
+  }catch(e){
+    console.error('Failed to load report:',e);
+    document.getElementById('loading').style.display='none';
+    document.getElementById('error').style.display='flex';
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,1 +1,3 @@
 Image/
+.vercel
+.env*.local

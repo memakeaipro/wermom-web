@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/detail-report/:id",
+      "destination": "/detail-report.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
