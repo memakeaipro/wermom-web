@@ -237,20 +237,12 @@ nav.scrolled {
   gap: 16px;
 }
 .nav-login {
-  padding: 10px 24px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #e8846a, #d4604a);
-  border-radius: 100px;
-  transition: all 0.3s var(--ease-out);
+  color: var(--slate);
+  transition: color 0.3s;
 }
-.nav-login:hover {
-  background: linear-gradient(135deg, #d4604a, #c24a3a);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(232,132,106,0.3);
-  color: #fff;
-}
+.nav-login:hover { color: var(--midnight); }
 .nav-start {
   padding: 10px 24px;
   background: var(--midnight);
@@ -5167,7 +5159,7 @@ footer::before {
 
 <!-- ==================== NAVIGATION ==================== -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">
+  <a href="/" class="nav-logo">
     <img src="logo.svg" alt="Wermom" height="48" style="display:block;">
   </a>
   <ul class="nav-links">
@@ -5179,7 +5171,7 @@ footer::before {
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <div class="nav-cta">
-    <a href="#pricing" class="nav-login">Download App</a>
+    <a href="survey.html" class="nav-login">Login</a>
     <a href="#pricing" class="nav-start">Get Started Free</a>
   </div>
   <div class="mobile-toggle" onclick="openMobileMenu()">
@@ -5196,7 +5188,7 @@ footer::before {
     <ul class="mobile-menu-links">
       <li><a href="#who" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-pregnant"/></svg>Who It's For</a></li>
       <li><a href="#features" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-zap"/></svg>Smart Tools</a></li>
-      <li class="mm-highlight"><a href="#chat" onclick="closeMobileMenu(); setTimeout(()=>document.getElementById('chat').scrollIntoView({behavior:'smooth'}),100)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>Talk to AI Expert</a></li>
+      <li class="mm-highlight"><a href="#chat" onclick="closeMobileMenu(); setTimeout(()=>document.getElementById('chat').scrollIntoView({behavior:'smooth'}),100)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>Talk to Expert</a></li>
       <li><a href="#experts" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-doctor"/></svg>Our Experts</a></li>
       <li><a href="#reviews" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><use href="#ico-heart-pulse"/></svg>Reviews</a></li>
       <li><a href="#faq" onclick="closeMobileMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>FAQ</a></li>
@@ -6479,7 +6471,7 @@ footer::before {
       <div class="photo-carousel-track">
         <!-- Review 1 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_072906_b4f604b5-e5cd-4f75-9157-9b323d65c4d6.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_072906_b4f604b5-e5cd-4f75-9157-9b323d65c4d6.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6490,7 +6482,7 @@ footer::before {
         </div>
         <!-- Review 2 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_072858_6c29f788-411a-4d5b-8d88-24eaa62dc6a6.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_072858_6c29f788-411a-4d5b-8d88-24eaa62dc6a6.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6501,7 +6493,7 @@ footer::before {
         </div>
         <!-- Review 3 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_072902_ffb0edef-dd4e-43f8-aac8-b39cca1a2057.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_072902_ffb0edef-dd4e-43f8-aac8-b39cca1a2057.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6512,7 +6504,7 @@ footer::before {
         </div>
         <!-- Review 4 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162315_c0115fb0-8673-4e11-98a0-0bd766117cf8.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162315_c0115fb0-8673-4e11-98a0-0bd766117cf8.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6523,7 +6515,7 @@ footer::before {
         </div>
         <!-- Review 5 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162648_98b159be-7671-4156-803a-6f717418822f.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162648_98b159be-7671-4156-803a-6f717418822f.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6534,7 +6526,7 @@ footer::before {
         </div>
         <!-- Review 6 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162027_19204a40-4f16-4e80-8c5d-095b8c505d49.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162027_19204a40-4f16-4e80-8c5d-095b8c505d49.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6545,7 +6537,7 @@ footer::before {
         </div>
         <!-- Review 7 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162036_848a71ff-1f25-4049-beb3-8f324a7082b0.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162036_848a71ff-1f25-4049-beb3-8f324a7082b0.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6556,7 +6548,7 @@ footer::before {
         </div>
         <!-- Review 8 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162231_a91f25d0-3738-4ba5-b127-110d6385c333.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162231_a91f25d0-3738-4ba5-b127-110d6385c333.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6567,7 +6559,7 @@ footer::before {
         </div>
         <!-- Review 9 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162125_e29dd7a0-1465-4a45-b1f9-6da23b211bad.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162125_e29dd7a0-1465-4a45-b1f9-6da23b211bad.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6578,7 +6570,7 @@ footer::before {
         </div>
         <!-- Review 10 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162509_072d48ce-147e-4e4f-abc9-fd116f8202fe.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162509_072d48ce-147e-4e4f-abc9-fd116f8202fe.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6589,7 +6581,7 @@ footer::before {
         </div>
         <!-- Review 11 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162220_2ede7feb-eeed-421b-8c04-ae22a61c8304.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162220_2ede7feb-eeed-421b-8c04-ae22a61c8304.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6600,7 +6592,7 @@ footer::before {
         </div>
         <!-- Review 12 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162231_a91f25d0-3738-4ba5-b127-110d6385c333.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162231_a91f25d0-3738-4ba5-b127-110d6385c333.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6611,7 +6603,7 @@ footer::before {
         </div>
         <!-- Review 13 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162315_c0115fb0-8673-4e11-98a0-0bd766117cf8.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162315_c0115fb0-8673-4e11-98a0-0bd766117cf8.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6622,7 +6614,7 @@ footer::before {
         </div>
         <!-- Review 14 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162321_07b57ca2-0bed-472f-b40d-cf52ac157761.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162321_07b57ca2-0bed-472f-b40d-cf52ac157761.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6633,7 +6625,7 @@ footer::before {
         </div>
         <!-- Review 15 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162522_931d9119-b6b8-4b86-825b-00895c0844a1.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162522_931d9119-b6b8-4b86-825b-00895c0844a1.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6644,7 +6636,7 @@ footer::before {
         </div>
         <!-- Review 16 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162328_22224d41-07c0-404c-a9e3-e08398e14615.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162328_22224d41-07c0-404c-a9e3-e08398e14615.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6655,7 +6647,7 @@ footer::before {
         </div>
         <!-- Review 17 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162509_072d48ce-147e-4e4f-abc9-fd116f8202fe.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162509_072d48ce-147e-4e4f-abc9-fd116f8202fe.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6666,7 +6658,7 @@ footer::before {
         </div>
         <!-- Review 18 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162516_48c0f2eb-c2d0-4e49-8f9d-c5bce9702d19.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162516_48c0f2eb-c2d0-4e49-8f9d-c5bce9702d19.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6677,7 +6669,7 @@ footer::before {
         </div>
         <!-- Review 19 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162522_931d9119-b6b8-4b86-825b-00895c0844a1.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162522_931d9119-b6b8-4b86-825b-00895c0844a1.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6688,7 +6680,7 @@ footer::before {
         </div>
         <!-- Review 20 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162533_41fca230-46e4-4141-b866-3f26cfc033f5.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162533_41fca230-46e4-4141-b866-3f26cfc033f5.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6699,7 +6691,7 @@ footer::before {
         </div>
         <!-- Review 21 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162648_98b159be-7671-4156-803a-6f717418822f.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162648_98b159be-7671-4156-803a-6f717418822f.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6710,7 +6702,7 @@ footer::before {
         </div>
         <!-- Review 22 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162027_19204a40-4f16-4e80-8c5d-095b8c505d49.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162027_19204a40-4f16-4e80-8c5d-095b8c505d49.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6721,7 +6713,7 @@ footer::before {
         </div>
         <!-- Review 23 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162125_e29dd7a0-1465-4a45-b1f9-6da23b211bad.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162125_e29dd7a0-1465-4a45-b1f9-6da23b211bad.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6732,7 +6724,7 @@ footer::before {
         </div>
         <!-- Review 24 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162220_2ede7feb-eeed-421b-8c04-ae22a61c8304.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162220_2ede7feb-eeed-421b-8c04-ae22a61c8304.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6743,7 +6735,7 @@ footer::before {
         </div>
         <!-- Review 25 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_162328_22224d41-07c0-404c-a9e3-e08398e14615.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_162328_22224d41-07c0-404c-a9e3-e08398e14615.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -6755,7 +6747,7 @@ footer::before {
         <!-- Duplicate for seamless loop -->
         <!-- Review 1 -->
         <div class="photo-review-card" onclick="toggleCarousel(this)">
-          <div class="prc-img"><img src="img/hf_20260325_072906_b4f604b5-e5cd-4f75-9157-9b323d65c4d6.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="prc-img"><img src="img/hf_20260325_072906_b4f604b5-e5cd-4f75-9157-9b323d65c4d6.jpg" alt="Wermom user review photo" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
           <div class="prc-overlay"></div>
           <div class="prc-content">
             <div class="prc-stars">★★★★★</div>
@@ -7953,7 +7945,7 @@ footer::before {
       </div>
       <div class="footer-col">
         <h4>Product</h4>
-        <a href="#chat">AI Expert Chat</a>
+        <a href="#chat">Expert Chat</a>
         <a href="#reviews">Reviews</a>
         <a href="#experts">Our Experts</a>
         <a href="#pricing">Get Started</a>
