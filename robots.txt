@@ -1,0 +1,15 @@
+# Wermom — robots.txt
+# https://www.wermom.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.wermom.com/sitemap.xml
+
+# Crawl-delay (be gentle)
+Crawl-delay: 1
+
+# Block unnecessary paths
+Disallow: /img/
+Disallow: /vid/
