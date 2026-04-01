@@ -5080,6 +5080,8 @@ footer::before {
   padding: 8px 14px;
   border-radius: 10px;
   text-align: center;
+  flex: 1;
+  min-width: 0;
 }
 .sc-content .showcase-stat-val {
   font-family: var(--font-num);
@@ -5122,9 +5124,262 @@ footer::before {
   .sc-content { padding: 0 18px 16px; }
 }
 
+/* ═══════════════ LEVEL 5-6 UPGRADES ═══════════════ */
+
+/* ── Loading Screen ── */
+.wm-loader{position:fixed;inset:0;background:var(--midnight);z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;transition:opacity .7s ease,visibility .7s ease}
+.wm-loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.wm-loader-logo{font-family:var(--font-display);font-size:2.4rem;font-weight:400;color:#fff;letter-spacing:.08em;opacity:0;transform:translateY(20px);animation:wmLoaderIn .8s .2s var(--ease-out) forwards}
+.wm-loader-bar{width:120px;height:2px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden;opacity:0;animation:wmLoaderIn .6s .5s var(--ease-out) forwards}
+.wm-loader-bar::after{content:'';display:block;width:0%;height:100%;background:linear-gradient(90deg,var(--rose),var(--sage));border-radius:2px;animation:wmLoaderFill 1.4s .6s var(--ease-out) forwards}
+@keyframes wmLoaderIn{to{opacity:1;transform:translateY(0)}}
+@keyframes wmLoaderFill{to{width:100%}}
+
+/* ── Scroll Progress Bar ── */
+.wm-scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--rose),var(--sage));z-index:100001;transition:width .1s linear;border-radius:0 2px 2px 0}
+
+/* ── Marquee Ticker ── */
+.wm-marquee{overflow:hidden;padding:14px 0;background:var(--midnight);border-bottom:1px solid rgba(255,255,255,.05);position:relative;z-index:1}
+.wm-marquee.light{background:var(--cream-deep);border-top:1px solid rgba(0,0,0,.04);border-bottom:1px solid rgba(0,0,0,.04)}
+.wm-marquee-track{display:flex;gap:0;white-space:nowrap;animation:wmMarquee 32s linear infinite;width:max-content}
+.wm-marquee.reverse .wm-marquee-track{animation-direction:reverse;animation-duration:36s}
+.wm-marquee-item{display:inline-flex;align-items:center;gap:16px;padding:0 36px;font-family:var(--font-display);font-size:.88rem;font-weight:400;letter-spacing:.04em;color:rgba(255,255,255,.35)}
+.wm-marquee.light .wm-marquee-item{color:var(--warm-gray)}
+.wm-marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--rose);opacity:.5;flex-shrink:0}
+.wm-marquee.light .wm-marquee-dot{background:var(--sage)}
+@keyframes wmMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── Hero stagger text reveal ── */
+.hero-benefits h1{opacity:0;animation:wmHeroH1 .9s 2.1s var(--ease-out) forwards}
+.hero-benefits .benefit-item{opacity:0;transform:translateX(-20px);animation:wmBenefitIn .6s var(--ease-out) forwards}
+.hero-benefits .benefit-item:nth-child(1){animation-delay:2.3s}
+.hero-benefits .benefit-item:nth-child(2){animation-delay:2.45s}
+.hero-benefits .benefit-item:nth-child(3){animation-delay:2.6s}
+.hero-benefits .benefit-item:nth-child(4){animation-delay:2.75s}
+.hero-benefits .benefit-item:nth-child(5){animation-delay:2.9s}
+.hero-bottom-bar{opacity:0;animation:wmHeroH1 .7s 3.1s var(--ease-out) forwards}
+@keyframes wmHeroH1{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes wmBenefitIn{to{opacity:1;transform:translateX(0)}}
+
+/* ── Enhanced card hover depth ── */
+.bento-item:hover,.way-card:hover,.research-content:hover{box-shadow:0 20px 60px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04) !important}
+.who-card:hover{box-shadow:0 24px 64px rgba(0,0,0,.1) !important;transform:translateY(-8px) !important}
+.testimonial-card:hover,.review-card:hover{transform:translateY(-6px) !important;box-shadow:0 20px 48px rgba(0,0,0,.08) !important}
+
+/* ── Button shimmer upgrade ── */
+.btn-primary::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transform:skewX(-20deg);transition:left .6s}
+.btn-primary:hover::after{left:150%}
+
+/* ── Nav link underline animation ── */
+.nav-links a{position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:var(--rose);transition:width .3s var(--ease-out)}
+.nav-links a:hover::after{width:100%}
+
+/* ── Section divider subtle lines ── */
+.research-section::before,.oldnew-section::before,.who-section::before,.reports-section::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:60px;background:linear-gradient(to bottom,var(--light-gray),transparent);z-index:1}
+
+/* ── Floating glow orb behind hero ── */
+.hero::after{content:'';position:absolute;bottom:-30%;right:-10%;width:40vw;height:40vw;background:radial-gradient(circle,rgba(123,166,141,.08) 0%,transparent 70%);pointer-events:none;z-index:0;animation:wmOrbFloat 8s ease-in-out infinite alternate}
+@keyframes wmOrbFloat{from{transform:translate(0,0)}to{transform:translate(-20px,-30px)}}
+
+/* ── Counter animation ready state ── */
+.wm-counter{transition:all .3s}
+
+/* ── Smooth section reveal scale variant ── */
+.reveal-scale{opacity:0;transform:scale(.97) translateY(24px);transition:all .9s var(--ease-out)}
+.reveal-scale.visible{opacity:1;transform:scale(1) translateY(0)}
+
+/* ═══════════ FULL SITE MEGA UPGRADE ═══════════ */
+
+/* ── OLD WAY vs NEW WAY Upgrades ── */
+.oldnew-section h2 span{background:linear-gradient(135deg,var(--rose),var(--rose-deep));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.way-card.new-way{backdrop-filter:blur(8px);background:linear-gradient(135deg,rgba(26,26,46,.95),rgba(45,45,63,.92)) !important;border:1px solid rgba(255,255,255,.06)}
+.way-step{transition:all .3s var(--ease-out)}
+.way-step:hover{transform:translateX(6px)}
+.way-step:hover .way-step-num{transform:scale(1.12)}
+.way-step-num{transition:transform .3s var(--ease-out)}
+.way-step:not(:last-child)::after{transition:opacity .5s}
+.new-way .way-step:hover .way-step-text{color:rgba(255,255,255,1) !important}
+.old-way .way-step:hover .way-step-text{color:var(--midnight) !important}
+
+/* ── WHO IT'S FOR Upgrades: Tilt + Glow ── */
+.who-card{transition:all .5s var(--ease-out);transform-style:preserve-3d;perspective:800px}
+.who-card:hover{transform:translateY(-8px) rotateX(2deg) rotateY(-2deg) !important;box-shadow:0 30px 80px rgba(0,0,0,.1),0 0 40px rgba(232,132,106,.06) !important}
+.who-card::after{content:'';position:absolute;inset:0;border-radius:inherit;opacity:0;transition:opacity .4s;background:linear-gradient(135deg,rgba(232,132,106,.04),transparent 60%);pointer-events:none;z-index:1}
+.who-card:hover::after{opacity:1}
+.who-card h3{transition:color .3s}
+.who-card:hover h3{color:var(--rose)}
+
+/* ── AI CHATBOT Upgrades ── */
+.chat-window{transition:box-shadow .4s var(--ease-out);border:1px solid rgba(0,0,0,.06) !important}
+.chat-window:hover{box-shadow:0 30px 80px rgba(0,0,0,.1) !important}
+.chat-input{transition:all .3s var(--ease-out)}
+.chat-input:focus-within{box-shadow:0 0 0 3px rgba(232,132,106,.15);border-color:var(--rose) !important}
+.wm-typing-indicator{display:inline-flex;align-items:center;gap:4px;padding:8px 16px;background:var(--cream-deep);border-radius:16px;margin:8px 0 4px 12px}
+.wm-typing-dot{width:6px;height:6px;border-radius:50%;background:var(--warm-gray);animation:wmTypingBounce 1.4s infinite}
+.wm-typing-dot:nth-child(2){animation-delay:.2s}
+.wm-typing-dot:nth-child(3){animation-delay:.4s}
+@keyframes wmTypingBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+.chatbot-features li{transition:all .3s var(--ease-out)}
+.chatbot-features li:hover{transform:translateX(4px)}
+.chatbot-features li svg{transition:transform .3s var(--ease-out)}
+.chatbot-features li:hover svg{transform:scale(1.15) rotate(-5deg)}
+.chatbot-availability .dot{animation:wmPulse 2s infinite !important}
+@keyframes wmPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.5}}
+
+/* ── PRICING / FORM Upgrades ── */
+.daily-log-card{backdrop-filter:blur(12px);transition:box-shadow .4s var(--ease-out)}
+.daily-log-card:hover{box-shadow:0 30px 80px rgba(0,0,0,.08)}
+.daily-log-input{transition:all .3s var(--ease-out) !important}
+.daily-log-input:focus{box-shadow:0 0 0 3px rgba(232,132,106,.12) !important;border-color:var(--rose) !important}
+.cat-card{transition:all .35s var(--ease-out)}
+.cat-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+.cat-card svg,.cat-card .cat-icon{transition:transform .4s var(--ease-spring)}
+.cat-card:hover svg,.cat-card:hover .cat-icon{transform:rotate(-8deg) scale(1.1)}
+
+/* ── TEXT REVIEWS Upgrades ── */
+.review-card{transition:all .4s var(--ease-out) !important;transform-origin:center bottom}
+.review-card:hover{transform:translateY(-6px) scale(1.01) !important;box-shadow:0 20px 50px rgba(0,0,0,.08) !important}
+.review-card-avatar{transition:all .3s var(--ease-spring)}
+.review-card:hover .review-card-avatar{transform:scale(1.1);box-shadow:0 4px 16px rgba(0,0,0,.12)}
+.review-card-stars{transition:transform .3s}
+.review-card:hover .review-card-stars{transform:scale(1.05)}
+.review-card-text{transition:color .3s}
+.review-card:hover .review-card-text{color:var(--midnight)}
+
+/* ── FAQ Upgrades ── */
+.faq-item{transition:background .3s}
+.faq-item.open{background:var(--cream-deep);margin:0 -24px;padding:0 24px;border-radius:16px}
+.faq-icon{transition:all .4s var(--ease-spring) !important}
+.faq-item.open .faq-icon{transform:rotate(45deg) scale(1.1) !important}
+.faq-question{transition:all .3s !important}
+.faq-question:hover .faq-icon{background:var(--peach);transform:scale(1.08)}
+.faq-answer p{opacity:0;transform:translateY(8px);transition:all .4s .1s var(--ease-out)}
+.faq-item.open .faq-answer p{opacity:1;transform:translateY(0)}
+
+/* ── FINAL CTA Upgrades ── */
+.final-cta h2 em,.final-cta h2 span{background:linear-gradient(135deg,var(--rose),var(--sage));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.final-cta .btn-primary{animation:wmCTAPulse 3s 1s infinite;position:relative;overflow:hidden}
+@keyframes wmCTAPulse{0%,100%{box-shadow:0 4px 20px rgba(212,96,74,.25)}50%{box-shadow:0 8px 40px rgba(212,96,74,.4)}}
+.final-cta .btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transform:skewX(-20deg);animation:wmShimmerLoop 4s 2s infinite}
+
+/* ── FOOTER Upgrades ── */
+footer a{position:relative;transition:color .3s}
+footer a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--rose);transition:width .3s var(--ease-out)}
+footer a:hover{color:var(--rose) !important}
+footer a:hover::after{width:100%}
+.footer-logo{transition:transform .3s var(--ease-spring)}
+.footer-logo:hover{transform:scale(1.05)}
+
+/* ── STICKY CTA Upgrades ── */
+.sticky-survey-cta{transition:all .5s var(--ease-spring) !important}
+.sticky-survey-cta.visible{animation:wmStickyBounce .6s var(--ease-spring)}
+@keyframes wmStickyBounce{0%{transform:translateY(100%)}60%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+.sticky-survey-cta a{position:relative;overflow:hidden}
+.sticky-survey-cta a::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transform:skewX(-20deg);animation:wmShimmerLoop 3s 1s infinite}
+
+/* ── EXPERT & PHOTO CAROUSEL Upgrades ── */
+.expert-review-card{transition:all .4s var(--ease-out)}
+.expert-review-card:hover{transform:scale(1.04) !important;z-index:2}
+.expert-review-card:hover .erc-overlay{opacity:.6 !important}
+.expert-review-card .erc-text{transition:transform .3s}
+.expert-review-card:hover .erc-text{transform:translateY(-4px)}
+.photo-review-card{transition:all .4s var(--ease-out)}
+.photo-review-card:hover{transform:scale(1.04) !important;z-index:2}
+.photo-review-card:hover .prc-img img{transform:scale(1.08)}
+.photo-review-card .prc-img img{transition:transform .6s var(--ease-out)}
+
+/* ── GLOBAL: Smooth scroll-triggered counters ── */
+.wm-count-up{transition:all .3s}
+
+/* ── GLOBAL: Section entrance stagger for cards ── */
+.reveal[style*="delay:1"]{transition-delay:.1s}
+.reveal[style*="delay:2"]{transition-delay:.2s}
+.reveal[style*="delay:3"]{transition-delay:.3s}
+
+/* ═══════════ HERO MEGA UPGRADE ═══════════ */
+
+/* ── 1. Typed Text Animation ── */
+.wm-typed-cursor{display:inline-block;width:2px;height:.9em;background:var(--rose);margin-left:4px;vertical-align:text-bottom;animation:wmBlink 1s steps(1) infinite}
+@keyframes wmBlink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-benefits h1 em .wm-typed-text{display:inline}
+
+/* ── 2. Parallax Showcase Photos ── */
+.hero-showcase{position:relative;will-change:transform}
+.showcase-card{transition:transform .4s var(--ease-out)}
+.showcase-card.has-photo .sc-photo img{transition:transform .6s var(--ease-out)}
+.hero-showcase .showcase-card:first-child{--parallax-speed:0.06}
+.hero-showcase .showcase-card:last-child{--parallax-speed:0.03}
+
+/* ── 3. Floating Particles ── */
+.wm-particles{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+.wm-particle{position:absolute;border-radius:50%;opacity:0;animation:wmParticleFloat linear infinite}
+.wm-particle.rose{background:radial-gradient(circle,rgba(232,132,106,.18),transparent 70%)}
+.wm-particle.sage{background:radial-gradient(circle,rgba(123,166,141,.15),transparent 70%)}
+.wm-particle.blush{background:radial-gradient(circle,rgba(255,228,214,.2),transparent 70%)}
+@keyframes wmParticleFloat{
+  0%{transform:translateY(100%) scale(.5);opacity:0}
+  15%{opacity:1}
+  85%{opacity:1}
+  100%{transform:translateY(-120%) scale(1.2);opacity:0}
+}
+
+/* ── 4. Social Proof Bar ── */
+.wm-social-proof{display:flex;align-items:center;gap:14px;margin-top:20px;opacity:0;animation:wmSocialIn .8s 3.3s var(--ease-out) forwards}
+@keyframes wmSocialIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.wm-avatar-stack{display:flex;align-items:center}
+.wm-avatar{width:32px;height:32px;border-radius:50%;border:2px solid var(--white);margin-left:-8px;background-size:cover;background-position:center;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.wm-avatar:first-child{margin-left:0}
+.wm-social-proof-text{font-size:.85rem;color:var(--slate);line-height:1.3}
+.wm-social-proof-text strong{color:var(--midnight);font-weight:600}
+.wm-social-proof-stars{color:#F5A623;font-size:.75rem;letter-spacing:1px}
+
+/* ── 5. Negative Margin Overlap ── */
+.hero{position:relative;z-index:2;margin-bottom:-60px;padding-bottom:80px;overflow:visible}
+.wm-marquee{position:relative;z-index:3}
+
+/* ── 6. Enhanced CTA Shimmer ── */
+.hero-bottom-bar .btn-primary{position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(212,96,74,.25)}
+.hero-bottom-bar .btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);animation:wmShimmerLoop 3s 3.5s infinite}
+@keyframes wmShimmerLoop{0%{left:-100%}30%{left:200%}100%{left:200%}}
+
+/* ── 7. Enhanced Stagger — smoother + scale ── */
+.hero-benefits .hero-tagline-badge{opacity:0;animation:wmTagBadgeIn .7s 1.8s var(--ease-out) forwards}
+.hero-benefits .hero-top-label{opacity:0;animation:wmTagBadgeIn .6s 1.95s var(--ease-out) forwards}
+@keyframes wmTagBadgeIn{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.hero-benefits .benefit-item{opacity:0;transform:translateX(-20px) scale(.97);animation:wmBenefitInV2 .6s var(--ease-out) forwards}
+@keyframes wmBenefitInV2{to{opacity:1;transform:translateX(0) scale(1)}}
+.hero-benefits .benefit-item:nth-child(1){animation-delay:2.3s}
+.hero-benefits .benefit-item:nth-child(2){animation-delay:2.42s}
+.hero-benefits .benefit-item:nth-child(3){animation-delay:2.54s}
+.hero-benefits .benefit-item:nth-child(4){animation-delay:2.66s}
+.hero-benefits .benefit-item:nth-child(5){animation-delay:2.78s}
+
+/* ── 8. Showcase cards entrance ── */
+.hero-showcase .showcase-card{opacity:0;transform:translateY(30px) scale(.96);animation:wmShowcaseIn .8s var(--ease-out) forwards}
+.hero-showcase .showcase-card:first-child{animation-delay:2.5s}
+.hero-showcase .showcase-card:last-child{animation-delay:2.8s}
+@keyframes wmShowcaseIn{to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* ── Responsive adjustments for hero upgrades ── */
+@media(max-width:768px){
+  .wm-social-proof{justify-content:center;flex-wrap:wrap;gap:10px}
+  .wm-avatar{width:28px;height:28px}
+  .hero{margin-bottom:-30px;padding-bottom:50px}
+  .wm-particles .wm-particle{display:none} /* disable particles on mobile for perf */
+}
+
 </style>
 </head>
 <body>
+
+<!-- ═══ LOADING SCREEN ═══ -->
+<div class="wm-loader" id="wm-loader">
+  <div class="wm-loader-logo">Wermom</div>
+  <div class="wm-loader-bar"></div>
+</div>
+<!-- ═══ SCROLL PROGRESS ═══ -->
+<div class="wm-scroll-progress" id="wm-scroll-progress"></div>
 
 <!-- ==================== SVG ICON SPRITE ==================== -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
@@ -5205,6 +5460,8 @@ footer::before {
 
 <!-- ==================== SECTION 1: HERO ==================== -->
 <section class="hero">
+  <!-- Floating Particles -->
+  <div class="wm-particles" id="wm-particles"></div>
   <div class="hero-inner">
     <!-- LEFT: Numbered Benefits -->
     <div class="hero-benefits">
@@ -5244,6 +5501,20 @@ footer::before {
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <span class="hero-price-tag"><strong>$0.82/day</strong> &middot; both mom & baby</span>
+      </div>
+      <!-- Social Proof Bar -->
+      <div class="wm-social-proof">
+        <div class="wm-avatar-stack">
+          <div class="wm-avatar" style="background-image:url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop')"></div>
+          <div class="wm-avatar" style="background-image:url('https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop')"></div>
+          <div class="wm-avatar" style="background-image:url('https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop')"></div>
+          <div class="wm-avatar" style="background-image:url('https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop')"></div>
+          <div class="wm-avatar" style="background-image:url('https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop')"></div>
+        </div>
+        <div>
+          <div class="wm-social-proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="wm-social-proof-text">Trusted by <strong>50,000+</strong> moms worldwide</div>
+        </div>
       </div>
     </div>
 
@@ -5304,6 +5575,28 @@ footer::before {
   </div>
 </section>
 
+
+<!-- ═══ MARQUEE TICKER 1: After Hero ═══ -->
+<div class="wm-marquee">
+  <div class="wm-marquee-track">
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Pregnancy Tracking</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Expert-Reviewed Insights</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>AI Health Analysis</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Personalized Meal Plans</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Sleep Science</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Milestone Tracking</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>24/7 Expert Chat</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>WHO Growth Standards</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Pregnancy Tracking</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Expert-Reviewed Insights</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>AI Health Analysis</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Personalized Meal Plans</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Sleep Science</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Milestone Tracking</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>24/7 Expert Chat</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>WHO Growth Standards</span>
+  </div>
+</div>
 
 <!-- ==================== OLD WAY vs NEW WAY ==================== -->
 <section class="oldnew-section">
@@ -6107,13 +6400,31 @@ footer::before {
 -->
 
 
+<!-- ═══ MARQUEE TICKER 2: Before Experts ═══ -->
+<div class="wm-marquee light reverse">
+  <div class="wm-marquee-track">
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Backed by Johns Hopkins Research</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>WHO Growth Standards</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>AAP Guideline Compliant</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>500+ Peer-Reviewed Studies</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Board-Certified Pediatricians</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>HIPAA Secure</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Backed by Johns Hopkins Research</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>WHO Growth Standards</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>AAP Guideline Compliant</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>500+ Peer-Reviewed Studies</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>Board-Certified Pediatricians</span>
+    <span class="wm-marquee-item"><span class="wm-marquee-dot"></span>HIPAA Secure</span>
+  </div>
+</div>
+
 <!-- ==================== SECTION 9A: EXPERT REVIEWS CAROUSEL ==================== -->
 <section class="expert-carousel-section" id="experts">
   <div class="container">
     <div class="section-center reveal">
       <div class="section-label" style="justify-content:center;">Endorsed by Experts</div>
-      <h2>The experts we listen to.</h2>
-      <p class="subtitle">Pediatricians and child health specialists from the world's leading institutions trust our evidence-based approach.</p>
+      <h2 style="text-align:center;">The experts we listen to.</h2>
+      <p class="subtitle" style="margin:0 auto;text-align:center;">Pediatricians and child health specialists from the world's leading institutions trust our evidence-based approach.</p>
     </div>
     <div class="expert-carousel-container">
       <div class="expert-carousel-track">
@@ -8742,6 +9053,289 @@ document.getElementById('mobile-menu').addEventListener('click', function(e) {
   });
 })();
 
+</script>
+<!-- ═══════════ LEVEL 5-6 UPGRADE SCRIPTS ═══════════ -->
+<script>
+// ── Loading screen ──
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var loader = document.getElementById('wm-loader');
+    if (loader) loader.classList.add('done');
+  }, 2200);
+});
+
+// ── Scroll progress bar ──
+window.addEventListener('scroll', function() {
+  var scrollTop = document.documentElement.scrollTop;
+  var scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  var progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+  var bar = document.getElementById('wm-scroll-progress');
+  if (bar) bar.style.width = progress + '%';
+}, { passive: true });
+
+// ── Counter animation for social proof numbers ──
+function wmAnimateCounter(el, target, suffix, decimals) {
+  var duration = 2000;
+  var start = performance.now();
+  suffix = suffix || '';
+  decimals = decimals || 0;
+  function update(now) {
+    var elapsed = now - start;
+    var progress = Math.min(elapsed / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    var current = eased * target;
+    if (decimals > 0) {
+      el.textContent = current.toFixed(decimals) + suffix;
+    } else {
+      current = Math.round(current);
+      el.textContent = (target >= 1000 ? current.toLocaleString() : current) + suffix;
+    }
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+// Find stat numbers and animate them on scroll
+var counterDone = new Set();
+var counterObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting && !counterDone.has(entry.target)) {
+      counterDone.add(entry.target);
+      var text = entry.target.textContent.trim();
+      // Extract number from text like "50,000+" or "98%" or "9.2"
+      var match = text.match(/([\d,]+\.?\d*)\s*(%|\+|\/\d+|[a-zA-Z]*)/);
+      if (match) {
+        var numStr = match[1].replace(/,/g, '');
+        var num = parseFloat(numStr);
+        var suffix = match[2] || '';
+        var decimals = numStr.indexOf('.') >= 0 ? (numStr.split('.')[1] || '').length : 0;
+        if (!isNaN(num) && num > 1) {
+          entry.target.textContent = (decimals > 0 ? '0.' + '0'.repeat(decimals) : '0') + suffix;
+          wmAnimateCounter(entry.target, num, suffix, decimals);
+        }
+      }
+    }
+  });
+}, { threshold: 0.5 });
+
+// Target stat numbers in social proof, bento hero card, showcase stats
+document.querySelectorAll('.social-stat-num, .bento-hero-num, .showcase-stat-val').forEach(function(el) {
+  counterObserver.observe(el);
+});
+
+// ═══ HERO MEGA UPGRADE SCRIPTS ═══
+
+// ── Typed text animation for "so you can breathe." ──
+(function() {
+  var heroH1 = document.querySelector('.hero-benefits h1');
+  if (!heroH1) return;
+  var emEl = heroH1.querySelector('em');
+  if (!emEl) return;
+  var fullText = emEl.textContent;
+  emEl.innerHTML = '<span class="wm-typed-text"></span><span class="wm-typed-cursor"></span>';
+  var typedSpan = emEl.querySelector('.wm-typed-text');
+  var cursorSpan = emEl.querySelector('.wm-typed-cursor');
+  var charIndex = 0;
+  // Start typing after the h1 fade-in animation (delay 2.1s + duration 0.9s = 3s)
+  setTimeout(function typeChar() {
+    if (charIndex < fullText.length) {
+      typedSpan.textContent += fullText[charIndex];
+      charIndex++;
+      setTimeout(typeChar, 55 + Math.random() * 35);
+    } else {
+      // Remove cursor after 2 seconds
+      setTimeout(function() {
+        if (cursorSpan) cursorSpan.style.opacity = '0';
+      }, 2000);
+    }
+  }, 3000);
+})();
+
+// ── Parallax depth on showcase photos ──
+(function() {
+  var showcase = document.querySelector('.hero-showcase');
+  if (!showcase) return;
+  var cards = showcase.querySelectorAll('.showcase-card');
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        var rect = showcase.getBoundingClientRect();
+        var centerY = rect.top + rect.height / 2;
+        var viewCenter = window.innerHeight / 2;
+        var offset = (centerY - viewCenter) * -1;
+        cards.forEach(function(card, i) {
+          var speed = i === 0 ? 0.06 : 0.03;
+          card.style.transform = 'translateY(' + (offset * speed) + 'px)';
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Subtle mouse parallax on images
+  showcase.addEventListener('mousemove', function(e) {
+    var rect = showcase.getBoundingClientRect();
+    var x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+    var y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+    cards.forEach(function(card, i) {
+      var img = card.querySelector('.sc-photo img');
+      if (img) {
+        var intensity = i === 0 ? 8 : 5;
+        img.style.transform = 'scale(1.05) translate(' + (x * intensity) + 'px, ' + (y * intensity) + 'px)';
+      }
+    });
+  });
+  showcase.addEventListener('mouseleave', function() {
+    cards.forEach(function(card) {
+      var img = card.querySelector('.sc-photo img');
+      if (img) img.style.transform = 'scale(1)';
+    });
+  });
+})();
+
+// ── Floating particles ──
+(function() {
+  var container = document.getElementById('wm-particles');
+  if (!container || window.innerWidth < 769) return;
+  var colors = ['rose', 'sage', 'blush'];
+  for (var i = 0; i < 12; i++) {
+    var p = document.createElement('div');
+    p.className = 'wm-particle ' + colors[i % 3];
+    var size = 20 + Math.random() * 60;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.left = (Math.random() * 100) + '%';
+    p.style.animationDuration = (8 + Math.random() * 12) + 's';
+    p.style.animationDelay = (Math.random() * 10) + 's';
+    container.appendChild(p);
+  }
+})();
+
+// ═══ SECTION-WIDE UPGRADES ═══
+
+// ── Chatbot typing indicator injection ──
+(function() {
+  var chatBody = document.querySelector('.chat-body');
+  if (!chatBody) return;
+  var lastAI = chatBody.querySelectorAll('.chat-msg.ai');
+  if (lastAI.length > 0) {
+    var typingDiv = document.createElement('div');
+    typingDiv.className = 'wm-typing-indicator';
+    typingDiv.innerHTML = '<span class="wm-typing-dot"></span><span class="wm-typing-dot"></span><span class="wm-typing-dot"></span>';
+    typingDiv.style.display = 'none';
+    chatBody.appendChild(typingDiv);
+    // Show typing indicator when chat demo is in view
+    var chatObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          typingDiv.style.display = 'inline-flex';
+          setTimeout(function() { typingDiv.style.display = 'none'; }, 3000);
+          chatObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+    chatObserver.observe(chatBody);
+  }
+})();
+
+// ── Way step number counter animation ──
+(function() {
+  var wayStepNums = document.querySelectorAll('.way-step-num');
+  if (!wayStepNums.length) return;
+  var wayObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        var el = e.target;
+        var target = parseInt(el.textContent);
+        if (!isNaN(target) && target > 0) {
+          el.textContent = '0';
+          var count = 0;
+          var interval = setInterval(function() {
+            count++;
+            el.textContent = count;
+            if (count >= target) clearInterval(interval);
+          }, 120);
+        }
+        wayObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  wayStepNums.forEach(function(el) { wayObserver.observe(el); });
+})();
+
+// ── Review cards stagger entrance ──
+(function() {
+  var reviewCards = document.querySelectorAll('.review-card');
+  reviewCards.forEach(function(card, i) {
+    card.style.transitionDelay = ((i % 4) * 0.08) + 's';
+  });
+})();
+
+// ── Expert carousel pause on hover ──
+(function() {
+  var tracks = document.querySelectorAll('.expert-carousel-track, .photo-carousel-track');
+  tracks.forEach(function(track) {
+    track.addEventListener('mouseenter', function() {
+      track.style.animationPlayState = 'paused';
+    });
+    track.addEventListener('mouseleave', function() {
+      track.style.animationPlayState = 'running';
+    });
+  });
+})();
+
+// ── Counter animation for pricing/stats across ALL sections ──
+(function() {
+  var statEls = document.querySelectorAll('.social-stat-num, .bento-hero-num, .bento-sub-stat-num, .cat-count, .live-counter');
+  if (!statEls.length) return;
+  var statObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting && !e.target.dataset.counted) {
+        e.target.dataset.counted = '1';
+        var text = e.target.textContent.trim();
+        var match = text.match(/([\d,]+\.?\d*)\s*(%|\+|\/\d+|[a-zA-Z]*)/);
+        if (match) {
+          var num = parseFloat(match[1].replace(/,/g, ''));
+          var suffix = match[2] || '';
+          if (!isNaN(num) && num > 0) {
+            e.target.textContent = '0' + suffix;
+            wmAnimateCounter(e.target, num, suffix);
+          }
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+  statEls.forEach(function(el) { statObserver.observe(el); });
+})();
+
+// ── Sticky CTA bounce on first appearance ──
+(function() {
+  var stickyCta = document.getElementById('sticky-survey-cta');
+  if (!stickyCta) return;
+  var alreadyBounced = false;
+  var stickyObs = new MutationObserver(function(mutations) {
+    mutations.forEach(function(m) {
+      if (m.target.classList.contains('visible') && !alreadyBounced) {
+        alreadyBounced = true;
+        // bounce animation applied via CSS
+      }
+    });
+  });
+  stickyObs.observe(stickyCta, { attributes: true, attributeFilter: ['class'] });
+})();
+
+// ── Enhanced reveal-scale for bento cards ──
+document.querySelectorAll('.bento-item').forEach(function(el) {
+  el.classList.add('reveal-scale');
+});
+// Re-observe with existing observer
+if (typeof revealObserver !== 'undefined') {
+  document.querySelectorAll('.reveal-scale').forEach(function(el) {
+    revealObserver.observe(el);
+  });
+}
 </script>
 </body>
 </html>
