@@ -2602,7 +2602,25 @@ nav.scrolled {
   color: var(--warm-gray);
 }
 
-/* ==================== APP DOWNLOAD CARD ==================== */
+/* ==================== APP DOWNLOAD CARD (STEP 2) ==================== */
+.gs-step-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: var(--sage-light);
+  border-radius: 14px;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+  color: var(--sage-deep);
+  animation: wmSuccessPop 0.5s var(--ease-spring);
+}
+.gs-step-success strong { color: var(--charcoal); }
+@keyframes wmSuccessPop {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
 .app-download-content {
   text-align: center;
   padding: 8px 0 4px;
@@ -6193,7 +6211,7 @@ footer a:hover::after{width:100%}
         </div>
         <h3>Kick Counter</h3>
         <p>Count and time every kick from week 24+. Get alerts if movement patterns change. Peace of mind, one tap at a time.</p>
-        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();document.getElementById('pricing').scrollIntoView({behavior:'smooth',block:'start'});">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();var el=document.getElementById('gs-email');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});setTimeout(function(){el.focus();},600);}">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <!-- 2: Contraction Timer -->
       <div class="tool-card">
@@ -6202,7 +6220,7 @@ footer a:hover::after{width:100%}
         </div>
         <h3>Contraction Timer</h3>
         <p>Track frequency, duration, and intervals. The app tells you when it's time to go to the hospital &mdash; no guessing.</p>
-        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();document.getElementById('pricing').scrollIntoView({behavior:'smooth',block:'start'});">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();var el=document.getElementById('gs-email');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});setTimeout(function(){el.focus();},600);}">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <!-- 3: Nutrition Tracking -->
       <div class="tool-card">
@@ -6211,7 +6229,7 @@ footer a:hover::after{width:100%}
         </div>
         <h3>Nutrition Tracking</h3>
         <p>Log breastfeeding, formula, solids. Track iron, calcium, DHA intake. Personalized meal plans based on baby's age.</p>
-        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();document.getElementById('pricing').scrollIntoView({behavior:'smooth',block:'start'});">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();var el=document.getElementById('gs-email');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});setTimeout(function(){el.focus();},600);}">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <!-- 4: Stool & Health Monitor -->
       <div class="tool-card">
@@ -6220,7 +6238,7 @@ footer a:hover::after{width:100%}
         </div>
         <h3>Stool &amp; Health Monitor</h3>
         <p>Record frequency, color, and consistency. Combined with temperature data, our AI detects early signs of illness before symptoms become obvious.</p>
-        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();document.getElementById('pricing').scrollIntoView({behavior:'smooth',block:'start'});">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();var el=document.getElementById('gs-email');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});setTimeout(function(){el.focus();},600);}">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <!-- 5: Early Warning Alerts -->
       <div class="tool-card">
@@ -6229,7 +6247,7 @@ footer a:hover::after{width:100%}
         </div>
         <h3>Early Warning Alerts</h3>
         <p>AI cross-references stool changes, temperature spikes, sleep disruption, and feeding patterns to flag potential health issues 24-48 hours early.</p>
-        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();document.getElementById('pricing').scrollIntoView({behavior:'smooth',block:'start'});">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();var el=document.getElementById('gs-email');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});setTimeout(function(){el.focus();},600);}">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <!-- 6: Sleep & Growth Tracker -->
       <div class="tool-card">
@@ -6238,7 +6256,7 @@ footer a:hover::after{width:100%}
         </div>
         <h3>Sleep &amp; Growth Tracker</h3>
         <p>Track naps, night sleep, and growth measurements. WHO percentile charts updated in real-time. Spot sleep regressions early.</p>
-        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();document.getElementById('pricing').scrollIntoView({behavior:'smooth',block:'start'});">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#gs-email" class="tool-cta" onclick="event.preventDefault();var el=document.getElementById('gs-email');if(el){var y=el.getBoundingClientRect().top+window.pageYOffset-100;window.scrollTo({top:y,behavior:'smooth'});setTimeout(function(){el.focus();},600);}">Try it in the app <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
 
@@ -7330,8 +7348,8 @@ footer a:hover::after{width:100%}
       <div class="gs-hero-text">
         <div class="section-label">The Heart of Wermom</div>
         <h2>The more we know,<br><span style="color:var(--rose);">the better we care</span></h2>
-        <p class="subtitle" style="text-align:left;">Great care starts with understanding. Download Wermom and complete a short health assessment — the same kind of intake form a top pediatric clinic would use. Within 24 hours, our experts will return a <strong>free personalized report</strong> for both mom and baby.</p>
-        <div class="gs-hero-badge" style="display:inline-block; margin-top:20px;">93 questions &middot; 7 categories &middot; Free for 7 days</div>
+        <p class="subtitle" style="text-align:left;">Great care starts with understanding. Fill in your details, then complete a short health assessment — the same kind of intake form a top pediatric clinic would use. Within 24 hours, our experts will return a <strong>free personalized report</strong> for both mom and baby.</p>
+        <div class="gs-hero-badge" style="display:inline-block; margin-top:20px;">93 questions &middot; 7 categories &middot; 100% free</div>
       </div>
       <div class="gs-hero-visual">
         <div class="gs-hero-image" style="margin:0;">
@@ -7346,7 +7364,7 @@ footer a:hover::after{width:100%}
           </div>
         </div>
         <div style="text-align:center; margin-top:12px;">
-          <a href="#pricing" class="gs-assessment-link" onclick="event.preventDefault(); document.querySelector('.app-store-buttons').scrollIntoView({behavior:'smooth', block:'center'});">Download the App &rarr;</a>
+          <a href="#pricing" class="gs-assessment-link" onclick="event.preventDefault(); var el = document.getElementById('gs-email'); if(el){ var y = el.getBoundingClientRect().top + window.pageYOffset - 100; window.scrollTo({top: y, behavior:'smooth'}); setTimeout(function(){ el.focus(); }, 600); }">Do the Free Assessment &rarr;</a>
         </div>
       </div>
     </div>
@@ -7412,14 +7430,69 @@ footer a:hover::after{width:100%}
         </div>
       </div>
 
-      <!-- Right: App Download Card -->
+      <!-- Right: Lead Capture Form + App Download (2-step) -->
       <div class="getstarted-form-card reveal">
         <div class="getstarted-card-header">
           <div class="getstarted-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Free Assessment</div>
           <p class="getstarted-trust">Trusted by <strong>30,000+</strong> mothers worldwide</p>
         </div>
 
-        <div class="app-download-content">
+        <!-- STEP 1: Form -->
+        <div id="gs-step-form">
+          <form class="getstarted-form" onsubmit="event.preventDefault(); showDownloadStep();">
+            <div class="gs-field">
+              <label for="gs-name">Your Name</label>
+              <input type="text" class="gs-input" id="gs-name" placeholder="e.g. Sarah Chen" required>
+            </div>
+            <div class="gs-field">
+              <label for="gs-email">Email Address</label>
+              <input type="email" class="gs-input" id="gs-email" placeholder="e.g. sarah@email.com" required>
+            </div>
+            <div class="gs-row">
+              <div class="gs-field">
+                <label for="gs-phone">Phone Number</label>
+                <input type="tel" class="gs-input" id="gs-phone" placeholder="e.g. +1 555 123 4567">
+              </div>
+              <div class="gs-field">
+                <label for="gs-country">Country</label>
+                <select class="gs-input gs-select" id="gs-country" required>
+                  <option value="" disabled selected>Select your country</option>
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>Canada</option>
+                  <option>Australia</option>
+                  <option>Brazil</option>
+                  <option>Mexico</option>
+                  <option>Nigeria</option>
+                  <option>South Africa</option>
+                  <option>Kenya</option>
+                  <option>Ghana</option>
+                  <option>Germany</option>
+                  <option>France</option>
+                  <option>Japan</option>
+                  <option>South Korea</option>
+                  <option>Singapore</option>
+                  <option>Vietnam</option>
+                  <option>India</option>
+                  <option>Colombia</option>
+                  <option>Argentina</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn-primary gs-submit">
+              <span>Continue to Health Survey</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- STEP 2: App Download (hidden initially) -->
+        <div id="gs-step-download" class="app-download-content" style="display:none;">
+          <div class="gs-step-success">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--sage-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>You're all set, <strong id="gs-user-name-display">Sarah</strong>!</span>
+          </div>
           <div class="app-download-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
           </div>
@@ -7427,7 +7500,6 @@ footer a:hover::after{width:100%}
           <p class="app-download-subtitle">93 questions &middot; 7 categories &middot; Personalized report within 24h</p>
 
           <div class="app-store-buttons">
-            <!-- Apple App Store Badge -->
             <a href="https://apps.apple.com/app/wermom" target="_blank" rel="noopener" class="store-badge" aria-label="Download on the App Store">
               <svg viewBox="0 0 120 40" width="150" height="50">
                 <rect width="120" height="40" rx="6" fill="#000"/>
@@ -7438,8 +7510,6 @@ footer a:hover::after{width:100%}
                 </g>
               </svg>
             </a>
-
-            <!-- Google Play Badge -->
             <a href="https://play.google.com/store/apps/details?id=com.wermom" target="_blank" rel="noopener" class="store-badge" aria-label="Get it on Google Play">
               <svg viewBox="0 0 120 40" width="150" height="50">
                 <rect width="120" height="40" rx="6" fill="#000"/>
@@ -7483,11 +7553,11 @@ footer a:hover::after{width:100%}
 
         <div class="gs-live-counter">
           <span class="gs-live-dot"></span>
-          <span id="gs-live-count">23</span> mothers joined today
+          <span id="gs-live-count">23</span> people are taking this survey right now
         </div>
         <div class="gs-footer">
           <div class="gs-footer-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Your data is encrypted &amp; GDPR compliant</div>
-          <div class="gs-footer-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> 7-day free trial &middot; No credit card required</div>
+          <div class="gs-footer-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Takes 5&ndash;8 minutes to complete</div>
         </div>
       </div>
     </div>
@@ -8540,7 +8610,7 @@ footer a:hover::after{width:100%}
 <!-- Sticky Survey CTA (Mobile only) -->
 <div class="sticky-survey-cta" id="sticky-survey-cta">
   <a href="#pricing">
-    Download Free — 7 Day Trial
+    Start Free Assessment — It Only Takes 5 Min
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
 </div>
@@ -8769,7 +8839,7 @@ function sendChat() {
     aiMsg.innerHTML = 'Great question! To give you a truly accurate answer, I need to cross-reference this with your baby\'s complete health profile — feeding logs, sleep patterns, growth data, and medical history. That\'s what makes Wermom different from generic advice.<br><br><strong>Start your free health assessment</strong> and I\'ll be able to answer this (and hundreds more questions) with insights built entirely on YOUR child\'s data. <a href="#pricing" style="color:#F4A886;text-decoration:underline;cursor:pointer;">Begin free assessment &rarr;</a>';
     messages.appendChild(aiMsg);
     messages.scrollTop = messages.scrollHeight;
-    input.placeholder = 'Download the app to unlock personalized answers...';
+    input.placeholder = 'Start your assessment to unlock personalized answers...';
   }, 800);
 }
 
@@ -8781,8 +8851,46 @@ document.getElementById('chat-input').addEventListener('keydown', (e) => {
 
 // WEB-06: Lead capture → Survey redirect (PII via POST-like sessionStorage, not URL params)
 function goToSurvey() {
-  // Form removed — redirect to app download section
-  document.getElementById('pricing').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Legacy fallback — trigger download step
+  showDownloadStep();
+}
+
+function showDownloadStep() {
+  var name = document.getElementById('gs-name').value.trim();
+  var email = document.getElementById('gs-email').value.trim();
+  var phone = document.getElementById('gs-phone').value.trim();
+  var country = document.getElementById('gs-country').value;
+  if (!name || !email) { alert('Please fill in your name and email.'); return; }
+
+  // Store lead data
+  try {
+    sessionStorage.setItem('wermom_lead', JSON.stringify({ name: name, email: email, phone: phone, country: country }));
+  } catch(e) {}
+
+  // Show first name in success message
+  var firstName = name.split(' ')[0];
+  var nameEl = document.getElementById('gs-user-name-display');
+  if (nameEl) nameEl.textContent = firstName;
+
+  // Animate: fade out form, fade in download step
+  var formStep = document.getElementById('gs-step-form');
+  var dlStep = document.getElementById('gs-step-download');
+  formStep.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+  formStep.style.opacity = '0';
+  formStep.style.transform = 'translateY(-10px)';
+  setTimeout(function() {
+    formStep.style.display = 'none';
+    dlStep.style.display = 'block';
+    dlStep.style.opacity = '0';
+    dlStep.style.transform = 'translateY(10px)';
+    dlStep.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    requestAnimationFrame(function() {
+      dlStep.style.opacity = '1';
+      dlStep.style.transform = 'translateY(0)';
+    });
+    // Scroll the card into view nicely
+    document.querySelector('.getstarted-form-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 400);
 }
 
 // ==================== SMOOTH SCROLL FOR ANCHOR LINKS ====================
