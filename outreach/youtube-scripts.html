@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wermom YouTube Video Scripts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.8;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .video {
+            background: white;
+            padding: 40px;
+            margin-bottom: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            border-left: 5px solid #667eea;
+        }
+
+        .video-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .video-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .video-meta {
+            color: #999;
+            font-size: 0.95em;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .video-section {
+            margin-bottom: 30px;
+        }
+
+        .video-section h3 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            margin-top: 20px;
+        }
+
+        .video-section h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .script-text {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+            margin: 12px 0;
+            font-size: 0.95em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .script-text p {
+            margin-bottom: 12px;
+        }
+
+        .script-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .note {
+            background: #fff3cd;
+            padding: 12px 15px;
+            border-radius: 6px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+            font-size: 0.9em;
+            color: #856404;
+        }
+
+        .talking-points {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #2196f3;
+            margin: 15px 0;
+        }
+
+        .talking-points ul {
+            margin-left: 20px;
+        }
+
+        .talking-points li {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .cta-section {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+            margin-top: 20px;
+        }
+
+        .cta-section strong {
+            color: #667eea;
+        }
+
+        .instructions {
+            background: #f0f4ff;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 5px solid #667eea;
+        }
+
+        .instructions h3 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .instructions ul {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .copy-instruction {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 25px;
+            color: #0066cc;
+            font-size: 0.95em;
+            border-left: 4px solid #0066cc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            margin-top: 60px;
+            border-top: 2px solid #ddd;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .video-title {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Wermom YouTube Video Scripts</h1>
+            <p>5 complete video scripts (5-8 minutes each) for mommy influencer outreach</p>
+        </header>
+
+        <div class="instructions">
+            <h3>How to Use These Scripts:</h3>
+            <ul>
+                <li>Read through the script to understand the flow and talking points</li>
+                <li>Personalize with your own experiences and speaking style</li>
+                <li>Record intro with strong hook to capture attention in first 10 seconds</li>
+                <li>Follow the script loosely—feel free to expand on points naturally</li>
+                <li>Include screen recordings or app tours where noted</li>
+                <li>End with strong CTA directing viewers to link in description</li>
+                <li>Add B-roll of babies, apps, parenting moments for visual interest</li>
+                <li>Include thumbnail with text overlay of main hook</li>
+            </ul>
+        </div>
+
+        <!-- VIDEO 1 -->
+        <div class="video">
+            <span class="video-number">VIDEO 1 / 5</span>
+            <h2 class="video-title">I Tested the TOP 5 Baby Health Apps — Here's My Honest Ranking</h2>
+            <div class="video-meta">
+                Duration: 7-8 minutes | Category: App Review | Difficulty: Moderate
+            </div>
+
+            <div class="video-section">
+                <h3>HOOK (0-10 seconds)</h3>
+                <div class="script-text">
+                    <p>"I tested every popular baby health app on the market so you don't have to. And one of them is such a game-changer that I threw away my pen and paper baby notebook. Here are my top five."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>INTRO (10-30 seconds)</h3>
+                <div class="script-text">
+                    <p>"Hey mama! If you're new here, I'm [NAME] and I'm obsessed with finding tools that actually make parenting easier. Today we're ranking baby health apps because, let's be honest, you need to track your baby's health but you don't need it to be complicated. I've been using these apps for weeks and I'm breaking down exactly which ones are worth your time and which ones are just taking up phone storage."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>APP 1: Baby Tracker (1:00-1:45)</h3>
+                <div class="script-text">
+                    <p>"Let's start with Baby Tracker. This is the most basic option. It does one thing: lets you log your baby's activities. Feeding, sleep, diaper changes. If you want a simple log with zero bells and whistles, this works. But here's the problem: once you've logged the data, what do you do with it? There's no trend analysis, no pattern recognition, nothing that actually helps you understand your baby. It's a log for a log's sake. Rating: 2 out of 5 stars."</p>
+                </div>
+                <div class="note">
+                    [Show screenshots of Baby Tracker interface for 15 seconds]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>APP 2: Glow Baby (1:45-2:45)</h3>
+                <div class="script-text">
+                    <p>"Glow Baby is gorgeous. Seriously, the design is beautiful. But beautiful doesn't mean useful. It's packed with features—maybe too many features. You open it thinking you'll log one thing and suddenly there are five different options. After a week of using this, I felt overwhelmed every time I opened it. Plus, I love that it tracks development milestones, but the data visualization is lacking. I want to see patterns, and Glow Baby doesn't give me that. Gorgeous design, overwhelming to use. Rating: 2.5 out of 5 stars."</p>
+                </div>
+                <div class="note">
+                    [Show Glow Baby interface walkthrough for 30 seconds—emphasize beautiful but confusing layout]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>APP 3: Thrive (2:45-3:45)</h3>
+                <div class="script-text">
+                    <p>"Thrive is really focused on one thing: developmental milestones. If your main concern is 'is my baby hitting milestones on track?' then Thrive is great. It's well-designed for that specific purpose. But if you need to track health—symptoms, fevers, medication, feeding patterns—this is not your app. It's really specific in its focus. If you want a comprehensive baby health app, look somewhere else. Rating: 3 out of 5 stars."</p>
+                </div>
+                <div class="note">
+                    [Show milestone tracking features of Thrive]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>APP 4: BabyCenter (3:45-4:45)</h3>
+                <div class="script-text">
+                    <p>"BabyCenter tries to be everything—articles, community forums, tracking, developmental guides. Honestly? That's too much. I found myself reading articles obsessively instead of actually tracking my baby. The community forums fed my anxiety instead of reassuring me. And the tracking itself is just a basic log. I think BabyCenter is good for certain parents, but if you use it like I did, it becomes an anxiety spiral, not a helpful tool. Rating: 2.5 out of 5 stars."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>APP 5: Wermom (4:45-6:45) — THE WINNER</h3>
+                <div class="script-text">
+                    <p>"And then there's Wermom, which is the app I actually use every single day. Here's what makes it different: it does one thing incredibly well—it helps you track and understand your baby's health through organized data.</p>
+
+                    <p>Let me show you what I mean. [OPEN APP] You can log feeding, sleep, symptoms, mood, medication, everything. But here's the game-changer: you can actually SEE your data. [SHOW TREND VISUALIZATION] Look at this. Instead of a random list of entries, I can see the timeline of my baby's symptoms. I can see when his temperature was highest and when it started trending down. I can see if his sleep is improving.</p>
+
+                    <p>Last month my baby had a recurring rash. Using other apps, I would have had a list of dates that I logged it. With Wermom, I could see the pattern clearly: it appeared 24-48 hours after I ate dairy. I showed this data to my pediatrician and we identified the issue immediately. We eliminated dairy and the rash cleared up within a week.</p>
+
+                    <p>This is the difference between data and information. Wermom turns your logged data into information you can actually use. And it's designed to be quick—logging takes like 30 seconds. No overwhelm, no complexity.</p>
+
+                    <p>The organization is amazing too. All my baby's health information is in one place. His vaccinations, his temperature history, his feeding patterns, everything. When I go to the pediatrician, I can show them organized data instead of vague descriptions.</p>
+
+                    <p>This is the app I threw away my baby notebook for. And honestly, I'm never going back. Rating: 5 out of 5 stars."</p>
+                </div>
+                <div class="note">
+                    [Record 2-3 minute walkthrough of Wermom interface, showing: data entry, trend visualization, sharing features, organizational structure]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>RANKING SUMMARY (6:45-7:15)</h3>
+                <div class="script-text">
+                    <p>"So here's my final ranking:</p>
+                    <p>5. BabyCenter (anxiety spiral)</p>
+                    <p>4. Glow Baby (pretty but complicated)</p>
+                    <p>3. Baby Tracker (basic but useless)</p>
+                    <p>2. Thrive (good if milestones are your only concern)</p>
+                    <p>1. Wermom (actually helps you understand your baby's health)"</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>CTA (7:15-7:45)</h3>
+                <div class="script-text">
+                    <p>"If you're looking for an app that actually helps you track your baby's health and spot patterns, Wermom is it. I've linked it in the description—check it out and see if it's right for you. And hey, if you found this helpful, please like this video and subscribe so you see more honest product reviews. Thanks for watching, mama!"</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <strong>CTA Copy:</strong> Use this in video description: "Find Wermom: [link] | Track your baby's health, spot patterns, understand what's really happening. Full transparency: I genuinely love this app."
+            </div>
+
+            <div class="copy-instruction">
+                ✓ Download this script, personalize with your own experiences, and record. Include app walkthrough footage.
+            </div>
+        </div>
+
+        <!-- VIDEO 2 -->
+        <div class="video">
+            <span class="video-number">VIDEO 2 / 5</span>
+            <h2 class="video-title">Wermom Review: Is This $25/Month Baby App Worth It?</h2>
+            <div class="video-meta">
+                Duration: 6-7 minutes | Category: Product Review | Difficulty: Easy
+            </div>
+
+            <div class="video-section">
+                <h3>HOOK (0-10 seconds)</h3>
+                <div class="script-text">
+                    <p>"Is Wermom worth $25 a month? I've been using it for three months and I'm about to tell you if it's worth paying for or if you should stick with free apps."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>INTRO (10-30 seconds)</h3>
+                <div class="script-text">
+                    <p>"Hey! So I've been using Wermom for three months now and I've been getting tons of questions about whether it's actually worth the price. Today I'm breaking down exactly what you get, what you don't get, and whether it's worth $25 a month for your baby's health tracking. Let's dig in."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>WHAT YOU GET (1:00-3:30)</h3>
+                <div class="script-text">
+                    <p>"Here's what I use Wermom for every single day: [OPEN APP]</p>
+
+                    <p>First, health tracking. I log my baby's temperature, symptoms, feeding, sleep, medications, mood. Everything goes in one place. [SHOW DATA ENTRY] See how easy this is? Takes 30 seconds, max.</p>
+
+                    <p>Second, trend visualization. [SHOW GRAPHS] Instead of having a random list, I can see trends. Is his temperature getting better? I can see the trajectory. Is his sleep improving? I can see the data.</p>
+
+                    <p>Third, the organizational features. [SHOW ORGANIZATION] All my vaccination records are here. I can photograph important documents and they're organized by date. When I go to the pediatrician, I'm prepared.</p>
+
+                    <p>Fourth, shareability. [SHOW SHARE FEATURE] I can create a summary and share it with my pediatrician or with my partner. When my husband asks 'has she eaten today?' I can just show him the app instead of trying to remember.</p>
+
+                    <p>And fifth, the peace of mind. Honestly, knowing that all my baby's health information is organized in one place has reduced my anxiety so much. I'm not keeping notes scattered everywhere. Everything is right here."</p>
+                </div>
+                <div class="note">
+                    [Record full walkthrough of Wermom features for 2 minutes]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>IS IT WORTH $25/MONTH? (3:30-5:30)</h3>
+                <div class="script-text">
+                    <p>"Here's the thing about pricing: $25 a month is $300 a year, which is not cheap. So is it worth it?</p>
+
+                    <p>For me, yes. Here's why: I get so much value from having organized health data that I actually use. I'm not paying for an app that sits on my phone unused. I'm using this every single day. And that investment has directly helped me make better health decisions for my baby.</p>
+
+                    <p>When my baby had a recurring issue, I could see the pattern because of this app. I took that information to my pediatrician and we solved the problem without unnecessary testing or medication.</p>
+
+                    <p>That's worth money to me. Especially compared to paying for a doctor's visit to ask questions I could have answered with data.</p>
+
+                    <p>That said, if you're on a tight budget, there are free apps that do basic tracking. But they don't give you the trend visualization or the organization that makes Wermom special. So it depends on what's important to you.</p>
+
+                    <p>For me, organized health data that actually helps me understand my baby's health? Worth the $25."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>WHAT'S NOT INCLUDED (5:30-6:15)</h3>
+                <div class="script-text">
+                    <p>"Full transparency: Wermom is not a diagnosis tool. It's not going to tell you what's wrong with your baby. It's a tracking tool that helps you see patterns and organize information to discuss with your pediatrician.</p>
+
+                    <p>Also, it's not integrated with your EHR or your pediatrician's records system. You do need to manually input information or photograph documents. I'm hoping they add EHR integration in the future, but for now, it's manual."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>FINAL VERDICT (6:15-6:50)</h3>
+                <div class="script-text">
+                    <p>"Is Wermom worth $25 a month? If you want organized health data, meaningful trend visualization, and a tool that actually helps you understand your baby's health, yes. If you just need a basic log, no.</p>
+
+                    <p>For me, it's been worth every penny. But you have to decide what's important to you."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>CTA (6:50-7:00)</h3>
+                <div class="script-text">
+                    <p>"I've linked Wermom in the description if you want to check it out yourself. Let me know in the comments if you're using it and what you think. And subscribe for more honest product reviews!"</p>
+                </div>
+            </div>
+
+            <div class="copy-instruction">
+                ✓ Focus on honest assessment of pricing and value. Include full app walkthrough. Keep conversational tone.
+            </div>
+        </div>
+
+        <!-- VIDEO 3 -->
+        <div class="video">
+            <span class="video-number">VIDEO 3 / 5</span>
+            <h2 class="video-title">The App Every New Mom NEEDS (Not Sponsored, Just Honest)</h2>
+            <div class="video-meta">
+                Duration: 5-6 minutes | Category: Lifestyle/Parenting | Difficulty: Easy
+            </div>
+
+            <div class="video-section">
+                <h3>HOOK (0-10 seconds)</h3>
+                <div class="script-text">
+                    <p>"There's one app I recommend to literally every new mom I meet. It's not a parenting app, it's not entertainment, it's a health tracking app that changed everything."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>INTRO (10-30 seconds)</h3>
+                <div class="script-text">
+                    <p>"I'm usually skeptical of apps that claim to change your life. But this one actually did. It's called Wermom and I want to tell you about it because I think every new mom should know about this."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>THE PROBLEM (30 seconds - 2:00)</h3>
+                <div class="script-text">
+                    <p>"When you're a new mom, you're dealing with SO much information. Your baby is doing new things every day. You're supposed to track feeding, sleep, diaper changes. You're worried about their health. You're trying to remember if something is normal or concerning.</p>
+
+                    <p>And you're doing all this on no sleep with a brain that doesn't work anymore. Good luck remembering details that might be important later.</p>
+
+                    <p>I found myself writing things down and then losing the papers. Using my phone notes and then forgetting where I wrote things. My husband and I would argue about whether the baby had eaten. I'd go to the pediatrician and couldn't remember important details.</p>
+
+                    <p>It was chaos."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>THE SOLUTION (2:00-4:00)</h3>
+                <div class="script-text">
+                    <p>"Then I found Wermom. [OPEN APP] It's designed specifically for tracking your baby's health in a way that actually helps you.</p>
+
+                    <p>[SHOW FEATURES] You can log anything health-related. Feeding, sleep, temperature, symptoms, medication, mood. It takes like 30 seconds. Then the app organizes it all for you.</p>
+
+                    <p>But here's the genius part: [SHOW TRENDS] you can actually SEE your data. Instead of a random list of entries, you see trends. Your baby's sleep over time. Temperature trends. Symptom patterns.</p>
+
+                    <p>Last month my baby had digestive issues. I used other apps and just had a list of dates. With Wermom, I could see the pattern immediately. It was clearly linked to something in my diet. We figured it out and solved it.</p>
+
+                    <p>That's the difference. Organized data that you can actually use to make decisions. Not just a log for the sake of logging."</p>
+                </div>
+                <div class="note">
+                    [Record 90-second app walkthrough showing main features and trend visualization]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>WHY EVERY NEW MOM NEEDS THIS (4:00-5:15)</h3>
+                <div class="script-text">
+                    <p>"Here's why I recommend this to every new mom:</p>
+
+                    <p>One: You'll actually remember important health information. Your brain is fried, okay? Stop trying to remember things. Log them and let the app remember for you.</p>
+
+                    <p>Two: You'll spot patterns you'd otherwise miss. My baby's rash, my other baby's feeding issues—I would have missed these patterns without this app.</p>
+
+                    <p>Three: Your pediatrician will take you more seriously. When you show up with organized, specific data instead of vague concerns, your doctor can actually help you better.</p>
+
+                    <p>Four: You'll be a more confident parent. Knowing that your baby's health is organized and you have data to back up your decisions makes you feel more in control.</p>
+
+                    <p>Five: Your partner can actually help. [SHOW SHARING] You can share data with your partner so you're both on the same page. No more guessing if the baby ate."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>CTA (5:15-5:50)</h3>
+                <div class="script-text">
+                    <p>"If you're pregnant or a new mom, do yourself a favor and check out Wermom. I've linked it in the description. I'm not being paid to say this—I just genuinely think every new mom should know about it.</p>
+
+                    <p>And hey, if you found this helpful, please give it a like and subscribe for more honest parenting content. Thanks!"</p>
+                </div>
+            </div>
+
+            <div class="copy-instruction">
+                ✓ Keep authentic and personal. Emphasize that this is NOT sponsored but genuinely recommended. Show real use cases.
+            </div>
+        </div>
+
+        <!-- VIDEO 4 -->
+        <div class="video">
+            <span class="video-number">VIDEO 4 / 5</span>
+            <h2 class="video-title">How I Track My Baby's Health, Sleep & Nutrition | App Tour</h2>
+            <div class="video-meta">
+                Duration: 8-10 minutes | Category: Tutorial/App Tour | Difficulty: Moderate
+            </div>
+
+            <div class="video-section">
+                <h3>HOOK (0-10 seconds)</h3>
+                <div class="script-text">
+                    <p>"I'm going to show you my complete system for tracking my baby's health, sleep, and nutrition. If you're feeling chaotic about baby tracking, this might help."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>INTRO (10-30 seconds)</h3>
+                <div class="script-text">
+                    <p>"One of my most common questions is 'how do you stay organized with tracking your baby's health?' So today, I'm walking you through my complete system. I'm using Wermom and I'm going to show you exactly how I track everything and why it works for me."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>SECTION 1: HEALTH TRACKING (1:00-3:30)</h3>
+                <div class="script-text">
+                    <p>"Let me start with health tracking. [OPEN APP - SHOW HOME SCREEN] This is where everything lives. I can track:
+
+                    Temperature [CLICK] - I log this whenever I take my baby's temperature. Date, time, temperature reading. It's organized and I can see the trend.
+
+                    [SHOW TEMPERATURE LOG] Look at this—I can see my baby's temperature over the past week. I can see she had a fever on Tuesday that's been trending down. That's useful information I can tell my pediatrician.
+
+                    Symptoms [CLICK] - When my baby is sick, I log her symptoms. Cough, rash, congestion, whatever. [SHOW EXAMPLE] I logged these symptoms on these dates and I can see the progression. The rash appeared on Tuesday, was worst on Thursday, and is clearing up by Saturday.
+
+                    Medications [CLICK] - When she's on medication, I log every dose. [SHOW] This way I know exactly what she's taken and when. No more 'did I give her medicine at 8 or 9?'
+
+                    Doctor's Notes [CLICK] - I photograph my doctor's notes and keep them organized here. [SHOW] All my appointment summaries are in one place, dated and organized."</p>
+                </div>
+                <div class="note">
+                    [Record 2.5-minute walkthrough of health tracking features with actual data/examples]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>SECTION 2: SLEEP TRACKING (3:30-5:30)</h3>
+                <div class="script-text">
+                    <p>"Now sleep tracking. [CLICK SLEEP TAB] This is where I log every nap and every night sleep. [SHOW EXAMPLE] I log when she falls asleep, when she wakes up, how long she slept, and any notes about how the sleep went.
+
+                    [SHOW SLEEP HISTORY] Over time, I can see her sleep patterns. I can see that she sleeps longest in the morning and early afternoon. I can see that nights are getting longer as she gets older.
+
+                    [SHOW TREND] And look at this—the app shows me her sleep trend over time. This is amazing because I can actually see if her sleep is improving or getting worse. When we changed her bedtime, I could see the improvement in the data.
+
+                    Last month when she hit the 4-month sleep regression, I logged her sleep for a week. [SHOW EXAMPLE] I could see that her daytime naps were too long, which was making night sleep harder. We adjusted her nap schedule and night sleep improved. I could see the change in the data.
+
+                    That's the power of actually tracking. I'm not just guessing that things might be better—I can see it."</p>
+                </div>
+                <div class="note">
+                    [Record 2-minute walkthrough showing sleep logs, trends, and how adjustments impacted data]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>SECTION 3: FEEDING & NUTRITION (5:30-7:30)</h3>
+                <div class="script-text">
+                    <p>"Feeding is huge when you have a baby. [CLICK FEEDING TAB] I log every feeding—time, duration, which side, any issues. [SHOW FEEDING LOG] When my baby was having issues, I could actually trace it back to feeding patterns.
+
+                    [SHOW NUTRITION TAB] I also track nutrition. What solid foods she's eaten, when she started them, any reactions. [SHOW EXAMPLE] When I introduced eggs, she had a rash. Because I tracked it, I could see the correlation immediately.
+
+                    [SHOW TREND] The app shows me her feeding frequency and duration over time. I can see that her feeds are getting longer as she gets older. I can see how her nutrition is changing.
+
+                    The coolest part? [SHOW NOTES] I can add notes about her mood during feeding, any concerns, anything relevant. Then when I go to her pediatrician, I have the complete picture."</p>
+                </div>
+                <div class="note">
+                    [Record 2-minute walkthrough of feeding and nutrition tracking with examples]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>SECTION 4: ORGANIZATION & SHARING (7:30-8:45)</h3>
+                <div class="script-text">
+                    <p>"Here's what I love about the organization. [SHOW MAIN SCREEN] Everything is organized by date. I can look back at any day and see exactly what happened. Vaccination records [CLICK], all organized. Doctor appointments [CLICK], all documented.
+
+                    [SHOW SHARING FEATURE] I can create a summary and share it with my pediatrician. I can share it with my partner. My husband can check the app and see if the baby has eaten instead of texting me to ask.
+
+                    [SHOW EXPORT] I can even export my data. Some day when I want to put together a baby book, I'll have all this information organized and ready to go."</p>
+                </div>
+                <div class="note">
+                    [Record 1-minute showing organization features and sharing/export options]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>WHY THIS SYSTEM WORKS (8:45-9:30)</h3>
+                <div class="script-text">
+                    <p>"Here's why this system actually works for me:
+
+                    One: It's fast. Logging takes 30 seconds. I do it while my baby is eating or playing.
+
+                    Two: It's organized. I'm not searching for information. It's all right here, dated and categorized.
+
+                    Three: It's visual. I can see trends instead of having to interpret raw data.
+
+                    Four: It's shareable. I can show my pediatrician or my partner without having to explain everything.
+
+                    Five: It reduces anxiety. I'm not worried that I'm forgetting something important. It's all tracked."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>CTA (9:30-10:00)</h3>
+                <div class="script-text">
+                    <p>"If you want to use a similar system, Wermom is how I do it. I've linked it in the description. And if you try it, let me know what you think in the comments! Thanks for watching!"</p>
+                </div>
+            </div>
+
+            <div class="copy-instruction">
+                ✓ This should be a detailed app walkthrough. Show real data/examples. Spend time on each feature. Record full screen for 8-10 minutes.
+            </div>
+        </div>
+
+        <!-- VIDEO 5 -->
+        <div class="video">
+            <span class="video-number">VIDEO 5 / 5</span>
+            <h2 class="video-title">First Time Mom Must-Have Apps 2026 | My Top 5</h2>
+            <div class="video-meta">
+                Duration: 6-7 minutes | Category: Roundup/Listicle | Difficulty: Easy
+            </div>
+
+            <div class="video-section">
+                <h3>HOOK (0-10 seconds)</h3>
+                <div class="script-text">
+                    <p>"If you're a first-time mom, you're probably wondering which apps are actually worth downloading. I'm sharing my top 5 must-have apps for 2026."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>INTRO (10-30 seconds)</h3>
+                <div class="script-text">
+                    <p>"Hey mama! I know when you're pregnant or about to become a first-time mom, you're probably downloading every parenting app you can find. But honestly, you don't need all of them. Today I'm sharing my top 5 apps that I actually use and recommend to every first-time mom I know."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>APP 1: Wermom (1:00-2:00)</h3>
+                <div class="script-text">
+                    <p>"Number 5: Wermom. This is a health tracking app and honestly, it's the one app every new mom actually needs. I use this every single day to track my baby's health, sleep, feeding, everything. It helps me spot patterns and organize information to discuss with my pediatrician. It's the one app I'd be lost without. Download it."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>APP 2: (CUSTOMIZE - EXAMPLE: Pact or Opal) (2:00-2:45)</h3>
+                <div class="script-text">
+                    <p>"Number 4: [YOUR CHOICE APP - e.g., 'Opal']. This is for managing your own screen time as a mom. Because let's be real, you're going to need to limit your own phone usage while you're parenting. This app helps you stick to phone time boundaries so you can actually be present with your baby."</p>
+                </div>
+                <div class="note">
+                    [Choose your own second app—this is a template]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>APP 3: (CUSTOMIZE - EXAMPLE: Aroma or Calm) (2:45-3:30)</h3>
+                <div class="script-text">
+                    <p>"Number 3: [YOUR CHOICE APP - e.g., 'Calm']. You're going to be stressed. You're going to need to do something for your mental health. This app has guided meditations and relaxation exercises that are specifically designed for new moms. Ten minutes a day keeps me sane."</p>
+                </div>
+                <div class="note">
+                    [Choose your own wellness app—this is a template]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>APP 4: (CUSTOMIZE - EXAMPLE: Peanut) (3:30-4:15)</h3>
+                <div class="script-text">
+                    <p>"Number 2: [YOUR CHOICE APP - e.g., 'Peanut']. This is for connecting with other moms. Because honestly, you're going to need mom friends and community. This app helps you find other local moms and build your village. You don't do this alone."</p>
+                </div>
+                <div class="note">
+                    [Choose your own community/social app—this is a template]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>APP 5: (CUSTOMIZE - EXAMPLE: Find My Family) (4:15-5:00)</h3>
+                <div class="script-text">
+                    <p>"Number 1: [YOUR CHOICE APP - e.g., 'Find My Family']. This is for peace of mind. Location sharing with people you trust so you can know where your baby is. It might sound paranoid, but honestly, having this safety feature gives me peace of mind."</p>
+                </div>
+                <div class="note">
+                    [Choose your own safety/practical app—this is a template]
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>BONUS: APPS TO SKIP (5:00-5:45)</h3>
+                <div class="script-text">
+                    <p>"Quick note on apps to skip: Don't download every parenting app you see. You don't need 10 different tracking apps. You don't need apps that feed your anxiety. You don't need apps that try to do everything.
+
+                    Pick apps that serve a specific purpose and that you'll actually use. If you're downloading an app and not using it, delete it. You don't need the clutter."</p>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h3>CTA (5:45-6:15)</h3>
+                <div class="script-text">
+                    <p>"So there you have it—my top 5 must-have apps for first-time moms. If you want to try Wermom for health tracking, I've linked it in the description.</p>
+
+                    <p>What apps do you use? Let me know in the comments! And if you found this helpful, please like and subscribe for more first-time mom content. Thanks!"</p>
+                </div>
+            </div>
+
+            <div class="copy-instruction">
+                ✓ Fill in the app names for positions 2-5 based on apps you actually use/recommend. Keep focus on Wermom as the standout health tracking app.
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>All scripts created for Wermom outreach campaign | Personalize with your own experiences before recording</p>
+    </footer>
+</body>
+</html>

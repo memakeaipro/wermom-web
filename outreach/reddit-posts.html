@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wermom Reddit Posts - Ready to Share</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .subreddit-section {
+            margin-bottom: 50px;
+        }
+
+        .subreddit-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 8px;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .post-card {
+            background: white;
+            border-left: 5px solid #667eea;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .post-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            gap: 15px;
+        }
+
+        .post-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 8px;
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        .post-meta {
+            background: #f0f4ff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            white-space: nowrap;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .post-content {
+            color: #555;
+            margin: 15px 0;
+            line-height: 1.8;
+            font-size: 0.95em;
+        }
+
+        .post-content p {
+            margin-bottom: 12px;
+        }
+
+        .post-mention {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            color: #856404;
+        }
+
+        .copy-hint {
+            background: #e7f3ff;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            color: #0066cc;
+            margin-top: 15px;
+            border-left: 3px solid #0066cc;
+        }
+
+        .post-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            margin-top: 60px;
+            border-top: 2px solid #ddd;
+        }
+
+        .instructions {
+            background: #f0f4ff;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 5px solid #667eea;
+        }
+
+        .instructions h3 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .instructions ul {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .post-header {
+                flex-direction: column;
+            }
+
+            .post-meta {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Wermom Reddit Posts</h1>
+            <p>25 authentic, ready-to-post Reddit posts across parenting subreddits</p>
+        </header>
+
+        <div class="instructions">
+            <h3>How to Use These Posts:</h3>
+            <ul>
+                <li>Copy each post title and content exactly as written</li>
+                <li>Post to the specified subreddit</li>
+                <li>Feel free to add personal details or adjust wording slightly to match your voice</li>
+                <li>Add suggested flair when posting</li>
+                <li>Engage authentically with comments—don't just post and leave</li>
+                <li>Space posts out over 2-4 weeks to avoid appearing spammy</li>
+            </ul>
+        </div>
+
+        <!-- R/BABYBUMPS -->
+        <div class="subreddit-section">
+            <div class="subreddit-title">r/BabyBumps (5 posts)</div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">1</span>
+                        <div class="post-title">Finally found a way to track everything during pregnancy without losing my mind</div>
+                    </div>
+                    <div class="post-meta">Flair: Question/Advice</div>
+                </div>
+                <div class="post-content">
+                    <p>I'm 28 weeks and things were getting chaotic. I had doctor's notes scattered everywhere, blood pressure readings from home, my OB wanted me tracking sodium intake because of slight swelling, and my midwife wanted weight tracking. I was using three different notes apps and honestly couldn't tell what was normal anymore.</p>
+
+                    <p>My sister recommended this app called <span class="post-mention">Wermom</span> and I was skeptical—I'm not usually an app person—but it's genuinely changed things. Everything is in one place now. I can log my vitals, track symptoms, keep all my doctor's notes organized by visit, and even photograph my ultrasound images to look back on.</p>
+
+                    <p>The best part? I can share summaries with my OB and midwife before appointments. No more "wait, when exactly did the swelling start?" I just pull up the app and I have the timeline right there with my notes. My OB even said it was helpful to see the data organized this way.</p>
+
+                    <p>I wish I'd started doing this earlier in my pregnancy. Has anyone else tried anything like this? I feel like I'm actually prepared for appointments now instead of scrambling to remember details.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/BabyBumps</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">2</span>
+                        <div class="post-title">PSA: Stop writing everything in your phone notes. Here's what I do instead</div>
+                    </div>
+                    <div class="post-meta">Flair: PSA/Advice</div>
+                </div>
+                <div class="post-content">
+                    <p>I see so many posts here from bumpers who are trying to track their pregnancy information across different apps and notes. I used to do this too and it was a nightmare. Let me share what's actually helped us.</p>
+
+                    <p>I started using <span class="post-mention">Wermom</span> around week 12 and it honestly just keeps everything in one spot. Lab results, vitals, weight, symptoms, doctor notes—it's all there. You can even set reminders for medications or follow-ups.</p>
+
+                    <p>What I really love is the data visualization. Instead of trying to remember if my blood pressure was higher last week, I can literally see the trend. My OB asked me about changes in my symptoms, and I had dates and details because they're all logged there. It made me feel way more in control of my pregnancy instead of just hoping I'd remember everything correctly.</p>
+
+                    <p>I've recommended it to three friends so far and they've all said the same thing: why wasn't I doing this from the start?</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/BabyBumps</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">3</span>
+                        <div class="post-title">Managing health anxiety during pregnancy—tools that actually help</div>
+                    </div>
+                    <div class="post-meta">Flair: Mental Health</div>
+                </div>
+                <div class="post-content">
+                    <p>I'm a bit of a worrier (okay, very much a worrier) and this pregnancy has been triggering every health anxiety tendency I have. I've been googling symptoms obsessively and calling my OB about things that are probably totally normal.</p>
+
+                    <p>What's helped more than anything is having a structured way to track how I actually feel. I started using <span class="post-mention">Wermom</span> to log my symptoms—when they happen, how long they last, what makes them better or worse. Just having that data has genuinely reduced my anxiety because now I can see patterns instead of catastrophizing about random symptoms.</p>
+
+                    <p>When I feel that panic coming on, I open the app instead of Google. I see that yes, I had this exact symptom two weeks ago and everything was fine. It's given me a reality check that I needed. My therapist even mentioned that tracking objective data is better than trying to manage anxiety through reassurance seeking.</p>
+
+                    <p>If anyone else struggles with health anxiety during pregnancy, I'd recommend trying something like this. It really does help shift your brain from "everything is wrong" to "let me look at the actual data."</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/BabyBumps</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">4</span>
+                        <div class="post-title">31 weeks and my OB asked me to start tracking more closely—this is what I use</div>
+                    </div>
+                    <div class="post-meta">Flair: Advice</div>
+                </div>
+                <div class="post-content">
+                    <p>I had a conversation with my OB about my increasing blood pressure readings and she asked me to be more diligent about tracking it at home and monitoring for symptoms. She wanted to see trends, not just random numbers I might jot down randomly.</p>
+
+                    <p>I've been using <span class="post-mention">Wermom</span> for a few weeks now and it's perfect for this kind of requirement. I log my BP, any symptoms (headaches, vision changes, swelling), medications, and notes about how I'm feeling. The app timestamps everything and shows trends over time, which is exactly what my OB wants to see.</p>
+
+                    <p>The organization has genuinely made me feel more in control. Instead of feeling like I'm just white-knuckling through the third trimester, I'm actively monitoring my health and have clear data to discuss with my care team. The app even sent me a summary I could screenshot and show at my last appointment.</p>
+
+                    <p>For anyone in the third trimester dealing with more intensive monitoring, I'd really recommend this. It makes the whole process feel less scary when you're being proactive about it.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/BabyBumps</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">5</span>
+                        <div class="post-title">Preparing for labor—what I wish I'd documented better earlier in pregnancy</div>
+                    </div>
+                    <div class="post-meta">Flair: Third Trimester</div>
+                </div>
+                <div class="post-content">
+                    <p>I'm 38 weeks and getting ready for birth, and I've been thinking about how much information I've gathered over the past 40 weeks. Medical records, ultrasound images, conversations with my doctors, symptoms, mood changes—it's all valuable information.</p>
+
+                    <p>I wish I'd been more systematic about documenting this from the start. I've been using <span class="post-mention">Wermom</span> for the second half of my pregnancy and I'm so glad I at least have detailed records for this portion. All my lab work is organized, my ultrasound images are stored and dated, my vitals are tracked, and my doctor notes are all in one place.</p>
+
+                    <p>As I'm thinking about labor and postpartum, it's nice to have a complete health history to reference. I can show my birth team my full history, and if there are any postpartum complications, I have all this baseline data.</p>
+
+                    <p>To anyone early in pregnancy: start keeping good records NOW. You'll thank yourself later. And use something that actually organizes it for you instead of trying to piece it together yourself.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/BabyBumps</div>
+            </div>
+        </div>
+
+        <!-- R/BEYONDTHEBUMP -->
+        <div class="subreddit-section">
+            <div class="subreddit-title">r/beyondthebump (5 posts)</div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">6</span>
+                        <div class="post-title">Finally figured out my newborn's sleep schedule by tracking it obsessively (but in a healthy way)</div>
+                    </div>
+                    <div class="post-meta">Flair: Advice</div>
+                </div>
+                <div class="post-content">
+                    <p>My 6-week-old was all over the place with sleep—some days sleeping great, some days impossible. Everyone kept telling me "just follow their cues" but their cues seemed random to me. I felt like I was going crazy trying to figure out what I was doing wrong.</p>
+
+                    <p>Then I decided to actually track his sleep patterns for a week. I used <span class="post-mention">Wermom</span> to log every sleep session, how long it lasted, what he ate before, his mood when he woke up. After a week of data, I could actually SEE the pattern.</p>
+
+                    <p>Turns out he was most successful sleeping between 8:30-9am and 2:30-4pm, and he was getting overtired if we waited too long after his second feeding. Once we started timing naps intentionally around these windows, everything got so much better. He slept longer, woke less, and was way happier.</p>
+
+                    <p>I know everyone talks about "following baby's cues" but sometimes you need data to identify what the actual cues are. This made such a difference for us. If your newborn seems chaotic, try tracking for a week. You might see patterns you were missing.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/beyondthebump</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">7</span>
+                        <div class="post-title">How I identified my baby's hidden food sensitivity by keeping detailed records</div>
+                    </div>
+                    <div class="post-meta">Flair: Advice</div>
+                </div>
+                <div class="post-content">
+                    <p>My son was 3 months old and I knew something wasn't right. He'd have random fussy periods, skin rashes that came and went, and occasional spit-up. My pediatrician said "babies are just like this" but something felt off.</p>
+
+                    <p>I started tracking EVERYTHING in <span class="post-mention">Wermom</span>—what he ate, when he ate, his mood, skin condition, digestion, everything. After two weeks, I could see a pattern. Every time I had dairy on certain days (I was breastfeeding), he'd get fussy and develop a rash about 4-6 hours later.</p>
+
+                    <p>I eliminated dairy and he transformed overnight. Within a week, no more rashes, way happier, better sleep, less spit-up. My pediatrician said if I hadn't tracked it so carefully, she probably would have assumed it was reflux and put him on medication.</p>
+
+                    <p>The tracking app was key because I could show her the exact correlation in the data. She was impressed and even said this kind of detailed tracking is really valuable for identifying hidden sensitivities. I'm so glad I did this because I could have been dealing with unnecessary medication for months.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/beyondthebump</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">8</span>
+                        <div class="post-title">Postpartum health recovery—why my OB asked me to keep detailed records</div>
+                    </div>
+                    <div class="post-meta">Flair: Postpartum</div>
+                </div>
+                <div class="post-content">
+                    <p>I had a complicated birth and my OB asked me to monitor my postpartum recovery carefully. She wanted me tracking bleeding, any pain, fever, general wellbeing. At the time I thought "I'll just remember all this" and obviously that's ridiculous when you're sleep-deprived.</p>
+
+                    <p>I started using <span class="post-mention">Wermom</span> to track my recovery data. Honestly, it made such a difference not having to rely on my exhausted brain. I logged my vitals, pain levels, bleeding intensity, mood, when I felt ready to do certain activities, etc.</p>
+
+                    <p>At my 2-week postpartum check, I could show my OB a clear picture of my recovery. She could see I'd had a fever spike on day 4 that resolved, see my pain trajectory, see that my bleeding was normalizing appropriately. Instead of me trying to remember vague details, she had data.</p>
+
+                    <p>It also helped me recognize when things were actually improving versus just feeling blurry from sleep deprivation. I could see objective evidence that I was getting better, which helped mentally during those rough early weeks. Highly recommend this for anyone with a complicated postpartum recovery.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/beyondthebump</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">9</span>
+                        <div class="post-title">4-month sleep regression—how tracking helped us survive it</div>
+                    </div>
+                    <div class="post-meta">Flair: Sleep</div>
+                </div>
+                <div class="post-content">
+                    <p>My 4-month-old suddenly stopped sleeping and I was losing my mind. He went from sleeping through the night to waking every 2 hours. Everyone said "it's the 4-month regression" but nobody could tell me WHY his sleep fell apart or what would actually help.</p>
+
+                    <p>Instead of just guessing at solutions, I started tracking his sleep with <span class="post-mention">Wermom</span>. I logged sleep times, his mood when waking, how much he ate, everything. After a week, the data showed his naps were too long during the day, which was making night sleep impossible.</p>
+
+                    <p>We shortened his afternoon nap by 20 minutes and adjusted his bedtime earlier. Within days, his night sleep improved dramatically. Instead of random wake-ups all night, we were back to 1-2 feedings max.</p>
+
+                    <p>The regression didn't disappear, but tracking the data meant I could actually implement solutions instead of just surviving chaos. I knew exactly what was working and what wasn't. If anyone's in the middle of the 4-month regression, I highly recommend tracking for a week to see if there are patterns you can adjust.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/beyondthebump</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">10</span>
+                        <div class="post-title">When to call the pediatrician—I used tracking data to make the decision</div>
+                    </div>
+                    <div class="post-meta">Flair: Advice</div>
+                </div>
+                <div class="post-content">
+                    <p>One of the hardest parts of new parenthood is knowing when something is normal baby weirdness versus actually requiring a doctor's call. I must have second-guessed myself a hundred times in the first month.</p>
+
+                    <p>What helped was keeping detailed records in <span class="post-mention">Wermom</span>. My daughter had some digestion weirdness and I wasn't sure if I should call. Instead of panicking, I logged her symptoms for 3 days—feeding times, poops, mood, skin, sleep, everything.</p>
+
+                    <p>With that data, I could call my pediatrician and actually describe the pattern clearly. "She has X symptom at Y times after Z feedings, and here's what her poop has looked like for three days." They could immediately tell me if it was normal or needed examination, instead of me being vague and them asking me a hundred follow-up questions.</p>
+
+                    <p>The tracking also helped me feel less anxious because I had INFORMATION instead of just a feeling that something was wrong. Sometimes the data showed me that things were actually within normal range, and I could relax. Having that objective information made me a better advocate for my baby.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/beyondthebump</div>
+            </div>
+        </div>
+
+        <!-- R/NEWPARENTS -->
+        <div class="subreddit-section">
+            <div class="subreddit-title">r/NewParents (5 posts)</div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">11</span>
+                        <div class="post-title">The anxiety of never knowing if my baby is eating enough—solved</div>
+                    </div>
+                    <div class="post-meta">Flair: Feeding/Nutrition</div>
+                </div>
+                <div class="post-content">
+                    <p>My biggest source of anxiety as a new mom was feeding. I was exclusively breastfeeding and had no idea if my baby was actually getting enough milk. He seemed okay but what if he wasn't? What if I was failing at the one job I had?</p>
+
+                    <p>My lactation consultant suggested I track feeds and diapers for a few days to get objective data. Instead of just scribbling on random papers, I used <span class="post-mention">Wermom</span> to log every feed, every diaper, and notes about how he seemed during feeds.</p>
+
+                    <p>Having this organized data was SO reassuring. I could show my pediatrician exactly how many wet diapers he was having, exactly how long he was feeding, and his weight gain pattern. Everything pointed to him eating plenty. Just having that objective evidence calmed my anxiety more than any amount of reassurance could have.</p>
+
+                    <p>I still track feeds—it's become a habit—and honestly it helps me see patterns and notice if anything is off. For anyone anxious about feeding, I can't recommend tracking highly enough. It gives you concrete data instead of just worry.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/NewParents</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">12</span>
+                        <div class="post-title">New parent life hack: stop trying to remember baby's schedule in your head</div>
+                    </div>
+                    <div class="post-meta">Flair: Life Hack</div>
+                </div>
+                <div class="post-content">
+                    <p>I was so sleep-deprived in the first weeks that I genuinely couldn't remember if I'd changed my baby's diaper 10 minutes ago or 2 hours ago. I'd be standing there with a fresh diaper thinking "wait, didn't I just do this?"</p>
+
+                    <p>I started using <span class="post-mention">Wermom</span> instead of trying to keep everything in my head. Every feeding, every diaper, every medication dose, every time he napped—all logged. It sounds like extra work but it actually SAVES time because I don't have to think about it anymore.</p>
+
+                    <p>My partner can check the app and immediately know what the baby ate, when he last pooped, etc. We don't have to argue about whether he's had his vitamin drops. My pediatrician can see the data at checkups. It's become our system of truth instead of us both being confused.</p>
+
+                    <p>I know people did this with pen and paper before, but having it organized digitally with timestamps just makes it so much easier. Highly recommend to anyone feeling lost in those early chaotic weeks.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/NewParents</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">13</span>
+                        <div class="post-title">How detailed baby records helped me spot a medical issue early</div>
+                    </div>
+                    <div class="post-meta">Flair: Advice</div>
+                </div>
+                <div class="post-content">
+                    <p>At my baby's 2-month checkup, my pediatrician asked if he'd had any fevers. I couldn't remember clearly—maybe he felt warm at some point? I wasn't sure. The doctor was concerned about something on his exam and wanted to know his temperature history.</p>
+
+                    <p>Luckily, I'd been using <span class="post-mention">Wermom</span> and had logged his temperature daily. I could immediately show the doctor his complete temperature history for the past 8 weeks. It turned out he had a low-grade fever periodically that I had recorded but hadn't even registered as concerning because I wasn't tracking it systematically.</p>
+
+                    <p>The doctor was able to identify an issue that needed treatment because of that data. She said many parents can't give accurate histories and it makes her job harder. But because I had detailed records, she could act quickly.</p>
+
+                    <p>I'm convinced that tracking helped us catch something early that might have been missed otherwise. Whether it's medical or just peace of mind, keeping good records is worth it. Use an app that actually organizes the data for you instead of loose notes everywhere.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/NewParents</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">14</span>
+                        <div class="post-title">Managing colic—what I wish I'd tracked from the start</div>
+                    </div>
+                    <div class="post-meta">Flair: Advice</div>
+                </div>
+                <div class="post-content">
+                    <p>My baby had colic for the first 12 weeks and it was absolutely brutal. He'd cry inconsolably for hours and I felt helpless. I tried everything but couldn't figure out what was actually working.</p>
+
+                    <p>Around week 6, I decided to track his crying episodes with <span class="post-mention">Wermom</span>—what time they happened, how long they lasted, what we'd tried, his mood before and after. After two weeks of data, I could see that he was much worse between 6-9pm, and he seemed better after we went for walks.</p>
+
+                    <p>Armed with that information, we changed our approach. We prioritized being outside or moving during peak colic hours. We also identified that my afternoon diet seemed to affect his evening colic. It wasn't a magic fix, but having data meant we could be strategic instead of just surviving chaos.</p>
+
+                    <p>I wish I'd been this systematic from the beginning. You can't eliminate colic, but having data helps you identify what might help reduce it. Anyone with a colicky baby—try tracking for a week. You might see patterns that help you cope better.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/NewParents</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">15</span>
+                        <div class="post-title">Stop guessing about your baby's development—track the data instead</div>
+                    </div>
+                    <div class="post-meta">Flair: Development</div>
+                </div>
+                <div class="post-content">
+                    <p>I was constantly wondering if my baby was developing normally. Was she smiling too early? Too late? Was her head control normal for her age? I'd read everything online and second-guess myself constantly.</p>
+
+                    <p>What actually helped was tracking her development milestones in <span class="post-mention">Wermom</span>. Every time she hit a new milestone—first smile, holding head up, rolling over, babbling—I'd note it with a date. I could track her growth and development over time and see progress.</p>
+
+                    <p>When I went to her pediatric checkups, I could tell the doctor exactly when each milestone happened instead of vague guessing. The pediatrician appreciated having concrete dates. And honestly, seeing her progress documented made me way less anxious. I could see she was developing exactly on track.</p>
+
+                    <p>I also love looking back and seeing how far she's come. Having these records will be so special to keep. If you're anxious about development, I'd recommend tracking it. The data will probably reassure you that everything's normal, and if there is an issue, you'll have the information your pediatrician needs.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/NewParents</div>
+            </div>
+        </div>
+
+        <!-- R/MOMMIT -->
+        <div class="subreddit-section">
+            <div class="subreddit-title">r/Mommit (5 posts)</div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">16</span>
+                        <div class="post-title">Making parenting decisions with data instead of guilt and guessing</div>
+                    </div>
+                    <div class="post-meta">Flair: Parenting</div>
+                </div>
+                <div class="post-content">
+                    <p>I realized I was making SO many parenting decisions based on guilt and worry instead of actual information. Is my kid eating too much? Not enough? Too much screen time? Not enough physical activity? I'd spiral about everything.</p>
+
+                    <p>I decided to actually track my kid's day for a few weeks using <span class="post-mention">Wermom</span>—food intake, activities, sleep, everything. Not obsessively, just honest tracking. After two weeks of data, I could see clearly: my kid is eating well, getting plenty of physical activity, sleeping great, not overdoing screen time.</p>
+
+                    <p>Having objective data instead of vague worry has been transformative for my mental health. I can see that I'm actually doing a good job, instead of constantly second-guessing myself. And when something IS off—like one month his sleep got worse—I can see the pattern and address it.</p>
+
+                    <p>For any mom who's drowning in guilt and "am I doing this right?" thoughts, I'd recommend tracking for a couple weeks. You'll probably see that you're doing better than you think. And if there's something that actually needs adjusting, you'll see the data clearly.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/Mommit</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">17</span>
+                        <div class="post-title">Getting everyone on the same page about the kids' routines and health</div>
+                    </div>
+                    <div class="post-meta">Flair: Family/Parenting</div>
+                </div>
+                <div class="post-content">
+                    <p>My husband and I used to argue about stupid stuff like "did she eat already?" or "how much screen time has he had today?" We'd contradict each other and the kids would play us against each other. It was such an unnecessary source of conflict.</p>
+
+                    <p>We started using <span class="post-mention">Wermom</span> as a shared tracking system for both kids. We both log meals, activities, screen time, medication doses, appointment info—everything. Now we're literally always on the same page.</p>
+
+                    <p>There's no more argument about whether the kids brushed their teeth—it's logged. There's no confusion about their schedules because we can both see the data. My husband can handle a sick kid without asking me a million questions because he can see their temperature history and symptoms right there.</p>
+
+                    <p>This might sound like overkill but it's actually saved us from so many unnecessary arguments. And it makes life SO much easier logistically. I can't recommend this highly enough to any parents in a multi-caregiver household. Shared systems for tracking kids' routines and health = less conflict, more teamwork.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/Mommit</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">18</span>
+                        <div class="post-title">Allergy investigation—how tracking helped us identify what was affecting my kid</div>
+                    </div>
+                    <div class="post-meta">Flair: Health/Allergy</div>
+                </div>
+                <div class="post-content">
+                    <p>My 5-year-old had been having eczema flare-ups and occasional stomach issues for months. We'd try eliminating things but could never figure out the trigger. The pediatrician said "maybe it's environmental" which is basically useless.</p>
+
+                    <p>I started tracking EVERYTHING using <span class="post-mention">Wermom</span>—what he ate, when his skin flared up, his bathroom habits, his mood, even what he played with that day. After a month of data, a pattern emerged: his skin flared up 24-48 hours after he had eggs.</p>
+
+                    <p>We tested avoiding eggs and his skin improved dramatically. Within two weeks, it was nearly clear. We've now been egg-free for months and he's so much healthier. Nobody at the pediatrician's office had suggested eggs specifically, but the data showed it clearly.</p>
+
+                    <p>This has been a game-changer for his quality of life. And it all came from being willing to track and look for patterns. If your kid has recurring health issues and you can't figure out the trigger, I highly recommend systematic tracking.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/Mommit</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">19</span>
+                        <div class="post-title">School-age kid health tracking—what I've learned after 5 years</div>
+                    </div>
+                    <div class="post-meta">Flair: Advice</div>
+                </div>
+                <div class="post-content">
+                    <p>I've been tracking my kids' health and wellness data for years now. It started when they were babies and I've just continued it because it's become so useful. Now with a school-age kid and a toddler, I use <span class="post-mention">Wermom</span> to track both of them.</p>
+
+                    <p>With my older kid, I log his mood, sleep, activity level, screen time, and anything health-related. I can see clear patterns like how his mood tanks when he's not getting enough outdoor time, or how one hour of screen time is fine but two hours makes him anxious.</p>
+
+                    <p>I've also got all his doctor records, vaccine records, allergy information, and medication history organized. This was especially helpful when he was sick recently—I could show the pediatrician his complete history.</p>
+
+                    <p>Honest take: this seems like a lot of work but it's not. Once you get in the habit, it takes 2 minutes a day max. And the peace of mind and organizational benefits are so worth it. I plan to keep doing this as long as I have kids at home.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/Mommit</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">20</span>
+                        <div class="post-title">Mom burnout—why tracking your own health data matters too</div>
+                    </div>
+                    <div class="post-meta">Flair: Mental Health</div>
+                </div>
+                <div class="post-content">
+                    <p>I was in the thick of mom burnout and couldn't tell when I was actually sick versus just exhausted versus having a mental health crisis. Everything felt like a crisis when I was in burnout.</p>
+
+                    <p>My therapist suggested I start tracking my own health too—sleep, mood, physical symptoms, exercise, everything. I used <span class="post-mention">Wermom</span> since I was already tracking the kids. Having data about myself was weirdly enlightening.</p>
+
+                    <p>I could see clearly when my sleep was tanking (which was most days), when my mood was consistently low, when I wasn't moving my body at all. This data helped me make concrete changes instead of just spiraling. I prioritized fixing my sleep first because the data showed it was affecting everything else.</p>
+
+                    <p>Within a month of better sleep and a little exercise, my mental health shifted dramatically. The tracking helped me see that the solution wasn't "be a better mom" but "actually take care of yourself." If you're in burnout and can't see clearly, try tracking your own health data. It helps you see what actually needs to change.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/Mommit</div>
+            </div>
+        </div>
+
+        <!-- R/PREGNANT -->
+        <div class="subreddit-section">
+            <div class="subreddit-title">r/pregnant (5 posts)</div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">21</span>
+                        <div class="post-title">Anxious first-time pregnant? Here's what actually helped my anxiety</div>
+                    </div>
+                    <div class="post-meta">Flair: First Trimester</div>
+                </div>
+                <div class="post-content">
+                    <p>I'm 14 weeks and spent the entire first trimester anxious about literally everything. Is baby okay? Am I eating enough? Too much? What if something's wrong? The anxiety was consuming me even though I had no actual reason to think anything was wrong.</p>
+
+                    <p>What helped more than anything was having a structured way to track my pregnancy. I started using <span class="post-mention">Wermom</span> to log my symptoms, my vitals, how I'm feeling. Just having that organized information helped shift my brain from "everything could be wrong" to "here's the actual data."</p>
+
+                    <p>I can see my weight gaining appropriately, my symptoms are what pregnancy books say is normal, my vitals are healthy. It's not magic—it doesn't eliminate anxiety—but it gives you something concrete to hold onto instead of just spiraling thoughts.</p>
+
+                    <p>Plus, my OB has been really impressed with how organized I am at appointments. I show her the app and she immediately sees all the information she needs. It makes me feel more in control and like I'm taking an active role in my pregnancy instead of just hoping things are okay.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/pregnant</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">22</span>
+                        <div class="post-title">Miscarriage after miscarriage—how tracking helped me advocate for myself</div>
+                    </div>
+                    <div class="post-meta">Flair: Miscarriage/Loss</div>
+                </div>
+                <div class="post-content">
+                    <p>This is my third pregnancy after two miscarriages and I was so anxious I could barely function. My OB wasn't too concerned—she said miscarriage is common—but I wanted to make sure everything was being done to prevent it again.</p>
+
+                    <p>I started using <span class="post-mention">Wermom</span> to track everything I could—my symptoms, bleeding (any spotting freaked me out), my mood, my health. I documented everything carefully and brought detailed notes to every appointment.</p>
+
+                    <p>When I came prepared with organized data about my symptoms and health, my OB took me more seriously. We ended up doing some additional monitoring and bloodwork that she might not have suggested otherwise. It felt like I was being more proactive about my care instead of just hoping for the best.</p>
+
+                    <p>I'm not saying tracking prevented anything—I'm just saying it made me feel more in control when I felt powerless. I had information, I had documentation, I was being careful and intentional. I'm now 20 weeks and feeling more hopeful. For anyone who's had losses and is anxious about a subsequent pregnancy, detailed tracking might help you feel more empowered.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/pregnant</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">23</span>
+                        <div class="post-title">Gestational diabetes management—how I track everything to stay healthy</div>
+                    </div>
+                    <div class="post-meta">Flair: Third Trimester/Health</div>
+                </div>
+                <div class="post-content">
+                    <p>I was diagnosed with gestational diabetes at 26 weeks and immediately felt overwhelmed. There's so much to monitor—glucose readings, diet, activity, timing of meals. I was worried I'd screw it up and hurt my baby.</p>
+
+                    <p>My OB recommended keeping detailed records and I used <span class="post-mention">Wermom</span> to track my glucose readings, what I ate, when I exercised, everything. Having all of this organized in one place made the whole thing feel manageable instead of overwhelming.</p>
+
+                    <p>The app shows trends over time, so I can see which foods spike my glucose and which are safe. I can show my OB my readings anytime instead of just at appointments. My hospital even asked me for a summary to have on file before delivery.</p>
+
+                    <p>Managing GD is stressful but having the right tools to track it actually made me feel more in control. I'm now confident I'm doing everything I can to manage this and have a healthy pregnancy and baby. If you're dealing with GD, organized tracking really does help.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/pregnant</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">24</span>
+                        <div class="post-title">35 weeks and finally got the organized pregnancy system I should have had from the start</div>
+                    </div>
+                    <div class="post-meta">Flair: Third Trimester</div>
+                </div>
+                <div class="post-content">
+                    <p>I'm 35 weeks and it just hit me how disorganized my pregnancy information is. My ultrasound images are scattered in my phone, lab results are in different places, doctor's notes are on random papers, nothing is in one place.</p>
+
+                    <p>I started organizing everything using <span class="post-mention">Wermom</span> for the final stretch of pregnancy. I uploaded all my ultrasound images, scanned in my lab results, organized all my doctor's notes. It's been such a relief to have everything in one accessible place.</p>
+
+                    <p>I wish I'd done this from the beginning, but better late than never. Now when I go into labor, I'll have my complete pregnancy and health history organized and ready to share with my hospital. All my medications, allergies, doctor recommendations—everything is there.</p>
+
+                    <p>To anyone early in pregnancy reading this: START NOW. Organize your information as you go. You'll be so glad you did when you get to the end of pregnancy and especially after you deliver. It's such a time-saver and stress-reducer.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/pregnant</div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div>
+                        <span class="post-number">25</span>
+                        <div class="post-title">Work and pregnancy—how I'm managing with organized health tracking</div>
+                    </div>
+                    <div class="post-meta">Flair: Work/Pregnancy</div>
+                </div>
+                <div class="post-content">
+                    <p>I'm 24 weeks and still working full-time, which is exhausting. I have doctor's appointments, symptoms to monitor, and work stress all competing for my attention. I felt like I was dropping the ball on taking care of my pregnancy because I was so focused on work.</p>
+
+                    <p>I started using <span class="post-mention">Wermom</span> to track my pregnancy health in a way that fits into my busy schedule. It takes literally 3 minutes a day to log my symptoms and vitals. I photograph my appointment letters as I get them. I have all my ultrasound images in one place.</p>
+
+                    <p>Now when I'm at work stressed out, I can open the app and see that my health is actually fine and well-managed. I don't have to worry that I'm forgetting something important because everything is tracked. It's become a source of reassurance instead of another thing to stress about.</p>
+
+                    <p>For working pregnant people: you don't have to choose between managing your career and managing your pregnancy. A good tracking system makes it possible to do both without dropping either ball. Highly recommend.</p>
+                </div>
+                <div class="copy-hint">✓ Copy this entire post and share in r/pregnant</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>All posts created for Wermom outreach campaign | Ready to share directly to Reddit</p>
+    </footer>
+</body>
+</html>
