@@ -5509,13 +5509,19 @@ footer::before {
 /* ═══════════════ LEVEL 5-6 UPGRADES ═══════════════ */
 
 /* ── Loading Screen ── */
-.wm-loader{position:fixed;inset:0;background:var(--midnight);z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;transition:opacity .7s ease,visibility .7s ease}
+.wm-loader{position:fixed;inset:0;background:var(--midnight);z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;transition:opacity .7s ease,visibility .7s ease}
 .wm-loader.done{opacity:0;visibility:hidden;pointer-events:none}
-.wm-loader-logo{font-family:var(--font-display);font-size:2.4rem;font-weight:400;color:#fff;letter-spacing:.08em;opacity:0;transform:translateY(20px);animation:wmLoaderIn .8s .2s var(--ease-out) forwards}
-.wm-loader-bar{width:120px;height:2px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden;opacity:0;animation:wmLoaderIn .6s .5s var(--ease-out) forwards}
-.wm-loader-bar::after{content:'';display:block;width:0%;height:100%;background:linear-gradient(90deg,var(--rose),var(--sage));border-radius:2px;animation:wmLoaderFill 1.4s .6s var(--ease-out) forwards}
-@keyframes wmLoaderIn{to{opacity:1;transform:translateY(0)}}
-@keyframes wmLoaderFill{to{width:100%}}
+.wm-loader-circle{position:relative;width:120px;height:120px;display:flex;align-items:center;justify-content:center}
+.wm-loader-ring{position:absolute;inset:0;border-radius:50%;border:2.5px solid rgba(255,255,255,.08);border-top-color:var(--rose);border-right-color:var(--sage);animation:wmRingSpin 1.2s linear infinite}
+.wm-loader-logo-svg{width:60px;height:60px;opacity:0;animation:wmLogoReveal 1.6s .3s var(--ease-out) forwards}
+.wm-loader-logo-svg svg{width:100%;height:100%;filter:blur(0px)}
+/* Reveal mask: left-to-right wipe from transparent to visible */
+.wm-loader-logo-svg{-webkit-mask-image:linear-gradient(90deg,#000 0%,transparent 0%);mask-image:linear-gradient(90deg,#000 0%,transparent 0%);animation:wmLogoReveal 1.6s .3s var(--ease-out) forwards,wmLogoWipe 1.4s .4s var(--ease-out) forwards}
+@keyframes wmRingSpin{to{transform:rotate(360deg)}}
+@keyframes wmLogoReveal{0%{opacity:0;filter:blur(8px)}40%{opacity:.6;filter:blur(3px)}100%{opacity:1;filter:blur(0px)}}
+@keyframes wmLogoWipe{0%{-webkit-mask-image:linear-gradient(90deg,#000 0%,transparent 0%);mask-image:linear-gradient(90deg,#000 0%,transparent 0%)}100%{-webkit-mask-image:linear-gradient(90deg,#000 100%,transparent 100%);mask-image:linear-gradient(90deg,#000 100%,transparent 100%)}}
+.wm-loader-text{font-family:var(--font-display);font-size:1.1rem;font-weight:400;color:rgba(255,255,255,.4);letter-spacing:.12em;opacity:0;animation:wmLoaderTextIn .8s .8s var(--ease-out) forwards}
+@keyframes wmLoaderTextIn{to{opacity:1}}
 
 /* ── Scroll Progress Bar ── */
 .wm-scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--rose),var(--sage));z-index:100001;transition:width .1s linear;border-radius:0 2px 2px 0}
@@ -5757,8 +5763,13 @@ footer a:hover::after{width:100%}
 
 <!-- ═══ LOADING SCREEN ═══ -->
 <div class="wm-loader" id="wm-loader">
-  <div class="wm-loader-logo">Wermom</div>
-  <div class="wm-loader-bar"></div>
+  <div class="wm-loader-circle">
+    <div class="wm-loader-ring"></div>
+    <div class="wm-loader-logo-svg">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="ldr-clip"><path d="M 116 15 L 561 15 L 561 583.691406 L 116 583.691406 Z" clip-rule="nonzero"/></clipPath></defs><path fill="#f89fa4" d="M 116.496094 339.691406 C 131.574219 348.554688 149.984375 354.097656 165.925781 362.019531 C 213.292969 385.566406 264.304688 413.964844 295.484375 458.828125 C 298.675781 463.421875 322.160156 501.472656 320.699219 504.011719 C 349.160156 454.324219 370.480469 404.636719 404.566406 357.757812 C 442.917969 305.171875 481.269531 246.964844 499.683594 184.40625 C 511.101562 150.3125 513.914062 92.105469 481.261719 67.976562 C 424.574219 24.113281 371.980469 101.53125 344.808594 142.738281 C 333.3125 160.167969 322.289062 187.910156 302.289062 197.191406 C 299.984375 198.296875 297.949219 198.980469 296.15625 199.234375 L 295.902344 200.429688 C 295.902344 200.085938 295.816406 199.660156 295.726562 199.320312 C 293.859375 180.738281 289.082031 163.011719 282.007812 146.734375 C 239.476562 47.527344 114.449219 0.226562 48.734375 127.984375 C 5.695312 210.144531 52.488281 285.144531 116.496094 339.691406" fill-opacity="1" fill-rule="nonzero"/><g clip-path="url(#ldr-clip)"><path fill="#f8a1a6" d="M 344.808594 142.742188 C 371.980469 101.53125 424.574219 24.113281 481.261719 67.980469 C 513.917969 92.101562 511.101562 150.3125 499.683594 184.40625 C 481.269531 246.960938 442.917969 305.171875 404.566406 357.757812 C 370.480469 404.636719 349.164062 454.320312 320.699219 504.011719 C 322.160156 501.472656 298.675781 463.421875 295.484375 458.828125 C 264.304688 413.964844 213.292969 385.566406 165.925781 362.019531 C 149.984375 354.097656 131.574219 348.554688 116.496094 339.691406 C 122.203125 344.550781 127.996094 349.324219 133.964844 353.839844 C 214.929688 417.761719 274.59375 485.941406 308.683594 583.957031 C 372.609375 434.804688 568.628906 306.964844 560.105469 132.242188 C 547.324219 -68.042969 338.511719 21.449219 304.421875 166.335938 L 296.15625 199.234375 C 297.949219 198.976562 299.984375 198.296875 302.289062 197.1875 C 322.292969 187.910156 333.3125 160.171875 344.808594 142.742188" fill-opacity="1" fill-rule="nonzero"/></g></svg>
+    </div>
+  </div>
+  <div class="wm-loader-text">Wermom</div>
 </div>
 <!-- ═══ SCROLL PROGRESS ═══ -->
 <div class="wm-scroll-progress" id="wm-scroll-progress"></div>
