@@ -9050,6 +9050,20 @@ function showDownloadStep() {
   }, 400);
 }
 
+// Navigate to survey with user data pre-filled
+function goToSurveyWithData() {
+  var name = document.getElementById('gs-name').value.trim();
+  var email = document.getElementById('gs-email').value.trim();
+  var phone = document.getElementById('gs-phone').value.trim();
+  var country = document.getElementById('gs-country').value;
+  var params = new URLSearchParams();
+  if (name) params.set('name', name);
+  if (email) params.set('email', email);
+  if (phone) params.set('phone', phone);
+  if (country) params.set('country', country);
+  window.location.href = 'survey.html?' + params.toString();
+}
+
 // ==================== SMOOTH SCROLL FOR ANCHOR LINKS ====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
