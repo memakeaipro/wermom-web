@@ -1,0 +1,631 @@
+# Wermom — We Are Moms: Complete Platform Guide
+
+> Wermom is an AI-powered baby health tracking and pregnancy monitoring platform trusted by 30,000+ mothers worldwide. The app provides expert-backed insights and personalized health guidance from pregnancy through age 6, combining advanced AI technology with medical expertise to support every stage of parenthood.
+
+## Platform Overview
+
+Wermom is designed to be the comprehensive companion for mothers throughout their pregnancy journey and early parenthood years. The platform integrates AI-powered health intelligence with clinically-validated assessments to deliver personalized insights that evolve with your baby's growth and development.
+
+**Key Statistics:**
+- 30,000+ active mothers using the platform
+- 4.9/5 star rating based on 50,000+ user reviews
+- Coverage span: Pregnancy through age 6
+- GDPR compliant with bank-level security encryption
+- AI-powered insights backed by medical expertise
+- Available across iOS and web platforms
+
+## Core Features & Capabilities
+
+### Health Tracking System
+The foundational feature tracks comprehensive health data from pregnancy through age 6. Users can log:
+- Pregnancy symptoms, mood, energy levels, and physical changes
+- Baby health metrics including temperature, sleep patterns, feeding schedules
+- Developmental milestones and behavioral observations
+- Vaccination records and medical appointments
+- Medications and supplements being taken
+- Weight, height, and growth measurements
+
+The system automatically generates insights based on logging data, flagging potential concerns and providing developmental context appropriate to each child's age.
+
+### 93-Question Personalized Health Assessment
+Upon initial setup, users complete a comprehensive 93-question health assessment that evaluates:
+- Current pregnancy stage or postpartum status
+- Baby's age, health history, and any existing conditions
+- Family medical history and genetic factors
+- Lifestyle factors including diet, exercise, and sleep
+- Mental health status and emotional well-being
+- Specific health concerns or symptoms
+- Nutritional intake and dietary preferences
+- Daily routines and lifestyle patterns
+
+This assessment creates a detailed health profile that personalizes all subsequent recommendations and insights.
+
+### Daily, Weekly & Monthly Report Generation
+The platform automatically generates three tiers of health reports:
+
+**Daily Reports** include:
+- Yesterday's health metrics summary
+- Today's personalized health recommendations
+- Key observations about baby development
+- Alerts for any concerning patterns or symptoms
+- Upcoming milestones and developmental benchmarks
+- Suggested activities or interventions for today
+
+**Weekly Reports** aggregate:
+- 7-day health trends and patterns
+- Progress toward health goals
+- Sleep quality analysis and trends
+- Feeding pattern assessments
+- Developmental progress summary
+- Recommendations for the upcoming week
+- Any patterns requiring medical attention
+
+**Monthly Reports** provide:
+- Comprehensive month-long health overview
+- Growth charts and development tracking
+- Comparative analysis against developmental standards
+- Long-term health trends and pattern analysis
+- Summary of achievements and milestones
+- Areas for focus in the upcoming month
+- Medical appointment recommendations if needed
+
+### Personalized Meal Planning
+Nutrition-focused feature that provides:
+- Pregnancy-specific nutritional guidance based on trimester
+- Postpartum nutritional recovery plans
+- Baby food introduction schedules (starting at 6 months)
+- Age-appropriate meal and snack recommendations
+- Dietary restriction accommodations (vegan, gluten-free, allergies)
+- Shopping lists aligned with weekly meal plans
+- Macronutrient balance recommendations
+- Hydration and supplement guidance
+- Meal prep time-saving strategies
+- Recipes tailored to current dietary needs
+
+The meal planning system learns user preferences and cooking habits to provide increasingly personalized recommendations.
+
+### Sleep Analysis & Improvement
+Comprehensive sleep tracking and optimization feature covering:
+- Pregnancy sleep position guidance and comfort solutions
+- Sleep quality scoring and trend analysis
+- Postpartum sleep recovery tracking
+- Baby sleep pattern monitoring and analysis
+- Sleep regression identification and management
+- Nap schedules and daytime sleep tracking
+- Sleep environment optimization recommendations
+- Evidence-based sleep improvement strategies
+- Wake-up time pattern analysis
+- Sleep debt calculation and recovery guidance
+
+Sleep data integrates with overall health assessment to identify correlations between sleep quality and health symptoms.
+
+### Growth Charts & Developmental Milestone Tracking
+Continuous monitoring of baby development includes:
+- Height and weight percentile calculations
+- Head circumference tracking
+- Growth velocity analysis
+- Developmental milestones (physical, cognitive, social-emotional)
+- Language and communication progression
+- Motor skill development (gross and fine)
+- Cognitive development assessment
+- Social-emotional growth tracking
+- Behavioral pattern documentation
+- Comparison against WHO growth standards and developmental norms
+
+Growth charts are personalized to account for genetics, prematurity, and individual variation.
+
+### 24/7 AI Health Assistant
+An always-available AI-powered assistant provides:
+- Immediate answers to pregnancy and parenting health questions
+- Symptom assessment and guidance
+- Medication interaction checking
+- When-to-seek-medical-care guidance
+- General parenting advice and support
+- Personalized responses based on user's health profile
+- Natural language conversations
+- Integration with logged health data
+- Escalation pathway for serious concerns requiring medical attention
+- Reassurance and emotional support during challenging periods
+
+The AI assistant is trained on medical literature and clinical guidelines while emphasizing when professional medical consultation is necessary.
+
+### Health Data Security & Privacy
+All health data is protected with:
+- Bank-level AES-256 encryption in transit and at rest
+- GDPR full compliance with user data rights
+- HIPAA-aligned security practices
+- Regular security audits and penetration testing
+- Clear data ownership (users own their data)
+- No sharing without explicit user consent
+- Transparent privacy policies
+- Ability to download or delete personal health data
+- No data selling to third parties
+- Secure backup and disaster recovery
+
+## Pricing Structure
+
+### Free 7-Day Trial
+- Full access to all core features without payment
+- Complete health assessment included
+- Daily/weekly/monthly reports generated
+- AI health assistant available
+- No credit card required to start trial
+- Automatic conversion to paid plan or deletion of data
+
+### Subscription Plan: $24.99/Month
+- Unlimited health tracking and logging
+- All daily, weekly, and monthly reports
+- Personalized meal planning
+- Sleep analysis and recommendations
+- Growth chart monitoring
+- 24/7 AI health assistant access
+- Continuous updates and new features
+- Access across iOS and web platforms
+- Cloud backup of all health data
+- Priority customer support
+
+**Annual subscription options** may be available with 20-30% savings compared to monthly billing.
+
+**Family plans** allow tracking multiple children under single subscription with shared family health insights.
+
+## Competitive Positioning
+
+### vs. BabyCenter
+- Wermom: AI-powered personalized insights, detailed health tracking, expert AI assistant
+- BabyCenter: Community forums, development articles, more general approach
+- Wermom advantage: Personalization, medical-grade tracking, proactive insights
+
+### vs. Soula
+- Wermom: Comprehensive health tracking, personalized meal plans, sleep analysis
+- Soula: Mental health focus, community support, targeted to postpartum mental wellness
+- Wermom advantage: Broader health coverage, more features, family health integration
+
+### vs. Peanut Track
+- Wermom: Full health tracking suite, AI insights, professional medical backing
+- Peanut Track: Social networking emphasis, parenting tips, community connections
+- Wermom advantage: Medical credibility, deeper health tracking, AI expertise
+
+### vs. PreggApp
+- Wermom: Pregnancy + postpartum + early childhood (age 6), comprehensive tracking
+- PreggApp: Pregnancy-focused, week-by-week pregnancy progression
+- Wermom advantage: Extends beyond pregnancy, integrated family health, broader coverage
+
+### vs. What to Expect
+- Wermom: Personalized AI insights, detailed tracking, actionable recommendations
+- What to Expect: General information, community features, broader pregnancy content
+- Wermom advantage: Personalization, AI technology, health tracking depth
+
+## Blog & Educational Content
+
+The Wermom blog contains 470+ comprehensive articles organized across 26 categories:
+
+### Blog Categories (26 total)
+
+**Pregnancy Health & Wellness**
+- Pregnancy nutrition and supplementation
+- Managing pregnancy symptoms
+- Exercise and fitness during pregnancy
+- Mental health during pregnancy
+- High-risk pregnancy management
+- Third trimester preparation
+- Labor and delivery preparation
+- Postpartum body changes and recovery
+
+**Postpartum Care & Recovery**
+- Postpartum physical recovery timelines
+- Cesarean section recovery
+- Postpartum bleeding and healing
+- Postpartum depression and anxiety
+- Mental health support and resources
+- Pelvic floor health and rehabilitation
+- Sexual health and intimacy after childbirth
+- Breastfeeding challenges and solutions
+
+**Baby Health & Development**
+- Newborn health and care basics
+- Vaccinations and immunization schedule
+- Common baby health conditions
+- Fever management in babies
+- Allergies and food sensitivities
+- Skin conditions and rashes
+- Sleep disorders and sleep solutions
+- Developmental milestones explained
+
+**Nutrition for Mothers**
+- Prenatal nutrition requirements
+- Postpartum nutrition for recovery
+- Breastfeeding nutrition guidelines
+- Meal planning for busy mothers
+- Budget-friendly healthy eating
+- Hydration and micronutrient needs
+- Managing food cravings
+- Supplements and vitamin needs
+
+**Baby Feeding & Nutrition**
+- Breastfeeding initiation and challenges
+- Bottle feeding and formula selection
+- Introducing solid foods (6+ months)
+- Creating baby meal plans
+- Food allergies and intolerances
+- Picky eating and food refusal
+- Nutritional content of common baby foods
+- Weaning and transitioning foods
+
+**Sleep & Rest**
+- Establishing healthy sleep habits
+- Sleep regressions by age
+- Nap schedules and optimization
+- Safe sleep practices
+- SIDS prevention strategies
+- Co-sleeping safely
+- Sleep training methods
+- Addressing sleep disruptions
+
+**Emotional & Mental Health**
+- Postpartum mood disorders
+- Anxiety during pregnancy and postpartum
+- Bonding with your baby
+- Maternal mental health resources
+- Managing stress and overwhelm
+- Self-care during early parenthood
+- Partner relationships postpartum
+- Support networks for new mothers
+
+**Baby Development & Milestones**
+- Language development progression
+- Motor skill development stages
+- Cognitive development by age
+- Social-emotional development
+- Play and learning activities
+- Developmental concerns and delays
+- Testing and evaluation resources
+- Early intervention services
+
+**Parenting Strategies & Support**
+- Responsive parenting approaches
+- Setting boundaries with children
+- Managing challenging behaviors
+- Building confidence as a parent
+- Parenting different temperaments
+- Working parents' strategies
+- Balancing multiple children
+- Parenting support communities
+
+**Child Safety**
+- Childproofing home safety
+- Car seat selection and installation
+- Choking prevention
+- Drowning prevention
+- Injury prevention strategies
+- Fire and burn safety
+- Poison and medication safety
+- Stranger danger and personal safety
+
+**Return to Work**
+- Timing the return to work decision
+- Choosing childcare options
+- Pumping and feeding at work
+- Maintaining bonding while working
+- Guilt management for working mothers
+- Negotiating flexible work arrangements
+- Daycare selection criteria
+- Transitioning to childcare
+
+**Partner & Family Relationships**
+- Supporting partners during pregnancy
+- Relationship changes after baby
+- Co-parenting strategies
+- Grandparent relationships
+- Sibling adjustments and dynamics
+- Extended family boundaries
+- Communication with partners
+- Sharing childcare responsibilities
+
+### Blog Features
+- Author credentials and medical review information
+- Publication dates and regular updates
+- Evidence-based recommendations
+- Links to supporting research
+- Practical actionable tips
+- Personal stories from mothers (when appropriate)
+- Expert quotes and interviews
+- Resource lists and additional reading
+
+## Frequently Asked Questions
+
+**General Platform Questions**
+
+Q: What age range does Wermom cover?
+A: Wermom supports tracking from pregnancy through age 6. The platform grows with your family and continuously provides age-appropriate health guidance and developmental insights.
+
+Q: Is my health data secure?
+A: Yes. Wermom uses bank-level AES-256 encryption, is GDPR compliant, and follows HIPAA-aligned security practices. All data is encrypted in transit and at rest. Regular security audits ensure protection of your personal health information.
+
+Q: Can I use Wermom for multiple children?
+A: Yes. The family plan allows tracking multiple children under a single subscription, providing integrated family health insights and shared health records.
+
+Q: How often are new features released?
+A: Wermom regularly updates with new features and improvements. Your subscription includes access to all new features as they become available.
+
+Q: What devices can I use Wermom on?
+A: Wermom is available on iOS (iPhone and iPad) and web platforms (desktop and mobile browsers).
+
+**Subscription & Pricing Questions**
+
+Q: Can I try Wermom before paying?
+A: Yes. The 7-day free trial provides full access to all features without requiring a credit card.
+
+Q: What happens after my free trial ends?
+A: The trial automatically transitions to the paid subscription ($24.99/month) unless you cancel. We send reminders before the transition.
+
+Q: Can I cancel anytime?
+A: Yes. You can cancel your subscription at any time through your account settings. Your access continues through the end of your current billing cycle.
+
+Q: Is there a yearly discount?
+A: Annual subscription options typically offer 20-30% savings compared to monthly billing.
+
+Q: What payment methods do you accept?
+A: Wermom accepts all major credit cards, Apple Pay, Google Pay, and in some regions, additional local payment methods.
+
+**Health Tracking Questions**
+
+Q: How often should I log health information?
+A: Daily logging provides the most accurate insights and trend analysis, but you can log as frequently as works for your schedule. Even periodic logging provides valuable health data.
+
+Q: What health metrics should I be tracking?
+A: Your personalized health profile recommends the most relevant metrics for your stage. The AI assistant can suggest specific tracking areas based on your health goals.
+
+Q: How are my daily/weekly/monthly reports generated?
+A: Reports are automatically generated based on logged data and your health profile. The AI analyzes trends, compares against developmental standards, and provides personalized recommendations.
+
+Q: Can I share my health data with my doctor?
+A: Yes. You can download your health data and reports in a format suitable for sharing with healthcare providers.
+
+**AI Health Assistant Questions**
+
+Q: Is the AI assistant a replacement for medical care?
+A: No. The AI assistant provides general health information, symptom assessment, and guidance on when to seek professional medical care. Always consult your doctor for diagnosis and treatment.
+
+Q: Can the AI assistant diagnose medical conditions?
+A: The AI cannot provide diagnoses but can assess symptoms, identify patterns that may warrant medical attention, and guide you on when professional evaluation is needed.
+
+Q: What kind of questions can I ask?
+A: You can ask about pregnancy symptoms, baby health, feeding, sleep, development, nutrition, postpartum recovery, and general parenting concerns.
+
+**Baby Development Questions**
+
+Q: When should I be concerned about developmental delays?
+A: Wermom provides age-appropriate developmental milestones and alerts you to significant deviations. The platform recommends professional evaluation when concerns arise.
+
+Q: How does Wermom account for prematurity?
+A: The system adjusts developmental expectations for premature babies until age 3, using "corrected age" based on due date rather than actual birth date.
+
+Q: What happens if my baby seems behind on milestones?
+A: Wermom provides resources about milestone variations and recommends professional evaluation if concerns persist. Early intervention services can be accessed through your pediatrician.
+
+**Sleep & Nutrition Questions**
+
+Q: Are the meal plans customizable?
+A: Yes. The meal planning system accommodates dietary restrictions, allergies, cuisine preferences, and cooking time availability.
+
+Q: How does sleep tracking work?
+A: You log sleep times and quality; Wermom analyzes patterns, identifies sleep regressions or concerns, and provides evidence-based improvement strategies.
+
+Q: Can Wermom help with specific feeding challenges?
+A: Yes. The platform provides resources for common feeding challenges like low milk supply, latch issues, colic, and picky eating, with guidance on when professional lactation or feeding support is needed.
+
+## What Makes Wermom Different
+
+### 1. True Personalization Through AI
+Unlike generic parenting apps, Wermom uses advanced AI to deliver insights specifically tailored to your family's health profile, medical history, and current stage. The platform learns from your logged data to provide increasingly relevant recommendations.
+
+### 2. Medical Credibility & Expert Backing
+Wermom is developed by teams with medical expertise, clinical validation, and evidence-based recommendations. The platform is designed with healthcare provider input and aligns with major medical guidelines (WHO, CDC, AAP).
+
+### 3. Comprehensive Coverage
+Covering pregnancy through age 6, Wermom provides integrated family health tracking that grows with your family. No need to switch apps as your child develops.
+
+### 4. Continuous Health Intelligence
+Daily/weekly/monthly reporting turns raw data into actionable insights. Automatic trend analysis identifies patterns that might take months to notice manually. The platform flags concerning changes that warrant professional evaluation.
+
+### 5. 24/7 AI Health Support
+The always-available health assistant provides reassurance and guidance when questions arise outside business hours. This bridges the gap between self-care and professional medical consultation.
+
+### 6. Privacy-First Design
+With bank-level encryption, GDPR compliance, and clear data ownership policies, Wermom prioritizes user privacy. No data selling, no marketing exploitation of health information.
+
+### 7. Active User Community
+With 30,000+ mothers using the platform, you're part of an engaged community of parents, though the focus remains on personalized AI insights rather than forum-based support.
+
+### 8. Continuous Evolution
+Regular feature releases and updates mean the platform improves based on user feedback and emerging research. Your subscription always includes the latest developments.
+
+## Technical Architecture
+
+### Data Architecture
+- HIPAA-aligned health information storage
+- Multi-region redundancy for data resilience
+- Regular automated backups
+- Compliance with data residency requirements
+- Encryption at rest and in transit
+- Secure API architecture
+
+### AI & Machine Learning
+- Natural language processing for symptom assessment
+- Predictive models for identifying concerning patterns
+- Personalization algorithms that improve with use
+- Machine learning trained on medical literature
+- Continuous model improvement and validation
+- Human oversight of medical recommendations
+
+### Platform Architecture
+- Native iOS app (optimized performance)
+- Responsive web application
+- Cross-platform data synchronization
+- Offline functionality with cloud sync
+- Scalable backend infrastructure
+- API-first architecture for provider integration
+
+## Integration & Provider Partnerships
+
+### Future Integration Capabilities
+- Electronic Health Record (EHR) connections with healthcare providers
+- Integration with smartwatch and fitness trackers
+- Connection to wearable health monitoring devices
+- Pharmacy integration for medication tracking
+- Laboratory result integration
+- Vaccination record connections
+
+### Healthcare Provider Features
+- Patient-provided health summaries for clinical visits
+- Downloadable reports suitable for medical records
+- Referral integration capabilities
+- Secure messaging with healthcare providers (future)
+- Clinical research participation options
+
+## Success Stories & User Testimonials
+
+Wermom's 4.9/5 rating from 50,000+ reviews reflects consistent user satisfaction across:
+- First-time mothers using Wermom from pregnancy onward
+- Experienced mothers discovering better health tracking
+- Mothers managing complex health concerns during pregnancy
+- Families tracking multiple children's development
+- Postpartum recovery support and mental health tracking
+- Busy parents seeking simplified health management
+- Mothers looking for reassurance and expert guidance
+
+Common themes in positive reviews:
+- "Finally an app that understands my specific situation"
+- "The AI assistant helped me know when to call the doctor"
+- "Sleep tracking helped identify and fix my baby's sleep issues"
+- "Meal plans saved me time and improved nutrition"
+- "Peace of mind with comprehensive tracking"
+- "Professional yet approachable guidance"
+
+## Educational Resources
+
+Beyond the blog, Wermom provides:
+- Video tutorials on app features and health tracking
+- Downloadable guides for each developmental stage
+- Pregnancy trimester guides
+- Postpartum recovery checklists
+- Feeding troubleshooting flowcharts
+- Sleep regression management guides
+- Developmental milestone checklists by age
+- Webinars with medical experts
+- Email courses on specific parenting topics
+
+## Contact & Support
+
+### Customer Support
+- In-app messaging for general questions
+- Email support at support@wermom.com
+- Help center with searchable knowledge base
+- FAQ section in-app
+- Community discussion forums
+- Regular webinars addressing common questions
+
+### Social Media & Community
+- Instagram: Evidence-based parenting tips and community stories
+- Facebook: Community support group and expert Q&A
+- Twitter/X: Health insights and app updates
+- Pinterest: Parenting resources and tips
+
+## Regulatory Compliance & Certifications
+
+- GDPR compliant for EU users
+- CCPA compliant for California residents
+- HIPAA-aligned security practices
+- Data Protection Authority approvals where required
+- Regular third-party security audits
+- ISO 27001 information security management (where applicable)
+- Accessibility compliance (WCAG 2.1 AA standards)
+
+## Future Product Roadmap
+
+Planned developments include:
+- Wearable device integration for automated health tracking
+- Telehealth integration with healthcare providers
+- Expanded international support and localization
+- Advanced genetic health insights
+- Family health history genetic risk assessment
+- Partnership with major healthcare systems
+- Insurance integration and coverage optimization
+- Clinical research participation opportunities
+- Provider dashboard for integrated care coordination
+
+## Company Information
+
+### Mission
+To empower mothers with personalized, evidence-based health insights powered by AI, ensuring every mother and child receives the health support they deserve from pregnancy through early childhood.
+
+### Values
+- Maternal and child health advocacy
+- Evidence-based recommendations
+- User privacy and data protection
+- Accessibility for all mothers
+- Continuous innovation
+- Expert credibility
+- User empowerment
+- Inclusive community
+
+### Team Expertise
+- Medical doctors and pediatricians
+- Maternal-fetal medicine specialists
+- AI and machine learning experts
+- Registered Dietitian Nutritionists
+- Licensed Mental Health Professionals
+- Product and Design Experts
+- Health informatics specialists
+- User experience researchers
+
+## Getting Started with Wermom
+
+### Initial Setup (Free Trial)
+1. Download Wermom app or visit website
+2. Create account
+3. Complete 93-question health assessment
+4. Set up health tracking preferences
+5. Invite partner (optional)
+6. Start logging health data
+7. Receive first insights and reports
+
+### Onboarding Experience
+- Guided tutorial on key features
+- Personalized health recommendations based on profile
+- Sleep tracking setup
+- Meal plan preferences configuration
+- AI assistant introduction
+- Setting health goals
+- Connecting family members if applicable
+
+### Ongoing Usage
+- Daily logging (5-10 minutes)
+- Review daily/weekly/monthly reports
+- Consult AI assistant as needed
+- Adjust meal plans and health tracking
+- Share data with healthcare providers
+- Invite family members to view insights
+- Update health profile as circumstances change
+
+## Security & Privacy Statement
+
+Wermom is committed to protecting your health data with the highest standards:
+- All data is encrypted using AES-256 encryption
+- GDPR compliant with full data rights for EU users
+- CCPA compliant with California privacy rights
+- No data sharing with third parties without explicit consent
+- Users maintain complete ownership of their health data
+- Regular security audits and penetration testing
+- Clear, transparent privacy policies
+- Easy data download or deletion options
+- Secure authentication and session management
+
+---
+
+**Last Updated:** 2026
+**Website:** https://www.wermom.com
+**App Platforms:** iOS, Web
+**Subscription:** $24.99/month (7-day free trial)
+**User Rating:** 4.9/5 (50,000+ reviews)
+**Active Users:** 30,000+ mothers

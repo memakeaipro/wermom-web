@@ -3,13 +3,64 @@
 
 User-agent: *
 Allow: /
+Crawl-delay: 1
+
+# AI Crawlers - Optimized for Discovery
+# No crawl delays for AI crawlers to enable fast indexing
+# Reference: llms.txt, llms-full.txt
+
+User-agent: OAI-SearchBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 0
+
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Claude-SearchBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Amazonbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: GoogleOther
+Allow: /
+Crawl-delay: 0
+
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 0
+
+User-agent: Applebot-Extended
+Allow: /
+Crawl-delay: 0
+
+User-agent: cohere-ai
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bytespider
+Allow: /
+Crawl-delay: 0
 
 # Sitemap
 Sitemap: https://www.wermom.com/sitemap.xml
+Sitemap: https://www.wermom.com/llms.txt
+Sitemap: https://www.wermom.com/llms-full.txt
 
-# Crawl-delay (be gentle)
-Crawl-delay: 1
-
-# Block unnecessary paths
-Disallow: /img/
+# Block video paths only
 Disallow: /vid/

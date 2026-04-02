@@ -70,33 +70,107 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Wermom",
+  "alternateName": "We Are Moms",
   "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web",
-  "description": "Expert-backed baby health tracker and pregnancy monitoring app with AI-powered insights, personalized meal plans, and sleep tracking.",
+  "applicationSubCategory": "Baby Health Tracker",
+  "operatingSystem": "iOS, Android, Web",
+  "description": "Expert-backed baby health tracker and pregnancy monitoring app with AI-powered insights, personalized meal plans, and sleep tracking. Trusted by 30,000+ mothers worldwide. Covers pregnancy through age 6 with 93-question health assessments, daily expert reports, and 24/7 AI health assistant.",
   "url": "https://www.wermom.com",
-  "offers": {
-    "@type": "Offer",
-    "price": "24.99",
-    "priceCurrency": "USD",
-    "priceValidUntil": "2027-12-31",
-    "description": "Monthly subscription — both mom & baby tracked"
-  },
+  "downloadUrl": ["https://apps.apple.com/app/wermom", "https://play.google.com/store/apps/details?id=com.wermom"],
+  "screenshot": "https://www.wermom.com/img/hf_20260325_060649_f8ac1f84-5959-4447-b9f1-1a620dfc50dc.jpg",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free Trial",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "7-day free trial — full access to all features, cancel anytime",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "name": "Monthly Plan",
+      "price": "24.99",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2027-12-31",
+      "description": "Monthly subscription — both mom & baby tracked"
+    }
+  ],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
     "ratingCount": "50000",
-    "bestRating": "5"
+    "bestRating": "5",
+    "worstRating": "1"
   },
   "featureList": [
     "Pregnancy week-by-week tracking",
     "Baby health monitoring 0-6 years",
     "AI-powered health analysis",
-    "Expert-reviewed daily insights",
-    "Personalized meal plans",
-    "Sleep tracking and analysis",
-    "Growth chart benchmarking",
-    "24/7 AI health assistant"
+    "93-question expert health assessment",
+    "Personalized meal plans by age and trimester",
+    "Sleep tracking and coaching",
+    "Growth chart benchmarking against WHO standards",
+    "24/7 AI health assistant",
+    "Daily, weekly, and monthly health reports",
+    "Vaccination schedule tracker",
+    "Postpartum recovery monitoring",
+    "Expert-reviewed insights from pediatricians"
+  ],
+  "audience": {
+    "@type": "PeopleAudience",
+    "suggestedMinAge": 18,
+    "audienceType": "Pregnant women, new mothers, parents of children 0-6"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Sarah M."},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "reviewBody": "Wermom caught a vitamin D deficiency pattern in my baby's data that I would have never noticed. Our pediatrician confirmed it and started supplements immediately. This app literally changed our care routine."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Jessica L."},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "reviewBody": "The personalized meal plans alone are worth the subscription. My picky eater is finally getting balanced nutrition and the growth tracking gives me peace of mind between doctor visits."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Priya K."},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "reviewBody": "As a first-time mom, having expert-backed daily reports about my pregnancy made me feel so much more confident. The sleep tracking after birth was a game-changer for establishing a routine."
+    }
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Wermom Baby Health Tracker",
+  "description": "AI-powered baby health tracking and pregnancy monitoring app. Expert-backed health assessments, personalized meal plans, sleep coaching, and growth tracking from pregnancy through age 6.",
+  "brand": {"@type": "Brand", "name": "Wermom"},
+  "category": "Health & Wellness > Baby & Pregnancy",
+  "url": "https://www.wermom.com",
+  "image": "https://www.wermom.com/logo.svg",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "50000",
+    "bestRating": "5"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "lowPrice": "0",
+    "highPrice": "24.99",
+    "priceCurrency": "USD",
+    "offerCount": "2",
+    "offers": [
+      {"@type": "Offer", "name": "Free 7-Day Trial", "price": "0", "priceCurrency": "USD"},
+      {"@type": "Offer", "name": "Monthly Plan", "price": "24.99", "priceCurrency": "USD"}
+    ]
+  }
 }
 </script>
 <script type="application/ld+json">
