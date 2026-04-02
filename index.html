@@ -5277,9 +5277,15 @@ footer::before {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 6s cubic-bezier(.25,.46,.45,.94), filter 1s ease;
 }
 .sc-photo.pos-top img { object-position: center 20%; }
 .sc-photo.pos-center img { object-position: center center; }
+
+/* Hover: subtle Ken Burns zoom */
+.showcase-card.has-photo:hover .sc-photo img {
+  transform: scale(1.06);
+}
 
 /* Dark gradient at bottom for text readability */
 .sc-overlay {
@@ -5295,6 +5301,18 @@ footer::before {
     transparent 80%
   );
   pointer-events: none;
+  transition: background 0.6s ease;
+}
+/* Hover: deepen overlay slightly for text contrast */
+.showcase-card.has-photo:hover .sc-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(20, 20, 36, 0.92) 0%,
+    rgba(20, 20, 36, 0.7) 30%,
+    rgba(20, 20, 36, 0.3) 52%,
+    rgba(20, 20, 36, 0.06) 68%,
+    transparent 82%
+  );
 }
 
 /* Content pinned to bottom */
@@ -5303,7 +5321,13 @@ footer::before {
   z-index: 2;
   padding: 0 28px 24px;
   color: #fff;
+  transition: transform 0.5s var(--ease-out);
 }
+/* Hover: content lifts slightly */
+.showcase-card.has-photo:hover .sc-content {
+  transform: translateY(-4px);
+}
+
 .sc-content .showcase-title {
   font-family: var(--font-display);
   font-size: 1.25rem;
@@ -5311,14 +5335,24 @@ footer::before {
   margin-bottom: 8px;
   font-weight: 500;
   letter-spacing: -0.01em;
+  transition: text-shadow 0.4s ease;
 }
+.showcase-card.has-photo:hover .sc-content .showcase-title {
+  text-shadow: 0 2px 20px rgba(255,255,255,0.15);
+}
+
 .sc-content .showcase-desc {
   font-size: 0.82rem;
   color: rgba(255,255,255,0.75);
   line-height: 1.6;
   max-width: 300px;
   margin-bottom: 16px;
+  transition: color 0.4s ease;
 }
+.showcase-card.has-photo:hover .sc-content .showcase-desc {
+  color: rgba(255,255,255,0.88);
+}
+
 .sc-content .showcase-stats {
   display: flex;
   gap: 8px;
@@ -5334,7 +5368,20 @@ footer::before {
   text-align: center;
   flex: 1;
   min-width: 0;
+  transition: all 0.4s var(--ease-out);
 }
+/* Hover: glassmorphism glow on stats */
+.showcase-card.has-photo:hover .sc-content .showcase-stat {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.25);
+  box-shadow: 0 4px 24px rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+}
+/* Stagger stat hover */
+.showcase-card.has-photo:hover .showcase-stat:nth-child(1) { transition-delay: 0s; }
+.showcase-card.has-photo:hover .showcase-stat:nth-child(2) { transition-delay: 0.06s; }
+.showcase-card.has-photo:hover .showcase-stat:nth-child(3) { transition-delay: 0.12s; }
+
 .sc-content .showcase-stat-val {
   font-family: var(--font-num);
   font-variant-numeric: tabular-nums;
@@ -5342,6 +5389,11 @@ footer::before {
   font-weight: 700;
   color: #fff;
   letter-spacing: -0.01em;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.showcase-card.has-photo:hover .sc-content .showcase-stat-val {
+  color: var(--peach);
+  text-shadow: 0 0 12px rgba(232,132,106,0.35);
 }
 .sc-content .showcase-stat-label {
   font-size: 0.58rem;
@@ -5349,6 +5401,10 @@ footer::before {
   margin-top: 2px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+.showcase-card.has-photo:hover .sc-content .showcase-stat-label {
+  color: rgba(255,255,255,0.72);
 }
 
 /* Remove old showcase-card centered styles for .has-photo */
@@ -9650,6 +9706,32 @@ document.querySelectorAll('.social-stat-num, .bento-hero-num, .showcase-stat-val
       track.style.animationPlayState = 'running';
     });
   });
+})();
+
+// ── Showcase parallax: images shift on scroll ──
+(function() {
+  var cards = document.querySelectorAll('.showcase-card.has-photo');
+  if (!cards.length || window.innerWidth < 768) return;
+  var ticking = false;
+  function updateParallax() {
+    cards.forEach(function(card) {
+      var rect = card.getBoundingClientRect();
+      var vh = window.innerHeight;
+      if (rect.bottom < 0 || rect.top > vh) return;
+      // How far through viewport (0 = just entered bottom, 1 = exited top)
+      var progress = (vh - rect.top) / (vh + rect.height);
+      var img = card.querySelector('.sc-photo img');
+      if (img) {
+        var shift = (progress - 0.5) * 20; // ±10px parallax
+        img.style.transform = 'translateY(' + shift + 'px) scale(1.04)';
+      }
+    });
+    ticking = false;
+  }
+  window.addEventListener('scroll', function() {
+    if (!ticking) { ticking = true; requestAnimationFrame(updateParallax); }
+  }, { passive: true });
+  updateParallax();
 })();
 
 // ── Counter animation for pricing/stats across ALL sections ──
