@@ -1,5 +1,5 @@
 # Wermom — robots.txt
-# https://www.wermom.com
+# https://wermom.com
 
 User-agent: *
 Allow: /
@@ -58,9 +58,9 @@ Allow: /
 Crawl-delay: 0
 
 # Sitemap
-Sitemap: https://www.wermom.com/sitemap.xml
-Sitemap: https://www.wermom.com/llms.txt
-Sitemap: https://www.wermom.com/llms-full.txt
+Sitemap: https://wermom.com/sitemap.xml
+Sitemap: https://wermom.com/llms.txt
+Sitemap: https://wermom.com/llms-full.txt
 
 # Block video paths only
 Disallow: /vid/
