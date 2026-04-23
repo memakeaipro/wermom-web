@@ -5511,13 +5511,12 @@ footer::before {
 /* ── Loading Screen ── */
 .wm-loader{position:fixed;inset:0;background:var(--midnight);z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;transition:opacity .7s ease,visibility .7s ease}
 .wm-loader.done{opacity:0;visibility:hidden;pointer-events:none}
-.wm-loader-circle{position:relative;width:120px;height:120px;display:flex;align-items:center;justify-content:center}
-.wm-loader-ring{position:absolute;inset:0;border-radius:50%;border:2.5px solid rgba(255,255,255,.08);border-top-color:var(--rose);border-right-color:var(--peach);animation:wmRingSpin 1.2s linear infinite}
-.wm-loader-icon{width:80px;height:80px;border-radius:20px;overflow:hidden;animation:wmIconSpin 3s ease-in-out infinite,wmIconReveal 1.2s .2s var(--ease-out) forwards;opacity:0}
-.wm-loader-icon img{width:100%;height:100%;object-fit:cover;border-radius:20px}
-@keyframes wmRingSpin{to{transform:rotate(360deg)}}
-@keyframes wmIconSpin{0%{transform:rotate(0deg)}50%{transform:rotate(180deg)}100%{transform:rotate(360deg)}}
-@keyframes wmIconReveal{0%{opacity:0;transform:scale(0.5) rotate(0deg)}100%{opacity:1;transform:scale(1) rotate(0deg)}}
+.wm-loader-circle{position:relative;width:140px;height:140px;display:flex;align-items:center;justify-content:center}
+.wm-loader-glow{position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(232,132,106,0.3) 0%,rgba(244,168,134,0.1) 40%,transparent 70%);animation:wmGlowPulse 2.5s ease-in-out infinite}
+.wm-loader-icon{width:110px;height:110px;border-radius:50%;overflow:hidden;opacity:0;animation:wmIconReveal 1.2s .2s var(--ease-out) forwards;box-shadow:0 0 40px rgba(232,132,106,0.4),0 0 80px rgba(232,132,106,0.15)}
+.wm-loader-icon img{width:140%;height:140%;object-fit:cover;margin-left:-20%;margin-top:-20%;border-radius:0}
+@keyframes wmGlowPulse{0%,100%{transform:scale(1);opacity:0.6}50%{transform:scale(1.15);opacity:1}}
+@keyframes wmIconReveal{0%{opacity:0;transform:scale(0.6)}100%{opacity:1;transform:scale(1)}}
 .wm-loader-text{font-family:var(--font-display);font-size:1.1rem;font-weight:400;color:rgba(255,255,255,.4);letter-spacing:.12em;opacity:0;animation:wmLoaderTextIn .8s .8s var(--ease-out) forwards}
 @keyframes wmLoaderTextIn{to{opacity:1}}
 
@@ -5773,7 +5772,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ═══ LOADING SCREEN ═══ -->
 <div class="wm-loader" id="wm-loader">
   <div class="wm-loader-circle">
-    <div class="wm-loader-ring"></div>
+    <div class="wm-loader-glow"></div>
     <div class="wm-loader-icon">
       <img src="wermom-app-icon.png" alt="Wermom">
     </div>
