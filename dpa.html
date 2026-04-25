@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Processing Addendum — Wermom</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Wermom's Data Processing Addendum (DPA). How we handle and protect your personal data as a data processor under GDPR and applicable privacy laws.">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FFF9F5;
+      --cream-deep: #FFF1E8;
+      --blush: #FFE4D6;
+      --peach: #F4A886;
+      --rose: #E8846A;
+      --rose-deep: #D4604A;
+      --sage: #7BA68D;
+      --sage-light: #E8F2EC;
+      --sage-deep: #5C8A6F;
+      --midnight: #1A1A2E;
+      --charcoal: #2D2D3F;
+      --slate: #4A4A5E;
+      --warm-gray: #8A8A9A;
+      --light-gray: #E8E6E3;
+      --white: #FFFFFF;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      --container: min(900px, 92vw);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); color: var(--midnight); background: var(--cream); line-height: 1.8; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: var(--rose-deep); transition: color 0.3s; }
+    a:hover { color: var(--rose); }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    .container { width: var(--container); margin: 0 auto; }
+
+    /* Navigation */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 0 5vw; height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,249,245,0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid transparent;
+      transition: all 0.4s var(--ease-out);
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.95);
+      border-bottom-color: var(--blush);
+      box-shadow: 0 1px 12px rgba(0,0,0,0.04);
+    }
+    .nav-brand { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--midnight); letter-spacing: -0.01em; }
+    .nav-back { font-size: 0.9rem; color: var(--warm-gray); font-weight: 500; transition: color 0.3s; }
+    .nav-back:hover { color: var(--rose); }
+
+    /* Hero */
+    .hero-section {
+      padding: 120px 5vw 60px;
+      text-align: center;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+    }
+    .hero-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; color: var(--midnight); margin-bottom: 12px; letter-spacing: -0.02em; }
+    .hero-subtitle { font-size: 1.05rem; color: var(--warm-gray); font-weight: 400; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+    .hero-meta { margin-top: 20px; font-size: 0.85rem; color: var(--warm-gray); font-family: var(--font-mono); }
+
+    /* Content */
+    .content-wrapper { padding: 60px 5vw 80px; }
+    .content-inner { max-width: var(--container); margin: 0 auto; }
+
+    .dpa-section { margin-bottom: 48px; }
+    .section-title {
+      font-family: var(--font-display); font-size: 1.5rem; font-weight: 600;
+      color: var(--midnight); margin-bottom: 16px; letter-spacing: -0.01em;
+      padding-bottom: 8px; border-bottom: 2px solid var(--blush);
+    }
+    .section-text { font-size: 0.95rem; color: var(--slate); line-height: 1.9; margin-bottom: 16px; }
+
+    .dpa-list { margin: 16px 0 16px 24px; }
+    .dpa-list li { font-size: 0.95rem; color: var(--slate); line-height: 1.9; margin-bottom: 8px; }
+    .dpa-list li strong { color: var(--midnight); font-weight: 600; }
+
+    .highlight-box {
+      background: var(--sage-light); border-left: 4px solid var(--sage);
+      padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 20px 0;
+    }
+    .highlight-box p { font-size: 0.95rem; color: var(--charcoal); line-height: 1.8; margin: 0; }
+    .highlight-box strong { color: var(--sage-deep); font-weight: 600; }
+
+    .dpa-table {
+      width: 100%; border-collapse: collapse; margin: 24px 0;
+      font-size: 0.9rem; line-height: 1.8;
+    }
+    .dpa-table th {
+      background: var(--sage-light); color: var(--midnight); padding: 12px 16px;
+      text-align: left; font-weight: 600; border: 1px solid var(--light-gray);
+    }
+    .dpa-table td { padding: 12px 16px; border: 1px solid var(--light-gray); color: var(--slate); }
+    .dpa-table tr:nth-child(even) { background: rgba(232,242,236,0.3); }
+
+    /* Footer */
+    .page-footer { padding: 60px 5vw; background: var(--charcoal); color: rgba(255,255,255,0.85); border-top: 1px solid rgba(0,0,0,0.2); }
+    .footer-content { max-width: var(--container); margin: 0 auto; }
+    .footer-section { margin-bottom: 32px; }
+    .footer-section:last-child { margin-bottom: 0; }
+    .footer-title { font-family: var(--font-display); font-size: 1rem; color: var(--white); margin-bottom: 12px; font-weight: 500; }
+    .footer-text { font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.75); margin-bottom: 8px; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; font-size: 0.9rem; }
+    .footer-link { color: var(--rose); font-weight: 500; }
+    .footer-link:hover { color: var(--peach); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 4vw; height: 60px; }
+      .hero-section { padding: 100px 4vw 40px; }
+      .content-wrapper { padding: 40px 4vw 60px; }
+      .section-title { font-size: 1.3rem; }
+      .dpa-table { font-size: 0.8rem; }
+      .dpa-table th, .dpa-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="/" class="nav-brand">Wermom</a>
+    <a href="/" class="nav-back">← Back to Home</a>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero-section">
+    <h1 class="hero-title">Data Processing Addendum</h1>
+    <p class="hero-subtitle">How Wermom processes and protects your personal data in compliance with global privacy regulations.</p>
+    <p class="hero-meta">Last updated: April 24, 2026</p>
+  </div>
+
+  <!-- Content -->
+  <div class="content-wrapper">
+    <div class="content-inner">
+
+      <!-- 1. Introduction -->
+      <div class="dpa-section" id="introduction">
+        <h2 class="section-title">1. Introduction</h2>
+        <p class="section-text">
+          This Data Processing Addendum ("DPA") forms part of the Terms of Service between Wermom, Inc. ("Wermom," "we," "us," or "our") and you ("User," "you," or "your"). This DPA applies to the processing of personal data by Wermom on your behalf when you use the Wermom application and related services.
+        </p>
+        <p class="section-text">
+          This DPA is designed to ensure compliance with applicable data protection laws, including but not limited to the General Data Protection Regulation (EU) 2016/679 ("GDPR"), the UK General Data Protection Regulation, the California Consumer Privacy Act ("CCPA"), the Personal Information Protection and Electronic Documents Act ("PIPEDA"), and other applicable privacy legislation.
+        </p>
+      </div>
+
+      <!-- 2. Definitions -->
+      <div class="dpa-section" id="definitions">
+        <h2 class="section-title">2. Definitions</h2>
+        <ul class="dpa-list">
+          <li><strong>"Personal Data"</strong> means any information relating to an identified or identifiable natural person, including but not limited to names, email addresses, health-related data, pregnancy information, baby development data, and device identifiers.</li>
+          <li><strong>"Data Controller"</strong> means you, the User, who determines the purposes and means of processing personal data through the use of Wermom services.</li>
+          <li><strong>"Data Processor"</strong> means Wermom, Inc., which processes personal data on behalf of the Data Controller.</li>
+          <li><strong>"Sub-processor"</strong> means any third party appointed by Wermom to process personal data on behalf of the User.</li>
+          <li><strong>"Processing"</strong> means any operation performed on personal data, including collection, recording, storage, retrieval, use, disclosure, or deletion.</li>
+          <li><strong>"Data Breach"</strong> means a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to personal data.</li>
+        </ul>
+      </div>
+
+      <!-- 3. Scope and Purpose of Processing -->
+      <div class="dpa-section" id="scope">
+        <h2 class="section-title">3. Scope and Purpose of Processing</h2>
+        <p class="section-text">
+          Wermom processes personal data solely for the purpose of providing the Wermom application services, which include:
+        </p>
+        <ul class="dpa-list">
+          <li>Pregnancy tracking and health monitoring</li>
+          <li>Baby growth and development tracking</li>
+          <li>Personalized health insights and recommendations</li>
+          <li>Feeding, sleep, and diaper logging</li>
+          <li>Milestone tracking and notifications</li>
+          <li>Account management and customer support</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p><strong>Important:</strong> Wermom does not sell, rent, or trade your personal data to third parties for marketing or advertising purposes. All data processing is performed solely to deliver and improve the services you have requested.</p>
+        </div>
+      </div>
+
+      <!-- 4. Categories of Data -->
+      <div class="dpa-section" id="categories">
+        <h2 class="section-title">4. Categories of Personal Data</h2>
+        <table class="dpa-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Examples</th>
+              <th>Sensitivity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Account Information</td>
+              <td>Name, email address, profile picture</td>
+              <td>Standard</td>
+            </tr>
+            <tr>
+              <td>Health & Pregnancy Data</td>
+              <td>Due date, pregnancy week, symptoms, weight, blood pressure</td>
+              <td>Sensitive</td>
+            </tr>
+            <tr>
+              <td>Baby Information</td>
+              <td>Baby's name, date of birth, gender, weight, height, milestones</td>
+              <td>Sensitive</td>
+            </tr>
+            <tr>
+              <td>Activity Logs</td>
+              <td>Feeding records, sleep patterns, diaper changes, medications</td>
+              <td>Sensitive</td>
+            </tr>
+            <tr>
+              <td>Device Information</td>
+              <td>Device type, OS version, app version, IP address</td>
+              <td>Standard</td>
+            </tr>
+            <tr>
+              <td>Usage Analytics</td>
+              <td>Feature usage, session duration, crash reports</td>
+              <td>Standard</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 5. Obligations of Wermom -->
+      <div class="dpa-section" id="obligations">
+        <h2 class="section-title">5. Obligations of Wermom as Data Processor</h2>
+        <p class="section-text">Wermom shall:</p>
+        <ul class="dpa-list">
+          <li>Process personal data only on documented instructions from the User, unless required by law.</li>
+          <li>Ensure that persons authorized to process personal data are bound by obligations of confidentiality.</li>
+          <li>Implement appropriate technical and organizational measures to ensure the security of personal data (see Section 7).</li>
+          <li>Not engage another processor without prior specific or general written authorization from the Data Controller.</li>
+          <li>Assist the Data Controller in responding to requests from data subjects exercising their rights under applicable data protection laws.</li>
+          <li>Assist the Data Controller in ensuring compliance with data breach notification obligations.</li>
+          <li>Delete or return all personal data upon termination of services, at the User's choice, unless retention is required by law.</li>
+          <li>Make available to the Data Controller all information necessary to demonstrate compliance with this DPA.</li>
+        </ul>
+      </div>
+
+      <!-- 6. Sub-processors -->
+      <div class="dpa-section" id="subprocessors">
+        <h2 class="section-title">6. Sub-processors</h2>
+        <p class="section-text">
+          Wermom uses the following categories of sub-processors to deliver the services. We maintain a current list of sub-processors and will notify you of any intended changes.
+        </p>
+        <table class="dpa-table">
+          <thead>
+            <tr>
+              <th>Sub-processor</th>
+              <th>Purpose</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Amazon Web Services (AWS)</td>
+              <td>Cloud infrastructure and data storage</td>
+              <td>United States / Canada</td>
+            </tr>
+            <tr>
+              <td>Google Cloud Platform</td>
+              <td>Analytics and push notifications</td>
+              <td>United States</td>
+            </tr>
+            <tr>
+              <td>Stripe</td>
+              <td>Payment processing</td>
+              <td>United States</td>
+            </tr>
+            <tr>
+              <td>RevenueCat</td>
+              <td>Subscription management</td>
+              <td>United States</td>
+            </tr>
+            <tr>
+              <td>Intercom / Zendesk</td>
+              <td>Customer support</td>
+              <td>United States</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="section-text">
+          Where Wermom engages a new sub-processor, we will inform you at least 30 days in advance and provide you with the opportunity to object. If you object on reasonable grounds, we will work with you to find an alternative solution or allow you to terminate the affected services.
+        </p>
+      </div>
+
+      <!-- 7. Security Measures -->
+      <div class="dpa-section" id="security">
+        <h2 class="section-title">7. Technical and Organizational Security Measures</h2>
+        <p class="section-text">Wermom implements and maintains the following security measures:</p>
+        <ul class="dpa-list">
+          <li><strong>Encryption:</strong> All data is encrypted in transit (TLS 1.3) and at rest (AES-256).</li>
+          <li><strong>Access Control:</strong> Role-based access controls (RBAC) with multi-factor authentication for all staff accessing personal data.</li>
+          <li><strong>Network Security:</strong> Firewalls, intrusion detection systems, and regular vulnerability scanning.</li>
+          <li><strong>Data Isolation:</strong> Logical separation of user data with unique encryption keys per account.</li>
+          <li><strong>Monitoring:</strong> 24/7 system monitoring with automated alerting for suspicious activities.</li>
+          <li><strong>Backups:</strong> Automated daily backups with encrypted off-site storage and tested recovery procedures.</li>
+          <li><strong>Employee Training:</strong> Annual security awareness training for all employees with access to personal data.</li>
+          <li><strong>Incident Response:</strong> Documented incident response plan with defined escalation procedures.</li>
+        </ul>
+      </div>
+
+      <!-- 8. Data Breach Notification -->
+      <div class="dpa-section" id="breach">
+        <h2 class="section-title">8. Data Breach Notification</h2>
+        <p class="section-text">
+          In the event of a Data Breach affecting your personal data, Wermom shall:
+        </p>
+        <ul class="dpa-list">
+          <li>Notify the Data Controller without undue delay and no later than <strong>72 hours</strong> after becoming aware of the breach.</li>
+          <li>Provide all information reasonably required for the Data Controller to fulfill its own breach notification obligations.</li>
+          <li>Take immediate steps to contain and remediate the breach.</li>
+          <li>Document the breach, including the facts, its effects, and the remedial action taken.</li>
+          <li>Cooperate with the Data Controller and any supervisory authority in investigating and resolving the breach.</li>
+        </ul>
+        <div class="highlight-box">
+          <p><strong>Breach notification will include:</strong> nature of the breach, categories and approximate number of affected data subjects, likely consequences, and measures taken or proposed to address the breach.</p>
+        </div>
+      </div>
+
+      <!-- 9. Data Subject Rights -->
+      <div class="dpa-section" id="rights">
+        <h2 class="section-title">9. Data Subject Rights</h2>
+        <p class="section-text">
+          Wermom assists the Data Controller in fulfilling obligations to respond to data subjects exercising their rights, including:
+        </p>
+        <ul class="dpa-list">
+          <li><strong>Right of Access:</strong> Obtain confirmation of whether personal data is being processed and access copies of data.</li>
+          <li><strong>Right to Rectification:</strong> Request correction of inaccurate personal data.</li>
+          <li><strong>Right to Erasure:</strong> Request deletion of personal data ("right to be forgotten").</li>
+          <li><strong>Right to Data Portability:</strong> Receive personal data in a structured, machine-readable format.</li>
+          <li><strong>Right to Restrict Processing:</strong> Request limitation of processing in certain circumstances.</li>
+          <li><strong>Right to Object:</strong> Object to processing based on legitimate interests or for direct marketing.</li>
+          <li><strong>Right to Withdraw Consent:</strong> Withdraw consent at any time where processing is based on consent.</li>
+        </ul>
+        <p class="section-text">
+          To exercise any of these rights, contact us at <a href="mailto:privacy@wermom.com">privacy@wermom.com</a>. We will respond within 30 days of receiving your request.
+        </p>
+      </div>
+
+      <!-- 10. International Data Transfers -->
+      <div class="dpa-section" id="transfers">
+        <h2 class="section-title">10. International Data Transfers</h2>
+        <p class="section-text">
+          Where personal data is transferred outside of the European Economic Area (EEA), the United Kingdom, or Canada, Wermom ensures that appropriate safeguards are in place, including:
+        </p>
+        <ul class="dpa-list">
+          <li>Standard Contractual Clauses (SCCs) as approved by the European Commission.</li>
+          <li>UK International Data Transfer Addendum where applicable.</li>
+          <li>Adequacy decisions by the European Commission or relevant authorities.</li>
+          <li>Supplementary measures as recommended by the European Data Protection Board where necessary.</li>
+        </ul>
+        <p class="section-text">
+          Wermom, Inc. is incorporated in Ontario, Canada, a jurisdiction recognized by the European Commission as providing adequate data protection.
+        </p>
+      </div>
+
+      <!-- 11. Data Retention -->
+      <div class="dpa-section" id="retention">
+        <h2 class="section-title">11. Data Retention and Deletion</h2>
+        <p class="section-text">
+          Wermom retains personal data only for as long as necessary to provide the services and fulfill the purposes described in this DPA. Upon termination of your account:
+        </p>
+        <ul class="dpa-list">
+          <li>Active data is deleted within <strong>30 days</strong> of account deletion request.</li>
+          <li>Backup copies are purged within <strong>90 days</strong>.</li>
+          <li>Anonymized and aggregated data (which cannot identify individuals) may be retained for analytics and product improvement.</li>
+          <li>Data required by law (e.g., financial records) is retained for the legally mandated period.</li>
+        </ul>
+      </div>
+
+      <!-- 12. Audits -->
+      <div class="dpa-section" id="audits">
+        <h2 class="section-title">12. Audits and Compliance</h2>
+        <p class="section-text">
+          Wermom shall make available to the Data Controller all information necessary to demonstrate compliance with this DPA and allow for and contribute to audits and inspections conducted by the Data Controller or an authorized auditor.
+        </p>
+        <p class="section-text">
+          Audits shall be conducted with reasonable notice (at least 30 days), during normal business hours, and shall not unreasonably interfere with Wermom's operations. The Data Controller shall bear the costs of any audit unless the audit reveals material non-compliance by Wermom.
+        </p>
+      </div>
+
+      <!-- 13. Liability -->
+      <div class="dpa-section" id="liability">
+        <h2 class="section-title">13. Liability and Indemnification</h2>
+        <p class="section-text">
+          Each party's liability under this DPA is subject to the limitations and exclusions set forth in the Terms of Service. Wermom shall be liable for damages caused by processing that does not comply with this DPA or applicable data protection laws.
+        </p>
+      </div>
+
+      <!-- 14. Term and Termination -->
+      <div class="dpa-section" id="termination">
+        <h2 class="section-title">14. Term and Termination</h2>
+        <p class="section-text">
+          This DPA shall remain in effect for the duration of your use of Wermom services. Upon termination, Wermom shall, at your choice, delete or return all personal data and delete existing copies, unless applicable law requires storage of the personal data.
+        </p>
+      </div>
+
+      <!-- 15. Changes -->
+      <div class="dpa-section" id="changes">
+        <h2 class="section-title">15. Changes to This DPA</h2>
+        <p class="section-text">
+          Wermom may update this DPA from time to time to reflect changes in our data processing practices or applicable laws. We will notify you of material changes by updating the "Last updated" date and, where required, by providing direct notification. Your continued use of Wermom after changes constitutes acceptance of the updated DPA.
+        </p>
+      </div>
+
+      <!-- 16. Contact -->
+      <div class="dpa-section" id="contact">
+        <h2 class="section-title">16. Contact Information</h2>
+        <p class="section-text">
+          For questions or concerns about this DPA or our data processing practices, please contact:
+        </p>
+        <div class="highlight-box">
+          <p>
+            <strong>Wermom, Inc.</strong><br>
+            Data Protection Officer<br>
+            Email: <a href="mailto:privacy@wermom.com">privacy@wermom.com</a><br>
+            Ontario, Canada
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <p class="footer-text">
+          <span class="footer-title">Wermom</span><br>
+          Built by pediatric experts who understand what your baby truly needs.
+        </p>
+      </div>
+      <div class="footer-section">
+        <p class="footer-title">Legal</p>
+        <div class="footer-links">
+          <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+          <a href="dpa.html" class="footer-link">Data Processing Addendum</a>
+          <a href="cancellation-policy.html" class="footer-link">Cancellation Policy</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <p class="footer-title">Support</p>
+        <div class="footer-links">
+          <a href="support.html" class="footer-link">Help & Support</a>
+          <a href="mailto:hello@wermom.com" class="footer-link">hello@wermom.com</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <p class="footer-text" style="font-size: 0.85rem; opacity: 0.6;">
+          © 2026 Wermom, Inc. All rights reserved. Incorporated in Ontario, Canada.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+
+</body>
+</html>

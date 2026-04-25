@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — Wermom</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Wermom Support Center. Get help with your Wermom app, account, subscription, or baby tracking features.">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FFF9F5;
+      --cream-deep: #FFF1E8;
+      --blush: #FFE4D6;
+      --peach: #F4A886;
+      --rose: #E8846A;
+      --rose-deep: #D4604A;
+      --midnight: #1A1A2E;
+      --charcoal: #2D2D3F;
+      --slate: #4A4A5E;
+      --warm-gray: #8A8A9A;
+      --light-gray: #E8E6E3;
+      --white: #FFFFFF;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --container: min(900px, 92vw);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); color: var(--midnight); background: var(--cream); line-height: 1.8; overflow-x: hidden; }
+    a { text-decoration: none; color: var(--rose-deep); transition: color 0.3s; }
+    a:hover { color: var(--rose); }
+
+    /* Navigation */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 0 5vw; height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,249,245,0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid transparent;
+      transition: all 0.4s var(--ease-out);
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.95);
+      border-bottom-color: var(--blush);
+      box-shadow: 0 1px 12px rgba(0,0,0,0.04);
+    }
+    .nav-brand { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--midnight); letter-spacing: -0.01em; }
+    .nav-back { font-size: 0.9rem; color: var(--warm-gray); font-weight: 500; transition: color 0.3s; }
+    .nav-back:hover { color: var(--rose); }
+
+    /* Hero */
+    .hero-section {
+      padding: 120px 5vw 60px;
+      text-align: center;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+    }
+    .hero-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; color: var(--midnight); margin-bottom: 12px; letter-spacing: -0.02em; }
+    .hero-subtitle { font-size: 1.05rem; color: var(--warm-gray); font-weight: 400; max-width: 550px; margin: 0 auto; line-height: 1.7; }
+
+    /* Contact Cards */
+    .contact-section { padding: 0 5vw 60px; }
+    .contact-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px; max-width: var(--container); margin: 0 auto;
+    }
+    .contact-card {
+      background: var(--white); border-radius: 16px; padding: 32px 28px;
+      border: 1px solid var(--blush); text-align: center;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+    }
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(232,132,106,0.12);
+    }
+    .contact-icon {
+      width: 56px; height: 56px; border-radius: 14px; margin: 0 auto 16px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--rose) 0%, var(--peach) 100%);
+    }
+    .contact-icon svg { width: 26px; height: 26px; fill: none; stroke: var(--white); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-card h3 { font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--midnight); margin-bottom: 8px; }
+    .contact-card p { font-size: 0.9rem; color: var(--slate); line-height: 1.6; margin-bottom: 16px; }
+    .contact-link {
+      display: inline-block; font-size: 0.9rem; font-weight: 600; color: var(--rose-deep);
+      padding: 10px 24px; border-radius: 10px; background: var(--cream-deep); transition: all 0.3s;
+    }
+    .contact-link:hover { background: var(--blush); color: var(--rose); }
+
+    /* FAQ Section */
+    .faq-section { padding: 0 5vw 80px; }
+    .faq-inner { max-width: var(--container); margin: 0 auto; }
+    .faq-heading {
+      font-family: var(--font-display); font-size: 1.8rem; font-weight: 600;
+      color: var(--midnight); text-align: center; margin-bottom: 40px;
+    }
+
+    .faq-item {
+      background: var(--white); border: 1px solid var(--blush);
+      border-radius: 12px; margin-bottom: 12px; overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .faq-item:hover { box-shadow: 0 4px 16px rgba(232,132,106,0.08); }
+    .faq-question {
+      width: 100%; padding: 20px 24px; display: flex; align-items: center;
+      justify-content: space-between; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600;
+      color: var(--midnight); background: transparent; border: none;
+      text-align: left; line-height: 1.5;
+    }
+    .faq-question:hover { color: var(--rose-deep); }
+    .faq-chevron {
+      width: 20px; height: 20px; flex-shrink: 0; margin-left: 16px;
+      transition: transform 0.3s var(--ease-out);
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out);
+    }
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      font-size: 0.93rem; color: var(--slate); line-height: 1.8;
+    }
+    .faq-item.open .faq-answer { max-height: 500px; }
+
+    /* Quick Links */
+    .quick-links {
+      padding: 60px 5vw; background: var(--cream-deep);
+    }
+    .quick-inner { max-width: var(--container); margin: 0 auto; text-align: center; }
+    .quick-heading { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--midnight); margin-bottom: 24px; }
+    .quick-grid { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .quick-btn {
+      padding: 12px 24px; border-radius: 10px; font-size: 0.9rem; font-weight: 500;
+      color: var(--slate); background: var(--white); border: 1px solid var(--blush);
+      transition: all 0.3s;
+    }
+    .quick-btn:hover { background: var(--rose); color: var(--white); border-color: var(--rose); }
+
+    /* Footer */
+    .page-footer { padding: 60px 5vw; background: var(--charcoal); color: rgba(255,255,255,0.85); border-top: 1px solid rgba(0,0,0,0.2); }
+    .footer-content { max-width: var(--container); margin: 0 auto; }
+    .footer-section { margin-bottom: 32px; }
+    .footer-section:last-child { margin-bottom: 0; }
+    .footer-title { font-family: var(--font-display); font-size: 1rem; color: var(--white); margin-bottom: 12px; font-weight: 500; }
+    .footer-text { font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.75); margin-bottom: 8px; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; font-size: 0.9rem; }
+    .footer-link { color: var(--rose); font-weight: 500; }
+    .footer-link:hover { color: var(--peach); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 4vw; height: 60px; }
+      .hero-section { padding: 100px 4vw 40px; }
+      .contact-section, .faq-section { padding-left: 4vw; padding-right: 4vw; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="/" class="nav-brand">Wermom</a>
+    <a href="/" class="nav-back">← Back to Home</a>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero-section">
+    <h1 class="hero-title">How Can We Help?</h1>
+    <p class="hero-subtitle">We're here to support you on every step of your parenting journey. Find answers or reach out directly.</p>
+  </div>
+
+  <!-- Contact Cards -->
+  <div class="contact-section">
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3>Email Support</h3>
+        <p>Get a response within 24 hours. Our support team speaks English and Vietnamese.</p>
+        <a href="mailto:support@wermom.com" class="contact-link">support@wermom.com</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>In-App Chat</h3>
+        <p>Tap the chat icon inside the Wermom app for instant help while you're tracking.</p>
+        <span class="contact-link">Open Wermom App</span>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3>Help Center</h3>
+        <p>Browse articles, guides, and troubleshooting tips for common questions.</p>
+        <a href="help.html" class="contact-link">Visit Help Center</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="faq-inner">
+      <h2 class="faq-heading">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I create an account?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Download the Wermom app from the App Store or Google Play. Open the app and tap "Get Started." You can sign up with your email address, Apple ID, or Google account. Follow the onboarding steps to set up your profile and add your baby's information.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I cancel or manage my subscription?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">You can manage your subscription through your device's app store settings. On iPhone, go to Settings → Apple ID → Subscriptions → Wermom. On Android, go to Google Play → Menu → Subscriptions → Wermom. You can also visit our <a href="cancellation-policy.html">Cancellation Policy</a> for more details.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is my baby's data safe and private?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Absolutely. We use bank-level encryption (AES-256) to protect all your data. We never sell or share your personal information with third parties for marketing. Your baby's health data is stored securely and only accessible by you. Read our <a href="privacy-policy.html">Privacy Policy</a> and <a href="dpa.html">Data Processing Addendum</a> for complete details.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I track multiple children?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes! Wermom supports tracking multiple children under one account. You can easily switch between profiles in the app. Each child has their own dedicated tracking space for feeding, sleep, diapers, milestones, and growth charts.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I share access with my partner or caregiver?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Go to Settings → Family Sharing in the app. You can invite your partner, family members, or caregivers by email. They'll get their own login and can view and log activities in real-time. All data syncs instantly across all connected accounts.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What features are included in the free plan?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">The free plan includes basic feeding, sleep, and diaper tracking, growth charts, milestone tracking, and daily tips. Premium features like AI-powered insights, unlimited photo storage, detailed analytics reports, and expert consultations require a Wermom Premium subscription.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I export my data?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Go to Settings → Data & Privacy → Export My Data. You can export your data in CSV or PDF format. This includes all tracking logs, growth data, milestones, and notes. Exports are typically generated within a few minutes and sent to your email.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I delete my account?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Go to Settings → Account → Delete Account. This will permanently remove your account and all associated data within 30 days. Backup copies are purged within 90 days. You can also request account deletion by emailing <a href="mailto:privacy@wermom.com">privacy@wermom.com</a>.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Quick Links -->
+  <div class="quick-links">
+    <div class="quick-inner">
+      <h2 class="quick-heading">Quick Links</h2>
+      <div class="quick-grid">
+        <a href="privacy-policy.html" class="quick-btn">Privacy Policy</a>
+        <a href="terms-of-service.html" class="quick-btn">Terms of Service</a>
+        <a href="dpa.html" class="quick-btn">Data Processing Addendum</a>
+        <a href="cancellation-policy.html" class="quick-btn">Cancellation Policy</a>
+        <a href="help.html" class="quick-btn">Help Center</a>
+        <a href="contact.html" class="quick-btn">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <p class="footer-text">
+          <span class="footer-title">Wermom</span><br>
+          Built by pediatric experts who understand what your baby truly needs.
+        </p>
+      </div>
+      <div class="footer-section">
+        <p class="footer-title">Legal</p>
+        <div class="footer-links">
+          <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+          <a href="dpa.html" class="footer-link">Data Processing Addendum</a>
+          <a href="cancellation-policy.html" class="footer-link">Cancellation Policy</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <p class="footer-title">Support</p>
+        <div class="footer-links">
+          <a href="support.html" class="footer-link">Help & Support</a>
+          <a href="mailto:support@wermom.com" class="footer-link">support@wermom.com</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <p class="footer-text" style="font-size: 0.85rem; opacity: 0.6;">
+          © 2026 Wermom, Inc. All rights reserved. Incorporated in Ontario, Canada.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // FAQ accordion
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      // Toggle clicked
+      if (!wasOpen) item.classList.add('open');
+    }
+  </script>
+
+</body>
+</html>
