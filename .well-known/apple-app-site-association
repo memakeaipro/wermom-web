@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "FPY3UXBJNG.com.wermom.app",
+        "paths": ["*", "/app", "/app.html", "/share/*", "/report/*", "/baby/*", "/auth/*"]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["FPY3UXBJNG.com.wermom.app"]
+  }
+}

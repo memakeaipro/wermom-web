@@ -298,6 +298,8 @@ footer a:hover::after { width: 100%; }
       <a href="help.html" class="contact-link">Visit Help Center</a>
     </div>
   </div>
+
+  <p style="text-align: center; margin-top: 32px; font-size: 0.95rem; color: var(--slate);">Have an idea? Email <a href="mailto:feature@wermom.com" style="color: var(--rose-deep); font-weight: 500;">feature@wermom.com</a></p>
 </div>
 
 <!-- FAQ -->
@@ -369,6 +371,72 @@ footer a:hover::after { width: 100%; }
       <div class="faq-answer"><div class="faq-answer-inner">Go to Settings → Account → Delete Account. This will permanently remove your account and all associated data within 30 days. Backup copies are purged within 90 days. You can also request account deletion by emailing <a href="mailto:privacy@wermom.com">privacy@wermom.com</a>.</div></div>
     </div>
 
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How do I reset my password?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Open the app → Tap "Forgot Password" on the login screen → Enter your email → Check your inbox for a reset link → Follow the link to set a new password. If you don't receive the email, check your spam folder or contact <a href="mailto:support@wermom.com">support@wermom.com</a>.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Why was I charged after cancelling?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">If you cancelled after the 7-day free trial ended, the annual charge of $299 had already been processed. Cancellation prevents future renewals but doesn't refund the current period. You keep access until the end of your billing period. For refund requests, visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How accurate is Wermom AI?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Wermom AI provides guidance based on WHO, AAP, and peer-reviewed research. It is designed for educational purposes only and is not a substitute for professional medical advice. Always consult your healthcare provider for medical decisions about you or your baby.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How do I report a bug?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Email us at <a href="mailto:support@wermom.com">support@wermom.com</a> with: your device model, iOS/Android version, app version (Settings → About), steps to reproduce the issue, and any screenshots. We typically investigate within 48 hours.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can I track a second baby or pregnancy?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Yes! Go to Settings → Profiles → Add Child. Each child has their own tracking space. You can also run a pregnancy profile alongside a baby profile.</div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Account Deletion Section -->
+<div style="padding: 0 5vw 80px;">
+  <div style="max-width: min(800px, 92vw); margin: 0 auto;">
+    <h2 style="font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 400; color: var(--midnight); text-align: center; margin-bottom: 40px; letter-spacing: -0.02em; line-height: 1.15;">How to Delete Your Account</h2>
+
+    <div style="background: var(--white); border: 1px solid rgba(0,0,0,0.04); border-radius: 16px; padding: 32px; margin-bottom: 24px;">
+      <h3 style="font-family: var(--font-num); font-size: 1.1rem; font-weight: 700; color: var(--midnight); margin-bottom: 16px;">Steps to Delete Your Account</h3>
+      <p style="font-size: 0.9rem; color: var(--slate); line-height: 1.9; margin-bottom: 12px;">You can delete your Wermom account in two ways:</p>
+      <ul style="margin: 0 0 16px 20px; font-size: 0.9rem; color: var(--slate); line-height: 1.9;">
+        <li style="margin-bottom: 8px;">In the app: Settings → Account → Delete Account</li>
+        <li style="margin-bottom: 8px;">By email: Contact <a href="mailto:privacy@wermom.com" style="color: var(--rose-deep); text-decoration: none; font-weight: 500;">privacy@wermom.com</a></li>
+      </ul>
+    </div>
+
+    <div style="background: rgba(232,132,106,0.08); border: 2px solid var(--rose); border-radius: 8px; padding: 24px; margin-bottom: 24px;">
+      <p style="font-size: 0.95rem; color: var(--midnight); line-height: 1.8; font-weight: 600; margin-bottom: 12px;">Important: Deleting your Wermom account does NOT automatically cancel your Apple subscription.</p>
+      <p style="font-size: 0.9rem; color: var(--midnight); line-height: 1.8; margin-bottom: 0;">You must cancel your subscription separately in iPhone Settings → Apple ID → Subscriptions → Wermom before deleting your account, or you will continue to be charged.</p>
+    </div>
+
+    <div style="background: var(--white); border: 1px solid rgba(0,0,0,0.04); border-radius: 16px; padding: 32px;">
+      <h3 style="font-family: var(--font-num); font-size: 1.1rem; font-weight: 700; color: var(--midnight); margin-bottom: 16px;">Data Deletion Timeline</h3>
+      <p style="font-size: 0.9rem; color: var(--slate); line-height: 1.9;">Your data will be removed within 30 days. Backup copies are purged within 90 days.</p>
+    </div>
   </div>
 </div>
 

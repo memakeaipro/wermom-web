@@ -27,6 +27,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Wermom">
 <meta name="theme-color" content="#E8846A">
+<meta name="apple-itunes-app" content="app-id=6762637772">
 <link rel="alternate" hreflang="en" href="https://wermom.com/">
 <!-- WEB-07: Security headers via meta tags -->
 <meta http-equiv="X-Frame-Options" content="DENY">
@@ -213,7 +214,7 @@
       "name": "Can I cancel anytime?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Of course. Cancel within your 7-day free trial and you pay nothing — no questions, no hassle. After that, your subscription runs for the year. We're confident you'll want to stay, and 98% of our families do."
+        "text": "Yes — and we make it easy. Cancel within your 7-day free trial and you pay nothing. To cancel: Open iPhone Settings → Tap your name → Subscriptions → Select Wermom → Tap Cancel Subscription. Your subscription auto-renews at $299/year unless cancelled at least 24 hours before the current period ends. Per Apple's policy, refunds are not provided after the trial ends."
       }
     },
     {
@@ -5754,6 +5755,10 @@ footer a:hover::after{width:100%}
   .wm-particles .wm-particle{display:none} /* disable particles on mobile for perf */
 }
 
+/* Medical Disclaimer */
+.medical-disclaimer{background:linear-gradient(135deg,#fef9c3 0%,#fde68a 100%);border-top:1px solid #f59e0b;border-bottom:1px solid #f59e0b;padding:18px 20px}
+@media(max-width:600px){.medical-disclaimer{padding:14px 16px}.medical-disclaimer p{font-size:12.5px!important}}
+
 </style>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -5975,6 +5980,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- MEDICAL DISCLAIMER — Apple Health App Compliance -->
+<aside class="medical-disclaimer" role="note" aria-label="Medical disclaimer">
+  <div class="container" style="display:flex; align-items:flex-start; gap:14px; max-width:900px;">
+    <span style="font-size:22px; flex-shrink:0; line-height:1;" aria-hidden="true">&#9877;&#65039;</span>
+    <p style="margin:0; font-size:13.5px; line-height:1.6; color:#713f12;">
+      <strong style="color:#422006;">Educational use only.</strong>
+      Wermom AI provides general guidance based on WHO, AAP, and peer-reviewed research — it is not a substitute for professional medical advice, diagnosis, or treatment.
+      <strong style="color:#422006;">Always consult your healthcare provider</strong> for medical concerns about you or your baby.
+    </p>
+  </div>
+</aside>
 
 <!-- ═══ MARQUEE TICKER 1: After Hero ═══ -->
 <div class="wm-marquee">
@@ -7710,6 +7726,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
+
+    <!-- PRICING CARD — Apple Guideline 3.1.2 -->
+    <div class="pricing-card-wrap reveal" style="max-width:520px; margin:60px auto 0; padding:48px 36px; background:var(--white); border:2px solid var(--rose); border-radius:24px; box-shadow:0 12px 40px rgba(232,132,106,0.12); text-align:center;">
+      <div style="display:inline-block; background:linear-gradient(135deg,var(--rose),var(--peach)); color:#fff; font-size:11px; font-weight:800; letter-spacing:1.5px; padding:6px 16px; border-radius:20px; margin-bottom:20px; text-transform:uppercase;">7-Day Free Trial</div>
+      <h3 style="font-family:var(--font-body); font-size:22px; font-weight:700; color:var(--midnight); margin:0 0 16px;">Wermom Premium</h3>
+      <div style="display:flex; align-items:baseline; justify-content:center; gap:4px; margin-bottom:4px;">
+        <span style="font-size:56px; font-weight:800; color:var(--rose); line-height:1;">$299</span>
+        <span style="font-size:18px; color:var(--warm-gray);">/year</span>
+      </div>
+      <div style="font-size:14px; color:var(--warm-gray); margin-bottom:28px;">$0.82/day — less than a daily coffee</div>
+      <ul style="list-style:none; padding:0; margin:0 0 28px; text-align:left;">
+        <li style="padding:10px 0 10px 28px; border-bottom:1px solid var(--light-gray); position:relative; font-size:15px; color:var(--charcoal);"><span style="position:absolute;left:0;color:var(--rose);font-weight:700;">&#10003;</span>Unlimited AI conversations with Wermom AI</li>
+        <li style="padding:10px 0 10px 28px; border-bottom:1px solid var(--light-gray); position:relative; font-size:15px; color:var(--charcoal);"><span style="position:absolute;left:0;color:var(--rose);font-weight:700;">&#10003;</span>Daily logs for baby + mom wellness</li>
+        <li style="padding:10px 0 10px 28px; border-bottom:1px solid var(--light-gray); position:relative; font-size:15px; color:var(--charcoal);"><span style="position:absolute;left:0;color:var(--rose);font-weight:700;">&#10003;</span>Personalized weekly + monthly reports</li>
+        <li style="padding:10px 0 10px 28px; border-bottom:1px solid var(--light-gray); position:relative; font-size:15px; color:var(--charcoal);"><span style="position:absolute;left:0;color:var(--rose);font-weight:700;">&#10003;</span>Vaccination &amp; milestone calendar</li>
+        <li style="padding:10px 0 10px 28px; position:relative; font-size:15px; color:var(--charcoal);"><span style="position:absolute;left:0;color:var(--rose);font-weight:700;">&#10003;</span>Priority email support</li>
+      </ul>
+      <a href="https://apps.apple.com/app/id6762637772" class="btn-primary" style="display:inline-block; padding:16px 40px; font-size:17px; border-radius:28px;" aria-label="Start 7-day free trial on the App Store">
+        <span>Start 7-Day Free Trial</span>
+      </a>
+      <p style="font-size:12px; color:var(--warm-gray); line-height:1.6; margin-top:24px;">
+        Auto-renews at <strong>$299/year</strong> unless cancelled at least 24 hours before the trial ends.
+        Cancel anytime in <strong>iPhone Settings → Apple ID → Subscriptions → Wermom</strong>.
+        Payment charged to your Apple ID account.
+        <br>
+        <a href="privacy-policy.html" style="color:var(--rose);">Privacy Policy</a> ·
+        <a href="terms-of-service.html" style="color:var(--rose);">Terms of Service</a> ·
+        <a href="cancellation-policy.html" style="color:var(--rose);">Cancellation Policy</a>
+      </p>
+    </div>
+
   </div>
 </section>
 
@@ -8665,7 +8712,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
         <div class="faq-answer">
-          <p>Of course. Cancel within your 7-day free trial and you pay nothing — no questions, no hassle. After that, your subscription runs for the year. We're confident you'll want to stay, and 98% of our families do.</p>
+          <p><strong>Yes — and we make it easy.</strong> Cancel within your 7-day free trial and you pay nothing.</p>
+          <p style="margin-top:12px;"><strong>To cancel:</strong></p>
+          <ol style="margin:8px 0 12px 20px; font-size:0.92rem; line-height:1.8; color:var(--slate);">
+            <li>Open <strong>iPhone Settings</strong></li>
+            <li>Tap your name → <strong>Subscriptions</strong> (or <strong>Apple ID → Subscriptions</strong>)</li>
+            <li>Select <strong>Wermom</strong></li>
+            <li>Tap <strong>Cancel Subscription</strong></li>
+          </ol>
+          <p>Your subscription auto-renews at <strong>$299/year</strong> unless cancelled at least <strong>24 hours before</strong> the current period ends. Cancellation takes effect at the end of the current billing period — you keep access until then.</p>
+          <p style="margin-top:8px; font-size:0.85rem; color:var(--warm-gray);">Per Apple's policy, refunds are not provided after the trial ends. To request a refund from Apple, visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener" style="color:var(--rose);">reportaproblem.apple.com</a>.</p>
         </div>
       </div>
       <div class="faq-item reveal">
