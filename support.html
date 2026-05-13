@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Wermom</title>
+<meta name="description" content="Wermom support and help center. Contact us for app help, subscription questions, or technical support.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #FFF5F5;
+    color: #2D1B2E;
+    line-height: 1.6;
+    padding: 0;
+  }
+  header {
+    background: #FFFAF7;
+    padding: 24px 32px;
+    border-bottom: 1px solid #FFE0DC;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #E91E8C;
+  }
+  header .back {
+    color: #E91E8C;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .hero {
+    background: linear-gradient(180deg, #FFF0F5 0%, #FFFAF7 100%);
+    padding: 80px 32px 60px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #2D1B2E;
+  }
+  .hero .sub {
+    font-size: 18px;
+    color: #6B5868;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+  }
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 16px rgba(233, 30, 140, 0.06);
+  }
+  .card h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: #2D1B2E;
+  }
+  .card p {
+    color: #4A3845;
+    margin-bottom: 12px;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: #FFF5F5;
+    border-radius: 10px;
+    align-items: center;
+  }
+  .contact-row .label {
+    font-weight: 600;
+    color: #2D1B2E;
+  }
+  .contact-row a {
+    color: #E91E8C;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .faq-item {
+    border-bottom: 1px solid #FFE0DC;
+    padding: 16px 0;
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #2D1B2E;
+  }
+  .faq-item p {
+    font-size: 15px;
+    color: #6B5868;
+  }
+  footer {
+    background: #FFFAF7;
+    padding: 32px;
+    text-align: center;
+    color: #8A7884;
+    font-size: 14px;
+    border-top: 1px solid #FFE0DC;
+  }
+  footer a { color: #E91E8C; text-decoration: none; }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 32px; }
+    .hero .sub { font-size: 16px; }
+    main { padding: 24px 16px 60px; }
+    .card { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">wermom</div>
+  <a href="/" class="back">← Back to Home</a>
+</header>
+
+<section class="hero">
+  <h1>How can we help?</h1>
+  <p class="sub">We're here to support your motherhood journey. Reach out anytime — we typically respond within 24 hours.</p>
+</section>
+
+<main>
+
+  <div class="card">
+    <h2>Contact Us</h2>
+    <p>For app help, subscription questions, account issues, or any feedback, please email us.</p>
+    <div class="contact-grid">
+      <div class="contact-row">
+        <span class="label">Email</span>
+        <a href="mailto:hello@wermom.com">hello@wermom.com</a>
+      </div>
+      <div class="contact-row">
+        <span class="label">Response time</span>
+        <span style="color:#4A3845;">Within 24 hours (Mon–Fri)</span>
+      </div>
+      <div class="contact-row">
+        <span class="label">Privacy concerns</span>
+        <a href="mailto:hello@wermom.com?subject=Privacy">hello@wermom.com</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>How do I cancel my subscription?</h3>
+      <p>Open iPhone <strong>Settings → Your Name → Subscriptions → Wermom Premium → Cancel Subscription</strong>. Your access continues until the end of the current billing period.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I restore my purchase on a new device?</h3>
+      <p>Sign in with the same Apple ID, open Wermom, go to <strong>Settings → Restore Purchases</strong>. Your premium access will activate automatically.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is my data private?</h3>
+      <p>Yes. All health data is encrypted on-device and synced via Supabase with row-level security. We never share data with third parties. See our <a href="/privacy-policy.html" style="color:#E91E8C;">Privacy Policy</a> for details.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I delete my account?</h3>
+      <p>Open the app → <strong>Settings → Account → Delete Account</strong>. This permanently removes your data within 30 days per our retention policy.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>The 7-day free trial — how does it work?</h3>
+      <p>New subscribers get 7 days free of Wermom Premium. Cancel anytime before the trial ends to avoid being charged. Manage in iPhone Settings → Subscriptions.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>I lost my data after switching phones — help!</h3>
+      <p>Don't worry. Sign in to Wermom on your new device with the same email. Your data is securely stored in the cloud and will sync automatically. Need help? Email us.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I report a bug?</h3>
+      <p>Email <a href="mailto:hello@wermom.com?subject=Bug Report" style="color:#E91E8C;">hello@wermom.com</a> with subject "Bug Report". Include your iPhone model, iOS version, and screenshots if possible.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Wermom AI gave wrong info — what should I do?</h3>
+      <p>Wermom AI provides educational information based on WHO, AAP, and peer-reviewed research. It is NOT medical advice. For any health concern, please consult your doctor or pediatrician.</p>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h2>Legal & Policies</h2>
+    <div class="contact-grid">
+      <div class="contact-row"><span class="label">Privacy Policy</span><a href="/privacy-policy.html">Read →</a></div>
+      <div class="contact-row"><span class="label">Terms of Service</span><a href="/terms-of-service.html">Read →</a></div>
+      <div class="contact-row"><span class="label">Cancellation Policy</span><a href="/cancellation-policy.html">Read →</a></div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 Wermom Technologies Inc. · <a href="/">Home</a> · <a href="mailto:hello@wermom.com">hello@wermom.com</a>
+</footer>
+
+</body>
+</html>
