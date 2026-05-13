@@ -4,218 +4,514 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Support — Wermom</title>
-<meta name="description" content="Wermom support and help center. Contact us for app help, subscription questions, or technical support.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Wermom Support Center. Get help with your Wermom app, account, subscription, or baby tracking features.">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #FFF5F5;
-    color: #2D1B2E;
-    line-height: 1.6;
-    padding: 0;
-  }
-  header {
-    background: #FFFAF7;
-    padding: 24px 32px;
-    border-bottom: 1px solid #FFE0DC;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  header .logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #E91E8C;
-  }
-  header .back {
-    color: #E91E8C;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  .hero {
-    background: linear-gradient(180deg, #FFF0F5 0%, #FFFAF7 100%);
-    padding: 80px 32px 60px;
-    text-align: center;
-  }
-  .hero h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: #2D1B2E;
-  }
-  .hero .sub {
-    font-size: 18px;
-    color: #6B5868;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 32px 80px;
-  }
-  .card {
-    background: white;
-    border-radius: 16px;
-    padding: 32px;
-    margin-bottom: 24px;
-    box-shadow: 0 2px 16px rgba(233, 30, 140, 0.06);
-  }
-  .card h2 {
-    font-size: 22px;
-    margin-bottom: 16px;
-    color: #2D1B2E;
-  }
-  .card p {
-    color: #4A3845;
-    margin-bottom: 12px;
-  }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 16px;
-  }
-  .contact-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 14px 18px;
-    background: #FFF5F5;
-    border-radius: 10px;
-    align-items: center;
-  }
-  .contact-row .label {
-    font-weight: 600;
-    color: #2D1B2E;
-  }
-  .contact-row a {
-    color: #E91E8C;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .faq-item {
-    border-bottom: 1px solid #FFE0DC;
-    padding: 16px 0;
-  }
-  .faq-item:last-child { border-bottom: none; }
-  .faq-item h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: #2D1B2E;
-  }
-  .faq-item p {
-    font-size: 15px;
-    color: #6B5868;
-  }
-  footer {
-    background: #FFFAF7;
-    padding: 32px;
-    text-align: center;
-    color: #8A7884;
-    font-size: 14px;
-    border-top: 1px solid #FFE0DC;
-  }
-  footer a { color: #E91E8C; text-decoration: none; }
-  @media (max-width: 600px) {
-    .hero h1 { font-size: 32px; }
-    .hero .sub { font-size: 16px; }
-    main { padding: 24px 16px 60px; }
-    .card { padding: 24px 20px; }
-  }
+:root {
+  --cream: #FFF9F5;
+  --cream-deep: #FFF1E8;
+  --blush: #FFE4D6;
+  --peach: #F4A886;
+  --rose: #E8846A;
+  --rose-deep: #D4604A;
+  --midnight: #1A1A2E;
+  --charcoal: #2D2D3F;
+  --slate: #4A4A5E;
+  --warm-gray: #8A8A9A;
+  --light-gray: #E8E6E3;
+  --white: #FFFFFF;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-num: 'DM Sans', 'Inter', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --container: min(1100px, 92vw);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); color: var(--midnight); background: var(--cream); line-height: 1.7; overflow-x: hidden; }
+a { text-decoration: none; color: var(--rose-deep); transition: color 0.3s; }
+a:hover { color: var(--rose); }
+
+/* ==================== NAVIGATION ==================== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 5vw; height: 72px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,249,245,0.85);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.4s;
+}
+nav.scrolled {
+  height: 64px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+  border-bottom-color: var(--blush);
+}
+.nav-logo {
+  font-family: var(--font-display); font-size: 1.5rem; color: var(--midnight);
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-back {
+  font-size: 0.85rem; font-weight: 500; color: var(--slate); transition: color 0.3s;
+}
+.nav-back:hover { color: var(--midnight); }
+
+/* ==================== HERO ==================== */
+.hero-section {
+  padding: 120px 5vw 70px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero-section::before {
+  content: '';
+  position: absolute; top: -20%; right: -10%;
+  width: 60vw; height: 60vw;
+  background: radial-gradient(circle, rgba(244,168,134,0.15) 0%, transparent 60%);
+  border-radius: 50%; pointer-events: none;
+}
+.hero-section::after {
+  content: '';
+  position: absolute; bottom: -30%; left: -15%;
+  width: 50vw; height: 50vw;
+  background: radial-gradient(circle, rgba(232,132,106,0.1) 0%, transparent 60%);
+  border-radius: 50%; pointer-events: none;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 400; color: var(--midnight);
+  margin-bottom: 16px; letter-spacing: -0.02em; line-height: 1.15;
+}
+.hero-subtitle {
+  font-size: 1.05rem; color: var(--warm-gray); font-weight: 400;
+  max-width: 520px; margin: 0 auto; line-height: 1.7;
+}
+
+/* ==================== CONTACT CARDS ==================== */
+.contact-section { padding: 0 5vw 80px; }
+.contact-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px; max-width: var(--container); margin: 0 auto;
+}
+.contact-card {
+  background: var(--white); border-radius: 20px; padding: 40px 28px;
+  border: 1px solid rgba(0,0,0,0.04);
+  text-align: center; position: relative; overflow: hidden;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+.contact-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--rose), var(--peach));
+  opacity: 0; transition: opacity 0.4s;
+}
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(26,26,46,0.08);
+}
+.contact-card:hover::before { opacity: 1; }
+
+.contact-icon {
+  width: 60px; height: 60px; border-radius: 16px; margin: 0 auto 20px;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--rose), var(--peach));
+  box-shadow: 0 8px 24px rgba(232,132,106,0.25);
+}
+.contact-icon svg {
+  width: 26px; height: 26px; fill: none; stroke: var(--white);
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.contact-card h3 {
+  font-family: var(--font-num); font-size: 1.1rem; font-weight: 700;
+  color: var(--midnight); margin-bottom: 8px;
+}
+.contact-card p {
+  font-size: 0.9rem; color: var(--slate); line-height: 1.7; margin-bottom: 20px;
+}
+.contact-link {
+  display: inline-block; font-size: 0.85rem; font-weight: 600;
+  color: var(--white); padding: 12px 28px; border-radius: 100px;
+  background: var(--midnight); transition: all 0.3s var(--ease-out);
+}
+.contact-link:hover {
+  background: var(--charcoal); color: var(--white);
+  transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,26,46,0.2);
+}
+
+/* ==================== FAQ ==================== */
+.faq-section { padding: 0 5vw 80px; }
+.faq-inner { max-width: min(800px, 92vw); margin: 0 auto; }
+.faq-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 400;
+  color: var(--midnight); text-align: center; margin-bottom: 40px;
+  letter-spacing: -0.02em; line-height: 1.15;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.04);
+  border-radius: 16px; margin-bottom: 12px; overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+.faq-item:hover { box-shadow: 0 8px 24px rgba(26,26,46,0.04); }
+.faq-question {
+  width: 100%; padding: 22px 24px; display: flex; align-items: center;
+  justify-content: space-between; cursor: pointer;
+  font-family: var(--font-num); font-size: 0.95rem; font-weight: 600;
+  color: var(--midnight); background: transparent; border: none;
+  text-align: left; line-height: 1.5;
+  transition: color 0.3s;
+}
+.faq-question:hover { color: var(--rose-deep); }
+.faq-chevron {
+  width: 20px; height: 20px; flex-shrink: 0; margin-left: 16px;
+  transition: transform 0.3s var(--ease-out); color: var(--warm-gray);
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--rose); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out); }
+.faq-answer-inner {
+  padding: 0 24px 22px; font-size: 0.9rem; color: var(--slate); line-height: 1.9;
+}
+.faq-answer-inner a { font-weight: 500; }
+.faq-item.open .faq-answer { max-height: 500px; }
+
+/* ==================== QUICK LINKS ==================== */
+.quick-links { padding: 60px 5vw 80px; background: var(--cream-deep); }
+.quick-inner { max-width: var(--container); margin: 0 auto; text-align: center; }
+.quick-heading {
+  font-family: var(--font-display);
+  font-size: 1.4rem; font-weight: 400; color: var(--midnight);
+  margin-bottom: 28px; letter-spacing: -0.01em;
+}
+.quick-grid { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.quick-btn {
+  padding: 12px 24px; border-radius: 100px; font-size: 0.85rem; font-weight: 500;
+  color: var(--slate); background: var(--white); border: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.3s var(--ease-out);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.quick-btn:hover {
+  background: var(--midnight); color: var(--white); border-color: var(--midnight);
+  transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,26,46,0.15);
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+  background: var(--midnight);
+  color: rgba(255,255,255,0.6);
+  padding: 60px 0 32px;
+}
+footer .container { width: min(1360px, 92vw); margin: 0 auto; padding: 0 5vw; }
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px; margin-bottom: 40px;
+}
+.footer-brand p { font-size: 0.85rem; line-height: 1.7; max-width: 280px; margin-top: 16px; }
+.footer-col h4 {
+  color: var(--white); font-size: 0.85rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;
+}
+.footer-col a {
+  display: block; font-size: 0.85rem; color: rgba(255,255,255,0.5);
+  padding: 4px 0; transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;
+}
+.footer-legal { display: flex; gap: 24px; }
+.footer-legal a { color: rgba(255,255,255,0.4); transition: color 0.3s; }
+.footer-legal a:hover { color: var(--white); }
+footer a { position: relative; transition: color .3s; }
+footer a::after {
+  content: ''; position: absolute; bottom: -2px; left: 0;
+  width: 0; height: 1px; background: var(--rose); transition: width .3s var(--ease-out);
+}
+footer a:hover { color: var(--rose) !important; }
+footer a:hover::after { width: 100%; }
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 4vw; height: 60px; }
+  .hero-section { padding: 100px 4vw 50px; }
+  .contact-section { padding: 0 4vw 60px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .faq-section { padding: 0 4vw 60px; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">wermom</div>
-  <a href="/" class="back">← Back to Home</a>
-</header>
+<!-- Navigation -->
+<nav id="navbar">
+  <a href="app.html" class="nav-logo">
+    <img src="logo.svg" alt="Wermom" height="44" style="display:block;">
+  </a>
+  <a href="app.html" class="nav-back">← Back to Home</a>
+</nav>
 
-<section class="hero">
-  <h1>How can we help?</h1>
-  <p class="sub">We're here to support your motherhood journey. Reach out anytime — we typically respond within 24 hours.</p>
-</section>
+<!-- Hero -->
+<div class="hero-section">
+  <h1 class="hero-title">How Can We Help?</h1>
+  <p class="hero-subtitle">We're here to support you on every step of your parenting journey. Find answers or reach out directly.</p>
+</div>
 
-<main>
-
-  <div class="card">
-    <h2>Contact Us</h2>
-    <p>For app help, subscription questions, account issues, or any feedback, please email us.</p>
-    <div class="contact-grid">
-      <div class="contact-row">
-        <span class="label">Email</span>
-        <a href="mailto:hello@wermom.com">hello@wermom.com</a>
+<!-- Contact Cards -->
+<div class="contact-section">
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </div>
-      <div class="contact-row">
-        <span class="label">Response time</span>
-        <span style="color:#4A3845;">Within 24 hours (Mon–Fri)</span>
+      <h3>Email Support</h3>
+      <p>Get a response within 24 hours. Our support team speaks English and Vietnamese.</p>
+      <a href="mailto:support@wermom.com" class="contact-link">support@wermom.com</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       </div>
-      <div class="contact-row">
-        <span class="label">Privacy concerns</span>
-        <a href="mailto:hello@wermom.com?subject=Privacy">hello@wermom.com</a>
+      <h3>In-App Chat</h3>
+      <p>Tap the chat icon inside the Wermom app for instant help while you're tracking.</p>
+      <span class="contact-link">Open Wermom App</span>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
       </div>
+      <h3>Help Center</h3>
+      <p>Browse articles, guides, and troubleshooting tips for common questions.</p>
+      <a href="help.html" class="contact-link">Visit Help Center</a>
     </div>
   </div>
 
-  <div class="card">
-    <h2>Frequently Asked Questions</h2>
+  <p style="text-align: center; margin-top: 32px; font-size: 0.95rem; color: var(--slate);">Have an idea? Email <a href="mailto:feature@wermom.com" style="color: var(--rose-deep); font-weight: 500;">feature@wermom.com</a></p>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="faq-inner">
+    <h2 class="faq-heading">Frequently Asked Questions</h2>
 
     <div class="faq-item">
-      <h3>How do I cancel my subscription?</h3>
-      <p>Open iPhone <strong>Settings → Your Name → Subscriptions → Wermom Premium → Cancel Subscription</strong>. Your access continues until the end of the current billing period.</p>
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How do I create an account?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Download the Wermom app from the App Store or Google Play. Open the app and tap "Get Started." You can sign up with your email address, Apple ID, or Google account. Follow the onboarding steps to set up your profile and add your baby's information.</div></div>
     </div>
 
     <div class="faq-item">
-      <h3>How do I restore my purchase on a new device?</h3>
-      <p>Sign in with the same Apple ID, open Wermom, go to <strong>Settings → Restore Purchases</strong>. Your premium access will activate automatically.</p>
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How do I cancel or manage my subscription?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">You can manage your subscription through your device's app store settings. On iPhone, go to Settings → Apple ID → Subscriptions → Wermom. On Android, go to Google Play → Menu → Subscriptions → Wermom. You can also visit our <a href="cancellation-policy.html">Cancellation Policy</a> for more details.</div></div>
     </div>
 
     <div class="faq-item">
-      <h3>Is my data private?</h3>
-      <p>Yes. All health data is encrypted on-device and synced via Supabase with row-level security. We never share data with third parties. See our <a href="/privacy-policy.html" style="color:#E91E8C;">Privacy Policy</a> for details.</p>
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Is my baby's data safe and private?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Absolutely. We use bank-level encryption (AES-256) to protect all your data. We never sell or share your personal information with third parties for marketing. Your baby's health data is stored securely and only accessible by you. Read our <a href="privacy-policy.html">Privacy Policy</a> and <a href="dpa.html">Data Processing Addendum</a> for complete details.</div></div>
     </div>
 
     <div class="faq-item">
-      <h3>How do I delete my account?</h3>
-      <p>Open the app → <strong>Settings → Account → Delete Account</strong>. This permanently removes your data within 30 days per our retention policy.</p>
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can I track multiple children?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Yes! Wermom supports tracking multiple children under one account. You can easily switch between profiles in the app. Each child has their own dedicated tracking space for feeding, sleep, diapers, milestones, and growth charts.</div></div>
     </div>
 
     <div class="faq-item">
-      <h3>The 7-day free trial — how does it work?</h3>
-      <p>New subscribers get 7 days free of Wermom Premium. Cancel anytime before the trial ends to avoid being charged. Manage in iPhone Settings → Subscriptions.</p>
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How do I share access with my partner or caregiver?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Go to Settings → Family Sharing in the app. You can invite your partner, family members, or caregivers by email. They'll get their own login and can view and log activities in real-time. All data syncs instantly across all connected accounts.</div></div>
     </div>
 
     <div class="faq-item">
-      <h3>I lost my data after switching phones — help!</h3>
-      <p>Don't worry. Sign in to Wermom on your new device with the same email. Your data is securely stored in the cloud and will sync automatically. Need help? Email us.</p>
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What features are included in the free plan?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">The free plan includes basic feeding, sleep, and diaper tracking, growth charts, milestone tracking, and daily tips. Premium features like AI-powered insights, unlimited photo storage, detailed analytics reports, and expert consultations require a Wermom Premium subscription.</div></div>
     </div>
 
     <div class="faq-item">
-      <h3>How do I report a bug?</h3>
-      <p>Email <a href="mailto:hello@wermom.com?subject=Bug Report" style="color:#E91E8C;">hello@wermom.com</a> with subject "Bug Report". Include your iPhone model, iOS version, and screenshots if possible.</p>
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How do I export my data?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Go to Settings → Data & Privacy → Export My Data. You can export your data in CSV or PDF format. This includes all tracking logs, growth data, milestones, and notes. Exports are typically generated within a few minutes and sent to your email.</div></div>
     </div>
 
     <div class="faq-item">
-      <h3>Wermom AI gave wrong info — what should I do?</h3>
-      <p>Wermom AI provides educational information based on WHO, AAP, and peer-reviewed research. It is NOT medical advice. For any health concern, please consult your doctor or pediatrician.</p>
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How do I delete my account?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Go to Settings → Account → Delete Account. This will permanently remove your account and all associated data within 30 days. Backup copies are purged within 90 days. You can also request account deletion by emailing <a href="mailto:privacy@wermom.com">privacy@wermom.com</a>.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How do I reset my password?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Open the app → Tap "Forgot Password" on the login screen → Enter your email → Check your inbox for a reset link → Follow the link to set a new password. If you don't receive the email, check your spam folder or contact <a href="mailto:support@wermom.com">support@wermom.com</a>.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Why was I charged after cancelling?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">If you cancelled after the 7-day free trial ended, the annual charge of $299 had already been processed. Cancellation prevents future renewals but doesn't refund the current period. You keep access until the end of your billing period. For refund requests, visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How accurate is Wermom AI?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Wermom AI provides guidance based on WHO, AAP, and peer-reviewed research. It is designed for educational purposes only and is not a substitute for professional medical advice. Always consult your healthcare provider for medical decisions about you or your baby.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How do I report a bug?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Email us at <a href="mailto:support@wermom.com">support@wermom.com</a> with: your device model, iOS/Android version, app version (Settings → About), steps to reproduce the issue, and any screenshots. We typically investigate within 48 hours.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can I track a second baby or pregnancy?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Yes! Go to Settings → Profiles → Add Child. Each child has their own tracking space. You can also run a pregnancy profile alongside a baby profile.</div></div>
     </div>
 
   </div>
+</div>
 
-  <div class="card">
-    <h2>Legal & Policies</h2>
-    <div class="contact-grid">
-      <div class="contact-row"><span class="label">Privacy Policy</span><a href="/privacy-policy.html">Read →</a></div>
-      <div class="contact-row"><span class="label">Terms of Service</span><a href="/terms-of-service.html">Read →</a></div>
-      <div class="contact-row"><span class="label">Cancellation Policy</span><a href="/cancellation-policy.html">Read →</a></div>
+<!-- Account Deletion Section -->
+<div style="padding: 0 5vw 80px;">
+  <div style="max-width: min(800px, 92vw); margin: 0 auto;">
+    <h2 style="font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 400; color: var(--midnight); text-align: center; margin-bottom: 40px; letter-spacing: -0.02em; line-height: 1.15;">How to Delete Your Account</h2>
+
+    <div style="background: var(--white); border: 1px solid rgba(0,0,0,0.04); border-radius: 16px; padding: 32px; margin-bottom: 24px;">
+      <h3 style="font-family: var(--font-num); font-size: 1.1rem; font-weight: 700; color: var(--midnight); margin-bottom: 16px;">Steps to Delete Your Account</h3>
+      <p style="font-size: 0.9rem; color: var(--slate); line-height: 1.9; margin-bottom: 12px;">You can delete your Wermom account in two ways:</p>
+      <ul style="margin: 0 0 16px 20px; font-size: 0.9rem; color: var(--slate); line-height: 1.9;">
+        <li style="margin-bottom: 8px;">In the app: Settings → Account → Delete Account</li>
+        <li style="margin-bottom: 8px;">By email: Contact <a href="mailto:privacy@wermom.com" style="color: var(--rose-deep); text-decoration: none; font-weight: 500;">privacy@wermom.com</a></li>
+      </ul>
+    </div>
+
+    <div style="background: rgba(232,132,106,0.08); border: 2px solid var(--rose); border-radius: 8px; padding: 24px; margin-bottom: 24px;">
+      <p style="font-size: 0.95rem; color: var(--midnight); line-height: 1.8; font-weight: 600; margin-bottom: 12px;">Important: Deleting your Wermom account does NOT automatically cancel your Apple subscription.</p>
+      <p style="font-size: 0.9rem; color: var(--midnight); line-height: 1.8; margin-bottom: 0;">You must cancel your subscription separately in iPhone Settings → Apple ID → Subscriptions → Wermom before deleting your account, or you will continue to be charged.</p>
+    </div>
+
+    <div style="background: var(--white); border: 1px solid rgba(0,0,0,0.04); border-radius: 16px; padding: 32px;">
+      <h3 style="font-family: var(--font-num); font-size: 1.1rem; font-weight: 700; color: var(--midnight); margin-bottom: 16px;">Data Deletion Timeline</h3>
+      <p style="font-size: 0.9rem; color: var(--slate); line-height: 1.9;">Your data will be removed within 30 days. Backup copies are purged within 90 days.</p>
     </div>
   </div>
+</div>
 
-</main>
+<!-- Quick Links -->
+<div class="quick-links">
+  <div class="quick-inner">
+    <h2 class="quick-heading">Quick Links</h2>
+    <div class="quick-grid">
+      <a href="privacy-policy.html" class="quick-btn">Privacy Policy</a>
+      <a href="terms-of-service.html" class="quick-btn">Terms of Service</a>
+      <a href="dpa.html" class="quick-btn">Data Processing Addendum</a>
+      <a href="cancellation-policy.html" class="quick-btn">Cancellation Policy</a>
+      <a href="help.html" class="quick-btn">Help Center</a>
+      <a href="contact.html" class="quick-btn">Contact Us</a>
+    </div>
+  </div>
+</div>
 
+<!-- Footer -->
 <footer>
-  © 2026 Wermom Technologies Inc. · <a href="/">Home</a> · <a href="mailto:hello@wermom.com">hello@wermom.com</a>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="app.html" class="nav-logo" style="gap:10px;">
+          <img src="logo.svg" alt="Wermom" height="44" style="display:block;">
+        </a>
+        <p>Your baby's personal health team. From pregnancy through the first six years — expert care, daily insights, and a plan built around your child.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="app.html#chat">Expert Chat</a>
+        <a href="app.html#reviews">Reviews</a>
+        <a href="app.html#experts">Our Experts</a>
+        <a href="app.html#pricing">Get Started</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="support.html">Help & Support</a>
+        <a href="help.html">Help Center</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="dpa.html">Data Processing</a>
+        <a href="cancellation-policy.html">Cancellation Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Wermom, Inc. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html">Terms</a>
+        <a href="dpa.html">DPA</a>
+        <a href="cancellation-policy.html">Refunds</a>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 10);
+}, { passive: true });
+
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+</script>
 
 </body>
 </html>

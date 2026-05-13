@@ -1,0 +1,38 @@
+# Wermom — We Are Moms
+> AI-powered baby health tracking and pregnancy monitoring app trusted by 30,000+ mothers worldwide. Expert-backed insights covering pregnancy through age 6, with personalized health tracking, meal plans, sleep analysis, and 24/7 AI health assistant.
+
+## About
+- [Home](https://www.wermom.com): Official Wermom website and app platform
+- [Our Story](https://www.wermom.com/about): Learn about the mission and team behind We Are Moms
+- [Why Wermom](https://www.wermom.com/why): AI-powered parenting support backed by medical expertise
+
+## Features
+- [Health Tracker](https://www.wermom.com/features): Comprehensive health monitoring from pregnancy through age 6
+- [Meal Plans](https://www.wermom.com/features/nutrition): Personalized nutrition and meal planning for mothers and babies
+- [Sleep Analysis](https://www.wermom.com/features/sleep): Sleep tracking and improvement recommendations
+- [Growth Charts](https://www.wermom.com/features/growth): Monitor baby development milestones and growth metrics
+- [Health Assessment](https://www.wermom.com/assessment): 93-question personalized health evaluation
+- [Daily Reports](https://www.wermom.com/reports): Comprehensive daily health insights and recommendations
+- [AI Health Assistant](https://www.wermom.com/ai-assistant): 24/7 AI-powered health guidance and expert support
+
+## Pricing
+- [Pricing Plans](https://www.wermom.com/pricing): Free 7-day trial, then $24.99/month subscription
+- [Comparison](https://www.wermom.com/pricing/comparison): How Wermom compares to BabyCenter, Soula, Peanut Track, PreggApp, and What to Expect
+
+## Blog & Resources
+- [Blog](https://www.wermom.com/blog): 470+ articles across 26 categories covering pregnancy and parenting topics
+- [Guides](https://www.wermom.com/guides): Expert-backed resources and how-to guides
+- [FAQ](https://www.wermom.com/faq): Frequently asked questions about Wermom and parenting
+
+## Legal & Trust
+- [Privacy Policy](https://www.wermom.com/privacy): GDPR compliant data protection and privacy practices
+- [Terms of Service](https://www.wermom.com/terms): User agreement and platform terms
+- [Security](https://www.wermom.com/security): Data security and encryption standards
+- [Reviews](https://www.wermom.com/reviews): 4.9/5 rating from 50,000+ user reviews
+
+## Stats
+- 30,000+ active mothers
+- 4.9/5 star rating (50,000+ reviews)
+- Coverage: Pregnancy through age 6
+- GDPR compliant
+- AI-powered insights with medical expertise
