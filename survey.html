@@ -2102,7 +2102,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div style="text-align:center;margin-bottom:20px;">
                         <p style="font-weight:600;font-size:1.05rem;color:var(--midnight);margin-bottom:16px;">Download the app &amp; log in now</p>
                         <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
-                            <a href="https://apps.apple.com/app/wermom" target="_blank" rel="noopener" style="display:inline-block;transition:transform .2s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                            <a href="https://apps.apple.com/app/id6762637772" target="_blank" rel="noopener" style="display:inline-block;transition:transform .2s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                                 <svg viewBox="0 0 120 40" width="170" height="56">
                                     <rect width="120" height="40" rx="6" fill="#000"/>
                                     <g fill="#fff">
@@ -2112,27 +2112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     </g>
                                 </svg>
                             </a>
-                            <a href="https://play.google.com/store/apps/details?id=com.wermom" target="_blank" rel="noopener" style="display:inline-block;transition:transform .2s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                <svg viewBox="0 0 120 40" width="170" height="56">
-                                    <rect width="120" height="40" rx="6" fill="#000"/>
-                                    <g>
-                                        <defs>
-                                            <linearGradient id="gp1s" x1="15" y1="8" x2="28" y2="33" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00A0FF"/><stop offset="1" stop-color="#00E3FF"/></linearGradient>
-                                            <linearGradient id="gp2s" x1="18" y1="20" x2="30" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFE000"/><stop offset="1" stop-color="#FFA500"/></linearGradient>
-                                            <linearGradient id="gp3s" x1="14" y1="28" x2="22" y2="36" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF3A44"/><stop offset="1" stop-color="#C31162"/></linearGradient>
-                                            <linearGradient id="gp4s" x1="14" y1="4" x2="22" y2="12" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#32A071"/><stop offset="1" stop-color="#2DA771"/></linearGradient>
-                                        </defs>
-                                        <path d="M15.5 8.4c-.3.3-.5.8-.5 1.4v20.4c0 .6.2 1.1.5 1.4l.1.1 11.4-11.4v-.3L15.5 8.4z" fill="url(#gp1s)"/>
-                                        <path d="M30.8 24.1l-3.8-3.8v-.3l3.8-3.8.1.1 4.5 2.5c1.3.7 1.3 1.9 0 2.6l-4.5 2.6-.1.1z" fill="url(#gp2s)"/>
-                                        <path d="M31 24l-4-3.9-11.5 11.5c.4.5 1.1.5 1.9.1L31 24z" fill="url(#gp3s)"/>
-                                        <path d="M31 16l-13.6-7.7c-.8-.4-1.5-.3-1.9.1L27 20l4-4z" fill="url(#gp4s)"/>
-                                    </g>
-                                    <g fill="#fff">
-                                        <text x="42" y="15" font-family="system-ui,-apple-system,sans-serif" font-size="5.5" font-weight="400" letter-spacing=".02em">GET IT ON</text>
-                                        <text x="42" y="27" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" letter-spacing="-.01em">Google Play</text>
-                                    </g>
-                                </svg>
-                            </a>
+                            <!-- Google Play badge removed - Android app not yet available -->
                         </div>
                     </div>
 
@@ -2882,14 +2862,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         // (Password strength indicators removed — account creation happens before survey)
 
-        const WERMOM_API_URL = 'https://wermom-backend-production.up.railway.app';
+        // V36: same-origin Vercel function (old Railway backend was 502 and
+        // every submission was silently lost).
+        const WERMOM_SURVEY_ENDPOINT = '/api/survey-submit';
+        // One id per session: retries dedup server-side on submission_id.
+        const WERMOM_SUBMISSION_ID = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : ('s-' + Date.now() + '-' + Math.random().toString(36).slice(2));
 
         async function submitSurveyData() {
             collectFormData();
-            console.log('Survey Data:', formData);
 
             try {
                 const payload = {
+                    submissionId: WERMOM_SUBMISSION_ID,
                     email: formData.email || '',
                     fullName: formData.fullName || '',
                     phone: formData.phone || '',
@@ -2910,19 +2894,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     surveyData: formData
                 };
 
-                const response = await fetch(WERMOM_API_URL + '/api/survey/submit', {
+                const response = await fetch(WERMOM_SURVEY_ENDPOINT, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
 
-                if (response.ok) {
-                    console.log('Survey submitted successfully');
-                }
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                hideSurveySubmitError();
             } catch (err) {
                 console.error('Survey submission error:', err);
-                // Don't block the user — they already see the completion step
+                // V36: no more silent loss — surface an inline error + retry
+                // on the completion step instead of pretending it worked.
+                showSurveySubmitError();
             }
+        }
+
+        function showSurveySubmitError() {
+            var box = document.getElementById('surveySubmitError');
+            if (!box) {
+                box = document.createElement('div');
+                box.id = 'surveySubmitError';
+                box.style.cssText = 'margin:16px auto 0;max-width:520px;padding:12px 16px;border-radius:12px;background:#FDECEC;color:#B3261E;font-size:0.95rem;text-align:center;';
+                box.innerHTML = 'We could not save your answers. <button id="surveyRetryBtn" style="margin-left:8px;padding:6px 14px;border:none;border-radius:8px;background:#B3261E;color:#fff;cursor:pointer;font-size:0.9rem;">Retry</button>';
+                var step = document.querySelector('.step.active') || document.body;
+                step.appendChild(box);
+                document.getElementById('surveyRetryBtn').addEventListener('click', function () {
+                    this.disabled = true; this.textContent = 'Retrying...';
+                    var self = this;
+                    submitSurveyData().finally(function () { self.disabled = false; self.textContent = 'Retry'; });
+                });
+            }
+            box.style.display = '';
+        }
+
+        function hideSurveySubmitError() {
+            var box = document.getElementById('surveySubmitError');
+            if (box) box.style.display = 'none';
         }
 
 
@@ -2940,7 +2948,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             setTimeout(() => {
                 if (Date.now() - start < 2000) {
                     // Deep link didn't work — redirect to App Store / landing
-                    window.location.href = 'https://apps.apple.com/app/wermom/id0000000000'; // Replace with real App Store ID
+                    window.location.href = 'https://apps.apple.com/app/id6762637772';
                 }
             }, 1500);
         }
