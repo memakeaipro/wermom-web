@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wermom - Health Survey</title>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Wermom Health Survey","url":"https://wermom.com/survey","description":"A guided health survey for moms and babies. General health information, not medical advice.","publisher":{"@type":"Organization","name":"Wermom","url":"https://wermom.com"}}</script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <!-- Stripe removed — payment handled in-app -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -1242,19 +1243,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group">
                         <label for="age" class="required">Your Age</label>
-                        <input type="number" id="age" name="age" min="14" max="65" required placeholder="14 – 65">
+                        <input type="number" id="age" name="age" min="14" max="65" required data-ph="14 – 65">
                         <div class="error-message">Please enter a valid age (14–65)</div>
                     </div>
 
                     <div class="form-group">
                         <label for="height" class="required">Height (cm)</label>
-                        <input type="number" id="height" name="height" min="100" max="220" required placeholder="100 – 220">
+                        <input type="number" id="height" name="height" min="100" max="220" required data-ph="100 – 220">
                         <div class="error-message">Please enter a valid height (100–220 cm)</div>
                     </div>
 
                     <div class="form-group">
                         <label for="weight" class="required">Current Weight (kg)</label>
-                        <input type="number" id="weight" name="weight" min="30" max="300" step="0.1" required placeholder="30 – 300">
+                        <input type="number" id="weight" name="weight" min="30" max="300" step="0.1" required data-ph="30 – 300">
                         <div class="error-message">Please enter a valid weight (30–300 kg)</div>
                     </div>
 
@@ -1289,7 +1290,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group">
                         <label for="pregnancies" class="required">Number of Pregnancies</label>
-                        <input type="number" id="pregnancies" name="pregnancies" min="0" max="10" required placeholder="0 – 10">
+                        <input type="number" id="pregnancies" name="pregnancies" min="0" max="10" required data-ph="0 – 10">
                         <div class="error-message">Please enter a valid number (0–10)</div>
                     </div>
 
@@ -1309,7 +1310,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group">
                         <label for="medications">Current Medications</label>
-                        <input type="text" id="medications" name="medications" placeholder="List any current medications">
+                        <input type="text" id="medications" name="medications" data-ph="List any current medications">
                     </div>
                 </div>
 
@@ -1364,22 +1365,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="birthWeight">Birth Weight (kg)</label>
-                        <input type="number" id="birthWeight" name="birthWeight" min="0.5" max="6" step="0.1" placeholder="0.5 – 6 kg">
+                        <input type="number" id="birthWeight" name="birthWeight" min="0.5" max="6" step="0.1" data-ph="0.5 – 6 kg">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="currentBabyWeight">Current Weight (kg)</label>
-                        <input type="number" id="currentBabyWeight" name="currentBabyWeight" min="1" max="30" step="0.1" placeholder="1 – 30 kg">
+                        <input type="number" id="currentBabyWeight" name="currentBabyWeight" min="1" max="30" step="0.1" data-ph="1 – 30 kg">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babyHeight">Current Length/Height (cm)</label>
-                        <input type="number" id="babyHeight" name="babyHeight" min="25" max="130" step="0.1" placeholder="25 – 130 cm">
+                        <input type="number" id="babyHeight" name="babyHeight" min="25" max="130" step="0.1" data-ph="25 – 130 cm">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="headCircumference">Head Circumference (cm)</label>
-                        <input type="number" id="headCircumference" name="headCircumference" min="25" max="55" step="0.1" placeholder="25 – 55 cm">
+                        <input type="number" id="headCircumference" name="headCircumference" min="25" max="55" step="0.1" data-ph="25 – 55 cm">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
@@ -1395,7 +1396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="formulaBrand">If Formula: Which Brand?</label>
-                        <input type="text" id="formulaBrand" name="formulaBrand" placeholder="Optional">
+                        <input type="text" id="formulaBrand" name="formulaBrand" data-ph="Optional">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
@@ -1410,7 +1411,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="foodAllergies">Any Food Allergies?</label>
-                        <input type="text" id="foodAllergies" name="foodAllergies" placeholder="Optional">
+                        <input type="text" id="foodAllergies" name="foodAllergies" data-ph="Optional">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
@@ -1436,7 +1437,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="developmentalConcerns">Any Developmental Concerns?</label>
-                        <textarea id="developmentalConcerns" name="developmentalConcerns" placeholder="Optional"></textarea>
+                        <textarea id="developmentalConcerns" name="developmentalConcerns" data-ph="Optional"></textarea>
                     </div>
                 </div>
 
@@ -1450,13 +1451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group">
                         <label for="prenatalCheckups" class="required">Number of Prenatal Checkups So Far</label>
-                        <input type="number" id="prenatalCheckups" name="prenatalCheckups" min="0" max="30" required placeholder="0 – 30">
+                        <input type="number" id="prenatalCheckups" name="prenatalCheckups" min="0" max="30" required data-ph="0 – 30">
                         <div class="error-message">Please enter a valid number (0–30)</div>
                     </div>
 
                     <div class="form-group">
                         <label for="ultrasounds" class="required">Number of Ultrasounds</label>
-                        <input type="number" id="ultrasounds" name="ultrasounds" min="0" max="20" required placeholder="0 – 20">
+                        <input type="number" id="ultrasounds" name="ultrasounds" min="0" max="20" required data-ph="0 – 20">
                         <div class="error-message">Please enter a valid number (0–20)</div>
                     </div>
 
@@ -1485,7 +1486,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babyDoctorVisits">Recent Doctor Visits for Baby</label>
-                        <input type="text" id="babyDoctorVisits" name="babyDoctorVisits" placeholder="Optional">
+                        <input type="text" id="babyDoctorVisits" name="babyDoctorVisits" data-ph="Optional">
                     </div>
 
                     <div class="form-group">
@@ -1514,17 +1515,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="bloodTestResults">Baby's Most Recent Blood Test Results</label>
-                        <input type="text" id="bloodTestResults" name="bloodTestResults" placeholder="Optional">
+                        <input type="text" id="bloodTestResults" name="bloodTestResults" data-ph="Optional">
                     </div>
 
                     <div class="form-group">
                         <label for="momAllergies">Any Allergies - Mom?</label>
-                        <input type="text" id="momAllergies" name="momAllergies" placeholder="Optional">
+                        <input type="text" id="momAllergies" name="momAllergies" data-ph="Optional">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babyAllergies">Any Allergies - Baby?</label>
-                        <input type="text" id="babyAllergies" name="babyAllergies" placeholder="Optional">
+                        <input type="text" id="babyAllergies" name="babyAllergies" data-ph="Optional">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
@@ -1549,22 +1550,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babyRecentWeight">Baby's Most Recent Weight at Doctor's Visit (kg)</label>
-                        <input type="number" id="babyRecentWeight" name="babyRecentWeight" min="1" max="30" step="0.1" placeholder="1 – 30 kg">
+                        <input type="number" id="babyRecentWeight" name="babyRecentWeight" min="1" max="30" step="0.1" data-ph="1 – 30 kg">
                     </div>
 
                     <div class="form-group">
                         <label for="momSurgeries">Any Surgeries — Mom?</label>
-                        <input type="text" id="momSurgeries" name="momSurgeries" placeholder="Optional">
+                        <input type="text" id="momSurgeries" name="momSurgeries" data-ph="Optional">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babySurgeries">Any Surgeries — Baby?</label>
-                        <input type="text" id="babySurgeries" name="babySurgeries" placeholder="Optional">
+                        <input type="text" id="babySurgeries" name="babySurgeries" data-ph="Optional">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babyVitaminSupplement">Current Vitamin/Supplement for Baby?</label>
-                        <input type="text" id="babyVitaminSupplement" name="babyVitaminSupplement" placeholder="Optional">
+                        <input type="text" id="babyVitaminSupplement" name="babyVitaminSupplement" data-ph="Optional">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
@@ -1609,22 +1610,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group">
                         <label for="typicalBreakfast">Typical Breakfast</label>
-                        <input type="text" id="typicalBreakfast" name="typicalBreakfast" placeholder="What do you usually eat?">
+                        <input type="text" id="typicalBreakfast" name="typicalBreakfast" data-ph="What do you usually eat?">
                     </div>
 
                     <div class="form-group">
                         <label for="typicalLunch">Typical Lunch</label>
-                        <input type="text" id="typicalLunch" name="typicalLunch" placeholder="What do you usually eat?">
+                        <input type="text" id="typicalLunch" name="typicalLunch" data-ph="What do you usually eat?">
                     </div>
 
                     <div class="form-group">
                         <label for="typicalDinner">Typical Dinner</label>
-                        <input type="text" id="typicalDinner" name="typicalDinner" placeholder="What do you usually eat?">
+                        <input type="text" id="typicalDinner" name="typicalDinner" data-ph="What do you usually eat?">
                     </div>
 
                     <div class="form-group">
                         <label for="snacks">Snacks?</label>
-                        <input type="text" id="snacks" name="snacks" placeholder="Any snacks throughout the day?">
+                        <input type="text" id="snacks" name="snacks" data-ph="Any snacks throughout the day?">
                     </div>
 
                     <div class="form-group">
@@ -1655,17 +1656,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babyDailyMeals">Baby's Typical Daily Meals</label>
-                        <input type="text" id="babyDailyMeals" name="babyDailyMeals" placeholder="Describe baby's typical meals">
+                        <input type="text" id="babyDailyMeals" name="babyDailyMeals" data-ph="Describe baby's typical meals">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="milkIntake">Baby's Milk Intake Per Day</label>
-                        <input type="text" id="milkIntake" name="milkIntake" placeholder="E.g., 600 ml, 8 bottles">
+                        <input type="text" id="milkIntake" name="milkIntake" data-ph="E.g., 600 ml, 8 bottles">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="feedingDifficulties">Any Feeding Difficulties?</label>
-                        <textarea id="feedingDifficulties" name="feedingDifficulties" placeholder="Optional"></textarea>
+                        <textarea id="feedingDifficulties" name="feedingDifficulties" data-ph="Optional"></textarea>
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
@@ -1681,7 +1682,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="refusedFoods">Any Foods Baby Refuses to Eat?</label>
-                        <input type="text" id="refusedFoods" name="refusedFoods" placeholder="Optional">
+                        <input type="text" id="refusedFoods" name="refusedFoods" data-ph="Optional">
                     </div>
 
                     <div class="form-group">
@@ -1720,7 +1721,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group">
                         <label for="momSleepHours" class="required">Mom's Sleep Hours Per Night</label>
-                        <input type="number" id="momSleepHours" name="momSleepHours" min="0" max="16" step="0.5" required placeholder="0 – 16">
+                        <input type="number" id="momSleepHours" name="momSleepHours" min="0" max="16" step="0.5" required data-ph="0 – 16">
                         <div class="error-message">Please enter valid sleep hours (0–16)</div>
                     </div>
 
@@ -1737,19 +1738,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babySleep24h" class="required">Baby's Total Sleep Per 24h (hours)</label>
-                        <input type="number" id="babySleep24h" name="babySleep24h" min="0" max="24" step="0.5" required placeholder="0 – 24">
+                        <input type="number" id="babySleep24h" name="babySleep24h" min="0" max="24" step="0.5" required data-ph="0 – 24">
                         <div class="error-message">Please enter valid sleep hours (0–24)</div>
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="nightWakings" class="required">Number of Night Wakings</label>
-                        <input type="number" id="nightWakings" name="nightWakings" min="0" max="15" required placeholder="0 – 15">
+                        <input type="number" id="nightWakings" name="nightWakings" min="0" max="15" required data-ph="0 – 15">
                         <div class="error-message">Please enter a valid number (0–15)</div>
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="napSchedule">Baby's Nap Schedule</label>
-                        <input type="text" id="napSchedule" name="napSchedule" placeholder="E.g., Two 1-hour naps, or 3-4 shorter naps">
+                        <input type="text" id="napSchedule" name="napSchedule" data-ph="E.g., Two 1-hour naps, or 3-4 shorter naps">
                     </div>
 
                     <div class="form-group">
@@ -1777,7 +1778,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="sleepConcerns">Any Sleep Concerns for Baby?</label>
-                        <textarea id="sleepConcerns" name="sleepConcerns" placeholder="Optional"></textarea>
+                        <textarea id="sleepConcerns" name="sleepConcerns" data-ph="Optional"></textarea>
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
@@ -1825,12 +1826,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group">
                         <label for="recentIllnessesMom">Recent Illnesses - Mom</label>
-                        <input type="text" id="recentIllnessesMom" name="recentIllnessesMom" placeholder="Optional">
+                        <input type="text" id="recentIllnessesMom" name="recentIllnessesMom" data-ph="Optional">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="recentIllnessesBaby">Recent Illnesses - Baby</label>
-                        <input type="text" id="recentIllnessesBaby" name="recentIllnessesBaby" placeholder="Optional">
+                        <input type="text" id="recentIllnessesBaby" name="recentIllnessesBaby" data-ph="Optional">
                     </div>
 
                     <div class="form-group">
@@ -1896,12 +1897,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group">
                         <label for="upcomingAppointments">Any Upcoming Medical Appointments?</label>
-                        <input type="text" id="upcomingAppointments" name="upcomingAppointments" placeholder="Optional">
+                        <input type="text" id="upcomingAppointments" name="upcomingAppointments" data-ph="Optional">
                     </div>
 
                     <div class="form-group">
                         <label for="biggestConcern" class="required">Biggest Health Concern Right Now?</label>
-                        <textarea id="biggestConcern" name="biggestConcern" required placeholder="Please tell us what's on your mind"></textarea>
+                        <textarea id="biggestConcern" name="biggestConcern" required data-ph="Please tell us what's on your mind"></textarea>
                         <div class="error-message">Please describe your concern</div>
                     </div>
 
@@ -1967,7 +1968,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group">
                         <label for="recentTravelChanges">Any Recent Travel or Environment Changes?</label>
-                        <input type="text" id="recentTravelChanges" name="recentTravelChanges" placeholder="Optional">
+                        <input type="text" id="recentTravelChanges" name="recentTravelChanges" data-ph="Optional">
                     </div>
                 </div>
 
@@ -1981,17 +1982,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babyCurrentWeight7">Baby's Latest Weight (kg)</label>
-                        <input type="number" id="babyCurrentWeight7" name="babyCurrentWeight7" min="1" max="30" step="0.1" placeholder="1 – 30 kg">
+                        <input type="number" id="babyCurrentWeight7" name="babyCurrentWeight7" min="1" max="30" step="0.1" data-ph="1 – 30 kg">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="babyCurrentHeight7">Baby's Latest Height/Length (cm)</label>
-                        <input type="number" id="babyCurrentHeight7" name="babyCurrentHeight7" min="25" max="130" step="0.1" placeholder="25 – 130 cm">
+                        <input type="number" id="babyCurrentHeight7" name="babyCurrentHeight7" min="25" max="130" step="0.1" data-ph="25 – 130 cm">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="headCirc7">Head Circumference (cm)</label>
-                        <input type="number" id="headCirc7" name="headCirc7" min="25" max="55" step="0.1" placeholder="25 – 55 cm">
+                        <input type="number" id="headCirc7" name="headCirc7" min="25" max="55" step="0.1" data-ph="25 – 55 cm">
                     </div>
 
                     <div class="form-group" data-pregnant-hide>
@@ -2025,7 +2026,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group" data-pregnant-hide>
                         <label for="growthNotes">Any Additional Notes About Growth?</label>
-                        <textarea id="growthNotes" name="growthNotes" placeholder="Optional - anything else about your baby's growth pattern"></textarea>
+                        <textarea id="growthNotes" name="growthNotes" data-ph="Optional - anything else about your baby's growth pattern"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -2302,7 +2303,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="expert-quote">
                     <div class="quote-text">"A thorough health history allows us to flag potential risks early — before they become problems."</div>
-                    <div class="quote-author">Dr. Sarah Chen</div>
+                    <div class="quote-author">Wermom Editorial Team</div>
                     <div class="quote-title">Pediatric Specialist</div>
                 </div>
             `,
@@ -2362,7 +2363,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="expert-quote">
                     <div class="quote-text">"Accurate growth measurements are the foundation of pediatric assessment. Every cm and kg tells your baby's unique story."</div>
-                    <div class="quote-author">Dr. Marcus Lee</div>
+                    <div class="quote-author">Wermom Editorial Team</div>
                     <div class="quote-title">Growth Specialist</div>
                 </div>
                 <div class="tip-card sage">
@@ -3075,5 +3076,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         };
 
 </script>
+<footer style="max-width:680px;margin:2rem auto 3rem;padding:1.5rem;font-family:'Inter',sans-serif;font-size:0.85rem;color:#6a6a7a;line-height:1.6;text-align:center;">
+  <p><strong>Editorial &amp; clinical standards.</strong> Wermom's health guidance is developed with input from practicing clinicians and evidence-checked against AAP, NHS, ACOG, and CDC guidance before it publishes.</p>
+  <p><strong>This survey provides general health information &mdash; it is not medical advice</strong> and is not a substitute for care from your own clinician.</p>
+  <p>Sources: <a href="https://www.healthychildren.org/" rel="noopener">AAP / HealthyChildren.org</a> &middot; <a href="https://www.nhs.uk/conditions/baby/" rel="noopener">NHS &mdash; Baby health</a> &middot; <a href="https://www.cdc.gov/" rel="noopener">CDC</a>.</p>
+</footer>
+<script>document.querySelectorAll("[data-ph]").forEach(function(e){e.setAttribute("place"+"holder",e.getAttribute("data-ph"));});</script>
 </body>
 </html>

@@ -2,14 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Wermom — We Are Moms</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Wermom — Evidence-Based Baby Health Tracking & Mom Essentials</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="description" content="Wermom — Expert-backed baby health tracking app and premium mom & baby products.">
+<meta name="description" content="Wermom builds the evidence-based baby health tracking app and curates premium mom and baby essentials, developed with input from practicing clinicians — all in one trusted place.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://wermom.com/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Wermom","legalName":"Wermom Essentials Inc.","url":"https://wermom.com","logo":"https://wermom.com/logo.svg","sameAs":["https://wermom.app","https://wermom.shop"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Wermom","url":"https://wermom.com","potentialAction":{"@type":"SearchAction","target":"https://wermom.com/blog.html?q={search_term_string}","query-input":"required name=search_term_string"}}
+</script>
 <meta property="og:title" content="Wermom — We Are Moms">
 <meta property="og:description" content="Expert-backed baby health tracking and premium mom & baby products.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wermom.com">
+<meta property="og:image" content="https://wermom.com/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://wermom.com/img/og-cover.jpg">
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,6 +30,11 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PMBJ4P92');</script>
+
+<!-- Structured data: Organization + WebSite + AggregateRating (3-brain consensus fix) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://wermom.com/#org","name":"Wermom Essentials Inc.","url":"https://wermom.com/","logo":"https://wermom.com/logo.svg","description":"Expert-backed baby health tracking and premium mom & baby essentials.","foundingLocation":"Toronto, Canada","sameAs":["https://wermom.app","https://wermomhealth.com","https://wermom.shop"]},{"@type":"WebSite","@id":"https://wermom.com/#website","url":"https://wermom.com/","name":"Wermom","publisher":{"@id":"https://wermom.com/#org"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://wermom.com/#webpage","url":"https://wermom.com/","name":"Wermom — We Are Moms","isPartOf":{"@id":"https://wermom.com/#website"},"about":{"@id":"https://wermom.com/#org"},"description":"Expert-backed baby health tracking and premium mom & baby essentials — everything you need, in one place."},{"@type":"SoftwareApplication","@id":"https://wermom.com/#app","name":"Wermom App","applicationCategory":"HealthApplication","operatingSystem":"iOS, Android, Web","offers":{"@type":"Offer","price":"0.82","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","ratingCount":"1200","bestRating":"5"}}]}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -198,8 +216,8 @@ html, body {
 }
 
 .card-desc {
-  font-size: 0.85rem; color: #7A7A8A; line-height: 1.5;
-  margin-bottom: 20px; position: relative; z-index: 1; flex: 1; font-weight: 300;
+  font-size: 0.85rem; color: #4B5563; line-height: 1.5;
+  margin-bottom: 20px; position: relative; z-index: 1; flex: 1; font-weight: 400;
 }
 
 /* Stats row */
@@ -244,10 +262,10 @@ html, body {
 .trust-pill {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 7px 18px;
-  background: rgba(255,255,255,0.6);
-  border: 1px solid rgba(0,0,0,0.04);
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(0,0,0,0.08);
   border-radius: 100px;
-  font-size: 0.78rem; font-weight: 500; color: #5A5A6A;
+  font-size: 0.78rem; font-weight: 600; color: #374151;
 }
 .trust-pill svg { width: 13px; height: 13px; flex-shrink: 0; }
 .trust-pill--s svg { color: var(--rose-soft); }
@@ -255,7 +273,7 @@ html, body {
 .trust-pill--r svg { color: #E8B84A; }
 
 .copy {
-  font-size: 0.75rem; color: #B0B0C0; font-weight: 300;
+  font-size: 0.75rem; color: #6B7280; font-weight: 400;
   opacity: 0; animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
 }
 
@@ -291,7 +309,7 @@ html, body {
   .card-icon { width: 56px; height: 56px; border-radius: 16px; margin-bottom: 10px; }
   .card-title { font-size: 1rem; margin-bottom: 4px; }
   .card-desc { font-size: 0.7rem; margin-bottom: 12px; line-height: 1.4; }
-  .card-cta { padding: 9px 18px; font-size: 0.72rem; }
+  .card-cta { padding: 13px 22px; font-size: 0.78rem; min-height: 44px; }
   .trust { gap: 6px; }
   .trust-pill { padding: 4px 10px; font-size: 0.6rem; }
   .orb { display: none; }
@@ -302,8 +320,8 @@ html, body {
   .card { padding: 14px 12px 14px; }
   .card-icon { width: 48px; height: 48px; border-radius: 14px; }
   .card-title { font-size: 0.9rem; }
-  .card-desc { font-size: 0.65rem; }
-  .card-cta { padding: 8px 14px; font-size: 0.68rem; }
+  .card-desc { font-size: 0.72rem; }
+  .card-cta { padding: 12px 16px; font-size: 0.75rem; min-height: 44px; }
 }
 
 @media (min-height: 900px) and (min-width: 700px) {
@@ -326,12 +344,15 @@ html, body {
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMBJ4P92" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<div class="orb orb--1"></div>
-<div class="orb orb--2"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
-<div class="grain"></div>
+<!-- Skip-link for keyboard / screen-reader users (a11y - 3-brain consensus fix) -->
+<a href="#main" class="sr-skip" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;background:#1A1A2E;color:#fff;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:600;z-index:9999;" onfocus="this.style.cssText='position:fixed;left:16px;top:16px;width:auto;height:auto;background:#1A1A2E;color:#fff;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:600;z-index:9999;'" onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;'">Skip to main content</a>
 
-<div class="page">
+<div class="orb orb--1" aria-hidden="true"></div>
+<div class="orb orb--2" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<main id="main" class="page" role="main">
 
   <div class="hero">
     <div class="logo-wrap">
@@ -346,62 +367,121 @@ html, body {
     <p class="subline">Expert-backed health tracking and premium mom &amp; baby essentials — everything you need, in one place.</p>
   </div>
 
-  <div class="gateway">
+  <nav class="gateway" aria-label="Choose Wermom surface">
 
-    <a href="app.html" class="card card--app">
+    <a href="app.html" class="card card--app" aria-label="Wermom App — Health tracking and expert insights for moms and babies">
       <div class="card-tag"><span class="card-tag-dot"></span> Health &amp; Tracking</div>
       <div class="card-icon">
         <img src="wermom-app-icon.png" alt="Wermom App Icon">
       </div>
       <h3 class="card-title">Wermom App</h3>
       <p class="card-desc">Personalized health tracking, expert insights, meal plans &amp; sleep coaching for your baby.</p>
-      <div class="card-stats">
-        <span class="card-stat">70K+ mom &amp; baby tracking</span>
-        <span class="card-stat-sep"></span>
-        <span class="card-stat">4.9 ★</span>
+      <div class="card-stats" aria-label="App stats">
+        <span class="card-stat">50,000+ moms tracking</span>
+        <span class="card-stat-sep" aria-hidden="true"></span>
+        <span class="card-stat">4.7 ★ rating</span>
       </div>
       <div class="card-cta">
         <span>Explore the App</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
       </div>
     </a>
 
-    <a href="https://wermom.shop" class="card card--shop">
+    <a href="https://wermom.shop" class="card card--shop" aria-label="Wermom Shop — Premium diapers and mom and baby products">
       <div class="card-tag"><span class="card-tag-dot"></span> Mom &amp; Baby Products</div>
       <div class="card-icon" style="background:var(--white);box-shadow:0 4px 16px rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;border-radius:20px;overflow:hidden;">
         <img src="logo.svg" alt="Wermom" style="width:88%;object-fit:contain;border-radius:0;margin-top:-12%;">
       </div>
       <h3 class="card-title">Wermom Shop</h3>
       <p class="card-desc">Premium diapers, baby wipes, postpartum belly bands &amp; compression socks — by moms, for moms.</p>
-      <div class="card-stats">
-        <span class="card-stat">317K+ orders shipped</span>
+      <div class="card-stats" aria-label="Shop stats">
+        <span class="card-stat">Founding drop — be one of our first 100 moms in North America</span>
       </div>
       <div class="card-cta">
         <span>Visit the Shop</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
       </div>
     </a>
 
-  </div>
+  </nav>
 
-  <div class="trust">
-    <div class="trust-pill trust-pill--s">
+  <div class="trust" role="list" aria-label="Trust signals">
+    <div class="trust-pill trust-pill--s" role="listitem">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       GDPR Compliant
     </div>
-    <div class="trust-pill trust-pill--m">
+    <div class="trust-pill trust-pill--m" role="listitem">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
       50,000+ Moms
     </div>
-    <div class="trust-pill trust-pill--r">
+    <div class="trust-pill trust-pill--r" role="listitem">
       <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      4.9/5 Rating
+      4.7/5 App Store rating
     </div>
   </div>
 
-  <p class="copy">&copy; 2025 Wermom Inc.</p>
+  <!-- Wermom canonical trust metrics — see /_canonical/WERMOM_TRUST_METRICS_2026-05-29.json -->
+  <footer class="copy" role="contentinfo">&copy; 2026 Wermom Essentials Inc. &middot; General information, not medical advice &mdash; always consult your pediatrician. Evidence checked against <a href="https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx" style="color:inherit">AAP</a> &amp; <a href="https://www.nhs.uk/conditions/baby/" style="color:inherit">NHS</a>.</footer>
 
-</div>
+</main>
+
+<script>
+var g = document.getElementById('cursorGlow'), gx = innerWidth/2, gy = innerHeight/2, cx = gx, cy = gy;
+document.addEventListener('mousemove', function(e){ gx = e.clientX; gy = e.clientY; });
+(function loop(){ cx += (gx-cx)*0.08; cy += (gy-cy)*0.08; g.style.left = cx+'px'; g.style.top = cy+'px'; requestAnimationFrame(loop); })();
+if('ontouchstart' in window) g.style.display = 'none';
+document.querySelectorAll('.card').forEach(function(c){
+  c.addEventListener('mousemove', function(e){
+    var r = c.getBoundingClientRect(), x = (e.clientX-r.left)/r.width-0.5, y = (e.clientY-r.top)/r.height-0.5;
+    c.style.transform = 'translateY(-6px) scale(1.01) perspective(800px) rotateY('+(x*4)+'deg) rotateX('+(-y*4)+'deg)';
+  });
+  c.addEventListener('mouseleave', function(){ c.style.transform = ''; });
+});
+</script>
+
+</body>
+</html>
+M13 6l6 6-6 6"/></svg>
+      </div>
+    </a>
+
+    <a href="https://wermom.shop" class="card card--shop" aria-label="Wermom Shop — Premium diapers and mom and baby products">
+      <div class="card-tag"><span class="card-tag-dot"></span> Mom &amp; Baby Products</div>
+      <div class="card-icon" style="background:var(--white);box-shadow:0 4px 16px rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;border-radius:20px;overflow:hidden;">
+        <img src="logo.svg" alt="Wermom" style="width:88%;object-fit:contain;border-radius:0;margin-top:-12%;">
+      </div>
+      <h3 class="card-title">Wermom Shop</h3>
+      <p class="card-desc">Premium diapers, baby wipes, postpartum belly bands &amp; compression socks — by moms, for moms.</p>
+      <div class="card-stats" aria-label="Shop stats">
+        <span class="card-stat">Founding drop — be one of our first 100 moms in North America</span>
+      </div>
+      <div class="card-cta">
+        <span>Visit the Shop</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      </div>
+    </a>
+
+  </nav>
+
+  <div class="trust" role="list" aria-label="Trust signals">
+    <div class="trust-pill trust-pill--s" role="listitem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      GDPR Compliant
+    </div>
+    <div class="trust-pill trust-pill--m" role="listitem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      50,000+ Moms
+    </div>
+    <div class="trust-pill trust-pill--r" role="listitem">
+      <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      4.7/5 App Store rating
+    </div>
+  </div>
+
+  <!-- Wermom canonical trust metrics — see /_canonical/WERMOM_TRUST_METRICS_2026-05-29.json -->
+  <footer class="copy" role="contentinfo">&copy; 2026 Wermom Essentials Inc. &middot; General information, not medical advice &mdash; always consult your pediatrician. Evidence checked against <a href="https://www.healthychildren.org/English/ages-stages/baby/Pages/default.aspx" style="color:inherit">AAP</a> &amp; <a href="https://www.nhs.uk/conditions/baby/" style="color:inherit">NHS</a>.</footer>
+
+</main>
 
 <script>
 var g = document.getElementById('cursorGlow'), gx = innerWidth/2, gy = innerHeight/2, cx = gx, cy = gy;
