@@ -8997,11 +8997,38 @@ function showDownloadStep() {
   var country = document.getElementById('gs-country').value;
   if (!name || !email) { alert('Please fill in your name and email.'); return; }
 
-  // Store lead data
+  // Store lead data (local cache)
   try {
     sessionStorage.setItem('wermom_lead', JSON.stringify({ name: name, email: email, phone: phone, country: country }));
   } catch(e) {}
 
+  // V37: persist the lead server-side BEFORE showing success (previously
+  // sessionStorage-only — every lead was lost on tab close). Failure shows
+  // an inline error instead of a fake success.
+  var errBox = document.getElementById('gsLeadError');
+  if (errBox) errBox.style.display = 'none';
+  fetch('/api/lead-submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: name, email: email, phone: phone, country: country, source: 'app.html' })
+  }).then(function(r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    proceedToDownloadStep(name);
+  }).catch(function(err) {
+    console.error('Lead submit error:', err);
+    if (!errBox) {
+      errBox = document.createElement('div');
+      errBox.id = 'gsLeadError';
+      errBox.style.cssText = 'margin-top:12px;padding:10px 14px;border-radius:10px;background:#FDECEC;color:#B3261E;font-size:0.92rem;text-align:center;';
+      errBox.textContent = 'We could not save your details. Please check your connection and try again.';
+      var formEl = document.querySelector('#gs-step-form form') || document.getElementById('gs-step-form');
+      if (formEl) formEl.appendChild(errBox);
+    }
+    errBox.style.display = '';
+  });
+}
+
+function proceedToDownloadStep(name) {
   // Show first name in success message
   var firstName = name.split(' ')[0];
   var nameEl = document.getElementById('gs-user-name-display');
