@@ -28,7 +28,8 @@ module.exports = async (req, res) => {
   if (raw.length > 65536) return res.status(413).json({ error: 'Payload too large' });
 
   try {
-    const r = await fetch(`${url}/rest/v1/web_survey_submissions`, {
+    // on_conflict is required for Prefer: ignore-duplicates to dedup retries.
+    const r = await fetch(`${url}/rest/v1/web_survey_submissions?on_conflict=submission_id`, {
       method: 'POST',
       headers: {
         apikey: key,
