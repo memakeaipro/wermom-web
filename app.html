@@ -9790,11 +9790,12 @@ document.querySelectorAll('.social-stat-num, .bento-hero-num, .showcase-stat-val
         if (!isNaN(target) && target > 0) {
           el.textContent = '0';
           var count = 0;
+          var step = Math.max(1, Math.ceil(target / 25));
           var interval = setInterval(function() {
-            count++;
+            count = Math.min(target, count + step);
             el.textContent = count;
             if (count >= target) clearInterval(interval);
-          }, 120);
+          }, 60);
         }
         wayObserver.unobserve(el);
       }
