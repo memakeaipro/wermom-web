@@ -1,3 +1,6 @@
 Image/
 .vercel
 .env*.local
+
+node_modules/
+*.bak.preprune

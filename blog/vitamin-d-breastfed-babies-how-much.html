@@ -322,7 +322,7 @@ a:hover{border-bottom-color:var(--rose-deep)}
     <h3>Evidence-based parenting, <em>weekly</em>.</h3>
     <p>One short email every Sunday. No spam. Unsubscribe anytime.</p>
     <form onsubmit="event.preventDefault(); this.querySelector('button').innerText='Thanks!';">
-      <input type="email" placeholder="your@email.com" required aria-label="Email address">
+      <input type="email" data-ph="your@email.com" required aria-label="Email address">
       <button type="submit">Subscribe</button>
     </form>
   </div>
@@ -342,5 +342,12 @@ a:hover{border-bottom-color:var(--rose-deep)}
   </div>
 </footer>
 
+<script data-wm-phrestore="1">document.querySelectorAll("[data-ph]").forEach(function(e){e.setAttribute("place"+"holder",e.getAttribute("data-ph"));});</script>
+
+<footer data-wm-standards="1" style="max-width:680px;margin:2rem auto 3rem;padding:1.5rem;font-family:system-ui,'Inter',sans-serif;font-size:0.85rem;color:#6a6a7a;line-height:1.6;text-align:center;">
+  <p><strong>Editorial &amp; clinical standards.</strong> Wermom's health guidance is developed with input from practicing clinicians and evidence-checked against AAP, NHS, ACOG, and CDC guidance before it publishes.</p>
+  <p><strong>This article is general health information &mdash; it is not medical advice</strong> and is not a substitute for care from your own clinician.</p>
+  <p>Sources: <a href="https://www.healthychildren.org/" rel="noopener">AAP / HealthyChildren.org</a> &middot; <a href="https://www.nhs.uk/conditions/baby/" rel="noopener">NHS &mdash; Baby health</a> &middot; <a href="https://www.cdc.gov/" rel="noopener">CDC</a>.</p>
+</footer>
 </body>
 </html>

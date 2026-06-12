@@ -3,7 +3,7 @@
 
 User-agent: *
 Allow: /
-Crawl-delay: 1
+# Crawl-delay removed 2026-06-03 — it throttled Googlebot on an under-indexed 2,000-page site
 
 # AI Crawlers - Optimized for Discovery
 # No crawl delays for AI crawlers to enable fast indexing
@@ -57,10 +57,8 @@ User-agent: Bytespider
 Allow: /
 Crawl-delay: 0
 
-# Sitemap
+# Sitemap (llms.txt / llms-full.txt are NOT sitemaps — removed from Sitemap: directive 2026-06-02)
 Sitemap: https://wermom.com/sitemap.xml
-Sitemap: https://wermom.com/llms.txt
-Sitemap: https://wermom.com/llms-full.txt
 
 # Block video paths only
 Disallow: /vid/
