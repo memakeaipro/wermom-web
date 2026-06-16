@@ -9,20 +9,266 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
       ]
     },
     {
       "source": "/.well-known/apple-app-site-association",
       "headers": [
-        { "key": "Content-Type", "value": "application/json" },
-        { "key": "Cache-Control", "value": "no-cache, no-store" }
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/blogs/1-year-old-sleep-schedule.html",
+      "destination": "/blog/1-year-old-sleep-schedule.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/10-month-sleep-regression.html",
+      "destination": "/blog/10-month-sleep-regression.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/12-month-sleep-regression.html",
+      "destination": "/blog/12-month-sleep-regression.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/18-month-sleep-regression-guide.html",
+      "destination": "/blog/18-month-sleep-regression-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/18-month-sleep-regression-prevention.html",
+      "destination": "/blog/18-month-sleep-regression-prevention.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/2-month-old-sleep-schedule.html",
+      "destination": "/blog/2-month-old-sleep-schedule.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/2-to-1-nap-transition.html",
+      "destination": "/blog/2-to-1-nap-transition.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/2-year-old-sleep-regression.html",
+      "destination": "/blog/2-year-old-sleep-regression.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/2-year-old-sleep-schedule.html",
+      "destination": "/blog/2-year-old-sleep-schedule.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/3-month-old-sleep-schedule.html",
+      "destination": "/blog/3-month-old-sleep-schedule.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/3-to-2-nap-transition.html",
+      "destination": "/blog/3-to-2-nap-transition.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/4-month-sleep-regression-how-long.html",
+      "destination": "/blog/4-month-sleep-regression-how-long.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/4-month-sleep-regression-survival.html",
+      "destination": "/blog/4-month-sleep-regression-survival.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/5-month-old-sleep-schedule.html",
+      "destination": "/blog/5-month-old-sleep-schedule.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/6-month-old-sleep-schedule.html",
+      "destination": "/blog/6-month-old-sleep-schedule.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/8-month-sleep-regression-tips.html",
+      "destination": "/blog/8-month-sleep-regression-tips.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/8-month-sleep-regression.html",
+      "destination": "/blog/8-month-sleep-regression.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/9-month-old-sleep-schedule.html",
+      "destination": "/blog/9-month-old-sleep-schedule.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/aap-safe-sleep-update-2025.html",
+      "destination": "/blog/aap-safe-sleep-update-2025.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-bedtime-routine-guide.html",
+      "destination": "/blog/baby-bedtime-routine-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-daylight-saving-sleep.html",
+      "destination": "/blog/baby-daylight-saving-sleep.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-dreams-sleep-science.html",
+      "destination": "/blog/baby-dreams-sleep-science.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-fighting-sleep-reasons.html",
+      "destination": "/blog/baby-fighting-sleep-reasons.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-independence-self-soothing.html",
+      "destination": "/blog/baby-independence-self-soothing.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-nap-guide-transitions.html",
+      "destination": "/blog/baby-nap-guide-transitions.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-nap-schedule-guide.html",
+      "destination": "/blog/baby-nap-schedule-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-nap-tracker-science-of-optimal-wake-windows.html",
+      "destination": "/blog/baby-nap-tracker-science-of-optimal-wake-windows.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-pacifier-sleep-guide.html",
+      "destination": "/blog/baby-pacifier-sleep-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-sleep-associations-breaking.html",
+      "destination": "/blog/baby-sleep-associations-breaking.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-sleep-associations-explained.html",
+      "destination": "/blog/baby-sleep-associations-explained.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-sleep-consultant-worth-it.html",
+      "destination": "/blog/baby-sleep-consultant-worth-it.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-sleep-cues-reading.html",
+      "destination": "/blog/baby-sleep-cues-reading.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-sleep-environment-checklist.html",
+      "destination": "/blog/baby-sleep-environment-checklist.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-sleep-safety-sids-prevention.html",
+      "destination": "/blog/baby-sleep-safety-sids-prevention.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-sleep-training-methods-compared.html",
+      "destination": "/blog/baby-sleep-training-methods-compared.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/baby-wont-sleep-in-crib.html",
+      "destination": "/blog/baby-wont-sleep-in-crib.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/bassinet-to-crib-transition.html",
+      "destination": "/blog/bassinet-to-crib-transition.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/chair-method-sleep-training.html",
+      "destination": "/blog/chair-method-sleep-training.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/cluster-feeding-survival-guide.html",
+      "destination": "/blog/cluster-feeding-survival-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/crib-to-toddler-bed-transition.html",
+      "destination": "/blog/crib-to-toddler-bed-transition.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/cry-it-out-sleep-training-safe-6-months.html",
+      "destination": "/blog/cry-it-out-sleep-training-safe-6-months.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/dream-feed-guide.html",
+      "destination": "/blog/dream-feed-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/index.html",
+      "destination": "/blog/index.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/pick-up-put-down-method.html",
+      "destination": "/blog/pick-up-put-down-method.html",
+      "statusCode": 301
     }
   ]
 }

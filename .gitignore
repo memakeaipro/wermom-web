@@ -4,3 +4,8 @@ Image/
 
 node_modules/
 *.bak.preprune
+*.bak
+
+# Local SEO tooling — kept on disk for scheduled tasks, NEVER deployed/web-exposed
+_rebuild_sitemap.py
+_add_blogs_redirects.py
