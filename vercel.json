@@ -3,6 +3,1466 @@
     {
       "source": "/detail-report/:id",
       "destination": "/detail-report.html"
+    },
+    {
+      "source": "/blogs/10-month-old-development.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/11-month-old-development.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/12-month-development-birthday.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/2-month-old-development-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/2-year-old-speech-milestones.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/3-month-old-development-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/5-month-old-bottle-feeding-schedule.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/6-month-old-development-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/6-month-old-weight-average.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/7-month-old-development.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/9-month-old-development.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/adopted-baby-bonding.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-acne-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-acne-vs-eczema.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-app-vs-pen-paper-tracking.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-bath-water-temperature.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-brain-architecture.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-carrier-guide-newborn.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-clothing-size-growth-rate.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-colic-causes-relief.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-congestion-remedies.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-constipation-after-solids.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-constipation-or-normal.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-constipation-signs-when-concerned.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-cradle-cap-treatment.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-crawling-development-age.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-development-red-flags-vs-normal.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-developmental-toys-by-age.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-ear-wax-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-eczema-winter-flare.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-eyes-color-change.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-fever-action-plan-by-age.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-fever-myths-debunked.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-fever-temperature-when-call-doctor.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-first-christmas-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-first-foods-by-age.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-first-steps-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-food-heavy-metal-avoidance.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-food-introduction-myths.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-food-pouches-truth.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-gas-relief-techniques.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-gear-actually-need.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-growth-chart-percentiles-normal.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-growth-percentile-drop.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-growth-spurt-signs.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-gut-microbiome-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-head-control-when-development.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-hearing-development-sound.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-heat-safety-summer.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-led-weaning-vs-purees.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-lotion-sunscreen-safe-age.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-massage-for-gas.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-milestone-anxiety.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-milestone-app-comparison.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-moving-new-home.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-nail-trimming-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-not-gaining-weight-poor-growth.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-object-permanence.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-overweight-underweight-assessment.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-passport-travel-documents.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-pincer-grasp-development.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-pointing-milestone.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-probiotics-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-proofing-room.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-rash-identification.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-reflux-management.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-refusing-food-not-eating.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-registry-must-haves.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-rolling-over-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-routine-schedule-tips.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-safe-essential-oils.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-screen-time-recommendations.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-separation-anxiety-tips.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-sign-language-benefits.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-sleep-regression-ages.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-sleep-sounds-normal.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-sleeping-through-night.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-stranger-anxiety-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-sunburn-prevention.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-teeth-brushing-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-teething-timeline-complete.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-temperament-types.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-travel-airplane-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-travel-checklist.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-vaccination-schedule-ages.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-vision-development-month-by-month.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-wearing-benefits.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-weight-loss-causes.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-witching-hour-survival.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/baby-wonder-weeks.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/bed-sharing-safety.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/best-first-foods-6-month-old.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/best-pregnancy-foods-nutrition.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/bilingual-baby-research.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/birth-plan-realistic-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/breast-pump.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/breastfeed-goals.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/breastfeed-latch.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/breastfeed-positions.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/breastfeeding-in-public-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/breastfeeding-pain-not-normal.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/breastfeeding-pain-relief-nipple-soreness.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/breastfeeding-positions-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/breastfeeding-vs-formula-feeding.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/breastfeeding-vs-pumping.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/breastmilk-supply-increase.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/c-section-incision-care-healing.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/c-section-what-to-expect.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/caffeine-pregnancy-safe-amount.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/caffeine-pregnancy-safe-limit.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/car-seat-installation-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/choking-hazards.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/choosing-a-pediatrician.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/co-sleeping-evidence-based-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/co-sleeping-safe-aap-room-sharing.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/cold-medicine-safety-babies.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/contact-nap-to-crib-transition.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/cow-milk-1-year-old-safety.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/cow-milk-transition-12-months.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/cradle-cap-treatment-prevention.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/cry-it-out-vs-gentle-sleep-training.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/dad-paternity-leave-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/dad-postpartum-depression.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/dad-topic-411.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/dad-topic-412.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/dad-topic-413.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/dad-topic-414.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/dad-topic-415.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/dad-topic-416.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/dad-topic-417.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/dad-topic-418.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/dad-topic-419.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/daycare-preschool-readiness-age.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/daycare-transition-tips.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/developmental-delay-evaluation-when.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/developmental-red-flags-checklist.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/diaper-rash-causes-treatment.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/diastasis-recti-exercises-safe.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/doctor-visit-preparation-data.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/drop-third-nap-8-month-old.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/drowsy-but-awake-myth.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/ear-infection-signs-symptoms-baby.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/early-morning-waking-baby.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/emotion-topic-402.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/emotion-topic-403.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/emotion-topic-404.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/emotion-topic-405.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/emotion-topic-406.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/emotion-topic-408.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/emotion-topic-409.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/emotion-topic-410.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/emotional-development-self-regulation-children.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/epigenetics-first-1000-days.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/exercise-during-pregnancy-safe.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/first-bath-newborn-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/first-time-parent-mistakes.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/first-trimester-symptoms-warning-signs.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/first-words-baby-speech-development.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/fish-pregnancy-safe-mercury-content.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/flying-during-pregnancy-safety.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/foods-to-avoid-pregnancy-safety.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/formula-amount-4-month-old.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/formula-preparation-safety.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/formula-shortage-alternatives.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/fourth-trimester-what-nobody-tells-you.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/gentle-sleep-training-methods.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/gestational-diabetes-meal-plan.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/grandparent-boundaries-baby.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/grandparent-topic-462.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/grandparent-topic-463.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/grandparent-topic-464.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/grandparent-topic-465.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/grandparent-topic-466.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/grandparent-topic-467.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/grandparent-topic-468.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/grandparent-topic-470.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/growth-percentile-explained.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/hand-foot-mouth-disease-baby.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/healthy-pregnancy-weight-gain.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/healthy-sleep-habits-children.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/high-chair-safety-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/honey-botulism-babies-under-12-months.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/hospital-bag-checklist-practical.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/how-many-hours-should-3-month-old-sleep.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/how-much-formula-by-age.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/how-to-burp-a-newborn-properly.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/how-to-read-baby-food-labels.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/how-to-soothe-a-crying-baby.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/how-wermom-tracks-baby-growth.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/humidifier-newborn-room-benefits.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/infant-choking-cpr-what-to-do.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/infant-massage-complete-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/introducing-baby-to-mirror.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/introducing-cup-to-baby.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/introducing-pets-to-baby.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/labor-stages-explained.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/low-milk-supply.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/mastitis.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/meal-prep-baby-food-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/milk-protein-allergy-signs-symptoms.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/mom-guilt-science-of-letting-go.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/mom-identity-loss-motherhood.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/morning-sickness-diet-foods.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/multi-caregiver-baby-tracking.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/nap-schedule-9-month-old.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/nap-schedule-by-age.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/newborn-bathing-frequency-schedule.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/newborn-clothing-layers-temperature.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/newborn-crying-decoded.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/newborn-diaper-rash-prevention.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/newborn-hiccups-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/newborn-lotion-safe-moisturizer.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/newborn-poop-color-chart.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/newborn-reflexes-test-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/newborn-sleep-cues-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/newborn-sleeping-too-much-20-hours.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/newborn-temperature-signs-too-hot-cold.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/newborn-weight-gain-normal.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/newborn-weight-loss-after-birth.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/night-feeding-when-to-stop.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/night-feeding.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/nighttime-diaper-change-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/omega-3-dha-baby-brain.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/outdoor-play-importance-development.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/pacifier-pros-cons-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/parenting-styles-authoritative-effects.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/partner-mental-load-sharing.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/pelvic-floor-exercises-beyond-kegels.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/perineal-massage-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/poison-control.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-anxiety-symptoms.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-anxiety-vs-depression.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-bleeding-lochia-when-serious.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-bleeding-what-is-normal.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-body-acceptance.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-depression-signs-when-help.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-exercise-timeline.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-hair-loss-shedding.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-hair-loss-timeline.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-insomnia-cant-sleep.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-night-sweats.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-nutrition-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-nutrition-healing-milk-supply.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-rage-hidden-symptom.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-recovery-timeline-realistic.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-recovery-timeline-vaginal-delivery.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-relationship-survival.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-rest-exercise-when-start.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-sex-honest-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-sex-when-safe.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/postpartum-thyroiditis-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/predict-baby-adult-height.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/pregnancy-calorie-needs-by-trimester.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/pregnancy-cravings-aversions-management.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/pregnancy-supplements-beyond-prenatal.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/pregnancy-week-by-week-symptoms.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/premature-baby-adjusted-age.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/prenatal-vitamins-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/prenatal-vitamins-necessary-what-to-take.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/preparing-for-second-baby.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/protein-requirements-pregnancy.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/returning-to-running-after-baby.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/safe-medications-pregnancy-cold.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/safe-sleep-beyond-basics.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/screen-time-under-2-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/second-trimester-pregnancy-what-to-expect.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/secure-attachment-how-to-build.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/separation-anxiety-toddler-management.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/sids-prevention.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/signs-of-preterm-labor.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/single-parent-survival-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/sitting-up-baby-6-7-months.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/skin-topic-391.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/skin-topic-392.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/skin-topic-393.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/skin-topic-395.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/skin-topic-396.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/skin-topic-398.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/skin-topic-399.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/sleep-schedule-by-age-chart.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/sleep-training-when-to-start.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/special-topic-451.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/special-topic-452.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/special-topic-453.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/special-topic-454.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/special-topic-456.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/special-topic-457.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/special-topic-458.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/special-topic-460.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/stair-safety.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/standing-walking-baby-first-steps.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/sushi-deli-meat-pregnancy-safe.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/swaddle-transition-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/tdap-vaccine-pregnancy-timing.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/teething-pain-relief-baby.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/teething-vs-ear-infection.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/toddler-biting-hitting-phase.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/toddler-ear-infection-recurring.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/toddler-hitting-phase.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/toddler-iron-deficiency.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/toddler-milk-alternatives.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/toddler-overweight-bmi-age.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/toddler-physical-activity-exercise.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/toddler-potty-training-readiness.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/toddler-proof-home-checklist.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/toddler-sleep-schedule-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/toddler-speech-delay-signs.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/toddler-tantrums-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/tongue-tie.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/top-allergen-introduction-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/toy-safety.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/travel-topic-421.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/travel-topic-422.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/travel-topic-423.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/travel-topic-424.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/travel-topic-425.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/travel-topic-426.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/travel-topic-427.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/travel-topic-428.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/travel-topic-429.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/travel-topic-430.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/traveling-with-baby-safe-age.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/tummy-time-importance-duration.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/tummy-time-newborn-hates-it.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/tummy-time-positions-by-age.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/tummy-time-prevents-sids.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-431.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-432.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-433.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-434.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-435.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-436.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-438.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-439.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-440.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-442.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-446.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-447.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-448.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-449.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twin-topic-450.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/twins-first-year-guide.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/two-under-two-survival.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/umbilical-cord-care-newborn.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/umbilical-cord-stump-care.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/vegetarian-vegan-pregnancy-nutrition.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/vitamin-d-drops-newborn.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/water-safety.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/weaning-breastfeed.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/weaning-breastfeeding-12-months.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/weaning-from-breastfeeding-emotions.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/wermom-first-1000-days-philosophy.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/wet-diaper-count-hydration.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/what-pediatrician-checks-well-visit.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/when-babies-roll-over-6-month-milestone.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/when-baby-needs-er.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/when-start-solid-foods-baby-age.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/when-to-call-pediatrician-newborn.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/when-to-introduce-water.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/white-noise-volume-safety.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/why-personalized-baby-insights-matter.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/work-life-balance-new-parent.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/work-life-balance-working-parents.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/work-pumping.html",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blogs/working-mom-pumping-schedule.html",
+      "destination": "/api/gone"
     }
   ],
   "headers": [
